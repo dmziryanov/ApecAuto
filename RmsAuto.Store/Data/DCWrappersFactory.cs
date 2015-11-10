@@ -57,7 +57,6 @@ namespace RmsAuto.Store.Data
                 var CallingAssemblyName = st.GetFrame(i).GetMethod().Module.Assembly.FullName;
                 isCallingAssemblyAdm = CallingAssemblyName.Contains("RmsAuto.Store.Adm") || isCallingAssemblyAdm;
             }
-           // CallingAssemblyName = Assembly.GetExecutingAssembly().;
         }
 		
 		public DCWrappersFactory(bool pOpenConnection)  : this(IsolationLevel.ReadUncommitted, true, null, pOpenConnection)
@@ -93,7 +92,6 @@ namespace RmsAuto.Store.Data
             //Reflection медленнее генерик-типов
             _internalFranchName = pInternalFranchName;
             _dataContext = new T();
-        //    _dataContext.Log = new DebugTextWriter(); Если нужен лог то расскоментить
             _dataContext.Connection.ConnectionString = _getConnectionString();
             _commit = autoCommit;
 
@@ -105,13 +103,11 @@ namespace RmsAuto.Store.Data
         }
         
         public T DataContext { get { return _dataContext; } }
-		//TODO данное св-во вынести в SiteContext, заполнять в зависимости от выбранного региона (перегружая приложение после каждого выбора)
-		// ЛИБО из AppSettings если вызываем например из сервиса
+        
         public string InternalFranchName
 		{ 
 			get
 			{
-				//TODO try { region = SiteContext.Current.DataContextRegion } catch { ConfigurationManager.AppSettings["DataContextRegion"]
 				try
 				{
                     if (_internalFranchName == null)
