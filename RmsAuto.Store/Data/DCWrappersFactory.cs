@@ -169,7 +169,10 @@ namespace RmsAuto.Store.Data
                         else
                             _dataContext.Transaction.Rollback();
                     }
-                    catch { }
+                    catch (Exception ex)
+                    {
+                        Logger.WriteError(ex.Message, EventLogerID.SQLError, EventLogerCategory.FatalError);   
+                    }
                     finally
                     {
                         if (_dataContext.Connection.State == ConnectionState.Open) { _dataContext.Connection.Close(); }
