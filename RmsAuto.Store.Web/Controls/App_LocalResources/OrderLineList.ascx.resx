@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="_clearFilterButtonResource1.Text" xml:space="preserve">
+    <value>Очистить фильтр</value>
+  </data>
+  <data name="_filterCustOrderNumsResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="_filterEndDateCustomValidatorResource1.ErrorMessage" xml:space="preserve">
+    <value>Неверный формат данных</value>
+  </data>
+  <data name="_filterEndDateCustomValidatorResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="_filterEndDateResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="_filterEndPriceCustomValidatorResource1.ErrorMessage" xml:space="preserve">
+    <value>Неверный формат данных</value>
+  </data>
+  <data name="_filterEndPriceCustomValidatorResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="_filterEndPriceResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="_filterManufacturersResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="_filterOrderIDsResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="_filterPartNameResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="_filterPartNumbersResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="_filterReferenceIDsResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="_filterStartDateCustomValidatorResource1.ErrorMessage" xml:space="preserve">
+    <value>Неверный формат данных</value>
+  </data>
+  <data name="_filterStartDateCustomValidatorResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="_filterStartDateResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="_filterStartPriceCustomValidatorResource1.ErrorMessage" xml:space="preserve">
+    <value>Неверный формат данных</value>
+  </data>
+  <data name="_filterStartPriceCustomValidatorResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="_filterStartPriceResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="_OrderIDsCustomValidatorResource1.ErrorMessage" xml:space="preserve">
+    <value>Неверный формат данных</value>
+  </data>
+  <data name="_OrderIDsCustomValidatorResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="_searchButtonResource1.Text" xml:space="preserve">
+    <value>Фильтровать</value>
+  </data>
+  <data name="lCustOrderNumsResource1.Text" xml:space="preserve">
+    <value>Номер заказа клиента</value>
+  </data>
+  <data name="lEmptyListResource1.Text" xml:space="preserve">
+    <value>список строк пуст</value>
+  </data>
+  <data name="lFilterResource1.Text" xml:space="preserve">
+    <value>Фильтр:</value>
+  </data>
+  <data name="lHCustOrderNumberResource1.Text" xml:space="preserve">
+    <value>номер заказа клиента</value>
+  </data>
+  <data name="lHEstDateResource1.Text" xml:space="preserve">
+    <value>дата поступления на склад РМС Авто</value>
+  </data>
+  <data name="lHManufacturerResource1.Text" xml:space="preserve">
+    <value>производитель</value>
+  </data>
+  <data name="lHOrderDateResource1.Text" xml:space="preserve">
+    <value>дата заказа</value>
+  </data>
+  <data name="lHOrderNumberResource1.Text" xml:space="preserve">
+    <value>номер заказа</value>
+  </data>
+  <data name="lHPartNameResource1.Text" xml:space="preserve">
+    <value>наименование</value>
+  </data>
+  <data name="lHPartNumberResource1.Text" xml:space="preserve">
+    <value>номер детали</value>
+  </data>
+  <data name="lHPriceResource1.Text" xml:space="preserve">
+    <value>цена</value>
+  </data>
+  <data name="lHQtyResource1.Text" xml:space="preserve">
+    <value>к-во</value>
+  </data>
+  <data name="lHReferenceIDResource1.Text" xml:space="preserve">
+    <value>код заказа</value>
+  </data>
+  <data name="lHStatusResource1.Text" xml:space="preserve">
+    <value>статус</value>
+  </data>
+  <data name="lHSumResource1.Text" xml:space="preserve">
+    <value>сумма</value>
+  </data>
+  <data name="ListItemResource1.Text" xml:space="preserve">
+    <value>все</value>
+  </data>
+  <data name="ListItemResource2.Text" xml:space="preserve">
+    <value>все рабочие</value>
+  </data>
+  <data name="ListItemResource3.Text" xml:space="preserve">
+    <value>все закрытые</value>
+  </data>
+  <data name="lManufacturersResource1.Text" xml:space="preserve">
+    <value>Производитель</value>
+  </data>
+  <data name="lOrderIDsResource1.Text" xml:space="preserve">
+    <value>Номер заказа</value>
+  </data>
+  <data name="lPartNameResource1.Text" xml:space="preserve">
+    <value>Наименование детали</value>
+  </data>
+  <data name="lPartNumbersResource1.Text" xml:space="preserve">
+    <value>Номер детали</value>
+  </data>
+  <data name="lReferenceIDsResource1.Text" xml:space="preserve">
+    <value>Код заказа</value>
+  </data>
+  <data name="lStartDateResource1.Text" xml:space="preserve">
+    <value>Дата размещения заказа, с </value>
+  </data>
+  <data name="lStartPriceResource1.Text" xml:space="preserve">
+    <value>Диапазон цены детали, c </value>
+  </data>
+  <data name="lStatusResource1.Text" xml:space="preserve">
+    <value>Статус заказа</value>
+  </data>
+</root>

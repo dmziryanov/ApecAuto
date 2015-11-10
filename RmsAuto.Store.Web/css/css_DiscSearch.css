@@ -1,0 +1,314 @@
+﻿table, tbody, tr, td, div, span {
+    font-family: 'Trebuchet MS';
+    font-size: 13px;
+}
+
+.Buy {
+    background-color:  #912330;
+    background-image: -webkit-linear-gradient(top, #CE2438, #68030C);
+    background-image: -moz-linear-gradient(top, #CE2438, #68030C);
+    background-image: -ms-linear-gradient(top, #CE2438, #68030C);
+    background-image: -o-linear-gradient(top, #CE2438, #68030C);
+    background-image: linear-gradient(top, #CE2438, #68030C);
+    font-size: 13px;
+    font-weight: bold;
+    border: 1px solid #68030C;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    color: white;
+    text-align: center;
+    padding: 7px 25px 7px 25px;
+    text-decoration: none;
+    margin-right:5px;
+}
+
+    .imgCat
+    {
+        margin-left: 3px; 
+        margin-right: 3px; 
+        border: 0px; 
+        cursor: pointer;
+        color:#295d89;
+	    font-family: Tahoma;
+	    font-size: 12px;
+	    font-weight:normal;
+	    text-decoration:none;        
+	    height: 162;
+	    width:62;
+    }
+    
+    .imgCat:hover
+    {
+        text-decoration:underline;        
+    }
+
+    .tireSearchCombo
+    {
+        width: 60px; margin-bottom: 0px; border: 1px;
+    }
+    
+    .tireSearchManufacturerCombo
+    {
+        width: 180px; margin-bottom: 0px; border: 1px;
+    }
+
+    .WarningText
+    {
+        border: groove 1px #7c7c7c;
+        position:relative;
+        position:relative;
+        background: #F0F8FF;
+        height:4em;
+        padding:0em;
+        margin :2em 10px 4em;
+        vertical-align: middle;
+        font-size:large;
+        padding-top: 2px;
+        padding-left: 3px;
+        margin-bottom: 12px;
+        margin-right: 12px;
+        border-radius: 6px;
+        -webkit-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        -moz-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    }
+    
+    
+    label.ui-button { width: 30px; height:16px}
+    label.ui-state-active { background: #4478a3 !important; }
+    label.ui-state-active span.ui-button-text {color: #ffffff; } 
+    label span.ui-button-text { font: 90% "Trebuchet MS", sans-serif; margin-top:-20%; margin-left:-35% }
+		
+	label {height: 16px; text-decoration: none; position: relative; }
+	.ui-helper-hidden-accessible {height: 2px; text-decoration: none; position: relative;}
+	
+    .ui-corner-left { -moz-border-radius-topleft: 0px/*{cornerRadius}*/; -webkit-border-top-left-radius: 0px/*{cornerRadius}*/; border-top-left-radius: 0px/*{cornerRadius}*/; -moz-border-radius-bottomleft: 0px/*{cornerRadius}*/; -webkit-border-bottom-left-radius: 0px/*{cornerRadius}*/; border-bottom-left-radius: 0px/*{cornerRadius}*/; }
+    .ui-corner-right { -moz-border-radius-topleft: 0px/*{cornerRadius}*/; -webkit-border-top-right-radius: 0px/*{cornerRadius}*/; border-top-right-radius: 0px/*{cornerRadius}*/; -moz-border-radius-bottomleft: 0px/*{cornerRadius}*/; -webkit-border-bottom-right-radius: 0px/*{cornerRadius}*/; border-bottom-right-radius: 0px/*{cornerRadius}*/; }
+    .ui-state-default { border-color: #2474B6 }
+        
+ .main_block { 
+   background: #fcf8e7; 
+   display:table-cell;
+   padding: 5px;  
+   height: 100%;
+   position: relative;  
+   overflow: hidden;  
+ } 
+ 
+
+.main_block div {  
+    background: #fcf8e7;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 4px;
+    white-space: nowrap;
+    font-family: Arial; 
+    font-size: 14px;
+    color: #af2735;
+ } 
+
+.main_block div span {
+    background: #fcf8e7;  
+    vertical-align: middle;
+    padding-left: 4px;
+    padding-right: 4px;
+    color: #786518;
+    font-size: 11px;
+   }
+
+
+.card {
+                background: #E6F5FF;
+                height: 196px;
+                width:370px;                 
+                border: groove 1px  #223D4F;
+                position:relative;
+                padding: 3px 3px 0px 3px;
+                margin:2em 0px 4em;
+                margin-bottom: 12px;
+                margin-right: 24px;
+                border-radius: 6px;
+                background-image: -webkit-linear-gradient(left, #B0CADC, #d8ebf8 55%);
+                background-image: -moz-linear-gradient(left, #B0CADC, #d8ebf8 55%);
+                background-image: -ms-linear-gradient(left, #B0CADC, #d8ebf8 55%);
+                background-image: -o-linear-gradient(left, #B0CADC, #d8ebf8 55%);
+                background-image: linear-gradient(left, #B0CADC, #d8ebf8 55%);
+    -webkit-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+ }        
+
+.card:hover
+{
+  position:relative;
+  background: #FFFFCC;
+  margin:2em 0px 4em;
+  margin-bottom: 12px;
+  margin-right: 24px;
+ -webkit-box-shadow: 0 15px 10px -10px rgba(0, 0, 200, 0.5), 0 1px 20px rgba(0, 0, 200, 0.3), 0 0 40px rgba(0, 0, 200, 0.1) inset;
+    -moz-box-shadow: 0 15px 10px -10px rgba(0, 0, 200, 0.5), 0 1px 20px rgba(0, 0, 200, 0.3), 0 0 40px rgba(0, 0, 200, 0.1) inset;
+         box-shadow: 0 15px 10px -10px rgba(0, 0, 200, 0.5), 0 1px 20px rgba(0, 0, 200, 0.3), 0 0 40px rgba(0, 0, 200, 0.1) inset;
+}
+ 
+
+.card:after {
+    content:"";
+    position:absolute;
+    z-index:-2;
+}
+
+.card:before
+{ top:10px;
+    bottom:10px;
+    left:0;
+    right:0;
+    -webkit-box-shadow:0 0 15px rgba(0,0,0,0.6);
+       -moz-box-shadow:0 0 15px rgba(0,0,0,0.6);
+            box-shadow:0 0 15px rgba(0,0,0,0.6);
+    -moz-border-radius:10px / 100px;
+         border-radius:10px / 100px;
+}
+ 
+ 
+
+.card table tbody tr td div img.bordgray {
+                border: 1px #047 solid;
+                background-color: #fff;
+}
+
+
+.article {
+    background-color: #3481C1; 
+    color: #e6f5ff; 
+    font-weight: bold;
+    background-image: -webkit-linear-gradient(top, #3481C1, #047);
+    background-image: -moz-linear-gradient(top, #3481C1, #047);
+    background-image: -ms-linear-gradient(top, #3481C1, #047);
+    background-image: -o-linear-gradient(top, #3481C1, #047);
+    background-image: linear-gradient(top, #3481C1, #047);
+    font-size: 13px;
+    font-weight: bold;
+    padding: 1px 0px 1px 0px;
+    color: white;
+    text-align: center;
+}
+
+p button.ui-button {  color: White;   background: #4478a3;    font-weight: bolder; }
+p button span.ui-button-text{ color:White; }
+p button.ui-button:hover {    color: White !important; background: #3481C1;  color:#FFFFFF !important;  font-weight: bolder; }
+p button.ui-state-active {  color: White !important;  background: #3481C1 !important;  color: #FFFFFF !important; font-weight: bolder;}
+.ui-buttonset { border-radius: 0px !important; }
+
+
+.cont {
+                color: #0B010B; 
+                padding-left: 3px; 
+                width: 90px;
+                height: 100px;
+                word-spacing:normal;
+                white-space:nowrap;
+             
+}
+
+.cont span {
+                color: #6c6b6c; 
+                padding-left: 3px;
+}
+
+.cont div {
+                color: #000000; 
+                padding-top: 20px;
+}
+
+
+.cont {
+                text-align: left; 
+                padding-right: 6px; 
+                width: auto; 
+                font-weight: bold;
+}
+.cont2 {
+                text-align: right; 
+                padding-right: 6px; 
+                width: auto; 
+                font-weight: bold;
+}
+
+.cont2 div {
+                color: #000000; 
+                padding-top: 20px;
+}
+
+
+.input {
+                vertical-align: middle;
+}
+
+.price {
+                font-weight: bold;
+                font-color: #a42735;
+                text-shadow: white 1px 1px 1px, red 0 0 0px;
+}
+
+.brand_name {
+               
+                text-align: center;
+                font-family: 'Arial';
+                font-size: 16px;
+                font-weight: bold;
+               width:300px;
+}
+
+.brand_name span h3 {
+                height : 1.5em;
+                width : 100%;
+                text-shadow: white 1px 1px 1px, black 0 0 0px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;             
+                -moz-binding: url('ellipsis.xml#ellipsis');
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+              
+}
+
+.brand_name span:first-child {
+                font-family: 'Arial';
+                font-size: 16px;
+                font-weight: bold;
+                text-shadow: white 1px 1px 1px, black 0 0 0px;
+                
+}
+
+.pricerow {
+                vertical-align: middle;
+                text-align: right;
+}
+
+
+.tooltip{
+	position:absolute;
+	width:250px;
+	background-image:url(tip-bg.png);
+	background-position:left center;
+	color:#333333;
+	padding:5px 5px 5px 8px;
+	font-size:12px;
+	font-family:Verdana, Geneva, sans-serif;
+	background-color: #FFFFFF;
+	border-style: solid;
+	border-width: 3;
+	border-color: #666666;
+}
+
+.tooltip-image{
+	float:left;
+	margin-right:5px;
+	margin-bottom:5px;
+	margin-top:3px;
+}
+
+.tooltip span{
+   font-weight:700;
+   color:#0066FF;
+}
+

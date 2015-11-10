@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/Default.aspx" title="Главная">
+        <siteMapNode url="~/StoreMgmt.aspx" title="Справочники" />
+        <siteMapNode url="~/TecdocMgmt.aspx" title="TecDocs" />
+        <siteMapNode url="~/ContentMgmt.aspx" title="Управление контентом" />
+        <siteMapNode url="~/SearchSparePartsLogExport.aspx" title="Статистика поиска" />
+        <siteMapNode url="~/ListSparePartImagesMgmt.aspx" title="Фотографии деталей"/>
+        <siteMapNode url="~/Catalogs/RefCatalogs.aspx" title="Каталоги"/>
+        <siteMapNode url="~/RefBooks.aspx" title="Общие справочники"/>
+        <siteMapNode url="~/WebServiceUsers.aspx" title="Права на веб-сервис"/>
+		<siteMapNode url="~/PendingLogins.aspx" title="Неактивированные логины"/>
+		<siteMapNode url="~/CartMgmt.aspx" title="Управление корзиной клиента"/>
+		<siteMapNode url="~/StatusesMgmt.aspx" title="Работа со статусами строк заказа"/>
+		<siteMapNode url="~/ExcelBanMgmt.aspx" title="Снятие БАНов"/>
+    </siteMapNode>
+</siteMap>

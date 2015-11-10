@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{111D4DC5-EB5F-4519-876D-F4700BC5AC8A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RmsAuto.Store.Import</RootNamespace>
+    <AssemblyName>RmsAuto.Store.Import</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataStreams1, Version=5.9.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DataStreams1.dll</HintPath>
+      <Aliases>DataStreams1</Aliases>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BatchParams.cs" />
+    <Compile Include="BatchUtil.cs" />
+    <Compile Include="BulkDataLoader.cs" />
+    <Compile Include="PriceFactorsImporter.cs" />
+    <Compile Include="DataCleanerBase.cs" />
+    <Compile Include="PricesCleaner.cs" />
+    <Compile Include="CommandBuilder.cs" />
+    <Compile Include="LoadCounters.cs" />
+    <Compile Include="DeleteDataLoader.cs" />
+    <Compile Include="StandardImporter.cs" />
+    <Compile Include="CsvColumnInfo.cs" />
+    <Compile Include="DataLoaderBase.cs" />
+    <Compile Include="IDataLoader.cs" />
+    <Compile Include="ImportActivity.cs" />
+    <Compile Include="CompleteEventArgs.cs" />
+    <Compile Include="ImportConfigurationSectionHandler.cs" />
+    <Compile Include="ImporterBase.cs" />
+    <Compile Include="ImportFacade.cs" />
+    <Compile Include="ImportSettings.cs" />
+    <Compile Include="LoadErrorEventArgs.cs" />
+    <Compile Include="PricesImporter.cs" />
+    <Compile Include="ImportMode.cs" />
+    <Compile Include="ImportReport.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmartDataLoader.cs" />
+    <Compile Include="ValidateRecordEventArgs.cs" />
+    <Compile Include="ValidationError.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RmsAuto.Common\RmsAuto.Common.csproj">
+      <Project>{7A551067-3165-433E-BDD0-F798EEEE3930}</Project>
+      <Name>RmsAuto.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

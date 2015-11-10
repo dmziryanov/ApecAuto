@@ -1,0 +1,247 @@
+body,table,tr,td,p,ul,li,span, option, select,form, input, option {
+	font-family: 'Trebuchet MS';
+	font-size: 13px;
+	color:#000000;
+}
+a img { border:0px;}
+body {
+	margin: 0px;
+	background-color:#FFFFFF;
+	background:url('../images/print_bgr.jpg') -13px 0px;
+	
+}
+.body_bgr
+{
+	height:99%;
+	position:absolute;
+	z-index:1px;
+	top:0px;
+	left:0px;
+	overflow:hidden;
+}
+.body
+{
+	position:absolute;
+	z-index:10px;
+	top:0px;
+	left:0px;
+	padding: 20px;
+}
+form 
+{
+	margin:0px;
+	padding:0px;
+}
+h1 {
+	color:#a13340;
+	font-family: Tahoma;
+	font-size: 15px;
+/*	text-transform: uppercase;*/
+	font-variant: small-caps;
+	margin:0px 0px 10px 0px;
+}
+h2 {
+	color:#000000;
+	font-family: Tahoma;
+	font-size: 18px;
+	margin:0px 0px 10px 0px;
+	font-weight: normal;
+}
+h3 {
+	color:#295d89;
+	font-family: Tahoma;
+	font-size: 14px;
+	margin:0px 0px 10px 0px;
+}
+h4, h5 {
+	color:#295d89;
+	font-family: Tahoma;
+	font-size: 12px;
+	margin:0px 0px 10px 0px;
+}
+select {
+	margin:0px 0px 0px 0px;
+	height:21px;
+	font-size: 11px;
+	padding:0px;
+	position:relative;
+}
+a {
+	text-decoration:underline;
+}
+a:hover {
+	text-decoration:none;
+}
+.list {
+	margin:10px 0px 10px 0px;
+	border-collapse:collapse;
+}
+.list th {
+	background-color:#c9e2f1;
+	border-bottom:2px solid #c9e2f1;
+	border-right:2px solid #FFFFFF;
+	text-align:left;
+	font-weight: normal;
+	padding:3px 6px;
+	color:#000000;
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+}
+.list th.last {
+	border-right:0px solid #e6f5ff;
+}
+
+.list td {
+	background-color:#ffffff;
+	border-bottom:1px dashed #cecece;
+/*	text-align:left;*/
+	font-weight: normal;
+	padding:6px;
+	vertical-align:top
+}
+.list td a {
+	color:#1a5694;
+	text-decoration:underline;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size:11px;
+	font-family: 'Trebuchet MS';
+}
+.list td.shop a {
+	color:#1f5893;
+	font-weight: bold;
+	font-size:14px;
+	font-family: 'Trebuchet MS';
+	background:url(../images/str_blue.gif) no-repeat 0px 7px;
+	padding:0px 0px 0px 10px;
+}
+.list td.price,.list td.price span {
+	color:#a42735;
+}
+.list td.basket_search {
+	text-align:right;
+}
+.list th.empty {
+	background-color:#e6f5ff;
+}
+.list td.empty {
+	background-color:#c9e2f1;
+	padding:0px;
+	border:0px solid #c8d1d9;
+}
+.list td div{
+	border:1px solid #c8d1d9;
+	width:20px;
+	background:url(../images/tel_bgr.gif) #f3f6f9 repeat-x;
+	float:left;
+}
+.list td div span {
+	border-bottom:1px dashed #cccfd1;
+	padding:0px 2px;
+}
+.list td.price span {
+	padding:0px;
+}
+
+.list td div span.red {
+	color:#b12b47;
+}
+.list td span.red {
+	color:#b12b47;
+}
+.list td.itog {
+	background-color:#ffffff;
+/*	border-top:1px solid #000000;*/
+	border-bottom:0px dashed #cecece;
+	font-weight: bold;
+	padding-bottom:15px;
+	padding-left:10px;
+}
+.client 
+{
+	color:#78868d;
+	font-size:14px;
+	padding:0px 0px 0px 19px;
+	border-left:1px dashed #78868d;
+	margin:35px 0px 0px 430px;
+}
+.client b
+{
+	color:#295d89;
+	font-size:15px;
+}
+.client span
+{
+	color:#78868d;
+	font-size:11px;
+}
+.link_block {
+	background:url(../images/str_blue.gif) no-repeat 0px 7px;
+	padding:0px 10px 0px 10px;
+	float:right;
+}
+.link_block a
+{
+	color:#295d89;
+}
+.right_align 
+{
+	text-align:right;
+}
+.center_align
+{
+	text-align:center;
+}
+table.tel {
+	display: block;
+	position:absolute;
+	top: 90px;
+	left:38px;
+	border:1px solid #c8d1d9;
+	background:url(../images/tel_bgr.gif) #f3f6f9 repeat-x;
+}
+table.tel td span {
+	padding:0px 2px;
+	border-left:1px dashed #cccfd1;
+	color:#265c9c;
+	font-size:13px;
+	font-weight: bold;
+	float:left;
+	cursor:pointer;
+}
+table.tel td span.code {
+	padding:0px 2px;
+	border-left:0px dashed #cccfd1;
+	color:#fb8c98;
+	font-size:13px;
+	font-weight: bold;
+}
+table.tel td.img {
+	padding:0px 2px;
+	border-left:1px dashed #cccfd1;
+}
+.store 
+{
+	color:#78868d;
+	font-size:14px;
+	padding:0px 0px 0px 19px;
+	border-left:1px dashed #78868d;
+	margin:0px 0px 0px 500px;
+}
+.store b
+{
+	color:#295d89;
+	font-size:15px;
+}
+.store span
+{
+	color:#78868d;
+	font-size:11px;
+}
+
+.footer
+{
+	clear:both;
+	padding-top:10px;
+}
+ @media print {.footer {display:none;}}

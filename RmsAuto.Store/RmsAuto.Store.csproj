@@ -1,0 +1,485 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B92C76CE-1D00-4D0F-873C-48CEBA6045D3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RmsAuto.Store</RootNamespace>
+    <AssemblyName>RmsAuto.Store</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acctg\AcctgError.cs" />
+    <Compile Include="Acctg\AcctgException.cs" />
+    <Compile Include="Acctg\Acknowledgement.cs" />
+    <Compile Include="Acctg\ArticleInfo.cs" />
+    <Compile Include="Acctg\BriefClientInfo.cs" />
+    <Compile Include="Acctg\ClientCategory.cs" />
+    <Compile Include="Acctg\ClientContactInfo.cs" />
+    <Compile Include="Acctg\ClientGroup.cs" />
+    <Compile Include="Acctg\ClientProfile.cs" />
+    <Compile Include="Acctg\ClientSearch.cs" />
+    <Compile Include="Acctg\CurrencyRate.cs" />
+    <Compile Include="Acctg\EmployeeInfo.cs" />
+    <Compile Include="Acctg\Entities\Acctg.designer.cs">
+      <DependentUpon>Acctg.dbml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Acctg\Entities\RequestRepeatCount.cs" />
+    <Compile Include="Acctg\OrderHandlingInfo.cs" />
+    <Compile Include="Acctg\OrderInfo.cs" />
+    <Compile Include="Acctg\OrderLineChangeReaction.cs" />
+    <Compile Include="Acctg\OrderLineChangeRequest.cs" />
+    <Compile Include="Acctg\OrderLineHandlingInfo.cs" />
+    <Compile Include="Acctg\OrderLineInfo.cs" />
+    <Compile Include="Acctg\OrderService.cs" />
+    <Compile Include="Acctg\RefCatalog.cs" />
+    <Compile Include="Acctg\SellerInfo.cs" />
+    <Compile Include="Acctg\ServiceModel\ClientEnvelopes.cs" />
+    <Compile Include="Acctg\ServiceModel\CustomStringWriter.cs" />
+    <Compile Include="Acctg\ServiceModel\DateTimeEnvelope.cs" />
+    <Compile Include="Acctg\ServiceModel\Envelope.cs" />
+    <Compile Include="Acctg\ServiceModel\FranchEnvelopes.cs" />
+    <Compile Include="Acctg\ServiceModel\GetRefEnvelopes.cs" />
+    <Compile Include="Acctg\ServiceModel\MessageSerializer.cs" />
+    <Compile Include="Acctg\ServiceModel\OrderEnvelopes.cs" />
+    <Compile Include="Acctg\ServiceModel\ProxyType.cs" />
+    <Compile Include="Acctg\ServiceModel\ReclamationEnvelope.cs" />
+    <Compile Include="Acctg\ServiceModel\SellerInfoEnvelope.cs" />
+    <Compile Include="Acctg\ServiceModel\ServiceMethodAttribute.cs" />
+    <Compile Include="Acctg\ServiceModel\ServiceMethodInfo.cs" />
+    <Compile Include="Acctg\ServiceModel\ServiceProxy.cs" />
+    <Compile Include="Acctg\StoreInfo.cs" />
+    <Compile Include="Acctg\SupplierInfo.cs" />
+    <Compile Include="Acctg\SystemMonitor.cs" />
+    <Compile Include="Acctg\TradingVolume.cs" />
+    <Compile Include="AuthenticationConfig.cs" />
+    <Compile Include="BL\FranchBO.cs" />
+    <Compile Include="BL\LightBO.cs" />
+    <Compile Include="BL\ManagerBO.cs" />
+    <Compile Include="BL\BLException.cs" />
+    <Compile Include="BL\ClientBO.cs" />
+    <Compile Include="BL\PricingSearch.cs" />
+    <Compile Include="BL\ReclamationBO.cs" />
+    <Compile Include="BL\StoreItemProxy.cs" />
+    <Compile Include="Cms\BL\FeedbackBO.cs" />
+    <Compile Include="Cms\BL\SeoPartsCatalogBO.cs" />
+    <Compile Include="Cms\Dac\CatalogItemsDac.cs" />
+    <Compile Include="Cms\Dac\FeedbackDac.cs" />
+    <Compile Include="Cms\Dac\FilesDac.cs" />
+    <Compile Include="Cms\Dac\NewsItemsDac.cs" />
+    <Compile Include="Cms\Dac\SeoPartsCatalogDac.cs" />
+    <Compile Include="Cms\Dac\SeoShortLinksDac.cs" />
+    <Compile Include="Cms\Dac\SeoTecDocTextTemplateDac.cs" />
+    <Compile Include="Cms\Dac\ShopsDac.cs" />
+    <Compile Include="Cms\Dac\SparePartGroupsDac.cs" />
+    <Compile Include="Cms\Dac\TextItemsDac.cs" />
+    <Compile Include="Cms\Entities\Banners.cs" />
+    <Compile Include="Cms\Entities\Battery.cs" />
+    <Compile Include="Cms\Entities\Brand.cs" />
+    <Compile Include="Cms\Entities\Catalog.cs" />
+    <Compile Include="Cms\Entities\CatalogItem.cs" />
+    <Compile Include="Cms\Entities\CatalogItemsLoc.cs" />
+    <Compile Include="Cms\Entities\CatalogItemMenuType.cs" />
+    <Compile Include="Cms\Entities\Cms.designer.cs">
+      <DependentUpon>Cms.dbml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Cms\Entities\FeedbackRecipientLoc.cs" />
+    <Compile Include="Cms\Entities\Disc.cs" />
+    <Compile Include="Cms\Entities\Employee.cs" />
+    <Compile Include="Cms\Entities\FeedbackRecipient.cs" />
+    <Compile Include="Cms\Entities\File.cs" />
+    <Compile Include="Cms\Entities\Gender.cs" />
+    <Compile Include="Cms\Entities\Manufacturer.cs" />
+    <Compile Include="Cms\Entities\NewsItem.cs" />
+    <Compile Include="Cms\Entities\SeoPartsCatalogItem.cs" />
+    <Compile Include="Cms\Entities\SeoPartsCatalogItemsLoc.cs" />
+    <Compile Include="Cms\Entities\SeoShortLink.cs" />
+    <Compile Include="Cms\Entities\SeoTecDocTextTemplate.cs" />
+    <Compile Include="Cms\Entities\Shop.cs" />
+    <Compile Include="Cms\Entities\SparePartGroup.cs" />
+    <Compile Include="Cms\Entities\TextItem.cs" />
+    <Compile Include="Cms\Entities\Tire.cs" />
+    <Compile Include="Cms\Entities\TireBrand.cs" />
+    <Compile Include="Cms\Entities\Vacancy.cs" />
+    <Compile Include="Cms\Entities\VehicleType.cs" />
+    <Compile Include="Cms\Mail\IMailMessage.cs" />
+    <Compile Include="Cms\Mail\MailAttachmentAttribute.cs" />
+    <Compile Include="Cms\Mail\MailData.cs" />
+    <Compile Include="Cms\Mail\MailEngine.cs" />
+    <Compile Include="Cms\Mail\MailTemplateAttribute.cs" />
+    <Compile Include="Cms\Mail\Templates\CartImportAlert.cs" />
+    <Compile Include="Cms\Mail\Templates\CartImportNoAlert.cs" />
+    <Compile Include="Cms\Mail\Templates\CartImportOK.cs" />
+    <Compile Include="Cms\Mail\Templates\ClientActivationAlert.cs" />
+    <Compile Include="Cms\Mail\Templates\ClientActivationAlertRet.cs" />
+    <Compile Include="Cms\Mail\Templates\ClientActivationAlertWhSl.cs" />
+    <Compile Include="Cms\Mail\Templates\FeedbackAlert.cs" />
+    <Compile Include="Cms\Mail\Templates\OfferAlert.cs" />
+    <Compile Include="Cms\Mail\Templates\OrderLineTrackingAlert.cs" />
+    <Compile Include="Cms\Mail\Templates\ReclamationTrackingAlert.cs" />
+    <Compile Include="Cms\Mail\Templates\ResetPasswordAlert.cs" />
+    <Compile Include="Cms\Mail\Templates\VinRequestAnswerAlert.cs" />
+    <Compile Include="Cms\Misc\Thumbnails\ThumbnailGenerator.cs" />
+    <Compile Include="Cms\Misc\Thumbnails\ThumbnailGeneratorConfig.cs" />
+    <Compile Include="Cms\Misc\Thumbnails\ThumbnailInfo.cs" />
+    <Compile Include="Cms\Routing\BreadCrumbItem.cs" />
+    <Compile Include="Cms\Routing\CatalogDependentRoute.cs" />
+    <Compile Include="Cms\Routing\CatalogItemsCache.cs" />
+    <Compile Include="Cms\Routing\CatalogItemsDictionary.cs" />
+    <Compile Include="Cms\Routing\CatalogRoute.cs" />
+    <Compile Include="Cms\Routing\CatalogSiteMapProvider.cs" />
+    <Compile Include="Cms\Routing\CmsContext.cs" />
+    <Compile Include="Cms\Routing\PageFields.cs" />
+    <Compile Include="Cms\Routing\PageRouteHandler.cs" />
+    <Compile Include="Cms\Routing\SeoPartsCatalogRoute.cs" />
+    <Compile Include="Cms\Routing\UrlManager.cs" />
+    <Compile Include="Configuration\ActivationConfiguration.cs" />
+    <Compile Include="Configuration\DiscountGroupsConfiguration.cs" />
+    <Compile Include="Configuration\OurDetailsConfiguration.cs" />
+    <Compile Include="Configuration\StocksConfiguration.cs" />
+    <Compile Include="Dac\ClientCarsDac.cs" />
+    <Compile Include="Dac\ClientAlertConfigDac.cs" />
+    <Compile Include="Dac\CommonDac.cs" />
+    <Compile Include="Dac\DiscountSparePartDac.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dac\ServiceAccountDac.cs" />
+    <Compile Include="Dac\SearchSparePartsLogDac.cs" />
+    <Compile Include="Dac\ManagerDac.cs" />
+    <Compile Include="Dac\SparePartImageDac.cs" />
+    <Compile Include="Dac\SparePartsDac.cs" />
+    <Compile Include="Dac\SparePartsDacFranch.cs" />
+    <Compile Include="Dac\UserDac.cs" />
+    <Compile Include="Dac\UserMaintDac.cs" />
+    <Compile Include="Dac\UserProfileDac.cs" />
+    <Compile Include="Dac\VinRequestsDac.cs" />
+    <Compile Include="Data\DCWrappersFactory.cs" />
+    <Compile Include="Entities\AddToCartSuccessResult.cs" />
+    <Compile Include="Entities\City.cs" />
+    <Compile Include="Entities\ClientRegistrationDataExt.cs" />
+    <Compile Include="Entities\CrossType.cs" />
+    <Compile Include="Entities\dcCommon.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dcCommon.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\DiscountSparePart.cs" />
+    <Compile Include="Entities\Handlers\SPImageHandler.cs" />
+    <Compile Include="Entities\Helpers\AddtionalInfoExt.cs" />
+    <Compile Include="Entities\Helpers\SearchHelper.cs" />
+    <Compile Include="Entities\Log.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Log.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\OrderLineStatusChange.cs" />
+    <Compile Include="Entities\OwnStoreSupplier.cs" />
+    <Compile Include="Entities\Reclamation.cs" />
+    <Compile Include="Entities\Region.cs" />
+    <Compile Include="Entities\RequestRepeatCount.cs" />
+    <Compile Include="Entities\ShoopingCartKey.cs" />
+    <Compile Include="Entities\SparePartCross.cs" />
+    <Compile Include="Entities\SparePartFranch.cs" />
+    <Compile Include="Entities\TransferChangesLogEntry.cs" />
+    <Compile Include="Entities\UserGarageCar.cs" />
+    <Compile Include="Entities\CarParameters.cs" />
+    <Compile Include="Entities\UserMaintEntry.cs" />
+    <Compile Include="Entities\UserMaintEntryPurpose.cs" />
+    <Compile Include="Entities\UserProfileEntry.cs" />
+    <Compile Include="Entities\VinRequestExt.cs" />
+    <Compile Include="Entities\VinRequestManufacturer.cs" />
+    <Compile Include="Entities\VinRequestModel.cs" />
+    <Compile Include="Entities\VinRequestModification.cs" />
+    <Compile Include="ex_apecautoR_storeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ex_apecautoR_storeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalDBSettings\GlobalSettings.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Configuration\LoggerConfiguration.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RefCatalog.cs" />
+    <Compile Include="Web\ArticleAddedEventArgs.cs" />
+    <Compile Include="Web\ClientData.cs" />
+    <Compile Include="Web\ClientDataSection.cs" />
+    <Compile Include="Web\ClientSiteContext.cs" />
+    <Compile Include="Entities\ClientStatus.cs" />
+    <Compile Include="Web\HandyClientSet.cs" />
+    <Compile Include="Web\HttpModules\RequestLimit.cs" />
+    <Compile Include="Web\IShoppingCartStorage.cs" />
+    <Compile Include="Web\OrderTracking.cs" />
+    <Compile Include="Web\PersistentShoppingCartStorage.cs" />
+    <Compile Include="Web\ReclamationTracking.cs" />
+    <Compile Include="Web\Resource\EnumResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\ShoppingCartAddItem.cs" />
+    <Compile Include="Web\ShoppingCartTotals.cs" />
+    <Compile Include="Web\ShoppingCartVersionValidator.cs" />
+    <Compile Include="Web\HttpModules\SiteContextModule.cs" />
+    <Compile Include="Web\TecDoc\BrandItem.cs" />
+    <Compile Include="Web\TecDoc\BrandsCache.cs" />
+    <Compile Include="Web\TecDoc\BrandsCollection.cs" />
+    <Compile Include="Web\TecDoc\SeoTecDocTextTemplatesCache.cs" />
+    <Compile Include="Web\TecDoc\TecDocAggregator.cs" />
+    <Compile Include="Web\TemporaryShoppingCartStorage.cs" />
+    <Compile Include="Web\UserProfileProvider.cs" />
+    <Compile Include="Web\VinRequestEventArgs.cs" />
+    <Compile Include="Web\CustomPrincipal.cs" />
+    <Compile Include="Web\LogonService.cs" />
+    <Compile Include="BL\OrderBO.cs" />
+    <Compile Include="Entities\BodyType.cs" />
+    <Compile Include="Entities\Store.designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Store.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\StoreDataContext.cs" />
+    <Compile Include="Entities\DriveType.cs" />
+    <Compile Include="Entities\EngineType.cs" />
+    <Compile Include="Entities\TransmissionType.cs" />
+    <Compile Include="Entities\SecurityRole.cs" />
+    <Compile Include="Web\ManagerSiteContext.cs" />
+    <Compile Include="Web\ShoppingCart.cs" />
+    <Compile Include="Entities\AddressInfo.cs" />
+    <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\OrderLine.cs" />
+    <Compile Include="Entities\OrderLineStatus.cs" />
+    <Compile Include="Entities\OrderStatus.cs" />
+    <Compile Include="Entities\PaymentMethod.cs" />
+    <Compile Include="Entities\PaymentStatus.cs" />
+    <Compile Include="Entities\PricingMatrixEntry.cs" />
+    <Compile Include="Entities\PricingMatrixEntryKey.cs" />
+    <Compile Include="Entities\ShippingMethod.cs" />
+    <Compile Include="Entities\ShoppingCartItem.cs" />
+    <Compile Include="Entities\ShoppingCartItemIssues.cs" />
+    <Compile Include="Entities\SparePart.cs" />
+    <Compile Include="Entities\SparePartPriceKey.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\LoginType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\SiteContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ex_apecautoR_storeDataSet.xsc">
+      <DependentUpon>ex_apecautoR_storeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ex_apecautoR_storeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ex_apecautoR_storeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ex_apecautoR_storeDataSet.xss">
+      <DependentUpon>ex_apecautoR_storeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Entities\Store.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Store.designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Entities\Log.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Log.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Entities\Store.dbml.layout">
+      <DependentUpon>Store.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RmsAuto.Common\RmsAuto.Common.csproj">
+      <Project>{7a551067-3165-433e-bdd0-f798eeee3930}</Project>
+      <Name>RmsAuto.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RmsAuto.TechDoc\RmsAuto.TechDoc.csproj">
+      <Project>{88624D18-F3F9-453F-9983-E6F34AF03E18}</Project>
+      <Name>RmsAuto.TechDoc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Entities\dcCommon.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>dcCommon.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Entities\Log.dbml.layout">
+      <DependentUpon>Log.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Entities\dcCommon.dbml.layout">
+      <DependentUpon>dcCommon.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Acctg\ServiceModel\DataExchange\test_web_hansa.html" />
+    <EmbeddedResource Include="Cms\Mail\Templates\VinRequestAnswerAlert.xslt" />
+    <EmbeddedResource Include="Cms\Mail\Templates\ResetPasswordAlert.xslt" />
+    <EmbeddedResource Include="Cms\Mail\Templates\ReclamationTrackingAlert.xslt" />
+    <EmbeddedResource Include="Cms\Mail\Templates\OrderLineTrackingAlert.xslt" />
+    <EmbeddedResource Include="Cms\Mail\Templates\OfferAlert.xslt" />
+    <EmbeddedResource Include="Cms\Mail\Templates\FeedbackAlert.xslt" />
+    <EmbeddedResource Include="Cms\Mail\Templates\ClientActivationAlertWhSl.xslt" />
+    <EmbeddedResource Include="Cms\Mail\Templates\ClientActivationAlertRet.xslt">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cms\Mail\Templates\ClientActivationAlert.xslt">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cms\Mail\Templates\CartImportOK.xslt" />
+    <EmbeddedResource Include="Cms\Mail\Templates\CartImportNoAlert.xslt" />
+    <EmbeddedResource Include="Cms\Mail\Templates\CartImportAlert.xslt" />
+    <EmbeddedResource Include="Web\Resource\EnumResource.en-US.resx" />
+    <EmbeddedResource Include="Web\Resource\EnumResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>EnumResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Acctg\Entities\Acctg.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Acctg.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Acctg\Entities\Acctg.dbml.layout">
+      <DependentUpon>Acctg.dbml</DependentUpon>
+    </None>
+    <None Include="Cms\Entities\Cms.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Cms.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Cms\Entities\Cms.dbml.layout">
+      <DependentUpon>Cms.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

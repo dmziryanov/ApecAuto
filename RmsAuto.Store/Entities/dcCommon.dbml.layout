@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="dcCommon">
+  <DataContextMoniker Name="/dcCommonDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c32a5279-1b4b-48d7-8c4b-4ffa76f43b18" absoluteBounds="0.5, 0.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/dcCommonDataContext/ClientGroup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ec1c5c6c-9746-4ce6-bf09-5eaa31cb948d" absoluteBounds="0.515, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2c46beea-8b23-4778-a34f-50567094c104" absoluteBounds="0.5, 3.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/dcCommonDataContext/City" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3ffd7051-f00f-4176-9a3e-844f6562a5ba" absoluteBounds="0.515, 3.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="34496285-b0e3-4caa-8071-a6184d90fff6" absoluteBounds="3.5, 1.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/dcCommonDataContext/Region" />
+      <nestedChildShapes>
+        <elementListCompartment Id="444a1d0e-4116-4e8e-9e82-d47f678b8656" absoluteBounds="3.515, 2.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="86856b67-61b2-4545-b4ef-7613289f5dc7" absoluteBounds="3.5, 4, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dcCommonDataContext/GlobalSetting" />
+      <nestedChildShapes>
+        <elementListCompartment Id="db8fa39d-52a8-4426-9db1-035805f12e0c" absoluteBounds="3.515, 4.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="935a481d-6461-49d3-89fc-81ee5c93ee7a" absoluteBounds="6.375, 2.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/dcCommonDataContext/OwnStoreSupplier" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9d1a92d8-14b8-4f41-bc95-b3808698aac3" absoluteBounds="6.39, 3.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

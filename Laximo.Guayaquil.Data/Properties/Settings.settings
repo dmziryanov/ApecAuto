@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Laximo.Guayaquil.Data.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Laximo_Guayaquil_Data_net_laximo_ws_Catalog" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://ws.laximo.net/ec.Kito.WebCatalog/services/Catalog.CatalogHttpSoap11Endpoint/</Value>
+    </Setting>
+    <Setting Name="Laximo_Guayaquil_Data_net_laximo_ws_aftermarket_Aftermarket" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://aws.laximo.net/ec.Kito.Aftermarket/services/Catalog.CatalogHttpSoap11Endpoint/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

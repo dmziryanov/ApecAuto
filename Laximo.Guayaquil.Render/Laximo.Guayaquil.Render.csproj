@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F68CC7E9-49DD-4CFB-9D9B-4F2F27354045}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Laximo.Guayaquil.Render</RootNamespace>
+    <AssemblyName>Laximo.Guayaquil.Render</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CatalogsList.cs" />
+    <Compile Include="CategoriesList.cs" />
+    <Compile Include="DetailsList.cs" />
+    <Compile Include="ICatalog.cs" />
+    <Compile Include="Toolbar.cs" />
+    <Compile Include="UnitFilter.cs" />
+    <Compile Include="FloatBox.cs" />
+    <Compile Include="FrameSearchForm.cs" />
+    <Compile Include="GuayaquilHelper.cs" />
+    <Compile Include="GuayaquilTemplate.cs" />
+    <Compile Include="IGuayaquilExtender.cs" />
+    <Compile Include="IncludedResources.cs" />
+    <Compile Include="OemSearchForm.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuickDetailsList.cs" />
+    <Compile Include="QuickGroupsList.cs" />
+    <Compile Include="ThreeColumnsCatalogList.cs" />
+    <Compile Include="TwoColumnsCatalogList.cs" />
+    <Compile Include="Unit.cs" />
+    <Compile Include="UnitImage.cs" />
+    <Compile Include="UnitsList.cs" />
+    <Compile Include="VehiclesList.cs" />
+    <Compile Include="VinSearchForm.cs" />
+    <Compile Include="Wizard.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Laximo.Guayaquil.Data\Laximo.Guayaquil.Data.csproj">
+      <Project>{87B556A9-28F0-4676-B942-EF26EC08CEB8}</Project>
+      <Name>Laximo.Guayaquil.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\css\common\colorbox.css" />
+    <EmbeddedResource Include="Assets\css\common\guayaquil.css" />
+    <EmbeddedResource Include="Assets\images\common\border.png" />
+    <EmbeddedResource Include="Assets\images\common\controls.png" />
+    <EmbeddedResource Include="Assets\images\common\filter.png" />
+    <EmbeddedResource Include="Assets\images\common\ie6\borderBottomCenter.png" />
+    <EmbeddedResource Include="Assets\images\common\ie6\borderBottomLeft.png" />
+    <EmbeddedResource Include="Assets\images\common\ie6\borderBottomRight.png" />
+    <EmbeddedResource Include="Assets\images\common\ie6\borderMiddleLeft.png" />
+    <EmbeddedResource Include="Assets\images\common\ie6\borderMiddleRight.png" />
+    <EmbeddedResource Include="Assets\images\common\ie6\borderTopCenter.png" />
+    <EmbeddedResource Include="Assets\images\common\ie6\borderTopLeft.png" />
+    <EmbeddedResource Include="Assets\images\common\ie6\borderTopRight.png" />
+    <EmbeddedResource Include="Assets\images\common\lmb.png" />
+    <EmbeddedResource Include="Assets\images\common\loading.gif" />
+    <EmbeddedResource Include="Assets\images\common\loading_background.png" />
+    <EmbeddedResource Include="Assets\images\common\mmb.png" />
+    <EmbeddedResource Include="Assets\images\common\mouse.png" />
+    <EmbeddedResource Include="Assets\images\common\mouse_wheel.png" />
+    <EmbeddedResource Include="Assets\images\common\move.png" />
+    <EmbeddedResource Include="Assets\images\common\noimage.png" />
+    <EmbeddedResource Include="Assets\images\common\overlay.png" />
+    <EmbeddedResource Include="Assets\images\common\pointer.png" />
+    <EmbeddedResource Include="Assets\images\common\rmb.png" />
+    <EmbeddedResource Include="Assets\images\common\zoom.png" />
+    <EmbeddedResource Include="Assets\scripts\common\dragscrollable.js" />
+    <EmbeddedResource Include="Assets\scripts\common\jquery.colorbox.js" />
+    <EmbeddedResource Include="Assets\scripts\common\jquery.dimensions.js" />
+    <EmbeddedResource Include="Assets\scripts\common\jquery.js" />
+    <EmbeddedResource Include="Assets\scripts\common\jquery.mousewheel.js" />
+    <EmbeddedResource Include="Assets\scripts\common\jquery.tooltip.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\images\catalogs\audi-w.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\audi.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\bmw.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\chevrolet.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\daihatsu.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\ford.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\fuso.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\hino.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\honda.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\hyundai-w.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\hyundai.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\infinity.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\isuzu.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\kawasaki.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\kia-w.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\kia.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\landrover.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\mazda.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\mb-w.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\mb.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\mitsubishi.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\nissan.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\nud.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\opel.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\peugeot.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\renault.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\seat-w.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\seat.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\skoda-w.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\skoda.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\subaru.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\suzuki.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\toyota.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\volvo.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\vw-w.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\vw.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\yamaha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\css\qgroups\groups.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\images\qgroups\closed.gif" />
+    <EmbeddedResource Include="Assets\images\qgroups\document.gif" />
+    <EmbeddedResource Include="Assets\images\qgroups\expand_leaf.gif" />
+    <EmbeddedResource Include="Assets\images\qgroups\expand_loading.gif" />
+    <EmbeddedResource Include="Assets\images\qgroups\expand_minus.gif" />
+    <EmbeddedResource Include="Assets\images\qgroups\expand_plus.gif" />
+    <EmbeddedResource Include="Assets\images\qgroups\i.gif" />
+    <EmbeddedResource Include="Assets\images\qgroups\i_bhalf.gif" />
+    <EmbeddedResource Include="Assets\images\qgroups\i_half.gif" />
+    <EmbeddedResource Include="Assets\images\qgroups\l.gif" />
+    <EmbeddedResource Include="Assets\images\qgroups\leaf.gif" />
+    <EmbeddedResource Include="Assets\images\qgroups\minus.gif" />
+    <EmbeddedResource Include="Assets\images\qgroups\open.gif" />
+    <EmbeddedResource Include="Assets\images\qgroups\plus.gif" />
+    <EmbeddedResource Include="Assets\images\qgroups\t.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\scripts\qgroups\groups.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\images\details\images\cart.gif" />
+    <EmbeddedResource Include="Assets\images\details\images\closed.gif" />
+    <EmbeddedResource Include="Assets\images\details\images\filter.gif" />
+    <EmbeddedResource Include="Assets\images\details\images\info.gif" />
+    <EmbeddedResource Include="Assets\images\details\images\open.gif" />
+    <EmbeddedResource Include="Assets\images\details\images\openned.gif" />
+    <EmbeddedResource Include="Assets\images\details\images\replacement-backward.gif" />
+    <EmbeddedResource Include="Assets\images\details\images\replacement-forward.gif" />
+    <EmbeddedResource Include="Assets\images\details\images\replacement.gif" />
+    <EmbeddedResource Include="Assets\images\details\images\spacer.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\scripts\details\detailslist.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\css\unit\unit.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\images\unit\spacer.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\scripts\unit\unit.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\scripts\vehicle\unitlist-floated.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\scripts\common\jquery.migrate.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\images\catalogs\abarth.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\alfa romeo.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\citroen.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\fiat professional.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\fiat.png" />
+    <EmbeddedResource Include="Assets\images\catalogs\lancia.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

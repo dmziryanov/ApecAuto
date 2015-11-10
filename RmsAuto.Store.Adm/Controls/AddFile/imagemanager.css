@@ -1,0 +1,118 @@
+body
+{
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 75%;
+    color: #666666;
+    background-color: #FFFFFF
+}
+body h1
+{
+    padding-bottom: 12px;
+    border-bottom: 1px dotted #bbbbbb;
+    font-size: 2.2em;
+    font-family: Trebuchet MS, Arial, sans-serif;
+    color: #888888;
+}
+
+input {width: 280px; }
+.submit_btn { width:auto }
+
+#explorer_table
+{
+	width: 870px;
+	height: 410px;
+}
+#explorer_table td
+{
+	vertical-align:top;
+}
+
+
+#cur_folder_field
+{
+	background:white;
+	width:870px;
+	border: solid 1px #D0D0D0;
+	margin:0px;
+	padding:2px
+}
+
+#folders_panel  
+{
+	background:white;
+	width:300px;
+	height:380px;
+	overflow-y:scroll; 
+	overflow-x:hidden; 
+	border: solid 1px #C0C0C0;
+	margin:0px 
+}
+#files_panel  
+{
+	background:white;
+	width:570px;
+	height:380px;
+	overflow-y:scroll; 
+	overflow-x:hidden; 
+	border: solid 1px #C0C0C0;
+	margin:0px 
+}
+
+table.files
+{
+	margin: 5px;
+	width: 95%;
+	border-collapse: collapse;
+}
+
+table.files td
+{
+	border-bottom: solid 1px #D0D0D0;
+	padding: 5px
+}
+
+.popup_panel
+{
+	border: solid 1px #808080;
+	background-color: #F0F0EE;
+	font-family: Tahoma, Arial, Sans-Serif; 
+	font-size: 8pt; 
+	margin: 5px
+}
+
+.popup_panel table, .popup_panel td
+{
+	background-color: #F0F0EE;
+	font-family: Tahoma, Arial, Sans-Serif; 
+	font-size: 8pt; 
+}
+.popup_panel input  
+{
+	border: solid 1px #808080;
+	font-family: Tahoma, Arial, Sans-Serif; 
+	font-size: 8pt  
+}
+.popup_panel input.file
+{
+	width:280px;
+}
+
+.refresh_btn
+{
+	width:0px;
+	height:0px;
+	display: none;
+}
+
+a:link,
+a:visited
+{
+    color: #718ABE;
+    text-decoration: none;
+    padding-right: 6px;
+}
+a:hover
+{
+    color: #000099;
+    text-decoration: underline !important;
+}

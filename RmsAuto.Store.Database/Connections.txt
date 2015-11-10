@@ -1,0 +1,4 @@
+DBRefFolders found in your dbp file
+Connect String: Data Source=METRIC-DEV2;Initial Catalog=ex_rmsauto_store;Integrated Security=True
+Provider: Microsoft SQL Server
+

@@ -1,0 +1,156 @@
+﻿		.ui-dialog-title
+		{
+			font-size: 16px;
+			font-weight:bolder;
+			font-family:tahoma;
+			
+		}
+
+       .dialogWithDropShadow
+        {
+               background: url('/../images/f6aZ.png') repeat-x top;
+               box-shadow: 1px 1px 5px #333;
+        }
+        
+        .ui-widget-overlay
+        {
+               background: url('http://i.imm.io/f6aZ.png') repeat-x top;
+               background-color: #DDDDDD;
+               box-shadow: 1px 1px 5px #333;
+        }
+        
+        .ui-state-hover
+        {
+        	background: #FFFFFF !important;
+        }
+        
+        .roundedCity
+        {
+            -moz-border-radius:8px;
+            -webkit-border-top-left-radius: 8px;
+            -webkit-border-top-right-radius:8px;
+            -webkit-border-bottom-right-radius:8px;
+            -webkit-border-bottom-left-radius: 8px;
+             border-radius: 8px;
+             background: #eff6fd;
+        }
+        
+        .GrayTextStyle2
+		{
+	        color:#295d89 !important;
+	        font-family: Tahoma;
+	        font-size: 14px;
+	        font-weight:normal;
+	        cursor:pointer;
+	        text-decoration: none;
+	        float:left;
+	        text-align:left;
+	        padding: 5px;
+        }
+        
+        .urlSiteStyle
+		{
+	        color:Black; 
+	        font-family: Tahoma;
+	        font-size: 14px;
+	        cursor:pointer;
+	        text-decoration: none;
+	        float:none;
+			clear: both;
+	        display: block;
+	        padding:3px;
+        }
+        
+        .urlSiteStyle:hover
+		{
+            text-decoration: underline;
+			 float:none;
+        }
+        
+        .PartnerTextStyle 
+		{
+	        color: #B22222; 
+	        font-family: Tahoma;
+	        font-size: 14px;
+	        font-weight:bolder;
+	        cursor:auto;
+	        text-decoration: underline;
+	        background: Transparent;
+	        display: table-cell;
+	        padding:3px;
+        }
+        
+        .GrayTextStyle:hover
+		{
+        	text-decoration: underline;
+        }
+        
+        .BeuatyLineBelow
+		{
+            height: 60px;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-bottom-color: #295d89;
+        }
+        
+        .LowerDiv
+		{
+        	border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-bottom-color: #EEEEEE;
+        	height: 80%;
+        	display: block;
+        }
+        
+       .GrayBlock
+		{
+        	 background: #eff6fd;
+			 text-align: left;
+        	 border-radius: 8px;
+			-moz-border-radius:8px;
+            -webkit-border-top-left-radius: 8px;
+            -webkit-border-top-right-radius:8px;
+            -webkit-border-bottom-right-radius:8px;
+            -webkit-border-bottom-left-radius: 8px;
+			 margin-bottom: 10px;
+			 margin-top: 10px;
+        }
+        
+        .overlay
+		{
+           background: white;
+		   color: black;
+        }
+        
+		.RegionSelector               {
+            font-family: Verdana;
+            color: #fff;
+            text-decoration: none;
+            background: #004F84;
+            padding: 6px 32px;
+            font-size:18px;
+        }
+              
+        .RegionHeader2         {
+            font-family: Tahoma;
+            color: #3F454B;
+            text-decoration: none;
+            background-repeat: no-repeat;
+            background-position: right center;
+            cursor:text;
+            padding: 0px 7px 0px 32px;
+            font-size: 14px;
+            padding-bottom: 0px;
+        }
+        
+        .RegionSelector:hover         
+        {
+                background: #366ea5;
+                padding: 6px 32px;
+        }
+        
+        .InvisibleBorder
+        {
+        	margin-top: 8px;
+			margin-bottom: 15px;
+        }

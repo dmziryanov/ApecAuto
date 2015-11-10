@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Store">
+  <DataContextMoniker Name="/TecdocStoreDataContext" />
+  <nestedChildShapes>
+    <classShape Id="96318dd7-e543-4c52-b8b8-eb9dd247a5c2" absoluteBounds="5, 0.75, 2, 0.93180582682291679">
+      <DataClassMoniker Name="/TecdocStoreDataContext/InvisibleManufacturer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f8a3c26e-7fb6-4863-a2ec-5458ef670f46" absoluteBounds="5.015, 1.21, 1.9700000000000002, 0.37180582682291669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7298e884-7210-410f-90b3-c42ab5f122b2" absoluteBounds="2.375, 0.625, 2, 0.93180582682291679">
+      <DataClassMoniker Name="/TecdocStoreDataContext/CountryVisibility" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6a322cff-9539-47bc-8cef-213790766b4d" absoluteBounds="2.3899999999999997, 1.085, 1.9700000000000002, 0.37180582682291669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e8ecc6ce-32ef-4f25-8a9b-99012539f79d" absoluteBounds="7.5, 3.5, 2, 1.7535424804687496">
+      <DataClassMoniker Name="/TecdocStoreDataContext/NameCorrection" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2f12dddc-8bf6-4de7-9ea7-fc0056a761e5" absoluteBounds="7.5150000000000006, 3.96, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b273c2f1-248e-4c3a-a414-fafad8de6d1d" absoluteBounds="5, 2, 2, 0.93180582682291679">
+      <DataClassMoniker Name="/TecdocStoreDataContext/InvisibleModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2be4be21-6028-4192-a67e-af18063bee57" absoluteBounds="5.015, 2.46, 1.9700000000000002, 0.37180582682291669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cf7f6326-fb39-42d3-8670-f5bf6c82411c" absoluteBounds="5, 3.375, 2, 0.93180582682291679">
+      <DataClassMoniker Name="/TecdocStoreDataContext/InvisibleModification" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e9ead800-7ca3-4b48-91c4-3cf28ebf2557" absoluteBounds="5.015, 3.835, 1.9700000000000002, 0.37180582682291669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,22 @@
+#tooltip 
+{
+	border:1px solid #c8d0d8; 
+	background-color:#f0f3f5; 
+	padding:5px; 
+	position: absolute;
+	z-index: 3000;
+	opacity: 0.85;
+}
+#tooltip h3, #tooltip div { margin: 0; }
+#tooltip h3
+{
+	font-family: 'Trebuchet MS';
+	font-size: 13px;
+	color:#000000;	
+	font-weight:normal;
+}
+
+.help_img
+{
+	cursor:help;
+}

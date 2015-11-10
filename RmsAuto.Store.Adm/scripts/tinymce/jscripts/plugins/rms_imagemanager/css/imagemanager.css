@@ -1,0 +1,73 @@
+#src_list, #over_list, #out_list {width:280px;}
+.mceActionPanel {margin-top:7px;}
+.alignPreview {border:1px solid #000; width:140px; height:140px; overflow:hidden; padding:5px;}
+.checkbox {border:0;}
+.panel_wrapper div.current {height:340px;}
+#prev {margin:0; border:1px solid #000; width:428px; height:150px; overflow:auto;}
+#align, #classlist {width:150px;}
+#width, #height {vertical-align:middle; width:50px; text-align:center;}
+#vspace, #hspace, #border {vertical-align:middle; width:30px; text-align:center;}
+#class_list {width:180px;}
+input {width: 280px; }
+#constrain, #onmousemovecheck {width:auto;}
+#id, #dir, #lang, #usemap, #longdesc {width:200px;}
+.submit_btn { width:auto }
+
+#explorer_table
+{
+	width: 670px;
+	height: 380px;
+}
+#explorer_table td
+{
+	vertical-align:top;
+}
+
+#folders_panel  
+{
+	background:white;
+	width:200px;
+	height:380px;
+	overflow-y:scroll; 
+	overflow-x:hidden; 
+	border-style: groove; 
+	border-width: 2px; 
+	margin:5 
+}
+#files_panel  
+{
+	background:white;
+	width:470px;
+	height:380px;
+	overflow-y:scroll; 
+	overflow-x:hidden; 
+	border-style: groove; 
+	border-width: 2px; 
+	margin:5 
+}
+
+.popup_panel
+{
+	border: solid 1px #808080;
+	background-color: #F0F0EE;
+	font-family: Tahoma, Arial, Sans-Serif; 
+	font-size: 8pt; 
+	margin: 5
+}
+
+.popup_panel table, .popup_panel td
+{
+	background-color: #F0F0EE;
+	font-family: Tahoma, Arial, Sans-Serif; 
+	font-size: 8pt; 
+}
+.popup_panel input  
+{
+	border: solid 1px #808080;
+	font-family: Tahoma, Arial, Sans-Serif; 
+	font-size: 8pt  
+}
+.popup_panel input.file
+{
+	width:280px;
+}

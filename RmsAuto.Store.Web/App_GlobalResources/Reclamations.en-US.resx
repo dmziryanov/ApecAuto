@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="EmptyList" xml:space="preserve">
+    <value>Empty list</value>
+  </data>
+  <data name="FormReclamation" xml:space="preserve">
+    <value>To form a reclamation</value>
+  </data>
+  <data name="FormRequests" xml:space="preserve">
+    <value>Form an application</value>
+  </data>
+  <data name="Head_Brand" xml:space="preserve">
+    <value>brand</value>
+  </data>
+  <data name="Head_CustOrderNumber" xml:space="preserve">
+    <value>customer order No</value>
+  </data>
+  <data name="Head_EstDate" xml:space="preserve">
+    <value>delivery date to APEC warehouse</value>
+  </data>
+  <data name="Head_OrderDate" xml:space="preserve">
+    <value>order date</value>
+  </data>
+  <data name="Head_OrderNumber" xml:space="preserve">
+    <value>order No</value>
+  </data>
+  <data name="Head_PartName" xml:space="preserve">
+    <value>description</value>
+  </data>
+  <data name="Head_PartNumber" xml:space="preserve">
+    <value>part number</value>
+  </data>
+  <data name="Head_Price" xml:space="preserve">
+    <value>price</value>
+  </data>
+  <data name="Head_Print" xml:space="preserve">
+    <value>print</value>
+  </data>
+  <data name="Head_Qty" xml:space="preserve">
+    <value>qty</value>
+  </data>
+  <data name="Head_RecDate" xml:space="preserve">
+    <value>Reclamation date</value>
+  </data>
+  <data name="Head_RecNumber" xml:space="preserve">
+    <value>Reclamation number</value>
+  </data>
+  <data name="Head_RecType" xml:space="preserve">
+    <value>Reclamation type</value>
+  </data>
+  <data name="Head_ReferenceID" xml:space="preserve">
+    <value>reference id</value>
+  </data>
+  <data name="Head_Status" xml:space="preserve">
+    <value>status</value>
+  </data>
+  <data name="Head_StatusDate" xml:space="preserve">
+    <value>status date</value>
+  </data>
+  <data name="Head_Summ" xml:space="preserve">
+    <value>summ</value>
+  </data>
+  <data name="HowToRaiseReclamation" xml:space="preserve">
+    <value>How to raise a reclamation</value>
+  </data>
+  <data name="IHaveReadAndAccept" xml:space="preserve">
+    <value>I have read the rules and I agree with it</value>
+  </data>
+  <data name="LookListOfDocuments" xml:space="preserve">
+    <value>Please look through the list of documents needed to proceed a reclamation here:</value>
+  </data>
+  <data name="PrintTooltip" xml:space="preserve">
+    <value>print the reclamation</value>
+  </data>
+  <data name="ReclamationDateSince" xml:space="preserve">
+    <value>Applications since:</value>
+  </data>
+  <data name="ReclamationDateTill" xml:space="preserve">
+    <value>till:</value>
+  </data>
+  <data name="ReclamationHint1" xml:space="preserve">
+    <value>To register reclamations see art. 11,12.</value>
+  </data>
+  <data name="ReclamationHint2" xml:space="preserve">
+    <value>To register reclamations see art. 12.</value>
+  </data>
+  <data name="ReclamationHint3" xml:space="preserve">
+    <value>To register reclamations see art. 5,6,7,8.</value>
+  </data>
+  <data name="ReclamationInProcess" xml:space="preserve">
+    <value>Reclamation in process</value>
+  </data>
+  <data name="ReclamationType" xml:space="preserve">
+    <value> Reclamation type</value>
+  </data>
+  <data name="Refusal" xml:space="preserve">
+    <value>Refusal</value>
+  </data>
+  <data name="RefusalDeliveryDate" xml:space="preserve">
+    <value>Delivery date at the warehouse</value>
+  </data>
+  <data name="RefusalQty" xml:space="preserve">
+    <value>The quantity to be refused in the receiving</value>
+  </data>
+  <data name="RefusalReason" xml:space="preserve">
+    <value>The refuse reason</value>
+  </data>
+  <data name="RefusalReasonFull" xml:space="preserve">
+    <value>The reason to refuse of the receiving goods on the warehouse</value>
+  </data>
+  <data name="RefusalRequest" xml:space="preserve">
+    <value>The refusal request</value>
+  </data>
+  <data name="Return" xml:space="preserve">
+    <value>Return</value>
+  </data>
+  <data name="ReturnInvoiceDate" xml:space="preserve">
+    <value>Invoice date</value>
+  </data>
+  <data name="ReturnQty" xml:space="preserve">
+    <value>The return quantity</value>
+  </data>
+  <data name="ReturnReason" xml:space="preserve">
+    <value>The reason of return</value>
+  </data>
+  <data name="ReturnReasonFull" xml:space="preserve">
+    <value>Full description of the return reason</value>
+  </data>
+  <data name="ReturnRequest" xml:space="preserve">
+    <value>The return request</value>
+  </data>
+  <data name="Rules" xml:space="preserve">
+    <value>Rules</value>
+  </data>
+  <data name="StartToForm" xml:space="preserve">
+    <value>Start to form a reclamation</value>
+  </data>
+</root>

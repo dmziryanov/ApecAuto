@@ -1,0 +1,520 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ex_apecautoR_store" Class="CmsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=W2008R2SQL1\SQL1;Initial Catalog=ex_apecautoR_store;Integrated Security=True" SettingsObjectName="RmsAuto.Store.Properties.Settings" SettingsPropertyName="ex_rmsauto_storeConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="Cms.LogItem" Member="LogItems">
+    <Type Name="LogItem">
+      <Column Name="LogID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LogEntityType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LogEntityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LogEventDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LogActionCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LogUserName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LogEntityName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.NewsItems" Member="NewsItems">
+    <Type Name="NewsItem">
+      <Column Name="NewsItemID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NewsItemDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NewsItemHeader" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="NewsItemAnnotation" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NewsItemText" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NewsItemVisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IconFileID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsDiscount" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Localization" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Association Name="File_NewsItem" Member="IconFile" ThisKey="IconFileID" OtherKey="FileID" Type="File" IsForeignKey="true" />
+      <Association Name="Localization_NewsItem" Member="Localization1" ThisKey="Localization" OtherKey="LocalizationID" Type="Localization" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.Vacancies" Member="Vacancies">
+    <Type Name="Vacancy">
+      <Column Name="VacancyID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VacancyName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ShopID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VacancyGender" Type="Gender" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="VacancyAgeFrom" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VacancyAgeTo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VacancyEducation" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="VacancyExperience" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="VacancyEmployment" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="VacancyIncomeLevel" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="VacancyRequirement" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="VacancyFunctions" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="VacancyNote" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="VacancyContacts" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="VacancyVisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Shop_Vacancy" Member="Shop" ThisKey="ShopID" OtherKey="ShopID" Type="Shop" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.Employees" Member="Employees">
+    <Type Name="Employee">
+      <Column Name="EmpID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ShopID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmpName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpPosition" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpEmail" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="EmpICQ" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EmpPhone" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EmpVisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EmpPriority" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Shop_Employee" Member="Shop" ThisKey="ShopID" OtherKey="ShopID" Type="Shop" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.FeedbackRecipients" Member="FeedbackRecipients">
+    <Type Name="FeedbackRecipient">
+      <Column Name="RecipientID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RecipientName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="RecipientEmail" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="RecipientVisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FeedbackRecipient_FeedbackRecipientsLoc" Member="FeedbackRecipientsLocs" ThisKey="RecipientID" OtherKey="RecipientID" Type="FeedbackRecipientsLoc" />
+    </Type>
+  </Table>
+  <Table Name="Cms.Folders" Member="Folders">
+    <Type Name="Folder">
+      <Column Name="FolderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FolderName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="FolderCreationDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Folder_Folder" Member="Folders" ThisKey="FolderID" OtherKey="ParentID" Type="Folder" />
+      <Association Name="Folder_File" Member="Files" ThisKey="FolderID" OtherKey="FolderID" Type="File" />
+      <Association Name="Folder_Folder" Member="Parent" Storage="_Folder1" ThisKey="ParentID" OtherKey="FolderID" Type="Folder" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.Files" Member="Files">
+    <Type Name="File">
+      <Column Name="FileID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FolderID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="FileBody" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" IsDelayLoaded="true" />
+      <Column Name="FileMimeType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FileSize" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FileCreationDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FileModificationDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FileNote" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IsImage" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ImageWidth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ImageHeight" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="File_Banners" Member="Banners" ThisKey="FileID" OtherKey="FileID" Type="Banners" />
+      <Association Name="File_TireBrand" Member="TireBrands" ThisKey="FileID" OtherKey="ImageId" Type="TireBrand" />
+      <Association Name="File_DiscBrand" Member="DiscBrands" ThisKey="FileID" OtherKey="ImageId" Type="DiscBrand" />
+      <Association Name="File_Catalog" Member="Catalogs" ThisKey="FileID" OtherKey="ImageUrl" Type="Catalog" />
+      <Association Name="File_OurCatalog" Member="OurCatalogs" ThisKey="FileID" OtherKey="ImageUrl" Type="OurCatalog" />
+      <Association Name="Folder_File" Member="Folder" ThisKey="FolderID" OtherKey="FolderID" Type="Folder" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.Shops" Member="Shops">
+    <Type Name="Shop">
+      <Column Name="ShopID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ShopName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ShopAddress" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ShopMetro" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ShopWorkTime" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="ShopPhones" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ShopNote" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ShopVisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ShopMapFileID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShopGalleryFolderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShopPriority" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StoreId" Type="System.String" DbType="Varchar(50)" CanBeNull="true" />
+      <Column Name="CityID" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="RegionID" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="SiteUrl" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="XCoord" Type="System.Double" DbType="real" CanBeNull="false" />
+      <Column Name="YCoord" Type="System.Single" DbType="real" CanBeNull="false" />
+      <Column Name="MapComment" Type="System.String" DbType="NVarChar(Max)" CanBeNull="true" />
+      <Column Name="isRMS" Type="System.Boolean" DbType="bit" CanBeNull="false" />
+      <Column Name="FranchName" Type="System.String" DbType="Nvarchar(100)" CanBeNull="true" />
+      <Column Name="InternalFranchName" Type="System.String" DbType="nvarchar(250)" CanBeNull="true" />
+      <Column Name="isRetail" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isWholeSale" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="FullInfo" Type="System.String" DbType="varchar(255)" CanBeNull="false" />
+      <Association Name="Shop_Vacancy" Member="Vacancies" ThisKey="ShopID" OtherKey="ShopID" Type="Vacancy" />
+      <Association Name="Shop_Employee" Member="Employees" ThisKey="ShopID" OtherKey="ShopID" Type="Employee" />
+      <Association Name="Folder_Shop" Member="ShopGalleryFolder" ThisKey="ShopGalleryFolderID" OtherKey="FolderID" Type="Folder" IsForeignKey="true" />
+      <Association Name="File_Shop" Member="ShopMapFile" ThisKey="ShopMapFileID" OtherKey="FileID" Type="File" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.Brands" Member="Brands">
+    <Type Name="Brand">
+      <Column Name="BrandID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VehicleType" Type="VehicleType" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Info" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="LogoFileID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AutoXPUrl" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="UrlCode" Type="System.String" DbType="Varchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PageTitle" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="PageKeywords" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PageDescription" Type="System.String" DbType="Varchar(MAX)" CanBeNull="true" />
+      <Column Name="PageFooter" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="File_Brand" Member="LogoFile" ThisKey="LogoFileID" OtherKey="FileID" Type="File" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.Manufacturers" Member="Manufacturers">
+    <Type Name="Manufacturer">
+      <Column Name="ManufacturerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Info" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="WebSiteUrl" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="LogoFileID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FolderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShowInCatalog" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UrlCode" Type="System.String" DbType="Varchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PageTitle" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="PageKeywords" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PageDescription" Type="System.String" DbType="Varchar(MAX)" CanBeNull="true" />
+      <Column Name="PageFooter" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Folder_Manufacturer" Member="Folder" ThisKey="FolderID" OtherKey="FolderID" Type="Folder" IsForeignKey="true" />
+      <Association Name="File_Manufacturer" Member="LogoFile" ThisKey="LogoFileID" OtherKey="FileID" Type="File" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.CatalogItems" Member="CatalogItems">
+    <Type Name="CatalogItem">
+      <Column Name="CatalogItemID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CatalogItemPriority" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CatalogItemName" Member="CatalogItemNameRU" Storage="_CatalogItemName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CatalogItemPath" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="CatalogItemQueryString" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CatalogItemVisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsServicePage" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CatalogItemOpenNewWindow" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CatalogItemMenuType" Type="CatalogItemMenuType" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="CatalogItemImageUrl" Member="CatalogItemImageUrlRU" Storage="_CatalogItemImageUrl" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CatalogItemCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PageTitle" Member="PageTitleRU" Storage="_PageTitle" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="PageKeywords" Member="PageKeywordsRU" Storage="_PageKeywords" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PageDescription" Member="PageDescriptionRU" Storage="_PageDescription" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PageBody" Member="PageBodyRU" Storage="_PageBody" Type="System.String" DbType="Varchar(MAX)" CanBeNull="true" />
+      <Column Name="PageFooter" Member="PageFooterRU" Storage="_PageFooter" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BannerCount" Type="Byte" DbType="TinyInt NOT NULL DEFAULT(1)" CanBeNull="false" />
+      <Column Name="CssClass" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Association Name="CatalogItem_CatalogItem" Member="ChildItems" ThisKey="CatalogItemID" OtherKey="ParentItemID" Type="CatalogItem" />
+      <Association Name="CatalogItem_BannersForCatalogItem" Member="BannersForCatalogItems" ThisKey="CatalogItemID" OtherKey="CatalogItemID" Type="BannersForCatalogItem" />
+      <Association Name="CatalogItem_CatalogItemsLoc" Member="CatalogItemsLocs" ThisKey="CatalogItemID" OtherKey="CatalogItemID" Type="CatalogItemsLoc" />
+      <Association Name="CatalogItem_CatalogItem" Member="ParentItem" ThisKey="ParentItemID" OtherKey="CatalogItemID" Type="CatalogItem" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.SeoPartsCatalogItems" Member="SeoPartsCatalogItems">
+    <Type Name="SeoPartsCatalogItem">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Member="NameRU" Storage="_Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Body" Member="BodyRU" Storage="_Body" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" IsDelayLoaded="true" />
+      <Column Name="UrlCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Visible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PageTitle" Member="PageTitleRU" Storage="_PageTitle" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="PageKeywords" Member="PageKeywordsRU" Storage="_PageKeywords" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" IsDelayLoaded="true" />
+      <Column Name="PageDescription" Member="PageDescriptionRU" Storage="_PageDescription" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" IsDelayLoaded="true" />
+      <Column Name="PageFooter" Member="PageFooterRU" Storage="_PageFooter" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" IsDelayLoaded="true" />
+      <Column Name="Priority" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsServicePage" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SeoPartsCatalogItem_SeoPartsCatalogItem" Member="ChildItems" ThisKey="ID" OtherKey="ParentID" Type="SeoPartsCatalogItem" />
+      <Association Name="SeoPartsCatalogItem_SeoPartsCatalogItemsLoc" Member="SeoPartsCatalogItemsLocs" ThisKey="ID" OtherKey="ID" Type="SeoPartsCatalogItemsLoc" />
+      <Association Name="SeoPartsCatalogItem_SeoPartsCatalogItem" Member="ParentItem" ThisKey="ParentID" OtherKey="ID" Type="SeoPartsCatalogItem" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.SeoTecDocTextTemplates" Member="SeoTecDocTextTemplates">
+    <Type Name="SeoTecDocTextTemplate">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TextType" Type="SeoTecDocTextTemplate.TextTypes" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="TextTemplate" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Association Name="SeoTecDocTextTemplate_SeoTecDocText" Member="SeoTecDocTexts" ThisKey="ID" OtherKey="PageFooterID" Type="SeoTecDocText" />
+    </Type>
+  </Table>
+  <Table Name="Cms.SeoTecDocTexts" Member="SeoTecDocTexts">
+    <Type Name="SeoTecDocText">
+      <Column Name="PageUrl" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PageTitleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PageFooterID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="SeoTecDocTextTemplate_SeoTecDocText" Member="PageFooterTemplate" ThisKey="PageFooterID" OtherKey="ID" Type="SeoTecDocTextTemplate" IsForeignKey="true" />
+      <Association Name="SeoTecDocTextTemplate_SeoTecDocText1" Member="PageTitleTemplate" ThisKey="PageTitleID" OtherKey="ID" Type="SeoTecDocTextTemplate" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.SparePartGroups" Member="SparePartGroups">
+    <Type Name="SparePartGroup">
+      <Column Name="SparePartGroupID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GroupName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="BackgroundColor" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="Visible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Cms.BannersForCatalogItems" Member="BannersForCatalogItems">
+    <Type Name="BannersForCatalogItem">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BannerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CatalogItemID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Position" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="IsVisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="CatalogItem_BannersForCatalogItem" Member="CatalogItem" ThisKey="CatalogItemID" OtherKey="CatalogItemID" Type="CatalogItem" IsForeignKey="true" />
+      <Association Name="Banners_BannersForCatalogItem" Member="Banners" ThisKey="BannerID" OtherKey="BannerID" Type="Banners" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.Banners" Member="Banners">
+    <Type Name="Banners">
+      <Column Name="BannerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="URL" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="FileID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Html" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="RenderType" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Association Name="Banners_BannersForCatalogItem" Member="BannersForCatalogItems" ThisKey="BannerID" OtherKey="BannerID" Type="BannersForCatalogItem" />
+      <Association Name="File_Banners" Member="File" ThisKey="FileID" OtherKey="FileID" Type="File" IsForeignKey="true" DeleteRule="SET NULL" />
+    </Type>
+  </Table>
+  <Table Name="Cms.SeoShortLinks" Member="SeoShortLinks">
+    <Type Name="SeoShortLink">
+      <Column Name="SeoLinksID" AutoSync="Never" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NameLink" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" IsReadOnly="true" CanBeNull="false" />
+      <Column Name="Localization" Type="System.String" DbType="Char(9) NOT NULL" CanBeNull="false" />
+      <Association Name="Localization_SeoShortLink" Member="Localization1" ThisKey="Localization" OtherKey="LocalizationID" Type="Localization" IsForeignKey="true" />
+    </Type>
+    <InsertFunction FunctionId="FunctionId1">
+      <Argument Parameter="seoLinksID" Member="SeoLinksID" />
+      <Argument Parameter="nameLink" Member="NameLink" />
+      <Argument Parameter="url" Member="Url" />
+      <Argument Parameter="localization" Member="Localization" />
+    </InsertFunction>
+    <UpdateFunction FunctionId="FunctionId1">
+      <Argument Parameter="seoLinksID" Member="SeoLinksID" />
+      <Argument Parameter="nameLink" Member="NameLink" />
+      <Argument Parameter="url" Member="Url" />
+      <Argument Parameter="localization" Member="Localization" />
+    </UpdateFunction>
+    <DeleteFunction FunctionId="FunctionId2">
+      <Argument Parameter="seoLinksID" Member="SeoLinksID" />
+    </DeleteFunction>
+  </Table>
+  <Table Name="dbo.Localization" Member="Localizations">
+    <Type Name="Localization">
+      <Column Name="LocalizationID" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Localization_NewsItem" Member="NewsItems" ThisKey="LocalizationID" OtherKey="Localization" Type="NewsItem" />
+      <Association Name="Localization_SeoShortLink" Member="SeoShortLinks" ThisKey="LocalizationID" OtherKey="Localization" Type="SeoShortLink" />
+      <Association Name="Localization_TextItem" Member="TextItems" ThisKey="LocalizationID" OtherKey="Localization" Type="TextItem" />
+      <Association Name="Localization_CatalogItemsLoc" Member="CatalogItemsLocs" ThisKey="LocalizationID" OtherKey="Localization" Type="CatalogItemsLoc" />
+      <Association Name="Localization_SeoPartsCatalogItemsLoc" Member="SeoPartsCatalogItemsLocs" ThisKey="LocalizationID" OtherKey="Localization" Type="SeoPartsCatalogItemsLoc" />
+      <Association Name="Localization_FeedbackRecipientsLoc" Member="FeedbackRecipientsLocs" ThisKey="LocalizationID" OtherKey="Localization" Type="FeedbackRecipientsLoc" />
+    </Type>
+  </Table>
+  <Table Name="Cms.TextItems" Member="TextItems">
+    <Type Name="TextItem">
+      <Column Name="TextItemID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TextItemHeader" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="TextItemBody" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TextItemFixed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Localization" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Localization_TextItem" Member="Localization1" ThisKey="Localization" OtherKey="LocalizationID" Type="Localization" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.Tires" Member="Tires">
+    <Type Name="Tires">
+      <Column Name="TireNumber" AutoSync="OnUpdate" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Profile" Type="System.Double" DbType="numeric" CanBeNull="true" />
+      <Column Name="Height" Type="System.Double" DbType="numeric" CanBeNull="true" />
+      <Column Name="Radius" Storage="_Diameter" Type="System.String" DbType="NVarChar(50)" CanBeNull="false" />
+      <Column Name="TireIndex" Type="System.String" DbType="NVarChar(50)" CanBeNull="false" />
+      <Column Name="ModelName" Type="System.String" DbType="NVarChar(50)" CanBeNull="false" />
+      <Column Name="Manufacturer" Type="System.String" DbType="NVarChar(50)" CanBeNull="false" />
+      <Column Name="Season" Type="System.String" DbType="NVarChar(50)" CanBeNull="false" />
+      <Column Name="ImageUrl" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ManufacturerId" Type="System.Int32" DbType="int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.TireBrands" Member="TireBrands">
+    <Type Name="TireBrand">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ImageId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsVisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="File_TireBrand" Member="File" ThisKey="ImageId" OtherKey="FileID" Type="File" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.Battery" Member="Batteries">
+    <Type Name="Battery">
+      <Column Name="PartNumber" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Manufacturer" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ManufaturerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModelName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Capacity" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="polarity" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cleat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Size" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ImageUrl" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.BatteryBrands" Member="BatteryBrands">
+    <Type Name="BatteryBrand">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ImageId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsVisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="File_BatteryBrand" Member="File" ThisKey="ImageId" OtherKey="FileID" Type="File" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.DiscBrands" Member="DiscBrands">
+    <Type Name="DiscBrand">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ImageId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsVisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="File_DiscBrand" Member="File" ThisKey="ImageId" OtherKey="FileID" Type="File" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.Catalogs" Member="Catalogs">
+    <Type Name="Catalog">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ImageUrl" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ref" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="File_Catalog" Member="File" ThisKey="ImageUrl" OtherKey="FileID" Type="File" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.OurCatalogs" Member="OurCatalogs">
+    <Type Name="OurCatalog">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ImageUrl" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ref" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Priority" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Visible" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="File_OurCatalog" Member="File" ThisKey="ImageUrl" OtherKey="FileID" Type="File" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.Disc" Member="Discs">
+    <Type Name="Disc">
+      <Column Name="PartNumber" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Manufacturer" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ManufaturerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModelName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Gab" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Diameter" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Width" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ImageUrl" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dia" Type="System.Decimal" DbType="Decimal(18,1)" CanBeNull="true" />
+      <Column Name="PCD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.OrderLineStatuses" Member="OrderLineStatuses">
+    <Type Name="OrderLineStatuses">
+      <Column Name="OrderLineStatusID" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NameRMS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NameHansa" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsFinal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RequiresClientReaction" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ExcludeFromTotalSum" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SendToAcctg" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Manager" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Client" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ClientShow" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ClientShowOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Cms.CatalogItemsLocs" Member="CatalogItemsLocs">
+    <Type Name="CatalogItemsLoc">
+      <Column Name="CatalogItemID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Localization" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CatalogItemName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CatalogItemImageUrl" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PageTitle" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="PageKeywords" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PageDescription" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PageFooter" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PageBody" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="CatalogItem_CatalogItemsLoc" Member="CatalogItem" ThisKey="CatalogItemID" OtherKey="CatalogItemID" Type="CatalogItem" IsForeignKey="true" />
+      <Association Name="Localization_CatalogItemsLoc" Member="Localization1" ThisKey="Localization" OtherKey="LocalizationID" Type="Localization" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.SeoPartsCatalogItemsLocs" Member="SeoPartsCatalogItemsLocs">
+    <Type Name="SeoPartsCatalogItemsLoc">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Localization" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Body" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PageTitle" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="PageKeywords" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PageDescription" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PageFooter" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="SeoPartsCatalogItem_SeoPartsCatalogItemsLoc" Member="SeoPartsCatalogItem" ThisKey="ID" OtherKey="ID" Type="SeoPartsCatalogItem" IsForeignKey="true" />
+      <Association Name="Localization_SeoPartsCatalogItemsLoc" Member="Localization1" ThisKey="Localization" OtherKey="LocalizationID" Type="Localization" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Cms.FeedbackRecipientsLocs" Member="FeedbackRecipientsLocs">
+    <Type Name="FeedbackRecipientsLoc">
+      <Column Name="RecipientID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Localization" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RecipientName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="FeedbackRecipient_FeedbackRecipientsLoc" Member="FeedbackRecipient" ThisKey="RecipientID" OtherKey="RecipientID" Type="FeedbackRecipient" IsForeignKey="true" />
+      <Association Name="Localization_FeedbackRecipientsLoc" Member="Localization1" ThisKey="Localization" OtherKey="LocalizationID" Type="Localization" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Id="FunctionId2" Name="dbo.spDelSeoShortLinks" Method="spDelSeoShortLinks">
+    <Parameter Name="SeoLinksID" Parameter="seoLinksID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId1" Name="dbo.spUpdSeoShortLinks" Method="spUpdSeoShortLinks">
+    <Parameter Name="SeoLinksID" Parameter="seoLinksID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NameLink" Parameter="nameLink" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Url" Parameter="url" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Localization" Parameter="localization" Type="System.String" DbType="Char(9)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Cms.spSelFilesFromRms" Method="spSelFilesFromRms">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spSelFilesFromRmsResult">
+      <Column Name="FileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FolderID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="FileBody" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="FileMimeType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FileSize" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FileCreationDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FileModificationDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FileNote" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IsImage" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ImageWidth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ImageHeight" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Cms.spSelCatalogsFromRms" Method="spSelCatalogsFromRms">
+    <ElementType Name="spSelCatalogsFromRmsResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ImageUrl" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ref" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Priority" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Visible" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Cms.spSelFranchesFromRms" Method="spSelFranchesFromRms">
+    <ElementType Name="spSelFranchesFromRmsResult">
+      <Column Name="Franch_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RegionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="InternalFranchName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ContactInfo" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="SiteName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ServerName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DbName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RegionCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AdditionalPeriod" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LogName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ImgTel" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="lnkHeadUrl" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="isLite" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PriceSearchCommandTimeOut" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClientGroup" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="License" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Issued" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

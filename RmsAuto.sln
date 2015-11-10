@@ -1,0 +1,212 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{24283758-07F9-471E-8FC4-E4CBD200993D}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\DataStreams.dll = Lib\DataStreams.dll
+		Lib\DataStreams1.dll = Lib\DataStreams1.dll
+		Lib\DevExpress.Data.v11.2.dll = Lib\DevExpress.Data.v11.2.dll
+		Lib\DevExpress.Patch.Common.dll = Lib\DevExpress.Patch.Common.dll
+		Lib\DevExpress.Web.ASPxEditors.v11.2.dll = Lib\DevExpress.Web.ASPxEditors.v11.2.dll
+		Lib\DevExpress.Web.ASPxGridView.v11.2.dll = Lib\DevExpress.Web.ASPxGridView.v11.2.dll
+		Lib\DevExpress.Web.ASPxThemes.v11.2.dll = Lib\DevExpress.Web.ASPxThemes.v11.2.dll
+		Lib\DevExpress.Web.ASPxTreeList.v11.2.dll = Lib\DevExpress.Web.ASPxTreeList.v11.2.dll
+		Lib\DevExpress.Web.v11.2.dll = Lib\DevExpress.Web.v11.2.dll
+		Lib\EPPlus\EPPlus.dll = Lib\EPPlus\EPPlus.dll
+		Lib\FreeImage.dll = Lib\FreeImage.dll
+		Lib\FreeImageNET.dll = Lib\FreeImageNET.dll
+		Lib\HtmlAgilityPack.dll = Lib\HtmlAgilityPack.dll
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+		Lib\Microsoft.Data.ConnectionUI.Dialog.dll = Lib\Microsoft.Data.ConnectionUI.Dialog.dll
+		Lib\Microsoft.Data.ConnectionUI.dll = Lib\Microsoft.Data.ConnectionUI.dll
+		Lib\Newtonsoft.Json\Newtonsoft.Json.dll = Lib\Newtonsoft.Json\Newtonsoft.Json.dll
+		RmsAuto.vsmdi = RmsAuto.vsmdi
+		Lib\System.Web.DataVisualization.dll = Lib\System.Web.DataVisualization.dll
+		Lib\vjslib.dll = Lib\vjslib.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tecdoc doc", "tecdoc doc", "{D928B3D9-27B1-42C4-9910-B3CB0FC9C48C}"
+	ProjectSection(SolutionItems) = preProject
+		Tecdoc tables full.txt = Tecdoc tables full.txt
+		view-шки tecdocs.txt = view-шки tecdocs.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "x64", "x64", "{5A638A4F-90E0-430F-8450-2FF026E53154}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\x64\FreeImage.dll = Lib\x64\FreeImage.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "site docs", "site docs", "{647838E7-AD5C-4E1C-983E-DE72B2C264DA}"
+	ProjectSection(SolutionItems) = preProject
+		notes.docx = notes.docx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "de", "de", "{FC25757E-94D9-414E-8AA6-20BB773EA6B3}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\de\DevExpress.Data.v11.2.resources.dll = Lib\de\DevExpress.Data.v11.2.resources.dll
+		Lib\de\DevExpress.Web.ASPxEditors.v11.2.resources.dll = Lib\de\DevExpress.Web.ASPxEditors.v11.2.resources.dll
+		Lib\de\DevExpress.Web.ASPxGridView.v11.2.resources.dll = Lib\de\DevExpress.Web.ASPxGridView.v11.2.resources.dll
+		Lib\de\DevExpress.Web.ASPxTreeList.v11.2.resources.dll = Lib\de\DevExpress.Web.ASPxTreeList.v11.2.resources.dll
+		Lib\de\DevExpress.Web.v11.2.resources.dll = Lib\de\DevExpress.Web.v11.2.resources.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "es", "es", "{CE62CC0A-658D-45D0-B00C-F2AE4E2EADDE}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\es\DevExpress.Data.v11.2.resources.dll = Lib\es\DevExpress.Data.v11.2.resources.dll
+		Lib\es\DevExpress.Web.ASPxEditors.v11.2.resources.dll = Lib\es\DevExpress.Web.ASPxEditors.v11.2.resources.dll
+		Lib\es\DevExpress.Web.ASPxGridView.v11.2.resources.dll = Lib\es\DevExpress.Web.ASPxGridView.v11.2.resources.dll
+		Lib\es\DevExpress.Web.ASPxTreeList.v11.2.resources.dll = Lib\es\DevExpress.Web.ASPxTreeList.v11.2.resources.dll
+		Lib\es\DevExpress.Web.v11.2.resources.dll = Lib\es\DevExpress.Web.v11.2.resources.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ja", "ja", "{89AB4845-F5ED-4F59-8E01-182396236A9A}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\ja\DevExpress.Data.v11.2.resources.dll = Lib\ja\DevExpress.Data.v11.2.resources.dll
+		Lib\ja\DevExpress.Web.ASPxEditors.v11.2.resources.dll = Lib\ja\DevExpress.Web.ASPxEditors.v11.2.resources.dll
+		Lib\ja\DevExpress.Web.ASPxGridView.v11.2.resources.dll = Lib\ja\DevExpress.Web.ASPxGridView.v11.2.resources.dll
+		Lib\ja\DevExpress.Web.ASPxTreeList.v11.2.resources.dll = Lib\ja\DevExpress.Web.ASPxTreeList.v11.2.resources.dll
+		Lib\ja\DevExpress.Web.v11.2.resources.dll = Lib\ja\DevExpress.Web.v11.2.resources.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ru", "ru", "{F5A64A43-CD31-4577-BC92-6DFC95A03FD8}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\ru\DevExpress.Data.v11.2.resources.dll = Lib\ru\DevExpress.Data.v11.2.resources.dll
+		Lib\ru\DevExpress.Web.ASPxEditors.v11.2.resources.dll = Lib\ru\DevExpress.Web.ASPxEditors.v11.2.resources.dll
+		Lib\ru\DevExpress.Web.ASPxGridView.v11.2.resources.dll = Lib\ru\DevExpress.Web.ASPxGridView.v11.2.resources.dll
+		Lib\ru\DevExpress.Web.ASPxTreeList.v11.2.resources.dll = Lib\ru\DevExpress.Web.ASPxTreeList.v11.2.resources.dll
+		Lib\ru\DevExpress.Web.v11.2.resources.dll = Lib\ru\DevExpress.Web.v11.2.resources.dll
+	EndProjectSection
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "RmsAuto.Store.Database", "RmsAuto.Store.Database\RmsAuto.Store.Database.sqlproj", "{957B0E16-93FD-49B5-8050-71142A99DF53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RmsAuto.Store", "RmsAuto.Store\RmsAuto.Store.csproj", "{B92C76CE-1D00-4D0F-873C-48CEBA6045D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RmsAuto.Store.Web", "RmsAuto.Store.Web\RmsAuto.Store.Web.csproj", "{7680EAB7-CA43-46A1-BE7E-E656E4110909}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RmsAuto.Store.Import", "RmsAuto.Store.Import\RmsAuto.Store.Import.csproj", "{111D4DC5-EB5F-4519-876D-F4700BC5AC8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RmsAuto.TechDoc", "RmsAuto.TechDoc\RmsAuto.TechDoc.csproj", "{88624D18-F3F9-453F-9983-E6F34AF03E18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RmsAuto.Store.Adm", "RmsAuto.Store.Adm\RmsAuto.Store.Adm.csproj", "{2B02A4A3-31F6-4E6D-9229-51A2E5F2BCE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RmsAuto.Common", "RmsAuto.Common\RmsAuto.Common.csproj", "{7A551067-3165-433E-BDD0-F798EEEE3930}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RmsAuto.UnitTesting", "RmsAuto.UnitTesting\RmsAuto.UnitTesting.csproj", "{A09C808C-FB0C-4D20-9960-F1FDBE9DE543}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RmsAuto.Store.MaintSvcs", "RmsAuto.Store.MaintSvcs\RmsAuto.Store.MaintSvcs.csproj", "{F4848EDC-9A04-4008-B0EC-C47C162B4CBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RmsAuto.Store.SupplierSvcs", "RmsAuto.Store.SupplierSvcs\RmsAuto.Store.SupplierSvcs.csproj", "{11BBB682-B401-487D-B5E0-AA7369CA375B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RmsAuto.Store.FranchSvcs", "RmsAuto.Store.FranchSvcs\RmsAuto.Store.FranchSvcs.csproj", "{C14E5AE1-B323-43BE-A360-B65140A9A0DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RmsAuto.Store.FranchServiceTestHost", "RmsAuto.Store.TestConsole\RmsAuto.Store.FranchServiceTestHost.csproj", "{9C0AF575-745A-4127-998E-E87F822C5AB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBOConsole", "TestConsoleApplication\TestBOConsole.csproj", "{0FCB1BF8-E61F-4FD8-9D4C-3C5C40A4074D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laximo.Guayaquil.Data", "Laximo.Guayaquil.Data\Laximo.Guayaquil.Data.csproj", "{87B556A9-28F0-4676-B942-EF26EC08CEB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laximo.Guayaquil.Render", "Laximo.Guayaquil.Render\Laximo.Guayaquil.Render.csproj", "{F68CC7E9-49DD-4CFB-9D9B-4F2F27354045}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "RmsAuto.ServiceSetup", "RmsAuto.ServiceSetup\ServiceSetup.vdproj", "{27A0BAE3-2A57-4A6B-B37A-195B44955EDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RmsAuto.SetupForms", "RmsAuto.SetupForms\RmsAuto.SetupForms.csproj", "{D0330D14-88B6-450D-8A73-74ECD19F789E}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{957B0E16-93FD-49B5-8050-71142A99DF53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{957B0E16-93FD-49B5-8050-71142A99DF53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{957B0E16-93FD-49B5-8050-71142A99DF53}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{957B0E16-93FD-49B5-8050-71142A99DF53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{957B0E16-93FD-49B5-8050-71142A99DF53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{957B0E16-93FD-49B5-8050-71142A99DF53}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B92C76CE-1D00-4D0F-873C-48CEBA6045D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B92C76CE-1D00-4D0F-873C-48CEBA6045D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B92C76CE-1D00-4D0F-873C-48CEBA6045D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B92C76CE-1D00-4D0F-873C-48CEBA6045D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7680EAB7-CA43-46A1-BE7E-E656E4110909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7680EAB7-CA43-46A1-BE7E-E656E4110909}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7680EAB7-CA43-46A1-BE7E-E656E4110909}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7680EAB7-CA43-46A1-BE7E-E656E4110909}.Release|Any CPU.Build.0 = Release|Any CPU
+		{111D4DC5-EB5F-4519-876D-F4700BC5AC8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{111D4DC5-EB5F-4519-876D-F4700BC5AC8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{111D4DC5-EB5F-4519-876D-F4700BC5AC8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{111D4DC5-EB5F-4519-876D-F4700BC5AC8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88624D18-F3F9-453F-9983-E6F34AF03E18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88624D18-F3F9-453F-9983-E6F34AF03E18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88624D18-F3F9-453F-9983-E6F34AF03E18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88624D18-F3F9-453F-9983-E6F34AF03E18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B02A4A3-31F6-4E6D-9229-51A2E5F2BCE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B02A4A3-31F6-4E6D-9229-51A2E5F2BCE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B02A4A3-31F6-4E6D-9229-51A2E5F2BCE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B02A4A3-31F6-4E6D-9229-51A2E5F2BCE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A551067-3165-433E-BDD0-F798EEEE3930}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A551067-3165-433E-BDD0-F798EEEE3930}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A551067-3165-433E-BDD0-F798EEEE3930}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A551067-3165-433E-BDD0-F798EEEE3930}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A09C808C-FB0C-4D20-9960-F1FDBE9DE543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A09C808C-FB0C-4D20-9960-F1FDBE9DE543}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A09C808C-FB0C-4D20-9960-F1FDBE9DE543}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A09C808C-FB0C-4D20-9960-F1FDBE9DE543}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4848EDC-9A04-4008-B0EC-C47C162B4CBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4848EDC-9A04-4008-B0EC-C47C162B4CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4848EDC-9A04-4008-B0EC-C47C162B4CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4848EDC-9A04-4008-B0EC-C47C162B4CBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11BBB682-B401-487D-B5E0-AA7369CA375B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11BBB682-B401-487D-B5E0-AA7369CA375B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11BBB682-B401-487D-B5E0-AA7369CA375B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11BBB682-B401-487D-B5E0-AA7369CA375B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C14E5AE1-B323-43BE-A360-B65140A9A0DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C14E5AE1-B323-43BE-A360-B65140A9A0DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C14E5AE1-B323-43BE-A360-B65140A9A0DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C14E5AE1-B323-43BE-A360-B65140A9A0DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C0AF575-745A-4127-998E-E87F822C5AB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C0AF575-745A-4127-998E-E87F822C5AB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C0AF575-745A-4127-998E-E87F822C5AB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C0AF575-745A-4127-998E-E87F822C5AB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FCB1BF8-E61F-4FD8-9D4C-3C5C40A4074D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FCB1BF8-E61F-4FD8-9D4C-3C5C40A4074D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FCB1BF8-E61F-4FD8-9D4C-3C5C40A4074D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FCB1BF8-E61F-4FD8-9D4C-3C5C40A4074D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87B556A9-28F0-4676-B942-EF26EC08CEB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87B556A9-28F0-4676-B942-EF26EC08CEB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87B556A9-28F0-4676-B942-EF26EC08CEB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87B556A9-28F0-4676-B942-EF26EC08CEB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F68CC7E9-49DD-4CFB-9D9B-4F2F27354045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F68CC7E9-49DD-4CFB-9D9B-4F2F27354045}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F68CC7E9-49DD-4CFB-9D9B-4F2F27354045}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F68CC7E9-49DD-4CFB-9D9B-4F2F27354045}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27A0BAE3-2A57-4A6B-B37A-195B44955EDF}.Debug|Any CPU.ActiveCfg = Debug
+		{27A0BAE3-2A57-4A6B-B37A-195B44955EDF}.Debug|Any CPU.Build.0 = Debug
+		{27A0BAE3-2A57-4A6B-B37A-195B44955EDF}.Release|Any CPU.ActiveCfg = Release
+		{27A0BAE3-2A57-4A6B-B37A-195B44955EDF}.Release|Any CPU.Build.0 = Release
+		{D0330D14-88B6-450D-8A73-74ECD19F789E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0330D14-88B6-450D-8A73-74ECD19F789E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0330D14-88B6-450D-8A73-74ECD19F789E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0330D14-88B6-450D-8A73-74ECD19F789E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D928B3D9-27B1-42C4-9910-B3CB0FC9C48C} = {24283758-07F9-471E-8FC4-E4CBD200993D}
+		{5A638A4F-90E0-430F-8450-2FF026E53154} = {24283758-07F9-471E-8FC4-E4CBD200993D}
+		{647838E7-AD5C-4E1C-983E-DE72B2C264DA} = {24283758-07F9-471E-8FC4-E4CBD200993D}
+		{FC25757E-94D9-414E-8AA6-20BB773EA6B3} = {24283758-07F9-471E-8FC4-E4CBD200993D}
+		{CE62CC0A-658D-45D0-B00C-F2AE4E2EADDE} = {24283758-07F9-471E-8FC4-E4CBD200993D}
+		{89AB4845-F5ED-4F59-8E01-182396236A9A} = {24283758-07F9-471E-8FC4-E4CBD200993D}
+		{F5A64A43-CD31-4577-BC92-6DFC95A03FD8} = {24283758-07F9-471E-8FC4-E4CBD200993D}
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = RmsAuto.vsmdi
+	EndGlobalSection
+EndGlobal

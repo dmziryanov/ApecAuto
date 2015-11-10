@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddToCartHint" xml:space="preserve">
+    <value>Добавить деталь в корзину</value>
+  </data>
+  <data name="CarName" xml:space="preserve">
+    <value>Автомобиль {0}</value>
+  </data>
+  <data name="Cars" xml:space="preserve">
+    <value>Найденные автомобили</value>
+  </data>
+  <data name="CatalogDate" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="CatalogTitle" xml:space="preserve">
+    <value>Наименование каталога</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Категории</value>
+  </data>
+  <data name="ColumnDetailAmount" xml:space="preserve">
+    <value>Количество</value>
+  </data>
+  <data name="ColumnDetailapplicablemodels" xml:space="preserve">
+    <value>Применимость к моделям</value>
+  </data>
+  <data name="ColumnDetailCodeOnImage" xml:space="preserve">
+    <value>№</value>
+  </data>
+  <data name="ColumnDetailcolor" xml:space="preserve">
+    <value>Цвет</value>
+  </data>
+  <data name="ColumnDetaildesignation" xml:space="preserve">
+    <value>Указание</value>
+  </data>
+  <data name="ColumnDetailfeaturedescription" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="ColumnDetailflag" xml:space="preserve">
+    <value>Пометки</value>
+  </data>
+  <data name="ColumnDetailmaterial" xml:space="preserve">
+    <value>Материал</value>
+  </data>
+  <data name="ColumnDetailName" xml:space="preserve">
+    <value>Наименование детали</value>
+  </data>
+  <data name="ColumnDetailNote" xml:space="preserve">
+    <value>Примечание</value>
+  </data>
+  <data name="ColumnDetailOEM" xml:space="preserve">
+    <value>OEM</value>
+  </data>
+  <data name="ColumnDetailpartspec" xml:space="preserve">
+    <value>Спецификация</value>
+  </data>
+  <data name="ColumnDetailPrice" xml:space="preserve">
+    <value>Цена</value>
+  </data>
+  <data name="ColumnDetailprodend" xml:space="preserve">
+    <value>Устанавливалось по</value>
+  </data>
+  <data name="ColumnDetailprodstart" xml:space="preserve">
+    <value>Устанавливалось с</value>
+  </data>
+  <data name="ColumnDetailshape" xml:space="preserve">
+    <value>Форма</value>
+  </data>
+  <data name="ColumnDetailsize" xml:space="preserve">
+    <value>Размер</value>
+  </data>
+  <data name="ColumnDetailstandard" xml:space="preserve">
+    <value>Стандарт</value>
+  </data>
+  <data name="ColumnVehiclecreationregion" xml:space="preserve">
+    <value>Сделано в</value>
+  </data>
+  <data name="ColumnVehicledate" xml:space="preserve">
+    <value>Дата выпуска</value>
+  </data>
+  <data name="ColumnVehicledatefrom" xml:space="preserve">
+    <value>Выпуск с</value>
+  </data>
+  <data name="ColumnVehicledateto" xml:space="preserve">
+    <value>Выпуск по</value>
+  </data>
+  <data name="ColumnVehicledestinationregion" xml:space="preserve">
+    <value>Для региона</value>
+  </data>
+  <data name="ColumnVehicledoors" xml:space="preserve">
+    <value>Двери</value>
+  </data>
+  <data name="ColumnVehicleengine" xml:space="preserve">
+    <value>Двигатель</value>
+  </data>
+  <data name="ColumnVehicleengineno" xml:space="preserve">
+    <value>№ двигателя</value>
+  </data>
+  <data name="ColumnVehicleframe" xml:space="preserve">
+    <value>Кузов</value>
+  </data>
+  <data name="ColumnVehicleframecolor" xml:space="preserve">
+    <value>Цвет</value>
+  </data>
+  <data name="ColumnVehicleframes" xml:space="preserve">
+    <value>Кузова</value>
+  </data>
+  <data name="ColumnVehiclegrade" xml:space="preserve">
+    <value>Комплектация</value>
+  </data>
+  <data name="ColumnVehiclemanufactured" xml:space="preserve">
+    <value>Выпущено</value>
+  </data>
+  <data name="ColumnVehiclemodel" xml:space="preserve">
+    <value>Модель</value>
+  </data>
+  <data name="ColumnVehiclemodification" xml:space="preserve">
+    <value>Модификация</value>
+  </data>
+  <data name="ColumnVehiclename" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="ColumnVehicleoptions" xml:space="preserve">
+    <value>Опции</value>
+  </data>
+  <data name="ColumnVehicletransmission" xml:space="preserve">
+    <value>КП</value>
+  </data>
+  <data name="ColumnVehicletrimcolor" xml:space="preserve">
+    <value>Цвет салона</value>
+  </data>
+  <data name="FINDFAILED" xml:space="preserve">
+    <value>Поиск по {0} ничего не дал</value>
+  </data>
+  <data name="GroupDetails" xml:space="preserve">
+    <value>Запчасти в группе</value>
+  </data>
+  <data name="InputFrame" xml:space="preserve">
+    <value>Введите код и номер кузова автомобиля, например {0}</value>
+  </data>
+  <data name="InputVIN" xml:space="preserve">
+    <value>Введите VIN автомобиля, например {0}</value>
+  </data>
+  <data name="ListVehicles" xml:space="preserve">
+    <value>Показать автомобили</value>
+  </data>
+  <data name="nothingfound" xml:space="preserve">
+    <value>Ничего не найдено</value>
+  </data>
+  <data name="QuickGroupsLink" xml:space="preserve">
+    <value>Поиск по группам</value>
+  </data>
+  <data name="ReplacementWay" xml:space="preserve">
+    <value>Тип заменяемости</value>
+  </data>
+  <data name="ReplacementWayBackward" xml:space="preserve">
+    <value>Замена НЕ возможна</value>
+  </data>
+  <data name="ReplacementWayForward" xml:space="preserve">
+    <value>Замена возможна указанным дубликатом возможна, но обратная замена не гарантируется</value>
+  </data>
+  <data name="ReplacementWayFull" xml:space="preserve">
+    <value>Точный дубликат</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="SearchByCode" xml:space="preserve">
+    <value>Поиск по коду</value>
+  </data>
+  <data name="SearchByFrame" xml:space="preserve">
+    <value>Поиск по коду/номеру кузова</value>
+  </data>
+  <data name="SearchByOEM" xml:space="preserve">
+    <value>Введите OEM номер</value>
+  </data>
+  <data name="SearchByOEMResult" xml:space="preserve">
+    <value>Результаты поиска по OEM {0}</value>
+  </data>
+  <data name="SearchByVIN" xml:space="preserve">
+    <value>Поиск по VIN</value>
+  </data>
+  <data name="SearchByWizard" xml:space="preserve">
+    <value>Поиск автомобиля по параметрам</value>
+  </data>
+  <data name="SearchDetail" xml:space="preserve">
+    <value>Поиск запчастей по OEM коду</value>
+  </data>
+  <data name="SelectedDetail" xml:space="preserve">
+    <value>Выбрана деталь {0}</value>
+  </data>
+  <data name="ToggleReplacements" xml:space="preserve">
+    <value>Показать/скрыть информацию о дубликатах</value>
+  </data>
+  <data name="UNIT_LEGEND" xml:space="preserve">
+    <value>Управление</value>
+  </data>
+  <data name="UNIT_LEGEND_ADD_TO_CART" xml:space="preserve">
+    <value>добавление детали в корзину</value>
+  </data>
+  <data name="UNIT_LEGEND_HIGHLIGHT_PARTS" xml:space="preserve">
+    <value>подсветка всех деталей на картинке и в таблице</value>
+  </data>
+  <data name="UNIT_LEGEND_HOVER_PARTS" xml:space="preserve">
+    <value>Наведение мышью на деталь</value>
+  </data>
+  <data name="UNIT_LEGEND_IMAGE_RESIZING" xml:space="preserve">
+    <value>масштабирование изображения</value>
+  </data>
+  <data name="UNIT_LEGEND_MOUSE_IMAGE_DRAG" xml:space="preserve">
+    <value>Перетаскивание картинки мышью</value>
+  </data>
+  <data name="UNIT_LEGEND_MOUSE_SCROLL_IMAGE" xml:space="preserve">
+    <value>прокрутка картинки</value>
+  </data>
+  <data name="UNIT_LEGEND_MOUSE_WHEEL" xml:space="preserve">
+    <value>Колесо мыши</value>
+  </data>
+  <data name="UNIT_LEGEND_SHOW_HIND" xml:space="preserve">
+    <value>показ подробной информации о запчасти</value>
+  </data>
+  <data name="UNIT_LEGEND_SHOW_REPLACEMENT_PARTS" xml:space="preserve">
+    <value>показ дубликатов запчастей</value>
+  </data>
+  <data name="UnitName" xml:space="preserve">
+    <value>Узел {0}</value>
+  </data>
+  <data name="UnitOptions" xml:space="preserve">
+    <value>Характеристики автомобиля</value>
+  </data>
+  <data name="VehicleLink" xml:space="preserve">
+    <value>Перейти на список узлов</value>
+  </data>
+  <data name="WhereToBuy" xml:space="preserve">
+    <value>Где купить</value>
+  </data>
+</root>

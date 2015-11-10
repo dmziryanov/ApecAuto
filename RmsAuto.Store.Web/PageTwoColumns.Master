@@ -1,0 +1,327 @@
+<%@ Master Language="C#" AutoEventWireup="true"  CodeBehind="PageTwoColumns.master.cs" Inherits="RmsAuto.Store.Web.PageTwoColumns" %>
+<%@ Register src="Cms/Controls/MetaTags.ascx" tagname="MetaTags" tagprefix="uc1" %>
+<%@ Register src="Cms/Controls/PageFooter.ascx" tagname="PageFooter" tagprefix="uc2" %>
+<%@ Register src="~/Cms/TextItems/TextItemControl.ascx" tagname="TextItemControl" tagprefix="uc3" %>
+<%@ Register src="~/Cms/Banners/BannerControl.ascx" tagname="BannerControl" tagprefix="uc4" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+	<meta http-equiv="Content-Type" content="<%# "text/html; charset="+Response.ContentEncoding.WebName%>" />
+	<uc1:MetaTags ID="MetaTags1" runat="server" />
+    <title></title>
+
+    <link rel="icon" href="<%# ResolveUrl("~/favicon.ico")%>" type="image/x-icon" /> 
+	<link rel="shortcut icon" href="<%# ResolveUrl("~/favicon.ico")%>" type="image/x-icon" /> 
+
+    <link rel="StyleSheet" href="<%# ResolveUrl("~/css/highslide/highslide.css")%>" type="text/css" media="screen" />
+	<link rel="StyleSheet" href="<%# ResolveUrl("~/css/css_new.css")%>" type="text/css" media="screen" />
+	<link rel="StyleSheet" href="<%# ResolveUrl("~/css/css_new_print.css")%>" type="text/css" media="print" />
+	<link rel="StyleSheet" href="<%# ResolveUrl("~/css/jquery.tooltip.css")%>" type="text/css" />
+	<link rel="Stylesheet" href="<%# ResolveUrl("~/css/themes/base/jquery.ui.all.css") %>" type="text/css" />
+	<link rel="Stylesheet" href="<%# ResolveUrl("~/Scripts/datepick/redmond.datepick.css") %>" type="text/css" />
+	<link rel="Stylesheet" href="<%# ResolveUrl("~/css/CitySelector.css") %>" type="text/css" /> 
+
+    
+    <script src="<%# ResolveUrl("~/Scripts/jquery-1.3.2.min.js") %>" type="text/javascript"></script>
+    <script src="<%# ResolveUrl("~/Scripts/jquery.tooltip.min.js") %>" type="text/javascript"></script>
+    <script src="<%# ResolveUrl("~/Scripts/highslide-full.packed-4.1.13.js") %>" type="text/javascript"></script>
+    <script src="<%# ResolveUrl("~/Scripts/common.js") %>" type="text/javascript"></script>
+    <script src="<%# ResolveUrl("~/Scripts/citySelector.js?v=1.0") %>" type="text/javascript"></script>    
+    
+    <script src="<%# ResolveUrl("~/Scripts/jquery.ui.core.min.js") %>" type="text/javascript"></script>
+    <script src="<%# ResolveUrl("~/Scripts/jquery.ui.widget.min.js") %>" type="text/javascript"></script>
+    <script src="<%# ResolveUrl("~/Scripts/jquery.ui.accordion.min.js") %>" type="text/javascript"></script>
+    <script src="<%# ResolveUrl("~/Scripts/jquery-ui-1.8.12.custom.min.js") %>" type="text/javascript"></script>
+    <script src="<%# ResolveUrl("~/Scripts/datepick/jquery.datepick.min.js") %>" type="text/javascript"></script>
+    <script src="<%# ResolveUrl("~/Scripts/datepick/jquery.datepick-ru.js") %>" type="text/javascript"></script>
+ 
+    
+    <style type="text/css">
+    body 
+    {
+    	min-width:1100px;
+    }
+    </style>
+	
+	<script type="text/javascript">
+		$(function() {
+			//$('img.help_img').tooltip({ showURL: false });
+			//initTextBoxTrimmer();
+		});
+	var siteURL='<%#System.Configuration.ConfigurationManager.AppSettings[ "WebSiteUrl" ]%>';
+
+	function getCookie(name) {
+	    var prefix = name + "=";
+	    var start = document.cookie.indexOf(prefix);
+	    if (start == -1)
+	        return "";
+	    var end = document.cookie.indexOf(";", start + prefix.length);
+	    if (end == -1)
+	        end = document.cookie.length;
+	    var value = document.cookie.substring(start + prefix.length, end);
+	    return unescape(value);
+	}
+
+	function delCookie(name, value) {
+	    var expires = new Date();
+	    expires.setTime(expires.getTime() - 31536000000);
+	    document.cookie = name + "=" + value + "; expires=" + expires.toGMTString() + "; path=/; domain=rmsauto.ru;";
+	}
+	
+//	$(document).ready(function() {
+
+//	    setInterval(function() {
+//	        var cityName = getCookie('cityName');
+//	        var cookieDomain = getCookie('cityDomain');
+//	        if (cityName != '')
+//	            $('.RegionSelector').text(cityName);
+//	    }, 200);
+
+
+//	    var cityName = getCookie('cityName');
+
+//	    var InternalFranchName = getCookie('InternalFranchName');
+//	    if (InternalFranchName == '' && cityName != '') {
+//	        delCookie('cityName');
+//	        delCookie('cityDomain');
+//	        fillDialog(true);
+//	        $('#RegionList').dialog('open');
+//	    }
+//	    else {
+//	        if (cityName != '')
+//	            $('.RegionSelector').text(cityName);
+//	    }
+//	});
+	
+    var browser = navigator.appName;
+    var version = navigator.appVersion.substring(0, 1);
+	var ie =
+	    ((browser == "Microsoft Internet Explorer") &&
+		(version >= 4))
+		;
+
+	var ns =
+	    ((browser == "Netscape") &&
+		(version >= 4));
+		
+	function setHomePage(objSrc) {
+	    if (ie) {
+            objSrc.style.behavior="url(#default#homepage)";
+            objSrc.setHomePage(objSrc.href);
+        } else { 
+            alert('Только для Internet Explorer 5+');
+        }
+	}
+
+	function addToFavorites(description) {
+	    if (ie) {
+    	    window.external.AddFavorite(siteURL, description);
+        } else { 
+            alert('Только для Internet Explorer 5+');
+        }
+    }
+    
+	</script>    
+	
+	
+	<script type="text/javascript">
+	    //<![CDATA[
+	    $(document).ready(function() {
+
+	        hs.registerOverlay({
+	            fade: 2, // fading the semi-transparent overlay looks bad in IE
+	            position: 'top center'
+	        });
+
+	        galleryOptions = {
+	            slideshowGroup: "mysite",
+	            dimmingOpacity: "0.8",
+	            captionEval: "this.a.title"
+	        };
+
+	        hs.addSlideshow({
+	            slideshowGroup: "mysite",
+	            dimmingOpacity: "0.8",
+	            interval: 3000,
+	            repeat: false,
+	            useControls: true,
+	            fixedControls: true,
+	            overlayOptions: {
+	                position: "bottom center"
+
+	            }
+	        });
+
+	        hs.align = 'top center';
+	        hs.showCredits = false;
+	        hs.graphicsDir = '/css/highslide/graphics/';
+	        hs.wrapperClassName = 'borderless';
+	    });
+    
+	    //]]>
+    </script>
+</head>
+<body>
+<form id="form2" runat="server">
+            <%--<div class = "InvisibleBorder">
+                <a id="RegionLabel1" class="RegionHeader2" href="#"><asp:Literal ID="lOurCity" 
+					runat="server" Text="Ваш город:" meta:resourcekey="lOurCityResource1" /></a><a id="RegionLabel" class="RegionSelector" href="#" onclick='prepareDialog(); fillDialog(true);  $("#RegionList").dialog("open");'>Москва</a><br>
+             </div>--%>
+            <!--div для окна c городами-->
+            <%--<div id="RegionList" style="width:100%; height:100%; text-align:center; display:none;">
+                <div id='UpperDiv' class='BeuatyLineBelow'></div>
+                <div id='LowerDiv' class='LowerDiv'></div>        
+            </div>  --%>  
+
+<div class="head-text">
+    <img id="ImgTel" runat="server" src="~/images/header_tel.jpg" alt="+971 50 9408570" width="210" height="26" border="0" align=right />
+    <asp:Literal ID="lNetMag" runat="server" Text="Интернет-магазин автозапчастей" meta:resourcekey="lNetMagResource1" />
+</div>
+
+<div class="head-link">
+	
+	<a id="lnkMapUrl" runat="server"><asp:Literal ID="lSiteMap" runat="server" 
+		Text="Карта сайта" meta:resourcekey="lSiteMapResource2" /></a>
+	<a id="lnkFeedbackUrl" runat="server"><asp:Literal ID="lFeedback" 
+		runat="server" Text="Обратная связь" meta:resourcekey="lFeedbackResource1" /></a>
+	
+	<asp:PlaceHolder ID="phFlags" runat="server" Visible="False">
+		<asp:ImageButton ID="ibRus" runat="server" ImageUrl="~/images/flags/rus.png" 
+			CommandArgument="ru-RU" OnClick="ibLang_Click" 
+			meta:resourcekey="ibRusResource1" />
+		<asp:ImageButton ID="ibEng" runat="server" ImageUrl="~/images/flags/eng.png" 
+			CommandArgument="en-US" OnClick="ibLang_Click" 
+			meta:resourcekey="ibEngResource1" />
+		<%--<asp:ImageButton ID="ibGer" runat="server" ImageUrl="~/images/flags/ger.png" 
+			CommandArgument="de-DE" OnClick="ibLang_Click" 
+			meta:resourcekey="ibGerResource1" />--%>
+    </asp:PlaceHolder>
+</div>
+<div class="head-link_top">
+
+      <nobr>
+        <center>
+            <%--<a id="lnkShopListUrl" runat="server"><asp:Literal ID="lOurShops" 
+				runat="server" Text="Наши магазины" meta:resourcekey="lOurShopsResource1" /></a>
+            <span id="RmsOfficeUrl" runat="server"><nobr><a href= '<%=System.Configuration.ConfigurationManager.AppSettings["WebSiteUrl"] + "/About/Shops/Region/100.aspx"%>'>Центральный офис</a>|<a href="/About/NewCityList.aspx">Офисы партнеров</a></span>|</nobr>--%>
+            <a href="#" onclick="setHomePage(this);return false"></nobr>
+        
+	<asp:Literal ID="lCreateStart" runat="server" Text="Сделать стартовой" meta:resourcekey="lCreateStartResource1" />
+	</a></nobr>|
+	<nobr><a href="#" onclick="addToFavorites('Интернет-магазин автозапчастей');return false"><asp:Literal 
+	ID="lAddToFavorite" runat="server" Text="Добавить в избранное" meta:resourcekey="lAddToFavoriteResource1" /></a></nobr>
+	    </center>
+</div>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr><td class="body">
+
+<div>
+	<div class="head-img"><a id="lnkHeadUrl" runat="server">
+	    <img runat="server" id = "HeadImg" src="~/images/header_img_logo.jpg" alt="RMS-AUTO" height="139" border="0" style="position:absolute;left:31px;"></a>
+	    <img runat="server" src="<%$ Resources:ImagesURL, header_img_new %>" alt="Интернет-магазин автозапчастей" width="706" height="139" border="0" class="right_img">
+    </div>
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+	    <td valign="top" style="padding-left:31px;">
+        <%-- Левое меню (begin) --%>
+        <div class="left_menu">	
+            <asp:ContentPlaceHolder ID="_leftContentPlaceHolder" runat="server">        
+            </asp:ContentPlaceHolder>
+    		<div class="bc_left">
+	            <%--<uc4:BannerControl ID="BannerControlPos0" runat="server"/>--%>
+	        </div>
+        </div>
+        </td>
+        <%-- Левое меню (end) --%>
+	    <td rowspan="2" valign="top" style="padding-right:29px;" width="100%">
+            <asp:ContentPlaceHolder ID="_headerContentPlaceHolder" runat="server">        
+            </asp:ContentPlaceHolder>
+        <div class="context2">
+            <asp:ContentPlaceHolder ID="_textContentPlaceHolder" runat="server">        
+            </asp:ContentPlaceHolder>
+        </div>
+   	    <br style="clear:both" />
+	    </td>
+	</tr>
+	</table>
+	<table border=0 cellpadding=0 cellspacing=0 width=100%>
+	<tr>
+	    <td class=body>
+            <div class="partners">
+        	    <div class="partner_left">
+		            <%--<img id="Img3" runat="server" src="<%$ Resources:ImagesURL, partners_img %>" alt="Партнеры" width="88" height="15" border="0" style="margin:0px 130px 10px 20px;" /><br />--%>
+		            <a id="lnkSeoPartsCatalogRootUrl" runat="server"><img id="Img1" runat="server" src="<%$ Resources:ImagesURL, manufacturers_img %>" alt="Производители" width="127" height="16" border="0" style="margin:0px 130px 9px 20px;" /></a>
+		        </div>    
+		        <div class="bc_bottom">
+                    <uc3:TextItemControl ID="_partnersFooter_TextItemControl" runat="server" 
+                    TextItemID="Banners.FooterPartners"
+                    ShowHeader="false"  />
+        	    </div>
+        	    <br style="clear:both" />
+				<div style="background-color:#256aa9;"><img id="Img6" alt="" runat="server" src="~/images/1pix.gif" width="1" height="3" border="0" /></div>
+		        <div style="background-color:#6399c5;"><img id="Img7" alt="" runat="server" src="~/images/1pix.gif" width="1" height="3" border="0" /></div>
+            </div>
+	    </td>
+	</tr>
+	</table>
+</div>
+</td></tr></table>
+<div class="footer">
+	<div class="footer-left">
+		&copy;
+        <%=DateTime.Now.Year%>
+        ApecAuto.com
+		<a href="http://www.apecauto.com" title="запчасти для иномарок">
+		<asp:Literal ID="lfNetMag" runat="server" 
+			Text="Интернет-магазин запчастей для иномарок" 
+			meta:resourcekey="lfNetMagResource1" /></a><br />
+		<uc2:PageFooter ID="PageFooter1" runat="server" />
+	</div>
+	<div class="footer-right">
+		<%--<a id="lnkMapUrl2" runat="server"><asp:Literal ID="lSiteMap2" runat="server" 
+			Text="Карта сайта" meta:resourcekey="lSiteMap2Resource1" /></a> 
+		<a id="lnkFeedbackUrl2" runat="server"><asp:Literal ID="lFeedback2" 
+			runat="server" Text="Обратная связь" meta:resourcekey="lFeedback2Resource1" /></a>--%>
+	</div>
+</div>
+<%--<hr id="dealers_hr" />
+<dl class="dealers">
+	<dt><asp:Literal ID="lWeDistributors" runat="server" Text="Мы дистрибьюторы:" 
+			meta:resourcekey="lWeDistributorsResource1" /></dt>
+	<dd>
+		<ul>
+			<li><a href="/Parts/Notoriginals/Kayaba.aspx"><img id="imgKayba" runat="server" alt="KAYABA" title="KAYABA" border="0" align="middle" src="~/images/dealers/kyb.jpg"/></a></li>
+			<li><a href="/Eberspacher.aspx"><img id="imgEberspacher" runat="server" alt="EBERSPACHER" title="EBERSPACHER" border="0" align="middle" src="~/images/dealers/eberspacher.jpg"/></a></li>
+			<li><a href="/Parts/Notoriginals/Textar.aspx"><img id="imgTextar" runat="server" alt="TEXTAR" title="TEXTAR" border="0" align="middle" src="~/images/dealers/textar.jpg"/></a></li>
+			<li><a href="/Parts/Notoriginals/Mintex.aspx"><img id="imgMintex" runat="server" alt="MINTEX" title="MINTEX" border="0" align="middle" src="~/images/dealers/mintex.jpg"/></a></li>
+			<li><a href="/Parts/Notoriginals/Gates.aspx"><img id="imgGates" runat="server" alt="GATES" title="GATES" border="0" align="middle" src="~/images/dealers/gates.jpg"/></a></li>
+			<li><a href="/Parts/Notoriginals/Delphi.aspx"><img id="imgDelphi" runat="server" alt="DELPHI" title="DELPHI" border="0" align="middle" src="~/images/dealers/delphi.jpg"/></a></li>
+			<li><a href="/Parts/Notoriginals/Mann.aspx"><img id="imgMannFilter" runat="server" alt="MANN FILTER" title="MANN FILTER" border="0" align="middle" src="~/images/dealers/mann-filt.jpg"/></a></li>
+			<li><a href="/Parts/Notoriginals/Besf1ts.aspx"><img id="imgBesf1ts" runat="server" alt="BESF1TS" title=" BESF1TS" border="0" align="middle" src="~/images/dealers/besf1ts.jpg"/></a></li>
+			<li><a href="/Parts/Notoriginals/Swag.aspx"><img id="imgSwag" runat="server" alt="SWAG" title="SWAG" border="0" align="middle" src="~/images/dealers/swag.jpg"/></a></li>
+			<li><a href="/Parts/Notoriginals/Behr.aspx"><img id="impBehr" runat="server" alt="BEHR" title="BEHR" border="0" align="middle" src="~/images/dealers/behr.jpg"/></a></li>
+			<li><a href="/Parts/Notoriginals/Hella.aspx"><img id="imgHella" runat="server" alt="HELLA" title="HELLA" border="0" align="middle" src="~/images/dealers/hella.jpg"/></a></li>
+			<li><a href="/Parts/Notoriginals/Denso.aspx"><img id="imgDenso" runat="server" alt="DENSO" title="DENSO" border="0" align="middle" src="~/images/dealers/denso.jpg"/></a></li>
+			<li><a href="/Parts/Notoriginals/Nissens.aspx"><img id="imgNissens" runat="server" alt="NISSENS" title="NISSENS" border="0" align="middle" src="~/images/dealers/nissens.jpg"/></a></li>
+			<li><a href="/Parts/Notoriginals/Valeo.aspx"><img id="imgValeo" runat="server" alt="VALEO" title="VALEO" border="0" align="middle" src="~/images/dealers/valeo.jpg"/></a></li>
+			<li><a href="/Parts/Notoriginals/Febest.aspx"><img id="imgFebest" runat="server" alt="FEBEST" title="FEBEST" border="0" align="middle" src="~/images/dealers/febest.jpg" /></a></li>
+			<li><a href="/Parts/Notoriginals/Ajusa.aspx"><img id="imgAjusa" runat="server" alt="AJUSA" title="AJUSA" border="0" align="middle" src="~/images/dealers/ajusa.jpg" /></a></li>
+			<li><a href="/Parts/Notoriginals/SWF.aspx"><img id="imgSwf" runat="server" alt="SWF" title="SWF" border="0" align="middle" src="~/images/dealers/swf.jpg" /></a></li>
+			<li><a href="/Parts/Notoriginals/Ctr.aspx"><img id="imgCtr" runat="server" alt="CTR" title="CTR" border="0" align="middle" src="~/images/dealers/ctr.jpg" /></a></li>
+			<li><a href="/Parts/Notoriginals/Dayco.aspx"><img id="imgDayco" runat="server" alt="DAYCO" title="DAYCO" border="0" align="middle" src="~/images/dealers/dayco.jpg" /></a></li>
+			<li><a href="/Parts/Notoriginals/Sakura.aspx"><img id="imgSakura" runat="server" alt="SAKURA" title="SAKURA" border="0" align="middle" src="~/images/dealers/sakura.jpg" /></a></li>
+			<li><a href="/Parts/Notoriginals/Nibk.aspx"><img id="imgNibk" runat="server" alt="NIBK" title="NIBK" border="0" align="middle" src="~/images/dealers/nibk.jpg" /></a></li>
+			<li><a href="/Parts/Notoriginals/Narva.aspx"><img id="imgNarva" runat="server" alt="NARVA" title="NARVA" border="0" align="middle" src="~/images/dealers/narva.jpg" /></a></li>
+			<li><a href="/Parts/Notoriginals/Philips.aspx"><img id="imgPhilips" runat="server" alt="PHILIPS" title="PHILIPS" border="0" align="middle" src="~/images/dealers/philips.jpg" /></a></li>
+			<li><a href="/Parts/Notoriginals/Amiwa.aspx"><img id="imgAmiwa" runat="server" alt="AMIWA" title="AMIWA" border="0" align="middle" src="~/images/dealers/amiwa.jpg" /></a></li>
+			<li><a href="/Parts/Notoriginals/Hengst.aspx"><img id="imgHengst" runat="server" alt="HENGST" title="HENGST" border="0" align="middle" src="~/images/dealers/hengst.jpg" /></a></li>
+			<li><a href="/Parts/Notoriginals/TSN.aspx"><img id="imgTSN" runat="server" alt="TSN" title="TSN" border="0" align="middle" src="~/images/dealers/tsn.jpg" /></a></li>
+			<li><a href="/Parts/Notoriginals/Otto_Zimmermann.aspx"><img id="imgZimmermann" runat="server" alt="ZIMMERMANN" title="ZIMMERMANN" border="0" align="middle" src="~/images/dealers/zimmer.jpg" /></a></li>
+		</ul>
+	</dd>
+</dl>--%>
+<img runat="server" alt="" src="~/images/1pix.gif" width="985" height="1" border="0" />
+</form>
+</body>
+</html>

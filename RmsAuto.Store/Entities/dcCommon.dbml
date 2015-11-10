@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="ex_rmsauto_common" Class="dcCommonDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=1ctest;Initial Catalog=ex_rmsauto_common;Integrated Security=True" SettingsObjectName="RmsAuto.Store.Properties.Settings" SettingsPropertyName="ex_rmsauto_commonConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ClientGroup" Member="ClientGroups">
+    <Type Name="ClientGroup">
+      <Column Name="ClientGroupID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ClientGroupName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cities" Member="Cities">
+    <Type Name="City">
+      <Column Name="Name" Type="System.String" DbType="nvarchar(100)" CanBeNull="false" />
+      <Column Name="CityID" Storage="_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="RegionID" Storage="_Region_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Visible" Type="System.Boolean" DbType="bit" CanBeNull="true" />
+      <Column Name="isVIP" Type="System.Boolean" DbType="bit" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="isNEW" Type="System.Boolean" DbType="bit" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Priority" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Region" Member="Regions">
+    <Type Name="Region">
+      <Column Name="RegionID" Storage="_Region_ID" Type="System.Int32" DbType="Int" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RegionName" Storage="_Region_Name" Type="System.String" DbType="Nvarchar(50)" CanBeNull="true" />
+      <Column Name="CountryID" Storage="_Country_ID" Type="System.Int32" DbType="Int" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GlobalSettings" Member="GlobalSettings">
+    <Type Name="GlobalSetting">
+      <Column Name="SettingID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OwnStoreSuppliers" Member="OwnStoreSuppliers">
+    <Type Name="OwnStoreSupplier">
+      <Column Name="SupplierID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsTopSearchResults" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.spSelAllHowKnowType" Method="spSelAllHowKnowType">
+    <ElementType Name="spSelAllHowKnowTypeResult">
+      <Column Name="HowKnowType_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HowKnowType_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spUpdBankInfo" Method="spUpdBankInfo">
+    <Parameter Name="BankInfo_BIC" Parameter="bankInfo_BIC" Type="System.String" DbType="NChar(9)" />
+    <Parameter Name="BankInfo_INN" Parameter="bankInfo_INN" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="BankInfo_Acc" Parameter="bankInfo_Acc" Type="System.String" DbType="NChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spSelAllScopeType" Method="spSelAllScopeType">
+    <ElementType Name="spSelAllScopeTypeResult">
+      <Column Name="ScopeType_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ScopeType_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spSelBankInfoByBIC" Method="spSelBankInfoByBIC">
+    <Parameter Name="BankInfo_BIC" Parameter="bankInfo_BIC" Type="System.String" DbType="NChar(9)" />
+    <ElementType Name="spSelBankInfoByBICResult">
+      <Column Name="BankInfo_INN" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="BankInfo_Acc" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="BankInfo_Name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spSelHowKnowTypeByID" Method="spSelHowKnowTypeByID">
+    <Parameter Name="HowKnowType_ID" Parameter="howKnowType_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spSelHowKnowTypeByIDResult">
+      <Column Name="HowKnowType_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spSelAllCountry" Method="spSelAllCountry">
+    <ElementType Name="spSelAllCountryResult">
+      <Column Name="CountryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CountryName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spSelRegionByCountry" Method="spSelRegionByCountry">
+    <Parameter Name="Country_ID" Parameter="country_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spSelRegionByCountryResult">
+      <Column Name="RegionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RegionName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spSelRegionByID" Method="spSelRegionByID">
+    <Parameter Name="Region_ID" Parameter="region_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spSelRegionByIDResult">
+      <Column Name="RegionName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spSelCountryByID" Method="spSelCountryByID">
+    <Parameter Name="Country_ID" Parameter="country_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spSelCountryByIDResult">
+      <Column Name="CountryName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

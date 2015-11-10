@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="ex_rmsauto_store" Class="TecdocStoreDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=1ctest;Initial Catalog=ex_rmsauto_store;Persist Security Info=True;User ID=sa" SettingsObjectName="RmsAuto.TechDoc.Properties.Settings" SettingsPropertyName="ex_rmsauto_storeConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="Tecdoc.ManufacturerVisibility" Member="InvisibleManufacturers">
+    <Type Name="InvisibleManufacturer">
+      <Column Name="ManufacturerID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Tecdoc.CountryVisibility" Member="CountryVisibilities">
+    <Type Name="CountryVisibility">
+      <Column Name="CountryID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Tecdoc.NameCorrections" Member="NameCorrections">
+    <Type Name="NameCorrection">
+      <Column Name="NameCorrectionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OriginalName" Type="System.String" DbType="VarChar(1200) NOT NULL" CanBeNull="false" />
+      <Column Name="CorrectedName" Type="System.String" DbType="VarChar(1200) NOT NULL" CanBeNull="false" />
+      <Column Name="TableName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsNew" Type="System.Boolean" DbType="BIT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Tecdoc.ModelVisibility" Member="InvisibleModels">
+    <Type Name="InvisibleModel">
+      <Column Name="ModelID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Tecdoc.ModificationVisibility" Member="InvisibleModifications">
+    <Type Name="InvisibleModification">
+      <Column Name="ModificationID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

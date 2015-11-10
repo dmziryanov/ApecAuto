@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Language="C#" CodeBehind="SaleReport.ashx.cs" Class="RmsAuto.Store.Web.Manager.SaleReport" %>

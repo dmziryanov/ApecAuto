@@ -1,0 +1,158 @@
+﻿.footer {
+    height:30px;
+    margin-top:-30px;
+}
+
+.footer-place {
+    height:30px;
+}
+
+.header {
+    padding-right:0;
+}
+
+.header .logo {
+    top:0;
+    left:0;
+}
+
+.header .logo a {
+    display: block;
+    background: url(../images/header_img_logo_manager.jpg) no-repeat 0 0;
+    width: 181px;
+    height: 47px;
+}
+
+.top-block {
+    background:#fff url(../images/gradient_stripe_1px.jpg) repeat-x;
+    margin-bottom:5px;
+}
+
+.links {
+    /*position:absolute;
+    top:5px;
+    right:25px;*/
+    font-size: 11px;
+    text-align: right;
+    float:right;
+    margin:5px 25px 0 0;
+}
+
+.links .sep {
+    display: inline-block;
+    height: 10px;
+    border-left: 1px solid #eaeef4;
+    border-right: 1px solid #2a5ba0;
+    vertical-align: middle;
+    margin: 0 7px;
+}
+
+.culture {
+    position:relative;
+    top:auto;
+    right:auto;
+    float:right;
+    margin:5px 25px 0 0;
+}
+
+.c-top {
+    border-bottom:none;
+}
+
+.pager td {
+    background-color:#fff;
+}
+
+.pager table {
+    width:auto;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.pager table td {
+    margin:0;
+    padding:0;
+    border:none;
+}
+
+.pager a, .pager span {
+    text-decoration: none;
+    margin-right: 1px;
+    display: inline-block;
+    vertical-align: top;
+    width: 18px;
+    height: 19px;
+    line-height: 19px;
+    text-align: center;
+    color: #6d6b6c;
+}
+
+.pager span {
+    background: #2b5a9e;
+    color: #fff;
+}
+
+.manager_top {
+
+}
+
+.person {
+    float:left;
+    padding:7px;
+    margin:0 1px 1px 0;
+    border-radius:5px;
+	-webkit-border-radius:5px;
+    width:160px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    background-color:#798aa2;
+    line-height:16px;
+    color:#fff;
+}
+
+.select {
+    padding:0;
+    width:174px;
+    background-color:#285a9f;
+}
+
+.select a {
+    display:block;
+    line-height:16px;
+    padding:7px 7px 7px 27px;
+    background:url(/images/add.png) no-repeat 7px 50%;
+}
+
+.person_on {
+    float:left;
+    background-color:#285a9f;
+    padding:7px;
+    margin:0 1px 1px 0;
+    border-radius:5px;
+	-webkit-border-radius:5px;
+    width:160px;
+    white-space:nowrap;
+    color:#fff;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    font-weight:bold;
+    line-height:16px;
+}
+
+.person_on a, .person a {
+    color:#fff;
+}
+
+.tab-bottom {
+    border-top:1px solid #717171;
+    margin-bottom:15px;
+}
+
+.tab-text {
+    line-height:14px;
+}
+
+.main-indent {
+    padding:25px 22px 0;
+}

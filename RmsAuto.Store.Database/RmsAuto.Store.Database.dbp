@@ -1,0 +1,32 @@
+# Microsoft Developer Studio Project File - Database Project
+Begin DataProject = "RmsAuto.Store.Database"
+   MSDTVersion = "80"
+   DefDBRef = "metric-dev2.ex_rmsauto_store.dbo"
+   SccProjectName = "Svn"
+   SccLocalPath = "Svn"
+   SccAuxPath = "Svn"
+   SccProvider = "SubversionScc"
+   Begin Folder = "Change Scripts"
+   End
+   Begin Folder = "Create Scripts"
+      Script = "Cms.sql"
+      Script = "Log.sql"
+      Script = "Store.sql"
+      Script = "Tecdoc.sql"
+      Script = "Tecdoc_Final.sql"
+   End
+   Begin DBRefFolder = "Database References"
+      Begin DBRefNode = "metric-dev2.ex_rmsauto_store.dbo"
+         ConnectStr = "Data Source=METRIC-DEV2;Initial Catalog=ex_rmsauto_store;Integrated Security=True"
+         Provider = "{91510608-8809-4020-8897-FBA057E22D54}"
+         Colorizer = 6
+      End
+   End
+   Begin Folder = "Queries"
+      Script = "CreateUserAccountsForExistingClients.sql"
+      Script = "InsertFixedTextItems.sql"
+      Script = "OrdersClientUserAccountsCleanup.sql"
+      Script = "ServiceBrokerSetup.sql"
+      Script = "UpdateAbsoluteUrlsInTextFields.sql"
+   End
+End

@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{88624D18-F3F9-453F-9983-E6F34AF03E18}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RmsAuto.TechDoc</RootNamespace>
+    <AssemblyName>RmsAuto.TechDoc</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FreeImageNET, Version=3.11.0.9, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\FreeImageNET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache\BoundedMap.cs" />
+    <Compile Include="Cache\EntityKey.cs" />
+    <Compile Include="Cache\TDCacheHelper.cs" />
+    <Compile Include="Configuration\TecdocConfiguration.cs" />
+    <Compile Include="Entities\Helpers\AdditionalInfo.cs" />
+    <Compile Include="Entities\Helpers\CriteriaInfo.cs" />
+    <Compile Include="Entities\TecdocBase\Article.cs" />
+    <Compile Include="Entities\Helpers\PartInfo.cs" />
+    <Compile Include="Entities\TecdocBase\AfterMarketBrand.cs" />
+    <Compile Include="Entities\TecdocBase\ArticleLookup.cs" />
+    <Compile Include="Entities\TecdocBase\ArticleStatus.cs" />
+    <Compile Include="Entities\TecdocBase\Supplier.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+    <Compile Include="Entities\Helpers\PartsListItem.cs" />
+    <Compile Include="Entities\TecdocBase\Country.cs" />
+    <Compile Include="Entities\Helpers\SearchTreeNodeHelper.cs" />
+    <Compile Include="Entities\TecdocBase\Model.cs" />
+    <Compile Include="Entities\TecdocBase\Manufacturer.cs" />
+    <Compile Include="Entities\TecdocBase\CarType.cs" />
+    <Compile Include="Entities\TecdocBase\TecdocBase.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TecdocBase.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TecdocBase\TecdocBaseContext.cs" />
+    <Compile Include="Entities\CountryVisibility.cs" />
+    <Compile Include="Entities\Helpers\ImageInfo.cs" />
+    <Compile Include="Entities\ITecDocItem.cs" />
+    <Compile Include="Entities\ItemViewAction.cs" />
+    <Compile Include="Entities\ManufacturerVisibility.cs" />
+    <Compile Include="Entities\ModelVisibility.cs" />
+    <Compile Include="Entities\ModificationVisibility.cs" />
+    <Compile Include="Entities\NameCorrection.cs" />
+    <Compile Include="Entities\Helpers\SearchPartInfo.cs" />
+    <Compile Include="Entities\TecdocStore.designer.cs">
+      <DependentUpon>TecdocStore.dbml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Entities\VehicleType.cs" />
+    <Compile Include="Facade.cs" />
+    <Compile Include="Handlers\ImageHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search\CountryVisibilityFilter.cs" />
+    <Compile Include="Search\IVisibilityFilter.cs" />
+    <Compile Include="Search\ManufacturerVisibilityFilter.cs" />
+    <Compile Include="Search\ModelVisibilityFilter.cs" />
+    <Compile Include="Search\ModificationVisibilityFilter.cs" />
+    <Compile Include="Search\VisibilityFilterProvider.cs" />
+    <Compile Include="Search\VisibilityFilterType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Entities\TecdocStore.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>TecdocStore.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Entities\TecdocStore.dbml.layout">
+      <DependentUpon>TecdocStore.dbml</DependentUpon>
+    </None>
+    <None Include="Entities\TecdocBase\TecdocBase.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>TecdocBase.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RmsAuto.Common\RmsAuto.Common.csproj">
+      <Project>{7A551067-3165-433E-BDD0-F798EEEE3930}</Project>
+      <Name>RmsAuto.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Entities\TecdocBase\TecdocBase.dbml.layout">
+      <DependentUpon>TecdocBase.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FreeImage.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

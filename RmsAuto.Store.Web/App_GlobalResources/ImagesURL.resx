@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="add_btn" xml:space="preserve">
+    <value>~/images/add_btn.gif</value>
+  </data>
+  <data name="basket_img" xml:space="preserve">
+    <value>~/images/basket_img.jpg</value>
+  </data>
+  <data name="basket_img_top3" xml:space="preserve">
+    <value>~/images/basket_img_top3.jpg</value>
+  </data>
+  <data name="bask_cencel" xml:space="preserve">
+    <value>~/images/bask_cencel.gif</value>
+  </data>
+  <data name="bask_nextstep" xml:space="preserve">
+    <value>~/images/bask_nextstep.gif</value>
+  </data>
+  <data name="bask_prevstep" xml:space="preserve">
+    <value>~/images/bask_prevstep.gif</value>
+  </data>
+  <data name="bask_send" xml:space="preserve">
+    <value>~/images/bask_send.gif</value>
+  </data>
+  <data name="btn_load" xml:space="preserve">
+    <value>~/images/btn_load.gif</value>
+  </data>
+  <data name="btn_reg" xml:space="preserve">
+    <value>~/images/btn_reg.gif</value>
+  </data>
+  <data name="btn_search_catalog" xml:space="preserve">
+    <value>~/images/btn_search_catalog.gif</value>
+  </data>
+  <data name="btn_search_vin" xml:space="preserve">
+    <value>~/images/btn_search_vin.gif</value>
+  </data>
+  <data name="cart_add" xml:space="preserve">
+    <value>~/images/cart_add.gif</value>
+  </data>
+  <data name="cart_issue" xml:space="preserve">
+    <value>~/images/cart_issue.gif</value>
+  </data>
+  <data name="car_edit" xml:space="preserve">
+    <value>~/images/car_edit.gif</value>
+  </data>
+  <data name="catalog_nonoriginals_img" xml:space="preserve">
+    <value>~/images/catalog_nonoriginals_img.jpg</value>
+  </data>
+  <data name="catalog_originals_img" xml:space="preserve">
+    <value>~/images/catalog_originals_img.jpg</value>
+  </data>
+  <data name="enter_btn" xml:space="preserve">
+    <value>~/images/enter_btn.jpg</value>
+  </data>
+  <data name="faq_img" xml:space="preserve">
+    <value>~/images/faq_img.jpg</value>
+  </data>
+  <data name="filter_btn" xml:space="preserve">
+    <value>~/images/filter_btn.gif</value>
+  </data>
+  <data name="header_img_new" xml:space="preserve">
+    <value>~/images/header-r-ru.png</value>
+  </data>
+  <data name="help_img" xml:space="preserve">
+    <value>~/images/help_img.png</value>
+  </data>
+  <data name="login_btn" xml:space="preserve">
+    <value>~/images/login_btn.gif</value>
+  </data>
+  <data name="logoff_title" xml:space="preserve">
+    <value>~/images/logoff_title.gif</value>
+  </data>
+  <data name="manufacturers_img" xml:space="preserve">
+    <value>~/images/manufacturers_img.png</value>
+  </data>
+  <data name="nextstep" xml:space="preserve">
+    <value>~/images/nextstep.gif</value>
+  </data>
+  <data name="partners_img" xml:space="preserve">
+    <value>~/images/partners_img.png</value>
+  </data>
+  <data name="prevstep" xml:space="preserve">
+    <value>~/images/prevstep.gif</value>
+  </data>
+  <data name="print_btn" xml:space="preserve">
+    <value>~/images/print_btn.gif</value>
+  </data>
+  <data name="print_logo" xml:space="preserve">
+    <value>~/images/print_logo.png</value>
+  </data>
+  <data name="reg_btn" xml:space="preserve">
+    <value>~/images/reg_btn.jpg</value>
+  </data>
+  <data name="reg_img" xml:space="preserve">
+    <value>~/images/reg_img.jpg</value>
+  </data>
+  <data name="reg_login" xml:space="preserve">
+    <value>~/images/reg_login.gif</value>
+  </data>
+  <data name="rurs_img" xml:space="preserve">
+    <value>~/images/rurs_img.jpg</value>
+  </data>
+  <data name="save_btn" xml:space="preserve">
+    <value>~/images/save_btn.gif</value>
+  </data>
+  <data name="search_img" xml:space="preserve">
+    <value>~/images/search_img.jpg</value>
+  </data>
+  <data name="send_btn" xml:space="preserve">
+    <value>~/images/send_btn.gif</value>
+  </data>
+  <data name="show_btn" xml:space="preserve">
+    <value>~/images/show_btn.gif</value>
+  </data>
+  <data name="btn_search_oil" xml:space="preserve">
+    <value>~/images/oil_catalog.gif</value>
+  </data>
+  <data name="btn_search_tires" xml:space="preserve">
+    <value>~/images/btn_search_tires.gif</value>
+  </data>
+  <data name="btn_search_catalog_accum" xml:space="preserve">
+    <value>~/images/btn_search_catalog_accum.gif</value>
+  </data>
+  <data name="header_img_manager" xml:space="preserve">
+    <value>~/images/header_img_manager.jpg</value>
+  </data>
+</root>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="ex_rmsauto_store" Class="AcctgDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=1ctest;Initial Catalog=ex_rmsauto_store;Integrated Security=True" SettingsObjectName="RmsAuto.Store.Properties.Settings" SettingsPropertyName="ex_rmsauto_storeConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="Acctg.RequestRepeatCount" Member="RequestRepeatCounts">
+    <Type Name="RequestRepeatCount">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RequestName" Type="System.String" DbType="VarChar(50)" IsReadOnly="true" CanBeNull="true" />
+      <Column Name="RepeatCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

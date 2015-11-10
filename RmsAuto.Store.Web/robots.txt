@@ -1,0 +1,7 @@
+User-Agent: *
+Disallow: /Cabinet
+Disallow: /Files
+Disallow: /WebResource.axd
+Disallow: /ScriptResource.axd
+
+Host: www.apecauto.com

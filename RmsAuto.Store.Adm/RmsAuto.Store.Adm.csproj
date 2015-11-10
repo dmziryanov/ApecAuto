@@ -1,0 +1,1289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2B02A4A3-31F6-4E6D-9229-51A2E5F2BCE4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RmsAuto.Store.Adm</RootNamespace>
+    <AssemblyName>RmsAuto.Store.Adm</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataStreams1, Version=5.9.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <Aliases>DataStreams1</Aliases>
+    </Reference>
+    <Reference Include="DevExpress.Data.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DevExpress.Data.v11.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Patch.Common, Version=5.1.0.0, Culture=neutral, PublicKeyToken=7fc7bfca2443de66, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DevExpress.Patch.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxEditors.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DevExpress.Web.ASPxEditors.v11.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxGridView.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DevExpress.Web.ASPxGridView.v11.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxThemes.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DevExpress.Web.ASPxThemes.v11.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxTreeList.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DevExpress.Web.ASPxTreeList.v11.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.v11.2, Version=11.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DevExpress.Web.v11.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.InfoPath.SemiTrust, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.DynamicData.Design">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.DynamicData">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AcctgTransferChangesLog.aspx" />
+    <Content Include="AcctgTransferErrors.aspx" />
+    <Content Include="ContentMgmt.aspx" />
+    <Content Include="Controls\FileManager\close.gif" />
+    <Content Include="Controls\FileManager\FileManagerControl.ascx" />
+    <Content Include="Controls\FileManager\FileManagerPopup.aspx" />
+    <Content Include="Controls\FileManager\folder-closed.gif" />
+    <Content Include="Controls\FileManager\folder-opened.gif" />
+    <Content Include="Controls\FileManager\imagemanager.css" />
+    <Content Include="Controls\FileManager\root.gif" />
+    <Content Include="Controls\ImportReportView.ascx" />
+    <Compile Include="AcctgTransferChangesLog.aspx.cs">
+      <DependentUpon>AcctgTransferChangesLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AcctgTransferChangesLog.aspx.designer.cs">
+      <DependentUpon>AcctgTransferChangesLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AcctgTransferErrors.aspx.cs">
+      <DependentUpon>AcctgTransferErrors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AcctgTransferErrors.aspx.designer.cs">
+      <DependentUpon>AcctgTransferErrors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CartMgmt.aspx.cs">
+      <DependentUpon>CartMgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CartMgmt.aspx.designer.cs">
+      <DependentUpon>CartMgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogs\Battery.aspx.cs">
+      <DependentUpon>Battery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogs\Battery.aspx.designer.cs">
+      <DependentUpon>Battery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogs\Comparers.cs" />
+    <Compile Include="Catalogs\Disc.aspx.cs">
+      <DependentUpon>Disc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogs\Disc.aspx.designer.cs">
+      <DependentUpon>Disc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogs\NoPhotoID.cs" />
+    <Compile Include="Catalogs\RefCatalogs.aspx.cs">
+      <DependentUpon>RefCatalogs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogs\RefCatalogs.aspx.designer.cs">
+      <DependentUpon>RefCatalogs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogs\Tires.aspx.cs">
+      <DependentUpon>Tires.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogs\Tires.aspx.designer.cs">
+      <DependentUpon>Tires.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cms\File.ashx.cs">
+      <DependentUpon>File.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ContentMgmt.aspx.cs">
+      <DependentUpon>ContentMgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContentMgmt.aspx.designer.cs">
+      <DependentUpon>ContentMgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AddFile\AddFileControl.ascx.cs">
+      <DependentUpon>AddFileControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AddFile\AddFileControl.ascx.designer.cs">
+      <DependentUpon>AddFileControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AddFile\AddFilePopup.aspx.cs">
+      <DependentUpon>AddFilePopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AddFile\AddFilePopup.aspx.designer.cs">
+      <DependentUpon>AddFilePopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FileManager\FileManagerControl.ascx.cs">
+      <DependentUpon>FileManagerControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\FileManager\FileManagerControl.ascx.designer.cs">
+      <DependentUpon>FileManagerControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FileManager\FileManagerPopup.aspx.cs">
+      <DependentUpon>FileManagerPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\FileManager\FileManagerPopup.aspx.designer.cs">
+      <DependentUpon>FileManagerPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ImportReportView.ascx.cs">
+      <DependentUpon>ImportReportView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ImportReportView.ascx.designer.cs">
+      <DependentUpon>ImportReportView.ascx</DependentUpon>
+    </Compile>
+    <Content Include="Controls\MetaModelTables.ascx" />
+    <Content Include="Controls\TopMenu.ascx" />
+    <Content Include="Default.aspx" />
+    <Content Include="DynamicData\Content\Images\cross.png" />
+    <Content Include="DynamicData\Content\Images\page_edit.png" />
+    <Content Include="DynamicData\Content\Images\show_subcatalog.png" />
+    <Content Include="DynamicData\Content\Images\mail.gif" />
+    <Content Include="DynamicData\Content\Images\zoom.png" />
+    <Content Include="DynamicData\CustomPages\CatalogItems\List.aspx" />
+    <Content Include="DynamicData\CustomPages\Files\List.aspx" />
+    <Content Include="Controls\FileManager\Upload.aspx" />
+    <Content Include="DynamicData\CustomPages\InvisibleManufacturers\List.aspx" />
+    <Content Include="DynamicData\CustomPages\NameCorrections\Edit.aspx" />
+    <Content Include="DynamicData\CustomPages\NameCorrections\List.aspx" />
+    <Content Include="DynamicData\CustomPages\PricingMatrixEntries\List.aspx" />
+    <Content Include="DynamicData\CustomPages\SeoPartsCatalogItems\Edit.aspx" />
+    <Content Include="DynamicData\CustomPages\SeoPartsCatalogItems\Insert.aspx" />
+    <Content Include="DynamicData\CustomPages\SeoPartsCatalogItems\List.aspx" />
+    <Content Include="DynamicData\CustomPages\SparePartCrosses\List.aspx" />
+    <Content Include="DynamicData\CustomPages\TextItems\List.aspx" />
+    <Content Include="DynamicData\FieldTemplates\Custom\AcctgRef.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Custom\AcctgRef_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Custom\DecimalCorrection.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Custom\DecimalCorrection_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Custom\FolderForeignKey.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Custom\FolderForeignKey_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Custom\FileForeignKey.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Custom\FileForeignKey_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Custom\CatalogItemForeignKey_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Custom\CatalogItemForeignKey.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Custom\Html.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Custom\Html_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Enumeration.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Custom\Manufacturers.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Custom\Manufacturers_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Password.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Password_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Custom\TecdocCountry.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Custom\TecdocCountry_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Custom\Suppliers.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Custom\Suppliers_Edit.ascx" />
+    <Content Include="Global.asax" />
+    <Compile Include="Controls\MetaModelTables.ascx.cs">
+      <DependentUpon>MetaModelTables.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\MetaModelTables.ascx.designer.cs">
+      <DependentUpon>MetaModelTables.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TopMenu.ascx.cs">
+      <DependentUpon>TopMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\TopMenu.ascx.designer.cs">
+      <DependentUpon>TopMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AcctgHansaMgmt.aspx.cs">
+      <DependentUpon>AcctgHansaMgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AcctgHansaMgmt.aspx.designer.cs">
+      <DependentUpon>AcctgHansaMgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExcelBanMgmt.aspx.cs">
+      <DependentUpon>ExcelBanMgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExcelBanMgmt.aspx.designer.cs">
+      <DependentUpon>ExcelBanMgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OwnStoresMgmt.aspx.cs">
+      <DependentUpon>OwnStoresMgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RefBooks.aspx.cs">
+      <DependentUpon>RefBooks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RefBooks.aspx.designer.cs">
+      <DependentUpon>RefBooks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListSparePartImagesMgmt.aspx.cs">
+      <DependentUpon>ListSparePartImagesMgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListSparePartImagesMgmt.aspx.designer.cs">
+      <DependentUpon>ListSparePartImagesMgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\Banners\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\Banners\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\Banners\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\Banners\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\CatalogItems\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\CatalogItems\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\Banners\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\Banners\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\Files\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\Files\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\InvisibleManufacturers\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\InvisibleManufacturers\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\NameCorrections\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\NameCorrections\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\NameCorrections\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\NameCorrections\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\OrderLineStatuses\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\OrderLineStatuses\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\PricingMatrixEntries\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\PricingMatrixEntries\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\SeoPartsCatalogItems\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\SeoPartsCatalogItems\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\SeoPartsCatalogItems\Insert.aspx.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\SeoPartsCatalogItems\Insert.aspx.designer.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\SeoPartsCatalogItems\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\SeoPartsCatalogItems\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\SparePartCrosses\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\SparePartCrosses\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\TextItems\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\CustomPages\TextItems\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\AcctgRef.ascx.cs">
+      <DependentUpon>AcctgRef.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\AcctgRef.ascx.designer.cs">
+      <DependentUpon>AcctgRef.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\AcctgRefBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\AcctgRef_Edit.ascx.cs">
+      <DependentUpon>AcctgRef_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\AcctgRef_Edit.ascx.designer.cs">
+      <DependentUpon>AcctgRef_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\DecimalCorrection.ascx.cs">
+      <DependentUpon>DecimalCorrection.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\DecimalCorrection.ascx.designer.cs">
+      <DependentUpon>DecimalCorrection.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\DecimalCorrection_Edit.ascx.cs">
+      <DependentUpon>DecimalCorrection_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\DecimalCorrection_Edit.ascx.designer.cs">
+      <DependentUpon>DecimalCorrection_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\FolderForeignKey.ascx.cs">
+      <DependentUpon>FolderForeignKey.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\FolderForeignKey.ascx.designer.cs">
+      <DependentUpon>FolderForeignKey.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\FolderForeignKey_Edit.ascx.cs">
+      <DependentUpon>FolderForeignKey_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\FolderForeignKey_Edit.ascx.designer.cs">
+      <DependentUpon>FolderForeignKey_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\FileForeignKey.ascx.cs">
+      <DependentUpon>FileForeignKey.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\FileForeignKey.ascx.designer.cs">
+      <DependentUpon>FileForeignKey.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\FileForeignKey_Edit.ascx.cs">
+      <DependentUpon>FileForeignKey_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\FileForeignKey_Edit.ascx.designer.cs">
+      <DependentUpon>FileForeignKey_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\CatalogItemForeignKey_Edit.ascx.cs">
+      <DependentUpon>CatalogItemForeignKey_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\CatalogItemForeignKey_Edit.ascx.designer.cs">
+      <DependentUpon>CatalogItemForeignKey_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\CatalogItemForeignKey.ascx.cs">
+      <DependentUpon>CatalogItemForeignKey.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\CatalogItemForeignKey.ascx.designer.cs">
+      <DependentUpon>CatalogItemForeignKey.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\Html.ascx.cs">
+      <DependentUpon>Html.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\Html.ascx.designer.cs">
+      <DependentUpon>Html.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\Html_Edit.ascx.cs">
+      <DependentUpon>Html_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\Html_Edit.ascx.designer.cs">
+      <DependentUpon>Html_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\OrderLineStatusID_Edit.ascx.cs">
+      <DependentUpon>OrderLineStatusID_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\OrderLineStatusID_Edit.ascx.designer.cs">
+      <DependentUpon>OrderLineStatusID_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Enumeration.ascx.cs">
+      <DependentUpon>Enumeration.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Enumeration.ascx.designer.cs">
+      <DependentUpon>Enumeration.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx.cs">
+      <DependentUpon>Enumeration_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx.designer.cs">
+      <DependentUpon>Enumeration_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\Manufacturers.ascx.cs">
+      <DependentUpon>Manufacturers.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\Manufacturers.ascx.designer.cs">
+      <DependentUpon>Manufacturers.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\Manufacturers_Edit.ascx.cs">
+      <DependentUpon>Manufacturers_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\Manufacturers_Edit.ascx.designer.cs">
+      <DependentUpon>Manufacturers_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Password.ascx.cs">
+      <DependentUpon>Password.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Password.ascx.designer.cs">
+      <DependentUpon>Password.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Password_Edit.ascx.cs">
+      <DependentUpon>Password_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Password_Edit.ascx.designer.cs">
+      <DependentUpon>Password_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\TecdocCountry.ascx.cs">
+      <DependentUpon>TecdocCountry.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\TecdocCountry.ascx.designer.cs">
+      <DependentUpon>TecdocCountry.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\TecdocCountry_Edit.ascx.cs">
+      <DependentUpon>TecdocCountry_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\TecdocCountry_Edit.ascx.designer.cs">
+      <DependentUpon>TecdocCountry_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\Suppliers.ascx.cs">
+      <DependentUpon>Suppliers.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\Suppliers.ascx.designer.cs">
+      <DependentUpon>Suppliers.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\Suppliers_Edit.ascx.cs">
+      <DependentUpon>Suppliers_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Custom\Suppliers_Edit.ascx.designer.cs">
+      <DependentUpon>Suppliers_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Content Include="images\ajax_loader.gif" />
+    <Content Include="images\Files\doc.png" />
+    <Content Include="images\Files\pdf.png" />
+    <Content Include="images\Files\txt.png" />
+    <Content Include="images\Files\unknown.png" />
+    <Content Include="images\Files\xls.png" />
+    <Content Include="Import.aspx" />
+    <Content Include="PendingLogins.aspx" />
+    <Content Include="scripts\jquery-1.3.2.min.js" />
+    <Content Include="scripts\mso.js" />
+    <Content Include="scripts\tinymce\close.gif" />
+    <Content Include="scripts\tinymce\css\content.css" />
+    <Content Include="scripts\tinymce\css\word.css" />
+    <Content Include="scripts\tinymce\index.aspx" />
+    <Content Include="scripts\tinymce\jscripts\plugins\rms_imagemanager\Upload.aspx" />
+    <Content Include="scripts\tinymce\jscripts\plugins\rms_imagemanager\css\imagemanager.css" />
+    <Content Include="scripts\tinymce\jscripts\plugins\rms_imagemanager\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\rms_imagemanager\ImageManager.aspx" />
+    <Content Include="scripts\tinymce\jscripts\plugins\rms_imagemanager\js\imagemanager.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\rms_imagemanager\langs\en_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\rms_imagemanager\langs\ru_dlg.js" />
+    <Content Include="scripts\tinymce\rms_tinymce.js" />
+    <Content Include="SearchSparePartsLogExport.aspx" />
+    <Content Include="Site.css" />
+    <Content Include="Site.master" />
+    <Compile Include="Import.aspx.cs">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Import.aspx.designer.cs">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderResendMgmt.aspx.cs">
+      <DependentUpon>OrderResendMgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderResendMgmt.aspx.designer.cs">
+      <DependentUpon>OrderResendMgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PendingLogins.aspx.cs">
+      <DependentUpon>PendingLogins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PendingLogins.aspx.designer.cs">
+      <DependentUpon>PendingLogins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="scripts\ScriptsManager.cs" />
+    <Compile Include="SearchSparePartsLog.ashx.cs">
+      <DependentUpon>SearchSparePartsLog.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchSparePartsLogExport.aspx.cs">
+      <DependentUpon>SearchSparePartsLogExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchSparePartsLogExport.aspx.designer.cs">
+      <DependentUpon>SearchSparePartsLogExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Security\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.master.cs">
+      <DependentUpon>Site.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.master.designer.cs">
+      <DependentUpon>Site.master</DependentUpon>
+    </Compile>
+    <Content Include="StoreMgmt.aspx" />
+    <Content Include="TecdocMgmt.aspx" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DynamicData\web.config" />
+    <Content Include="DynamicData\Content\FilterUserControl.ascx" />
+    <Compile Include="DynamicData\Content\FilterUserControl.ascx.cs">
+      <DependentUpon>FilterUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\Content\FilterUserControl.ascx.designer.cs">
+      <DependentUpon>FilterUserControl.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\Content\GridViewPager.ascx" />
+    <Compile Include="DynamicData\Content\GridViewPager.ascx.cs">
+      <DependentUpon>GridViewPager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\Content\GridViewPager.ascx.designer.cs">
+      <DependentUpon>GridViewPager.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\Content\Images\Back.gif" />
+    <Content Include="DynamicData\Content\Images\header_back.gif" />
+    <Content Include="DynamicData\Content\Images\PgFirst.gif" />
+    <Content Include="DynamicData\Content\Images\PgLast.gif" />
+    <Content Include="DynamicData\Content\Images\PgNext.gif" />
+    <Content Include="DynamicData\Content\Images\PgPrev.gif" />
+    <Content Include="DynamicData\Content\Images\plus.gif" />
+    <Content Include="DynamicData\FieldTemplates\Boolean.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\Boolean.ascx.cs">
+      <DependentUpon>Boolean.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Boolean.ascx.designer.cs">
+      <DependentUpon>Boolean.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\Boolean_Edit.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\Boolean_Edit.ascx.cs">
+      <DependentUpon>Boolean_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Boolean_Edit.ascx.designer.cs">
+      <DependentUpon>Boolean_Edit.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\Children.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\Children.ascx.cs">
+      <DependentUpon>Children.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Children.ascx.designer.cs">
+      <DependentUpon>Children.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\DateTime.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\DateTime.ascx.cs">
+      <DependentUpon>DateTime.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime.ascx.designer.cs">
+      <DependentUpon>DateTime.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\DateTime_Edit.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\DateTime_Edit.ascx.cs">
+      <DependentUpon>DateTime_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime_Edit.ascx.designer.cs">
+      <DependentUpon>DateTime_Edit.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\Decimal_Edit.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\Decimal_Edit.ascx.cs">
+      <DependentUpon>Decimal_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Decimal_Edit.ascx.designer.cs">
+      <DependentUpon>Decimal_Edit.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\ForeignKey.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey.ascx.cs">
+      <DependentUpon>ForeignKey.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey.ascx.designer.cs">
+      <DependentUpon>ForeignKey.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx.cs">
+      <DependentUpon>ForeignKey_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx.designer.cs">
+      <DependentUpon>ForeignKey_Edit.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\Integer_Edit.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\Integer_Edit.ascx.cs">
+      <DependentUpon>Integer_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Integer_Edit.ascx.designer.cs">
+      <DependentUpon>Integer_Edit.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx.cs">
+      <DependentUpon>MultilineText_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx.designer.cs">
+      <DependentUpon>MultilineText_Edit.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\Text.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\Text.ascx.cs">
+      <DependentUpon>Text.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text.ascx.designer.cs">
+      <DependentUpon>Text.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\FieldTemplates\Text_Edit.ascx" />
+    <Compile Include="DynamicData\FieldTemplates\Text_Edit.ascx.cs">
+      <DependentUpon>Text_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text_Edit.ascx.designer.cs">
+      <DependentUpon>Text_Edit.ascx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\PageTemplates\Details.aspx" />
+    <Compile Include="DynamicData\PageTemplates\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\PageTemplates\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\PageTemplates\Edit.aspx" />
+    <Compile Include="DynamicData\PageTemplates\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\PageTemplates\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\PageTemplates\Insert.aspx" />
+    <Compile Include="DynamicData\PageTemplates\Insert.aspx.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\PageTemplates\Insert.aspx.designer.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\PageTemplates\List.aspx" />
+    <Compile Include="DynamicData\PageTemplates\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\PageTemplates\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Content Include="DynamicData\PageTemplates\ListDetails.aspx" />
+    <Compile Include="DynamicData\PageTemplates\ListDetails.aspx.cs">
+      <DependentUpon>ListDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\PageTemplates\ListDetails.aspx.designer.cs">
+      <DependentUpon>ListDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+    </Compile>
+    <Compile Include="SparePartImagesMgmt.aspx.cs">
+      <DependentUpon>SparePartImagesMgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SparePartImagesMgmt.aspx.designer.cs">
+      <DependentUpon>SparePartImagesMgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StatusesMgmt.aspx.cs">
+      <DependentUpon>StatusesMgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StatusesMgmt.aspx.designer.cs">
+      <DependentUpon>StatusesMgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreMgmt.aspx.cs">
+      <DependentUpon>StoreMgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StoreMgmt.aspx.designer.cs">
+      <DependentUpon>StoreMgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TecdocMgmt.aspx.cs">
+      <DependentUpon>TecdocMgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TecdocMgmt.aspx.designer.cs">
+      <DependentUpon>TecdocMgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebServiceUsers.aspx.cs">
+      <DependentUpon>WebServiceUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebServiceUsers.aspx.designer.cs">
+      <DependentUpon>WebServiceUsers.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RmsAuto.Common\RmsAuto.Common.csproj">
+      <Project>{7A551067-3165-433E-BDD0-F798EEEE3930}</Project>
+      <Name>RmsAuto.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RmsAuto.Store.Import\RmsAuto.Store.Import.csproj">
+      <Project>{111D4DC5-EB5F-4519-876D-F4700BC5AC8A}</Project>
+      <Name>RmsAuto.Store.Import</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RmsAuto.Store\RmsAuto.Store.csproj">
+      <Project>{B92C76CE-1D00-4D0F-873C-48CEBA6045D3}</Project>
+      <Name>RmsAuto.Store</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RmsAuto.TechDoc\RmsAuto.TechDoc.csproj">
+      <Project>{88624D18-F3F9-453F-9983-E6F34AF03E18}</Project>
+      <Name>RmsAuto.TechDoc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CartMgmt.aspx" />
+    <Content Include="Controls\AddFile\close.gif" />
+    <Content Include="Controls\AddFile\AddFileControl.ascx" />
+    <Content Include="Controls\AddFile\AddFilePopup.aspx" />
+    <Content Include="Controls\AddFile\folder-closed.gif" />
+    <Content Include="Controls\AddFile\folder-opened.gif" />
+    <Content Include="Controls\AddFile\imagemanager.css" />
+    <Content Include="Controls\AddFile\root.gif" />
+    <Content Include="Controls\AddFile\Upload.aspx" />
+    <Content Include="AcctgHansaMgmt.aspx" />
+    <Content Include="RefBooks.aspx" />
+    <Content Include="ListSparePartImagesMgmt.aspx" />
+    <Content Include="css_info.css" />
+    <Content Include="DynamicData\Content\Images\achtung.png" />
+    <Content Include="DynamicData\Content\Images\down_arc_small.png" />
+    <Content Include="DynamicData\Content\Images\help.gif" />
+    <Content Include="DynamicData\CustomPages\Banners\Details.aspx" />
+    <Content Include="DynamicData\CustomPages\Banners\Edit.aspx" />
+    <Content Include="DynamicData\CustomPages\Banners\List.aspx" />
+    <Content Include="DynamicData\CustomPages\OrderLineStatuses\List.aspx" />
+    <Content Include="DynamicData\FieldTemplates\Custom\OrderLineStatusID_Edit.ascx" />
+    <Content Include="images\ico-basket.png" />
+    <Content Include="images\ico-excel.png" />
+    <Content Include="OrderResendMgmt.aspx" />
+    <Content Include="scripts\datepick\calendar-blue.gif" />
+    <Content Include="scripts\datepick\calendar-green.gif" />
+    <Content Include="scripts\datepick\calendar.gif" />
+    <Content Include="scripts\datepick\flora.datepick.css" />
+    <Content Include="scripts\datepick\humanity.datepick.css" />
+    <Content Include="scripts\datepick\jquery.datepick-ru.js" />
+    <Content Include="scripts\datepick\jquery.datepick-validation.js" />
+    <Content Include="scripts\datepick\jquery.datepick-validation.min.js" />
+    <Content Include="scripts\datepick\jquery.datepick.css" />
+    <Content Include="scripts\datepick\jquery.datepick.js" />
+    <Content Include="scripts\datepick\jquery.datepick.min.js" />
+    <Content Include="scripts\datepick\redmond.datepick.css" />
+    <Content Include="scripts\datepick\smoothness.datepick.css" />
+    <Content Include="scripts\jquery-1.6.2.min.js" />
+    <Content Include="scripts\tinymce\jscripts\jquery.tinymce.js" />
+    <Content Include="scripts\tinymce\jscripts\langs\en.js" />
+    <Content Include="scripts\tinymce\jscripts\langs\ru.js" />
+    <Content Include="scripts\tinymce\jscripts\license.txt" />
+    <Content Include="scripts\tinymce\jscripts\plugins\advhr\css\advhr.css" />
+    <Content Include="scripts\tinymce\jscripts\plugins\advhr\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\advhr\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\advhr\js\rule.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\advhr\langs\en_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\advhr\langs\ru_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\advhr\rule.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\advimage\css\advimage.css" />
+    <Content Include="scripts\tinymce\jscripts\plugins\advimage\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\advimage\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\advimage\image.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\advimage\img\sample.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\advimage\js\image.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\advimage\langs\en_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\advimage\langs\ru_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\advlink\css\advlink.css" />
+    <Content Include="scripts\tinymce\jscripts\plugins\advlink\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\advlink\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\advlink\js\advlink.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\advlink\langs\en_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\advlink\langs\ru_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\advlink\link.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\autoresize\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\autoresize\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\autosave\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\autosave\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\bbcode\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\bbcode\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\compat2x\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\compat2x\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\contextmenu\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\contextmenu\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\directionality\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\directionality\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\emotions\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\emotions\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\emotions\emotions.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\emotions\img\smiley-cool.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\emotions\img\smiley-cry.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\emotions\img\smiley-embarassed.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\emotions\img\smiley-foot-in-mouth.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\emotions\img\smiley-frown.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\emotions\img\smiley-innocent.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\emotions\img\smiley-kiss.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\emotions\img\smiley-laughing.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\emotions\img\smiley-money-mouth.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\emotions\img\smiley-sealed.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\emotions\img\smiley-smile.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\emotions\img\smiley-surprised.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\emotions\img\smiley-tongue-out.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\emotions\img\smiley-undecided.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\emotions\img\smiley-wink.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\emotions\img\smiley-yell.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\emotions\js\emotions.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\emotions\langs\en_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\emotions\langs\ru_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\example\dialog.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\example\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\example\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\example\img\example.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\example\js\dialog.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\example\langs\en.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\example\langs\en_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\fullpage\css\fullpage.css" />
+    <Content Include="scripts\tinymce\jscripts\plugins\fullpage\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\fullpage\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\fullpage\fullpage.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\fullpage\js\fullpage.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\fullpage\langs\en_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\fullpage\langs\ru_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\fullscreen\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\fullscreen\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\fullscreen\fullscreen.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\iespell\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\iespell\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\inlinepopups\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\inlinepopups\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\inlinepopups\skins\clearlooks2\img\alert.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\inlinepopups\skins\clearlooks2\img\button.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\inlinepopups\skins\clearlooks2\img\buttons.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\inlinepopups\skins\clearlooks2\img\confirm.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\inlinepopups\skins\clearlooks2\img\corners.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\inlinepopups\skins\clearlooks2\img\horizontal.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\inlinepopups\skins\clearlooks2\img\vertical.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\inlinepopups\skins\clearlooks2\window.css" />
+    <Content Include="scripts\tinymce\jscripts\plugins\inlinepopups\template.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\insertdatetime\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\insertdatetime\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\layer\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\layer\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\media\css\content.css" />
+    <Content Include="scripts\tinymce\jscripts\plugins\media\css\media.css" />
+    <Content Include="scripts\tinymce\jscripts\plugins\media\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\media\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\media\img\flash.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\media\img\flv_player.swf" />
+    <Content Include="scripts\tinymce\jscripts\plugins\media\img\quicktime.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\media\img\realmedia.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\media\img\shockwave.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\media\img\trans.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\media\img\windowsmedia.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\media\js\embed.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\media\js\media.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\media\langs\en_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\media\langs\ru_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\media\media.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\nonbreaking\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\nonbreaking\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\noneditable\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\noneditable\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\pagebreak\css\content.css" />
+    <Content Include="scripts\tinymce\jscripts\plugins\pagebreak\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\pagebreak\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\pagebreak\img\pagebreak.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\pagebreak\img\trans.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\paste\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\paste\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\paste\js\pastetext.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\paste\js\pasteword.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\paste\langs\en_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\paste\langs\ru_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\paste\pastetext.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\paste\pasteword.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\preview\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\preview\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\preview\example.html" />
+    <Content Include="scripts\tinymce\jscripts\plugins\preview\jscripts\embed.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\preview\preview.html" />
+    <Content Include="scripts\tinymce\jscripts\plugins\print\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\print\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\safari\blank.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\safari\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\safari\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\save\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\save\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\searchreplace\css\searchreplace.css" />
+    <Content Include="scripts\tinymce\jscripts\plugins\searchreplace\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\searchreplace\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\searchreplace\js\searchreplace.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\searchreplace\langs\en_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\searchreplace\langs\ru_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\searchreplace\searchreplace.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\spellchecker\css\content.css" />
+    <Content Include="scripts\tinymce\jscripts\plugins\spellchecker\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\spellchecker\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\spellchecker\img\wline.gif" />
+    <Content Include="scripts\tinymce\jscripts\plugins\style\css\props.css" />
+    <Content Include="scripts\tinymce\jscripts\plugins\style\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\style\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\style\js\props.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\style\langs\en_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\style\langs\ru_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\style\props.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\tabfocus\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\tabfocus\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\table\cell.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\table\css\cell.css" />
+    <Content Include="scripts\tinymce\jscripts\plugins\table\css\row.css" />
+    <Content Include="scripts\tinymce\jscripts\plugins\table\css\table.css" />
+    <Content Include="scripts\tinymce\jscripts\plugins\table\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\table\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\table\js\cell.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\table\js\merge_cells.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\table\js\row.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\table\js\table.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\table\langs\en_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\table\langs\ru_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\table\merge_cells.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\table\row.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\table\table.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\template\blank.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\template\css\template.css" />
+    <Content Include="scripts\tinymce\jscripts\plugins\template\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\template\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\template\js\template.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\template\langs\en_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\template\langs\ru_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\template\template.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\visualchars\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\visualchars\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\wordcount\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\wordcount\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\xhtmlxtras\abbr.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\xhtmlxtras\acronym.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\xhtmlxtras\attributes.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\xhtmlxtras\cite.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\xhtmlxtras\css\attributes.css" />
+    <Content Include="scripts\tinymce\jscripts\plugins\xhtmlxtras\css\popup.css" />
+    <Content Include="scripts\tinymce\jscripts\plugins\xhtmlxtras\del.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\xhtmlxtras\editor_plugin.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\xhtmlxtras\editor_plugin_src.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\xhtmlxtras\ins.htm" />
+    <Content Include="scripts\tinymce\jscripts\plugins\xhtmlxtras\js\abbr.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\xhtmlxtras\js\acronym.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\xhtmlxtras\js\attributes.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\xhtmlxtras\js\cite.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\xhtmlxtras\js\del.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\xhtmlxtras\js\element_common.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\xhtmlxtras\js\ins.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\xhtmlxtras\langs\en_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\plugins\xhtmlxtras\langs\ru_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\about.htm" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\anchor.htm" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\charmap.htm" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\color_picker.htm" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\editor_template.js" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\editor_template_src.js" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\image.htm" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\img\colorpicker.jpg" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\img\icons.gif" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\js\about.js" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\js\anchor.js" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\js\charmap.js" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\js\color_picker.js" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\js\image.js" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\js\link.js" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\js\source_editor.js" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\langs\en.js" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\langs\en_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\langs\ru.js" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\langs\ru_dlg.js" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\link.htm" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\skins\default\content.css" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\skins\default\dialog.css" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\skins\default\img\buttons.png" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\skins\default\img\items.gif" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\skins\default\img\menu_arrow.gif" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\skins\default\img\menu_check.gif" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\skins\default\img\progress.gif" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\skins\default\img\tabs.gif" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\skins\default\ui.css" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\skins\o2k7\content.css" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\skins\o2k7\dialog.css" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\skins\o2k7\img\button_bg.png" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\skins\o2k7\img\button_bg_black.png" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\skins\o2k7\img\button_bg_silver.png" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\skins\o2k7\ui.css" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\skins\o2k7\ui_black.css" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\skins\o2k7\ui_silver.css" />
+    <Content Include="scripts\tinymce\jscripts\themes\advanced\source_editor.htm" />
+    <Content Include="scripts\tinymce\jscripts\themes\simple\editor_template.js" />
+    <Content Include="scripts\tinymce\jscripts\themes\simple\editor_template_src.js" />
+    <Content Include="scripts\tinymce\jscripts\themes\simple\img\icons.gif" />
+    <Content Include="scripts\tinymce\jscripts\themes\simple\langs\en.js" />
+    <Content Include="scripts\tinymce\jscripts\themes\simple\langs\ru.js" />
+    <Content Include="scripts\tinymce\jscripts\themes\simple\skins\default\content.css" />
+    <Content Include="scripts\tinymce\jscripts\themes\simple\skins\default\ui.css" />
+    <Content Include="scripts\tinymce\jscripts\themes\simple\skins\o2k7\content.css" />
+    <Content Include="scripts\tinymce\jscripts\themes\simple\skins\o2k7\img\button_bg.png" />
+    <Content Include="scripts\tinymce\jscripts\themes\simple\skins\o2k7\ui.css" />
+    <Content Include="scripts\tinymce\jscripts\tiny_mce.js" />
+    <Content Include="scripts\tinymce\jscripts\tiny_mce_popup.js" />
+    <Content Include="scripts\tinymce\jscripts\tiny_mce_src.js" />
+    <Content Include="scripts\tinymce\jscripts\utils\editable_selects.js" />
+    <Content Include="scripts\tinymce\jscripts\utils\form_utils.js" />
+    <Content Include="scripts\tinymce\jscripts\utils\mctabs.js" />
+    <Content Include="scripts\tinymce\jscripts\utils\validate.js" />
+    <Content Include="SearchSparePartsLog.ashx" />
+    <Content Include="SparePartImagesMgmt.aspx" />
+    <Content Include="StatusesMgmt.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Catalogs\Battery.aspx" />
+    <Content Include="Catalogs\Disc.aspx" />
+    <Content Include="Catalogs\RefCatalogs.aspx" />
+    <Content Include="Catalogs\Tires.aspx" />
+    <Content Include="WebServiceUsers.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cms\File.ashx" />
+    <Content Include="ExcelBanMgmt.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RmsAuto.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Franch.sitemap" />
+    <Content Include="OwnStoresMgmt.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="App_Themes\" />
+    <Folder Include="DynamicData\CustomPages\RequestRepeatCount\" />
+    <Folder Include="DynamicData\CustomPages\SeoShortLinks\" />
+    <Folder Include="scripts\tinymce\jscripts\plugins\rms_imagemanager\img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\adm.pubxml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <!--<ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4213</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/RmsAuto.Store.Adm</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>-->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58545</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

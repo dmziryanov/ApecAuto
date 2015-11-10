@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns="http://WebCatalog.Kito.ec" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://WebCatalog.Kito.ec" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+		Kito Web Service
+	</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://WebCatalog.Kito.ec">
+      <xs:complexType name="Exception">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Exception" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Exception">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="Exception" nillable="true" type="ns:Exception" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryData">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="request" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryDataResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="QueryDataRequest">
+    <wsdl:part name="parameters" element="ns:QueryData" />
+  </wsdl:message>
+  <wsdl:message name="QueryDataResponse">
+    <wsdl:part name="parameters" element="ns:QueryDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="Exception">
+    <wsdl:part name="parameters" element="ns:Exception" />
+  </wsdl:message>
+  <wsdl:portType name="CatalogPortType">
+    <wsdl:operation name="QueryData">
+      <wsdl:input wsaw:Action="urn:QueryData" message="ns:QueryDataRequest" />
+      <wsdl:output wsaw:Action="urn:QueryDataResponse" message="ns:QueryDataResponse" />
+      <wsdl:fault wsaw:Action="urn:QueryDataException" name="Exception" message="ns:Exception" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CatalogSoap11Binding" type="ns:CatalogPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="QueryData">
+      <soap:operation soapAction="urn:QueryData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CatalogSoap12Binding" type="ns:CatalogPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="QueryData">
+      <soap12:operation soapAction="urn:QueryData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap12:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CatalogHttpBinding" type="ns:CatalogPortType">
+    <http:binding verb="POST" />
+    <wsdl:operation name="QueryData">
+      <http:operation location="Catalog/QueryData" />
+      <wsdl:input>
+        <mime:content part="QueryData" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="QueryData" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Catalog">
+    <wsdl:port name="CatalogHttpSoap11Endpoint" binding="ns:CatalogSoap11Binding">
+      <soap:address location="https://ws.laximo.net/ec.Kito.WebCatalog/services/Catalog.CatalogHttpSoap11Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="CatalogHttpSoap12Endpoint" binding="ns:CatalogSoap12Binding">
+      <soap12:address location="https://ws.laximo.net/ec.Kito.WebCatalog/services/Catalog.CatalogHttpSoap12Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="CatalogHttpEndpoint" binding="ns:CatalogHttpBinding">
+      <http:address location="https://ws.laximo.net/ec.Kito.WebCatalog/services/Catalog.CatalogHttpEndpoint/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

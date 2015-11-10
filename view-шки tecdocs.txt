@@ -1,0 +1,585 @@
+Перед использованием картинок очень рекомендую талицы TOF_GRA_DATAXX объединить в одну таблицу, и расставить индексы.
+
+В MSSQL рекомендую после создания вьюшек пару раз прогнать через профайлер и мастер расстановки индексов.
+В базе будут расставлены индексы.
+
+art_article_criteria - список информации по конкретному артиклю (ART_ID)
+art_articles - список артиклей с номерами (ART_ID)
+art_ean_numbers - заглушка под EAN номера (ART_ID)
+art_graphics - графическиая связка (ART_ID, GRD_ID)
+art_lookup - кроссы и заменители (ART_ID)
+art_typ - список применяемых машин к детали (ART_ID, TYP_ID)
+cds_texts - текстовые данные
+des_texts - текстовые данные
+ga_generic_articles - список места установки детали, принадлежности и т. п. (GA_ID)
+grd_data - графические данные (GRD_ID)
+для получения этой вьюшки необходимо собрать GRA_DATA1..N в одну таблицу GRA_DATA.
+
+link_typ_str - связка типов машин и товарной группы (TYP_ID, STR_ID)
+link_typ_str_art_ga - связь типов машин, товарной группы и артиклей с описанием. (TYP_ID,STR_ID,ART_ID,GA_ID)
+link_typ_str_ga_sup - почти тоже самое. сейчас не используется.
+mfa_manufacturers - список марок машин (MFA_ID)
+mod_model - список моделей (MOD_ID)
+str_search_tree - товарное дерево (STR_ID)
+typ_engines - список двигателей к типам автомобилей (TYP_ID)
+typ_str_art_details - связка типов машин, товарного дерева и артикулов (TYP_ID, STR_ID, ART_ID)
+typ_types - список типов автомобилей
+
+Если какие-либо поля будут непонятны, рекомендую посмотреть текстовое описание.
+
+CREATE VIEW dbo.v_art_ean_numbers
+AS
+SELECT     '' AS EAN_ART_ID, '' AS EAN_EAN
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+CREATE VIEW dbo.v_art_lookup
+AS
+SELECT     dbo.TECDOC_TOF_ART_LOOKUP.ARL_ART_ID, dbo.TECDOC_TOF_ART_LOOKUP.ARL_KIND, dbo.TECDOC_TOF_BRANDS.BRA_BRAND, 
+                      dbo.TECDOC_TOF_ART_LOOKUP.ARL_DISPLAY_NR
+FROM         dbo.TECDOC_TOF_ART_LOOKUP LEFT OUTER JOIN
+                      dbo.TECDOC_TOF_BRANDS ON dbo.TECDOC_TOF_ART_LOOKUP.ARL_BRA_ID = dbo.TECDOC_TOF_BRANDS.BRA_ID
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+CREATE VIEW dbo.	_texts
+WITH SCHEMABINDING 
+AS
+SELECT     dbo.TECDOC_TOF_COUNTRY_DESIGNATIONS.CDS_ID, MAX(DISTINCT dbo.TECDOC_TOF_DES_TEXTS.TEX_TEXT) AS TEX_TEXT
+FROM         dbo.TECDOC_TOF_DES_TEXTS INNER JOIN
+                      dbo.TECDOC_TOF_COUNTRY_DESIGNATIONS ON 
+                      dbo.TECDOC_TOF_DES_TEXTS.TEX_ID = dbo.TECDOC_TOF_COUNTRY_DESIGNATIONS.CDS_TEX_ID
+WHERE     (dbo.TECDOC_TOF_COUNTRY_DESIGNATIONS.CDS_LNG_ID = 16) OR
+                      (dbo.TECDOC_TOF_COUNTRY_DESIGNATIONS.CDS_LNG_ID = 255)
+GROUP BY dbo.TECDOC_TOF_COUNTRY_DESIGNATIONS.CDS_ID
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+
+CREATE VIEW dbo.v_des_texts
+WITH SCHEMABINDING 
+AS
+SELECT     dbo.TECDOC_TOF_DESIGNATIONS.DES_ID, MAX(DISTINCT dbo.TECDOC_TOF_DES_TEXTS.TEX_TEXT) AS TEX_TEXT
+FROM         dbo.TECDOC_TOF_DESIGNATIONS INNER JOIN
+                      dbo.TECDOC_TOF_DES_TEXTS ON dbo.TECDOC_TOF_DESIGNATIONS.DES_TEX_ID = dbo.TECDOC_TOF_DES_TEXTS.TEX_ID
+WHERE     (dbo.TECDOC_TOF_DESIGNATIONS.DES_LNG_ID = 16) OR
+                      (dbo.TECDOC_TOF_DESIGNATIONS.DES_LNG_ID = 255)
+GROUP BY dbo.TECDOC_TOF_DESIGNATIONS.DES_ID
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE VIEW dbo.v_grd_data
+AS
+SELECT     GRD_ID, GRD_GRAPHIC
+FROM         dbo.TECDOC_TOF_GRA_DATA
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+CREATE VIEW dbo.v_mfa_manufacturers
+AS
+SELECT     TOP 100 PERCENT dbo.TECDOC_TOF_MANUFACTURERS.MFA_ID, dbo.v_cds_texts.TEX_TEXT, dbo.TECDOC_TOF_MANUFACTURERS.MFA_PC_MFC, 
+                      dbo.TECDOC_TOF_MANUFACTURERS.MFA_CV_MFC, dbo.TECDOC_TOF_MANUFACTURERS.MFA_AXL_MFC, 
+                      dbo.TECDOC_TOF_MANUFACTURERS.MFA_ENG_MFC, dbo.TECDOC_TOF_MANUFACTURERS.MFA_ENG_TYP, 
+                      dbo.TECDOC_TOF_MANUFACTURERS.MFA_MFC_CODE, dbo.TECDOC_TOF_MANUFACTURERS.MFA_BRAND, 
+                      dbo.TECDOC_TOF_MANUFACTURERS.MFA_MF_NR
+FROM         dbo.TECDOC_TOF_MANUFACTURERS LEFT OUTER JOIN
+                      dbo.v_cds_texts ON dbo.TECDOC_TOF_MANUFACTURERS.MFA_CDS_ID = dbo.v_cds_texts.CDS_ID
+ORDER BY dbo.TECDOC_TOF_MANUFACTURERS.MFA_BRAND
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+CREATE VIEW dbo.v_mod_models
+ 
+AS
+SELECT     dbo.TECDOC_TOF_MODELS.MOD_ID, dbo.TECDOC_TOF_MODELS.MOD_MFA_ID, dbo.v_cds_texts.TEX_TEXT, 
+                      dbo.TECDOC_TOF_MODELS.MOD_SORT, dbo.TECDOC_TOF_MODELS.MOD_PCON_START, dbo.TECDOC_TOF_MODELS.MOD_PCON_END, 
+                      dbo.TECDOC_TOF_MODELS.MOD_PC, dbo.TECDOC_TOF_MODELS.MOD_CV, dbo.TECDOC_TOF_MODELS.MOD_AXL
+FROM         dbo.TECDOC_TOF_MODELS LEFT OUTER JOIN
+                      dbo.v_cds_texts ON dbo.TECDOC_TOF_MODELS.MOD_CDS_ID = dbo.v_cds_texts.CDS_ID
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+CREATE VIEW dbo.v_typ_engines
+AS
+SELECT     dbo.TECDOC_TOF_LINK_TYP_ENG.LTE_TYP_ID, dbo.TECDOC_TOF_LINK_TYP_ENG.LTE_NR, 
+                      dbo.v_cds_texts.TEX_TEXT AS ENG_MFA_TEXT, dbo.TECDOC_TOF_ENGINES.ENG_CODE, 
+                      dbo.TECDOC_TOF_LINK_TYP_ENG.LTE_PCON_START, dbo.TECDOC_TOF_LINK_TYP_ENG.LTE_PCON_END
+FROM         dbo.TECDOC_TOF_LINK_TYP_ENG INNER JOIN
+                      dbo.TECDOC_TOF_ENGINES ON dbo.TECDOC_TOF_LINK_TYP_ENG.LTE_ENG_ID = dbo.TECDOC_TOF_ENGINES.ENG_ID INNER JOIN
+                      dbo.TECDOC_TOF_MANUFACTURERS ON dbo.TECDOC_TOF_ENGINES.ENG_MFA_ID = dbo.TECDOC_TOF_MANUFACTURERS.MFA_ID INNER JOIN
+                      dbo.v_cds_texts ON dbo.TECDOC_TOF_MANUFACTURERS.MFA_CDS_ID = dbo.v_cds_texts.CDS_ID
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE VIEW dbo.v_art_article_criteria
+AS
+SELECT DISTINCT 
+                      dbo.TECDOC_TOF_ARTICLE_CRITERIA.ACR_ART_ID, dbo.TECDOC_TOF_ARTICLE_CRITERIA.ACR_SORT, v_des_texts_2.TEX_TEXT AS CRI_TEXT, 
+                      v_des_texts_1.TEX_TEXT AS CRI_SHORT_TEXT, v_des_texts_3.TEX_TEXT AS CRI_UNIT_TEXT, dbo.TECDOC_TOF_CRITERIA.CRI_TYPE, 
+                      dbo.TECDOC_TOF_CRITERIA.CRI_KT_ID, dbo.TECDOC_TOF_CRITERIA.CRI_IS_INTERVAL, dbo.TECDOC_TOF_CRITERIA.CRI_SUCCESSOR, 
+                      dbo.TECDOC_TOF_ARTICLE_CRITERIA.ACR_VALUE, dbo.v_des_texts.TEX_TEXT AS ACR_KV_TEXT, 
+                      dbo.TECDOC_TOF_ARTICLE_CRITERIA.ACR_DISPLAY
+FROM         dbo.v_des_texts RIGHT OUTER JOIN
+                      dbo.TECDOC_TOF_ARTICLE_CRITERIA INNER JOIN
+                      dbo.TECDOC_TOF_CRITERIA ON dbo.TECDOC_TOF_ARTICLE_CRITERIA.ACR_CRI_ID = dbo.TECDOC_TOF_CRITERIA.CRI_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_3 ON dbo.TECDOC_TOF_CRITERIA.CRI_UNIT_DES_ID = v_des_texts_3.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_1 ON dbo.TECDOC_TOF_CRITERIA.CRI_SHORT_DES_ID = v_des_texts_1.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_2 ON dbo.TECDOC_TOF_CRITERIA.CRI_DES_ID = v_des_texts_2.DES_ID ON 
+                      dbo.v_des_texts.DES_ID = dbo.TECDOC_TOF_ARTICLE_CRITERIA.ACR_KV_DES_ID
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE VIEW dbo.v_art_articles
+WITH SCHEMABINDING 
+AS
+SELECT     dbo.TECDOC_TOF_ARTICLES.ART_ID, dbo.TECDOC_TOF_ARTICLES.ART_ARTICLE_NR, dbo.TECDOC_TOF_SUPPLIERS.SUP_BRAND, 
+                      dbo.v_des_texts.TEX_TEXT AS ART_TEXT, v_des_texts_1.TEX_TEXT AS ART_COMPLETE_TEXT, 
+                      dbo.TECDOC_TOF_ARTICLES.ART_PACK_SELFSERVICE, dbo.TECDOC_TOF_ARTICLES.ART_MATERIAL_MARK, 
+                      dbo.TECDOC_TOF_ARTICLES.ART_REPLACEMENT, dbo.TECDOC_TOF_ARTICLES.ART_ACCESSORY, dbo.TECDOC_TOF_ARTICLES.ART_BATCH_SIZE1, 
+                      dbo.TECDOC_TOF_ARTICLES.ART_BATCH_SIZE2
+FROM         dbo.TECDOC_TOF_ARTICLES LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_1 ON dbo.TECDOC_TOF_ARTICLES.ART_COMPLETE_DES_ID = v_des_texts_1.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts ON dbo.TECDOC_TOF_ARTICLES.ART_DES_ID = dbo.v_des_texts.DES_ID LEFT OUTER JOIN
+                      dbo.TECDOC_TOF_SUPPLIERS ON dbo.TECDOC_TOF_ARTICLES.ART_SUP_ID = dbo.TECDOC_TOF_SUPPLIERS.SUP_ID
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+CREATE VIEW dbo.v_art_graphics
+AS
+SELECT     TECDOC_TOF_LINK_GRA_ART.LGA_ART_ID, TECDOC_TOF_LINK_GRA_ART.LGA_SORT, TECDOC_TOF_SUPPLIERS.SUP_BRAND, 
+                      TECDOC_TOF_DOC_TYPES.DOC_EXTENSION, TECDOC_TOF_GRAPHICS.GRA_LNG_ID, TECDOC_TOF_GRAPHICS.GRA_TYPE, 
+                      TECDOC_TOF_GRAPHICS.GRA_NORM, TECDOC_TOF_GRAPHICS.GRA_TAB_NR, v_des_texts.TEX_TEXT AS GRA_DESIGNATION, 
+                      TECDOC_TOF_GRA_DATA.GRD_ID, TECDOC_TOF_GRA_DATA.GRD_GRAPHIC
+FROM         TECDOC_TOF_LINK_GRA_ART INNER JOIN
+                      TECDOC_TOF_GRAPHICS ON TECDOC_TOF_LINK_GRA_ART.LGA_GRA_ID = TECDOC_TOF_GRAPHICS.GRA_ID INNER JOIN
+                      TECDOC_TOF_SUPPLIERS ON TECDOC_TOF_GRAPHICS.GRA_SUP_ID = TECDOC_TOF_SUPPLIERS.SUP_ID INNER JOIN
+                      TECDOC_TOF_DOC_TYPES ON TECDOC_TOF_GRAPHICS.GRA_DOC_TYPE = TECDOC_TOF_DOC_TYPES.DOC_TYPE INNER JOIN
+                      TECDOC_TOF_GRA_DATA ON TECDOC_TOF_GRAPHICS.GRA_GRD_ID = TECDOC_TOF_GRA_DATA.GRD_ID LEFT OUTER JOIN
+                      v_des_texts ON TECDOC_TOF_GRAPHICS.GRA_DES_ID = v_des_texts.DES_ID
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+CREATE VIEW dbo.v_ga_generic_articles
+AS
+SELECT     dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_ID, dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_NR, dbo.v_des_texts.TEX_TEXT AS GA_TEXT, 
+                      v_des_texts_1.TEX_TEXT AS GA_STANDART_TEXT, v_des_texts_2.TEX_TEXT AS GA_ASSEMBLY_TEXT, 
+                      v_des_texts_3.TEX_TEXT AS GA_INTENDED_TEXT, dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_UNIVERSAL
+FROM         dbo.TECDOC_TOF_GENERIC_ARTICLES LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_3 ON dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_DES_ID_INTENDED = v_des_texts_3.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_2 ON dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_DES_ID_ASSEMBLY = v_des_texts_2.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_1 ON dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_DES_ID_STANDARD = v_des_texts_1.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts ON dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_DES_ID = dbo.v_des_texts.DES_ID
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+CREATE VIEW dbo.v_link_typ_str
+WITH SCHEMABINDING
+AS
+SELECT DISTINCT 
+                      dbo.TECDOC_TOF_LINK_LA_TYP.LAT_TYP_ID, dbo.TECDOC_TOF_SEARCH_TREE.STR_ID, dbo.TECDOC_TOF_SEARCH_TREE.STR_ID_PARENT, 
+                      dbo.TECDOC_TOF_SEARCH_TREE.STR_TYPE, dbo.TECDOC_TOF_SEARCH_TREE.STR_LEVEL, dbo.v_des_texts.TEX_TEXT AS STR_TEXT, 
+                      dbo.TECDOC_TOF_SEARCH_TREE.STR_SORT, dbo.TECDOC_TOF_SEARCH_TREE.STR_NODE_NR
+FROM         dbo.TECDOC_TOF_LINK_LA_TYP INNER JOIN
+                      dbo.TECDOC_TOF_LINK_GA_STR ON dbo.TECDOC_TOF_LINK_LA_TYP.LAT_GA_ID = dbo.TECDOC_TOF_LINK_GA_STR.LGS_GA_ID INNER JOIN
+                      dbo.TECDOC_TOF_SEARCH_TREE ON dbo.TECDOC_TOF_LINK_GA_STR.LGS_STR_ID = dbo.TECDOC_TOF_SEARCH_TREE.STR_ID INNER JOIN
+                      dbo.v_des_texts ON dbo.TECDOC_TOF_SEARCH_TREE.STR_DES_ID = dbo.v_des_texts.DES_ID
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE VIEW dbo.v_link_typ_str_art_ga
+WITH SCHEMABINDING 
+AS
+SELECT DISTINCT 
+                      dbo.TECDOC_TOF_LINK_LA_TYP.LAT_TYP_ID, dbo.TECDOC_TOF_LINK_GA_STR.LGS_STR_ID, dbo.TECDOC_TOF_LINK_ART.LA_ART_ID, 
+                      dbo.TECDOC_TOF_LINK_ART.LA_GA_ID, dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_NR, dbo.v_des_texts.TEX_TEXT AS GA_TEXT, 
+                      v_des_texts_1.TEX_TEXT AS GA_STANDART_TEXT, v_des_texts_2.TEX_TEXT AS GA_ASSEMBLY_TEXT, 
+                      v_des_texts_3.TEX_TEXT AS GA_INTENDED_TEXT, dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_UNIVERSAL, 
+                      dbo.TECDOC_TOF_ARTICLES.ART_ARTICLE_NR, dbo.TECDOC_TOF_SUPPLIERS.SUP_BRAND, v_des_texts_4.TEX_TEXT AS ART_TEXT, 
+                      v_des_texts_5.TEX_TEXT AS ART_COMPLETE_TEXT, dbo.TECDOC_TOF_ARTICLES.ART_PACK_SELFSERVICE, 
+                      dbo.TECDOC_TOF_ARTICLES.ART_MATERIAL_MARK, dbo.TECDOC_TOF_ARTICLES.ART_REPLACEMENT, 
+                      dbo.TECDOC_TOF_ARTICLES.ART_ACCESSORY, dbo.TECDOC_TOF_ARTICLES.ART_BATCH_SIZE1, 
+                      dbo.TECDOC_TOF_ARTICLES.ART_BATCH_SIZE2
+FROM         dbo.TECDOC_TOF_LINK_LA_TYP INNER JOIN
+                      dbo.TECDOC_TOF_LINK_GA_STR ON dbo.TECDOC_TOF_LINK_LA_TYP.LAT_GA_ID = dbo.TECDOC_TOF_LINK_GA_STR.LGS_GA_ID INNER JOIN
+                      dbo.TECDOC_TOF_LINK_ART ON dbo.TECDOC_TOF_LINK_LA_TYP.LAT_LA_ID = dbo.TECDOC_TOF_LINK_ART.LA_ID INNER JOIN
+                      dbo.TECDOC_TOF_ARTICLES ON dbo.TECDOC_TOF_LINK_ART.LA_ART_ID = dbo.TECDOC_TOF_ARTICLES.ART_ID INNER JOIN
+                      dbo.TECDOC_TOF_GENERIC_ARTICLES ON dbo.TECDOC_TOF_LINK_ART.LA_GA_ID = dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_ID INNER JOIN
+                      dbo.TECDOC_TOF_SUPPLIERS ON dbo.TECDOC_TOF_ARTICLES.ART_SUP_ID = dbo.TECDOC_TOF_SUPPLIERS.SUP_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_5 ON dbo.TECDOC_TOF_ARTICLES.ART_COMPLETE_DES_ID = v_des_texts_5.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_4 ON dbo.TECDOC_TOF_ARTICLES.ART_DES_ID = v_des_texts_4.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts ON dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_DES_ID = dbo.v_des_texts.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_1 ON dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_DES_ID_STANDARD = v_des_texts_1.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_2 ON dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_DES_ID_ASSEMBLY = v_des_texts_2.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_3 ON dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_DES_ID_INTENDED = v_des_texts_3.DES_ID
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+CREATE VIEW dbo.v_link_typ_str_ga_sup
+AS
+SELECT     dbo.TECDOC_TOF_LINK_LA_TYP.LAT_TYP_ID, dbo.TECDOC_TOF_LINK_LA_TYP.LAT_LA_ID, dbo.TECDOC_TOF_LINK_LA_TYP.LAT_SUP_ID, 
+                      dbo.TECDOC_TOF_LINK_GA_STR.LGS_STR_ID, dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_ID, dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_NR, 
+                      dbo.v_des_texts.TEX_TEXT AS GA_TEXT, v_des_texts_1.TEX_TEXT AS GA_STANDART_TEXT, v_des_texts_2.TEX_TEXT AS GA_ASSEMBLY_TEXT, 
+                      v_des_texts_3.TEX_TEXT AS GA_INTENDED_TEXT, dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_UNIVERSAL, 
+                      dbo.TECDOC_TOF_SUPPLIERS.SUP_BRAND, dbo.TECDOC_TOF_LINK_LA_TYP.LAT_SORT
+FROM         dbo.v_des_texts RIGHT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_1 RIGHT OUTER JOIN
+                      dbo.TECDOC_TOF_LINK_LA_TYP INNER JOIN
+                      dbo.TECDOC_TOF_LINK_GA_STR ON dbo.TECDOC_TOF_LINK_LA_TYP.LAT_GA_ID = dbo.TECDOC_TOF_LINK_GA_STR.LGS_GA_ID INNER JOIN
+                      dbo.TECDOC_TOF_SUPPLIERS ON dbo.TECDOC_TOF_LINK_LA_TYP.LAT_SUP_ID = dbo.TECDOC_TOF_SUPPLIERS.SUP_ID INNER JOIN
+                      dbo.TECDOC_TOF_GENERIC_ARTICLES ON 
+                      dbo.TECDOC_TOF_LINK_LA_TYP.LAT_GA_ID = dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_3 ON dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_DES_ID_INTENDED = v_des_texts_3.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_2 ON dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_DES_ID_ASSEMBLY = v_des_texts_2.DES_ID ON 
+                      v_des_texts_1.DES_ID = dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_DES_ID_STANDARD ON 
+                      dbo.v_des_texts.DES_ID = dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_DES_ID
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+CREATE VIEW dbo.v_str_search_tree
+AS
+SELECT     dbo.TECDOC_TOF_SEARCH_TREE.STR_ID, dbo.TECDOC_TOF_SEARCH_TREE.STR_ID_PARENT, dbo.TECDOC_TOF_SEARCH_TREE.STR_TYPE, 
+                      dbo.TECDOC_TOF_SEARCH_TREE.STR_LEVEL, dbo.v_des_texts.TEX_TEXT AS STR_TEXT, dbo.TECDOC_TOF_SEARCH_TREE.STR_SORT, 
+                      dbo.TECDOC_TOF_SEARCH_TREE.STR_NODE_NR
+FROM         dbo.TECDOC_TOF_SEARCH_TREE INNER JOIN
+                      dbo.v_des_texts ON dbo.TECDOC_TOF_SEARCH_TREE.STR_DES_ID = dbo.v_des_texts.DES_ID
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE VIEW dbo.v_typ_str_sup_ga_art
+AS
+SELECT     dbo.TECDOC_TOF_LINK_LA_TYP.LAT_TYP_ID, dbo.TECDOC_TOF_LINK_LA_TYP.LAT_SUP_ID, dbo.TECDOC_TOF_LINK_LA_TYP.LAT_GA_ID, 
+                      dbo.TECDOC_TOF_LINK_GA_STR.LGS_STR_ID, dbo.TECDOC_TOF_LINK_ART.LA_ART_ID, dbo.TECDOC_TOF_ARTICLES.ART_ARTICLE_NR, 
+                      dbo.TECDOC_TOF_SUPPLIERS.SUP_BRAND, v_des_texts_4.TEX_TEXT AS ART_TEXT, v_des_texts_5.TEX_TEXT AS ART_COMPLETE_TEXT, 
+                      dbo.TECDOC_TOF_ARTICLES.ART_PACK_SELFSERVICE, dbo.TECDOC_TOF_ARTICLES.ART_MATERIAL_MARK, 
+                      dbo.TECDOC_TOF_ARTICLES.ART_REPLACEMENT, dbo.TECDOC_TOF_ARTICLES.ART_ACCESSORY, dbo.TECDOC_TOF_ARTICLES.ART_BATCH_SIZE1, 
+                      dbo.TECDOC_TOF_ARTICLES.ART_BATCH_SIZE2, dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_NR, dbo.v_des_texts.TEX_TEXT AS GA_TEXT, 
+                      v_des_texts_1.TEX_TEXT AS GA_STANDART_TEXT, v_des_texts_2.TEX_TEXT AS GA_ASSEMBLY_TEXT, 
+                      v_des_texts_3.TEX_TEXT AS GA_INTENDED_TEXT, dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_UNIVERSAL
+FROM         dbo.v_des_texts INNER JOIN
+                      dbo.v_des_texts v_des_texts_5 ON dbo.v_des_texts.DES_ID = v_des_texts_5.DES_ID RIGHT OUTER JOIN
+                      dbo.TECDOC_TOF_LINK_ART INNER JOIN
+                      dbo.TECDOC_TOF_ARTICLES ON dbo.TECDOC_TOF_LINK_ART.LA_ART_ID = dbo.TECDOC_TOF_ARTICLES.ART_ID INNER JOIN
+                      dbo.TECDOC_TOF_SUPPLIERS ON dbo.TECDOC_TOF_ARTICLES.ART_SUP_ID = dbo.TECDOC_TOF_SUPPLIERS.SUP_ID INNER JOIN
+                      dbo.TECDOC_TOF_LINK_LA_TYP ON dbo.TECDOC_TOF_LINK_ART.LA_ID = dbo.TECDOC_TOF_LINK_LA_TYP.LAT_LA_ID INNER JOIN
+                      dbo.TECDOC_TOF_GENERIC_ARTICLES ON dbo.TECDOC_TOF_LINK_LA_TYP.LAT_GA_ID = dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_ID INNER JOIN
+                      dbo.TECDOC_TOF_LINK_GA_STR ON dbo.TECDOC_TOF_LINK_LA_TYP.LAT_GA_ID = dbo.TECDOC_TOF_LINK_GA_STR.LGS_GA_ID ON 
+                      v_des_texts_5.DES_ID = dbo.TECDOC_TOF_ARTICLES.ART_COMPLETE_DES_ID AND 
+                      dbo.v_des_texts.DES_ID = dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_4 ON dbo.TECDOC_TOF_ARTICLES.ART_DES_ID = v_des_texts_4.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_3 ON dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_DES_ID_INTENDED = v_des_texts_3.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_2 ON dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_DES_ID_ASSEMBLY = v_des_texts_2.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_1 ON dbo.TECDOC_TOF_GENERIC_ARTICLES.GA_DES_ID_STANDARD = v_des_texts_1.DES_ID
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+CREATE VIEW dbo.v_typ_types
+AS
+SELECT     dbo.TECDOC_TOF_TYPES.TYP_ID, dbo.v_cds_texts.TEX_TEXT AS TYP_TEXT, v_cds_texts_1.TEX_TEXT AS TYP_MMT_TEXT, 
+                      dbo.TECDOC_TOF_TYPES.TYP_MOD_ID, dbo.TECDOC_TOF_MODELS.MOD_PC, dbo.TECDOC_TOF_MODELS.MOD_CV, 
+                      dbo.TECDOC_TOF_TYPES.TYP_SORT, dbo.TECDOC_TOF_TYPES.TYP_PCON_START, dbo.TECDOC_TOF_TYPES.TYP_PCON_END, 
+                      dbo.TECDOC_TOF_TYPES.TYP_KW_FROM, dbo.TECDOC_TOF_TYPES.TYP_KW_UPTO, dbo.TECDOC_TOF_TYPES.TYP_HP_FROM, 
+                      dbo.TECDOC_TOF_TYPES.TYP_HP_UPTO, dbo.TECDOC_TOF_TYPES.TYP_CCM, dbo.TECDOC_TOF_TYPES.TYP_CYLINDERS, 
+                      dbo.TECDOC_TOF_TYPES.TYP_DOORS, dbo.TECDOC_TOF_TYPES.TYP_TANK, v_des_texts_1.TEX_TEXT AS KV_ABS_TEXT, 
+                      v_des_texts_2.TEX_TEXT AS KV_ASR_TEXT, v_des_texts_3.TEX_TEXT AS KV_ENGINE_TEXT, v_des_texts_7.TEX_TEXT AS KV_BRAKE_TYPE_TEXT, 
+                      v_des_texts_8.TEX_TEXT AS KV_BRAKE_SYST_TEXT, v_des_texts_9.TEX_TEXT AS KV_FUEL_TEXT, 
+                      v_des_texts_10.TEX_TEXT AS KV_CATALYST_TEXT, v_des_texts_11.TEX_TEXT AS KV_BODY_TEXT, 
+                      v_des_texts_12.TEX_TEXT AS KV_STEERING_TEXT, v_des_texts_4.TEX_TEXT AS KV_STEERING_SIDE_TEXT, 
+                      dbo.TECDOC_TOF_TYPES.TYP_MAX_WEIGHT, v_des_texts_5.TEX_TEXT AS KV_MODEL_TEXT, v_des_texts_6.TEX_TEXT AS KV_AXLE_TEXT, 
+                      dbo.TECDOC_TOF_TYPES.TYP_CCM_TAX, dbo.TECDOC_TOF_TYPES.TYP_LITRES, v_des_texts_13.TEX_TEXT AS KV_DRIVE_TEXT, 
+                      v_des_texts_14.TEX_TEXT AS KV_TRANS_TEXT, v_des_texts_15.TEX_TEXT AS KV_FUEL_SUPPLY_TEXT, dbo.TECDOC_TOF_TYPES.TYP_VALVES, 
+                      dbo.TECDOC_TOF_TYPES.TYP_RT_EXISTS
+FROM         dbo.TECDOC_TOF_TYPES INNER JOIN
+                      dbo.TECDOC_TOF_MODELS ON dbo.TECDOC_TOF_TYPES.TYP_MOD_ID = dbo.TECDOC_TOF_MODELS.MOD_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_15 ON dbo.TECDOC_TOF_TYPES.TYP_KV_FUEL_SUPPLY_DES_ID = v_des_texts_15.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_14 ON dbo.TECDOC_TOF_TYPES.TYP_KV_TRANS_DES_ID = v_des_texts_14.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_13 ON dbo.TECDOC_TOF_TYPES.TYP_KV_DRIVE_DES_ID = v_des_texts_13.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_6 ON dbo.TECDOC_TOF_TYPES.TYP_KV_AXLE_DES_ID = v_des_texts_6.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_5 ON dbo.TECDOC_TOF_TYPES.TYP_KV_MODEL_DES_ID = v_des_texts_5.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_4 ON dbo.TECDOC_TOF_TYPES.TYP_KV_STEERING_SIDE_DES_ID = v_des_texts_4.DES_ID LEFT OUTER JOIN
+                      dbo.v_cds_texts ON dbo.TECDOC_TOF_TYPES.TYP_CDS_ID = dbo.v_cds_texts.CDS_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_12 ON dbo.TECDOC_TOF_TYPES.TYP_KV_STEERING_DES_ID = v_des_texts_12.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_11 ON dbo.TECDOC_TOF_TYPES.TYP_KV_BODY_DES_ID = v_des_texts_11.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_10 ON dbo.TECDOC_TOF_TYPES.TYP_KV_CATALYST_DES_ID = v_des_texts_10.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_9 ON dbo.TECDOC_TOF_TYPES.TYP_KV_FUEL_DES_ID = v_des_texts_9.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_8 ON dbo.TECDOC_TOF_TYPES.TYP_KV_BRAKE_SYST_DES_ID = v_des_texts_8.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_7 ON dbo.TECDOC_TOF_TYPES.TYP_KV_BRAKE_TYPE_DES_ID = v_des_texts_7.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_3 ON dbo.TECDOC_TOF_TYPES.TYP_KV_ENGINE_DES_ID = v_des_texts_3.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_2 ON dbo.TECDOC_TOF_TYPES.TYP_KV_ASR_DES_ID = v_des_texts_2.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts v_des_texts_1 ON dbo.TECDOC_TOF_TYPES.TYP_KV_ABS_DES_ID = v_des_texts_1.DES_ID LEFT OUTER JOIN
+                      dbo.v_des_texts ON dbo.TECDOC_TOF_TYPES.TYP_KV_VOLTAGE_DES_ID = dbo.v_des_texts.DES_ID LEFT OUTER JOIN
+                      dbo.v_cds_texts v_cds_texts_1 ON dbo.TECDOC_TOF_TYPES.TYP_MMT_CDS_ID = v_cds_texts_1.CDS_ID
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE VIEW dbo.v_art_typ
+AS
+SELECT DISTINCT 
+                      dbo.TECDOC_TOF_LINK_ART.LA_ART_ID, dbo.v_typ_types.TYP_ID, dbo.v_typ_types.TYP_TEXT, dbo.v_typ_types.TYP_MMT_TEXT, 
+                      dbo.v_typ_types.TYP_MOD_ID, dbo.v_typ_types.MOD_PC, dbo.v_typ_types.MOD_CV, dbo.v_typ_types.TYP_SORT, 
+                      dbo.v_typ_types.TYP_PCON_START, dbo.v_typ_types.TYP_PCON_END, dbo.v_typ_types.TYP_KW_FROM, dbo.v_typ_types.TYP_KW_UPTO, 
+                      dbo.v_typ_types.TYP_HP_FROM, dbo.v_typ_types.TYP_HP_UPTO, dbo.v_typ_types.TYP_CCM, dbo.v_typ_types.TYP_CYLINDERS, 
+                      dbo.v_typ_types.TYP_DOORS, dbo.v_typ_types.TYP_TANK, dbo.v_typ_types.KV_ABS_TEXT, dbo.v_typ_types.KV_ASR_TEXT, 
+                      dbo.v_typ_types.KV_ENGINE_TEXT, dbo.v_typ_types.KV_BRAKE_TYPE_TEXT, dbo.v_typ_types.KV_BRAKE_SYST_TEXT, 
+                      dbo.v_typ_types.KV_FUEL_TEXT, dbo.v_typ_types.KV_CATALYST_TEXT, dbo.v_typ_types.KV_BODY_TEXT, dbo.v_typ_types.KV_STEERING_TEXT, 
+                      dbo.v_typ_types.KV_STEERING_SIDE_TEXT, dbo.v_typ_types.TYP_MAX_WEIGHT, dbo.v_typ_types.KV_MODEL_TEXT, 
+                      dbo.v_typ_types.KV_AXLE_TEXT, dbo.v_typ_types.TYP_CCM_TAX, dbo.v_typ_types.TYP_LITRES, dbo.v_typ_types.KV_DRIVE_TEXT, 
+                      dbo.v_typ_types.KV_TRANS_TEXT, dbo.v_typ_types.KV_FUEL_SUPPLY_TEXT, dbo.v_typ_types.TYP_VALVES, 
+                      dbo.v_typ_types.TYP_RT_EXISTS
+FROM         dbo.TECDOC_TOF_LINK_LA_TYP INNER JOIN
+                      dbo.TECDOC_TOF_LINK_ART ON dbo.TECDOC_TOF_LINK_LA_TYP.LAT_LA_ID = dbo.TECDOC_TOF_LINK_ART.LA_ID INNER JOIN
+                      dbo.v_typ_types ON dbo.TECDOC_TOF_LINK_LA_TYP.LAT_TYP_ID = dbo.v_typ_types.TYP_ID
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+CREATE VIEW dbo.v_typ_str_art_details
+AS
+SELECT     dbo.v_link_typ_str_art_ga.LAT_TYP_ID, dbo.v_link_typ_str_art_ga.LGS_STR_ID, dbo.v_art_articles.ART_ARTICLE_NR, 
+                      dbo.v_art_articles.SUP_BRAND, dbo.v_art_articles.ART_TEXT, dbo.v_art_articles.ART_COMPLETE_TEXT, 
+                      dbo.v_art_articles.ART_PACK_SELFSERVICE, dbo.v_art_articles.ART_MATERIAL_MARK, dbo.v_art_articles.ART_REPLACEMENT, 
+                      dbo.v_art_articles.ART_ACCESSORY, dbo.v_art_articles.ART_BATCH_SIZE1, dbo.v_art_articles.ART_BATCH_SIZE2, 
+                      dbo.v_ga_generic_articles.GA_NR, dbo.v_ga_generic_articles.GA_TEXT, dbo.v_ga_generic_articles.GA_STANDART_TEXT, 
+                      dbo.v_ga_generic_articles.GA_ASSEMBLY_TEXT, dbo.v_ga_generic_articles.GA_INTENDED_TEXT, dbo.v_ga_generic_articles.GA_UNIVERSAL
+FROM         dbo.v_link_typ_str_art_ga INNER JOIN
+                      dbo.v_art_articles ON dbo.v_link_typ_str_art_ga.LA_ART_ID = dbo.v_art_articles.ART_ID INNER JOIN
+                      dbo.v_ga_generic_articles ON dbo.v_link_typ_str_art_ga.LA_GA_ID = dbo.v_ga_generic_articles.GA_ID
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+отдельно отмечу запрос на получение кроссов (аналогов):
+
+SELECT     TECDOC_TOF_ARTICLES.ART_ARTICLE_NR, TECDOC_TOF_SUPPLIERS.SUP_BRAND, TECDOC_TOF_ART_LOOKUP.ARL_SEARCH_NUMBER, 
+                      TECDOC_TOF_BRANDS.BRA_BRAND, TECDOC_TOF_ART_LOOKUP.ARL_KIND
+FROM         TECDOC_TOF_BRANDS RIGHT OUTER JOIN
+                      TECDOC_TOF_SUPPLIERS INNER JOIN
+                      TECDOC_TOF_ARTICLES ON TECDOC_TOF_SUPPLIERS.SUP_ID = TECDOC_TOF_ARTICLES.ART_SUP_ID INNER JOIN
+                      TECDOC_TOF_ART_LOOKUP ON TECDOC_TOF_ARTICLES.ART_ID = TECDOC_TOF_ART_LOOKUP.ARL_ART_ID ON 
+                      TECDOC_TOF_BRANDS.BRA_ID = TECDOC_TOF_ART_LOOKUP.ARL_BRA_ID
