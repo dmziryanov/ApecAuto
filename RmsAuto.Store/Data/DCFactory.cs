@@ -31,7 +31,7 @@ namespace RmsAuto.Store.Data
     }
 
 
-    public class DCWrappersFactory<T> : IDisposable where T : DataContext, new()
+    public class DCFactory<T> : IDisposable where T : DataContext, new()
     {
         private bool _openConnection = true; //параметр указывающий нужно ли открывать коннекцию в фабрике или это будет сделано явно вне ее
         private T _dataContext;
@@ -40,7 +40,7 @@ namespace RmsAuto.Store.Data
         private bool _commit;
         private string _internalFranchName;
 
-        public DCWrappersFactory()
+        public DCFactory()
             : this(IsolationLevel.ReadUncommitted, true, null, true)
         {
             //отсюда вызывается перегрузка конструктора с параметрами
@@ -48,7 +48,7 @@ namespace RmsAuto.Store.Data
 
         private static bool isCallingAssemblyAdm = false;
 
-        static DCWrappersFactory()
+        static DCFactory()
         {
             StackTrace st = new StackTrace(true);
 
@@ -59,13 +59,13 @@ namespace RmsAuto.Store.Data
             }
         }
 
-        public DCWrappersFactory(bool pOpenConnection)
+        public DCFactory(bool pOpenConnection)
             : this(IsolationLevel.ReadUncommitted, true, null, pOpenConnection)
         {
             _openConnection = pOpenConnection;
         }
 
-        public DCWrappersFactory(string pInternalFranchName)
+        public DCFactory(string pInternalFranchName)
             : this(IsolationLevel.ReadUncommitted, true, pInternalFranchName, true)
         {
         }
@@ -73,7 +73,7 @@ namespace RmsAuto.Store.Data
         public void SetCommit()
         {
             if (_disposed)
-                throw new ObjectDisposedException("DCWrappersFactory");
+                throw new ObjectDisposedException("DCFactory");
 
             _commit = true;
         }
@@ -81,12 +81,12 @@ namespace RmsAuto.Store.Data
         public void SetUnCommit()
         {
             if (_disposed)
-                throw new ObjectDisposedException("DCWrappersFactory");
+                throw new ObjectDisposedException("DCFactory");
 
             _commit = false;
         }
 
-        public DCWrappersFactory(IsolationLevel isolationLevel, bool autoCommit, string pInternalFranchName, bool pOpenConnection)
+        public DCFactory(IsolationLevel isolationLevel, bool autoCommit, string pInternalFranchName, bool pOpenConnection)
         {
             _openConnection = pOpenConnection;
             // тоже самое по сути, но через Reflection
@@ -192,7 +192,7 @@ namespace RmsAuto.Store.Data
             GC.SuppressFinalize(this);
         }
 
-        ~DCWrappersFactory()
+        ~DCFactory()
         {
             Dispose(false);
         }
