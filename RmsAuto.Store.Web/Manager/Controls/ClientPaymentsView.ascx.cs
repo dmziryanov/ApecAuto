@@ -135,7 +135,7 @@ namespace RmsAuto.Store.Web.Manager.Controls
 				};
 
 
-                using (var dc = new DCWrappersFactory<StoreDataContext>())
+                using (var dc = new DCFactory<StoreDataContext>())
                 {
                     if (LightBO.AddUserLightPayment(p, dc) > 0)
                     {

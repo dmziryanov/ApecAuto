@@ -31,7 +31,7 @@ namespace RmsAuto.Store.Cms.Dac
 
 		public static SeoTecDocTextTemplate[] GetTextTemplates()
 		{
-            using (var dc = new DCWrappersFactory<CmsDataContext>())
+            using (var dc = new DCFactory<CmsDataContext>())
 			{
 				return _getSeoTecDocTextTemplates( dc.DataContext ).ToArray();
 			}
@@ -39,7 +39,7 @@ namespace RmsAuto.Store.Cms.Dac
 
 		public static SeoTecDocText GetPageText( string pageUrl )
 		{
-            using (var dc = new DCWrappersFactory<CmsDataContext>())
+            using (var dc = new DCFactory<CmsDataContext>())
 			{
 				dc.DataContext.LoadOptions = _getSeoTecDocTextDlo;
 				dc.DataContext.DeferredLoadingEnabled = false;
@@ -49,7 +49,7 @@ namespace RmsAuto.Store.Cms.Dac
 
 		public static SeoTecDocText AddPageText( string pageUrl, int pageTitleTemplateID, int pageFooterTemplateID )
 		{
-            using (var dc = new DCWrappersFactory<CmsDataContext>())
+            using (var dc = new DCFactory<CmsDataContext>())
 			{
 				SeoTecDocText text = new SeoTecDocText();
 				text.PageUrl = pageUrl;

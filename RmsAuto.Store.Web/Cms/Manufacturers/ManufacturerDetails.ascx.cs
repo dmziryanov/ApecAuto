@@ -28,7 +28,7 @@ namespace RmsAuto.Store.Web.Cms.Manufacturers
 
 		protected void Page_PreRender( object sender, EventArgs e )
 		{
-			using( var dc = new DCWrappersFactory<CmsDataContext>() )
+			using( var dc = new DCFactory<CmsDataContext>() )
 			{
 				Manufacturer man = dc.DataContext.Manufacturers.Where( m => m.UrlCode == ManufacturerUrlCode && m.ShowInCatalog ).SingleOrDefault();
 

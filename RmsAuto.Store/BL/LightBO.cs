@@ -88,7 +88,7 @@ namespace RmsAuto.Store.BL
         {
             get
             {
-                using (var dc = new DCWrappersFactory<StoreDataContext>())
+                using (var dc = new DCFactory<StoreDataContext>())
                 {
                     return dc.DataContext.ExecuteQuery(typeof(decimal?), "select SupplierPriceWithMarkup from dbo.OrderLines where AcctgOrderLineID = {0} ", this.AcctgOrderLineID).OfType<decimal?>().FirstOrDefault();
                 }
@@ -114,7 +114,7 @@ namespace RmsAuto.Store.BL
         /// <param name="items">данные прочитанные из Excel-файла</param>
         public static void InsertOrderLinesNewStatuses(List<TempOLStatuse> items)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 dc.DataContext.TempOLStatuses.InsertAllOnSubmit(items);
                 dc.DataContext.SubmitChanges();
@@ -124,7 +124,7 @@ namespace RmsAuto.Store.BL
 
         public static void FillSupplyPrice<T>(IEnumerable<T> ordlnsdto) where T : ReportString
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>(IsolationLevel.ReadCommitted, true, "rmsauto", false))
+            using (var dc = new DCFactory<StoreDataContext>(IsolationLevel.ReadCommitted, true, "rmsauto", false))
             {
                 //Для Жмеринки сделали исключение
                 if (SiteContext.Current.InternalFranchName == "zhm01") { dc.DataContext.Connection.ConnectionString = dc.DataContext.Connection.ConnectionString.Replace("sqlwebcluster", "1CTest"); }
@@ -178,7 +178,7 @@ namespace RmsAuto.Store.BL
 
         public static int GetStringCount(DateTime bdate, DateTime edate, int CurrentPageSize, int CurrentPageIndex, string UserID, string OrderId, int StatusID)
         {
-            using (var ctx = new DCWrappersFactory<StoreDataContext>())
+            using (var ctx = new DCFactory<StoreDataContext>())
             {
 
                 return ctx.DataContext.ExecuteQuery<int>(@"SELECT count(*) FROM dbo.Orders ord, dbo.OrderLines ordlns, dbo.Users u, dbo.OrderLineStatusChanges ordstsc
@@ -194,7 +194,7 @@ namespace RmsAuto.Store.BL
 
         public static List<ReportString> GetRefId(DateTime bdate, DateTime edate, int CurrentPageSize, int CurrentPageIndex, string sortExpression, string direction, string UserID, string OrderId)
         {
-            using (var ctx = new DCWrappersFactory<StoreDataContext>())
+            using (var ctx = new DCFactory<StoreDataContext>())
             {
                 return ctx.DataContext.ExecuteQuery<ReportString>(@"select * FROM (SELECT Manufacturer, AcctgOrderLineID, SupplierID, ordlns.OrderId, ordlns.Qty*ordlns.UnitPrice as Total, PartNumber, ordlns.Qty FROM dbo.Orders ord, dbo.OrderLines ordlns, dbo.Users u, dbo.OrderLineStatusChanges ordstsc
                                  WHERE ord.ClientID = u.AcctgID and ordlns.OrderID = ord.OrderID and ordstsc.OrderLineID = ordlns.AcctgOrderLineID and ordlns.CurrentStatus >= {2}" + ((UserID == "-1") ? " " : " and u.UserID = " + UserID) +
@@ -216,7 +216,7 @@ namespace RmsAuto.Store.BL
         //Общий метод извлечения строк
         public static List<ReportString> GetCommonStrings(DateTime bdate, DateTime edate, int CurrentPageSize, int CurrentPageIndex, string sortExpression, string direction, string UserID, string OrderId, int StatusId)
         {
-            using (var ctx = new DCWrappersFactory<StoreDataContext>())
+            using (var ctx = new DCFactory<StoreDataContext>())
             {
                 return ctx.DataContext.ExecuteQuery<ReportString>(@"select * FROM (SELECT U.ClientName, 
                                                                                           u.AcctgID as ClientID, 
@@ -249,7 +249,7 @@ namespace RmsAuto.Store.BL
 
         public static void ProcessShipment(int[] ids, string CurrentClientId)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 dc.SetUnCommit();
 
@@ -287,7 +287,7 @@ namespace RmsAuto.Store.BL
         /// <param name="managerUserID">UserID менеджера</param>
         public static void DeleteOrderLinesNewStatuses(int managerUserID)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 var items = dc.DataContext.TempOLStatuses.Where(i => i.ManagerUserID == managerUserID).ToList();
                 dc.DataContext.TempOLStatuses.DeleteAllOnSubmit(items);
@@ -301,7 +301,7 @@ namespace RmsAuto.Store.BL
         /// <param name="managerUserID"></param>
         public static void DeleteOrder(int OrderID)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 var items = dc.DataContext.OrderLines.Where(i => i.OrderID == OrderID).ToList();
                 dc.DataContext.OrderLines.DeleteAllOnSubmit(items);
@@ -315,7 +315,7 @@ namespace RmsAuto.Store.BL
 
         public static IEnumerable<TempOLStatuse> SelectOrderLinesNewStatuses(int managerUserID)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>(false))
+            using (var dc = new DCFactory<StoreDataContext>(false))
             {
                 string query = @"exec dbo.spLightSelOLStatuses {0}";
                 return dc.DataContext.ExecuteQuery<TempOLStatuse>(query, managerUserID).ToList();
@@ -324,7 +324,7 @@ namespace RmsAuto.Store.BL
 
         public static int UpdateOrderLinesNewStatuses(int managerUserID)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>(false))
+            using (var dc = new DCFactory<StoreDataContext>(false))
             {
                 string query = @"exec dbo.spLightUpdOLStatuses {0}";
                 return dc.DataContext.ExecuteQuery<int>(query, managerUserID).FirstOrDefault();
@@ -333,7 +333,7 @@ namespace RmsAuto.Store.BL
 
         public static int UpdateUserLimit(int UserID, decimal PaymentLimit)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>(false))
+            using (var dc = new DCFactory<StoreDataContext>(false))
             {
                 string query = @"exec dbo.[spLightUpdPaymentLimit] {0}, {1}";
                 return dc.DataContext.ExecuteQuery<int>(query, UserID, PaymentLimit).FirstOrDefault();
@@ -343,7 +343,7 @@ namespace RmsAuto.Store.BL
         //TODO: вынести данные методы в загрузку профиля клиента
         public static int GetPaymentDelayDays(int userID)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>(false))
+            using (var dc = new DCFactory<StoreDataContext>(false))
             {
                 string query = @"select PaymentDelayDays from dbo.UserSettings where UserID = {0}";
                 return dc.DataContext.ExecuteQuery<int?>(query, userID).FirstOrDefault() ?? 0;
@@ -353,7 +353,7 @@ namespace RmsAuto.Store.BL
         //TODO: вынести данные методы в загрузку профиля клиента
         public static string GetAdditionalEmail(int userID)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>(false))
+            using (var dc = new DCFactory<StoreDataContext>(false))
             {
                 string query = @"select AdditionalEmail from dbo.UserSettings where UserID = {0}";
                 return dc.DataContext.ExecuteQuery<string>(query, userID).FirstOrDefault();
@@ -363,7 +363,7 @@ namespace RmsAuto.Store.BL
         //TODO: вынести данные методы в загрузку профиля клиента
         public static int GetPaymentLimit(int userID)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>(false))
+            using (var dc = new DCFactory<StoreDataContext>(false))
             {
                 string query = @"select PaymentLimit from dbo.UserSettings where UserID = {0}";
                 return dc.DataContext.ExecuteQuery<int>(query, userID).FirstOrDefault();
@@ -373,7 +373,7 @@ namespace RmsAuto.Store.BL
         //TODO: вынести данные методы в загрузку профиля клиента
         public static bool GetIsAutoOrder(int userID)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>(false))
+            using (var dc = new DCFactory<StoreDataContext>(false))
             {
                 string query = @"select IsAutoOrder from dbo.UserSettings where UserID = {0}";
                 return dc.DataContext.ExecuteQuery<bool>(query, userID).FirstOrDefault();
@@ -424,7 +424,7 @@ namespace RmsAuto.Store.BL
 
         public static void SetOrderNoXmlSign(int orderID)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>(false))
+            using (var dc = new DCFactory<StoreDataContext>(false))
             {
                 string query = @"insert into dbo.OrdersNoXml (OrderID) values ({0})";
                 dc.DataContext.ExecuteCommand(query, orderID);
@@ -433,7 +433,7 @@ namespace RmsAuto.Store.BL
 
         public static bool GetOrderNoXmlSign(int orderID)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>(false))
+            using (var dc = new DCFactory<StoreDataContext>(false))
             {
                 string query = @"select OrderID from dbo.OrdersNoXml where OrderID = {0}";
                 var res = dc.DataContext.ExecuteQuery<int>(query, orderID).FirstOrDefault();
@@ -448,7 +448,7 @@ namespace RmsAuto.Store.BL
         /// <param name="orderId">ID заказа</param>
         public static void FormXmlForOrder(int orderId)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 dc.SetUnCommit();
 
@@ -527,7 +527,7 @@ namespace RmsAuto.Store.BL
         /// <returns>страница данных</returns>
         public static List<UserLightPayment> GetUserLightPayments(int userID, DateTime dateFrom, DateTime dateTo, int startIndex, int pageSize)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 dc.DataContext.Log = new DebuggerWriter();
                 string query = @"	select T.ID, T.ClientName, T.PaymentDate, T.PaymentSum, T.PaymentType, T.PaymentMethod, T.UserID from
@@ -563,7 +563,7 @@ namespace RmsAuto.Store.BL
         /// <returns>кол-во</returns>
         public static int GetUserLightPaymentsCount(int userID, DateTime dateFrom, DateTime dateTo)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 if (userID > 0)
                 {
@@ -582,7 +582,7 @@ namespace RmsAuto.Store.BL
         /// Добавляет платеж в таблицу платежей
         /// </summary>
         /// <param name="payment">Платеж</param>
-        public static int AddUserLightPayment(UserLightPayment payment, DCWrappersFactory<StoreDataContext> dc)
+        public static int AddUserLightPayment(UserLightPayment payment, DCFactory<StoreDataContext> dc)
         {
             if (payment.UserID <= 0) return -1; //Ничего не делаем, пользователь не валидный
 
@@ -608,7 +608,7 @@ namespace RmsAuto.Store.BL
         /// <returns>сальдо</returns>
         public static decimal GetUserLightBalance(int userID, DateTime dateTo)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 string query = "select SUM(PaymentSum) from dbo.UserPayments where UserID = {0} and PaymentDate <= {1} ";
                 var result = dc.DataContext.ExecuteQuery<decimal?>(query, userID, dateTo).SingleOrDefault();
@@ -619,7 +619,7 @@ namespace RmsAuto.Store.BL
         //Считает сумму платежей и вычитает отгрузки, кроме тех которые были после дня оплаты
         public static decimal GetUserLightBalanceWithDelay(int userID)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 var dd = LightBO.GetPaymentDelayDays(userID);
 
@@ -634,7 +634,7 @@ namespace RmsAuto.Store.BL
 
         public static decimal GetUserActiveOrdersSum(int userID)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 string query = "select SUM(Qty*UnitPrice) from dbo.Orders a, dbo.OrderLines b where a.OrderId = b.OrderID and UserID = {0} and not CurrentStatus in (80, 162) and Status = 2";
                 var result = dc.DataContext.ExecuteQuery<decimal?>(query, userID).SingleOrDefault();
@@ -646,7 +646,7 @@ namespace RmsAuto.Store.BL
         ////Считает сумму активных заказов до даты
         public static decimal GetUserActiveOrdersSumToDate(int userID)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 //var dd = LightBO.GetPaymentDelayDays(userID);
                 //string query = "select SUM(Total) from dbo.Orders where UserID = {0} and Status = 2 and OrderDate < {1}";
@@ -688,7 +688,7 @@ namespace RmsAuto.Store.BL
         /// <returns></returns>
         public static decimal GetUserLightDebt(int userID)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 var dd = LightBO.GetPaymentDelayDays(userID);
                 if (dd == 0)
@@ -713,7 +713,7 @@ select
             bool SecondRule;
             bool FirdRule;
 
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 var OrderID = dc.DataContext.OrderLines.Where(x => OrderlineID[0] == x.OrderLineID.ToString()).FirstOrDefault().OrderID;
                 var Total = Math.Round(dc.DataContext.OrderLines.Where(x => OrderlineID.Contains(x.OrderLineID.ToString())).Sum(y => y.Qty * y.UnitPrice),2);
@@ -781,7 +781,7 @@ select
 
 
 
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 var ClientID = dc.DataContext.Orders.Where(x => x.OrderID == OrderID).FirstOrDefault().ClientID;
                 var Total = dc.DataContext.Orders.Where(x => x.OrderID == OrderID).FirstOrDefault().Total;
@@ -821,7 +821,7 @@ select
 
          public static List<OrdersDTO> GetPaymentList(int start, int PageSize, DateTime EndDate, string ClientName)
          {
-             using (var dc = new DCWrappersFactory<StoreDataContext>())
+             using (var dc = new DCFactory<StoreDataContext>())
              {
 //                return dc.DataContext.ExecuteQuery<OrdersDTO>(@"
 //                select * from
@@ -878,7 +878,7 @@ select
 
          public static List<OrdersDTO> GetSummaryPaymentList(int start, int PageSize, DateTime EndDate)
          {
-             using (var dc = new DCWrappersFactory<StoreDataContext>())
+             using (var dc = new DCFactory<StoreDataContext>())
              {
 
                  var txt = System.IO.File.ReadAllText(@"C:\SiteQueries\DebtReportSummary.txt");
@@ -901,7 +901,7 @@ select
 
          public static List<OrdersDTO> GetSummaryRow(string ClientName, DateTime EndDate)
          {
-             using (var dc = new DCWrappersFactory<StoreDataContext>())
+             using (var dc = new DCFactory<StoreDataContext>())
              {
                  return dc.DataContext.ExecuteQuery<OrdersDTO>(@"exec [Light].[spSelSummaryString] {0}, {1}, {2}   ", ClientName, EndDate, SiteContext.Current.InternalFranchName).ToList();
              }

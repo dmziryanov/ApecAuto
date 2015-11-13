@@ -15,7 +15,7 @@ namespace RmsAuto.Store.Web.Controls
         {
             if ( !Page.IsPostBack )
             {
-                var DC = new DCWrappersFactory<StoreDataContext>();
+                var DC = new DCFactory<StoreDataContext>();
                 var currSet = DC.DataContext.spSelUserSetting( SiteContext.Current.User.UserId ).FirstOrDefault();
                 if ( currSet != null )
                 {
@@ -32,7 +32,7 @@ namespace RmsAuto.Store.Web.Controls
 
         protected void btnSave_Click( object sender, EventArgs e )
         {
-			using (var DC = new DCWrappersFactory<StoreDataContext>())
+			using (var DC = new DCFactory<StoreDataContext>())
 			{
 				try
 				{

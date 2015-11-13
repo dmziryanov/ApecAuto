@@ -27,7 +27,7 @@ namespace RmsAuto.Store.Web.PrivateOffice
         {
             if (IsValid)
             {
-                using (var ctx = new DCWrappersFactory<StoreDataContext>())
+                using (var ctx = new DCFactory<StoreDataContext>())
                 {
                     var car = _garageCarEdit.GetNewCarData<UserGarageCar>();
                     car.AddedDate = DateTime.Now;

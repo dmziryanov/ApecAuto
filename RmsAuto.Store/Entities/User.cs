@@ -29,7 +29,7 @@ namespace RmsAuto.Store.Entities
 			if( action == ChangeAction.Insert || action == ChangeAction.Update )
             {
                 string errorMessage = null;
-                using (var dc = new DCWrappersFactory<StoreDataContext>())
+                using (var dc = new DCFactory<StoreDataContext>())
                 {
                     if (dc.DataContext.Users.Any(u => (u.Username == Username && u.UserID != UserID) && !string.IsNullOrEmpty(Username)))
                         errorMessage = "логин уже используется";

@@ -498,7 +498,7 @@ namespace RmsAuto.Store.Web.Controls
 		{
             if (_filterStatuses.Items.Count <= 0)
 			{
-                using (var dc = new DCWrappersFactory<StoreDataContext>())
+                using (var dc = new DCFactory<StoreDataContext>())
 				{
 					CurrentOrderLineStatuses = dc.DataContext.OrderLineStatuses.Where(t => t.ClientShow).OrderBy(t => t.ClientShowOrder).ToArray();
 					foreach (var status in CurrentOrderLineStatuses)

@@ -73,7 +73,7 @@ namespace RmsAuto.Store.Entities
 
         public Boolean IsParentForPartNumberTransition(Int32 orderLineID, OrderLine childOrderLine)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 //List<SuperTypeTurn> list = (from db in entity.SuperTypeTurn.Include("TypeTurn").Include("TypeTurn.Turn")
                 //                            from typeTurn in db.TypeTurn

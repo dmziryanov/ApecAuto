@@ -362,7 +362,7 @@ namespace RmsAuto.Store.BL
 				rd.CorrespondentBankAddress
 				).ClientId;
                 
-                using (var mtx = new DCWrappersFactory<StoreDataContext>())
+                using (var mtx = new DCFactory<StoreDataContext>())
                 {
                     UserMaintDac.DeleteEntry(maintEntry.EntryUid, mtx.DataContext);
                 }
@@ -403,7 +403,7 @@ namespace RmsAuto.Store.BL
 
             string clientId = UserDac.GetUserByUserId(maintEntry.UserID.Value).AcctgID;
             
-			using(var mtx = new DCWrappersFactory<StoreDataContext>(System.Data.IsolationLevel.ReadCommitted,false, null, true))
+			using(var mtx = new DCFactory<StoreDataContext>(System.Data.IsolationLevel.ReadCommitted,false, null, true))
 			{
                 
                 mtx.DataContext.spUpdUsersNamePswd( /*maintEntry.ClientID*/clientId, username, password.GetMD5Hash());
@@ -445,7 +445,7 @@ namespace RmsAuto.Store.BL
 			if( user == null )
 				throw new BLException( "Учетная запись пользователя сайта не найдена" );
 
-            using (var mtx = new DCWrappersFactory<StoreDataContext>())
+            using (var mtx = new DCFactory<StoreDataContext>())
 			{
 				UserDac.UpdatePassword(
 					user.UserID, password.GetMD5Hash(),

@@ -34,7 +34,7 @@ namespace RmsAuto.Store.Web.Store
 
 		protected void Page_Load( object sender, EventArgs e )
 		{
-            using (var ctx = new DCWrappersFactory<StoreDataContext>())
+            using (var ctx = new DCFactory<StoreDataContext>())
 			{
 				this.Mfr = Request.QueryString.TryGet<string>( UrlKeys.StoreAndTecdoc.ManufacturerName, String.Empty );
 				_pageTitleLiteral.Text = String.Format( "{0} / {1}", CmsContext.Current.CatalogItem.CatalogItemName, this.Mfr );

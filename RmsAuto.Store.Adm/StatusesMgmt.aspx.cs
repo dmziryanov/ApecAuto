@@ -17,7 +17,7 @@ namespace RmsAuto.Store.Adm
 			ScriptsManager.RegisterJQuery( this );
 			if (!IsPostBack)
 			{
-                using (DCWrappersFactory<StoreDataContext> dc = new DCWrappersFactory<StoreDataContext>())
+                using (DCFactory<StoreDataContext> dc = new DCFactory<StoreDataContext>())
 				{
 					foreach (var statusElement in dc.DataContext.OrderLineStatuses)
 					{
@@ -40,7 +40,7 @@ namespace RmsAuto.Store.Adm
 		protected void _btnChangeStatus_Click(object sender, EventArgs e)
 		{
             int orderID = -1; int.TryParse(_txtOrderID.Text.Trim(), out orderID); if (orderID < 0) return;
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 for (int i = 0; i < _gvOrderLines.Rows.Count; i++)
                 {
@@ -77,7 +77,7 @@ namespace RmsAuto.Store.Adm
 			{
 				int orderLineId = Convert.ToInt32( ib.CommandArgument );
 
-                using (var dc = new DCWrappersFactory<StoreDataContext>())
+                using (var dc = new DCFactory<StoreDataContext>())
 				{
 					var orderLine = dc.DataContext.OrderLines.Where( l => l.OrderLineID == orderLineId ).SingleOrDefault();
 					if (orderLine != null)
@@ -102,7 +102,7 @@ namespace RmsAuto.Store.Adm
 			if (orderID > 0)
 			{
 				List<OrderLine> orderLines = new List<OrderLine>();
-                using (var context = new DCWrappersFactory<StoreDataContext>())
+                using (var context = new DCFactory<StoreDataContext>())
 				{
 					orderLines = context.DataContext.OrderLines.Where(l => l.OrderID == orderID && l.CurrentStatus != OrderLineStatusUtil.StatusByte("Rejected")).ToList();
 				}

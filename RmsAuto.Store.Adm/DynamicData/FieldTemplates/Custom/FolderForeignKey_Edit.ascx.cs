@@ -57,7 +57,7 @@ namespace RmsAuto.Store.Adm
 				string foreignkey = ForeignKeyColumn.GetForeignKeyString( Row );
 				if( !string.IsNullOrEmpty( foreignkey ) )
 				{
-                    using (var dc = new DCWrappersFactory<CmsDataContext>())
+                    using (var dc = new DCFactory<CmsDataContext>())
 					{
 						Folder folder = dc.DataContext.Folders.Where( f => f.FolderID == Convert.ToInt32( foreignkey ) ).FirstOrDefault();
 						if( folder != null )

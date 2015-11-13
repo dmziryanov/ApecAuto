@@ -24,7 +24,7 @@ namespace RmsAuto.Store.Adm.DynamicData.CustomPages.SparePartCrosses
 
 		protected void _deleteButton_Click( object sender, EventArgs e )
 		{
-			using( var dc = new DCWrappersFactory<StoreDataContext>() )
+			using( var dc = new DCFactory<StoreDataContext>() )
 			{
 				dc.DataContext.CommandTimeout = 600;
 				dc.DataContext.ExecuteCommand( "truncate table dbo.SparePartCrosses" );
@@ -35,7 +35,7 @@ namespace RmsAuto.Store.Adm.DynamicData.CustomPages.SparePartCrosses
 
 		protected void _deleteBrandsButton_Click( object sender, EventArgs e )
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				dc.DataContext.CommandTimeout = 600;
 				dc.DataContext.ExecuteCommand( "truncate table dbo.SparePartCrossesBrands" );
@@ -46,7 +46,7 @@ namespace RmsAuto.Store.Adm.DynamicData.CustomPages.SparePartCrosses
 
 		protected void _deleteGroupsButton_Click( object sender, EventArgs e )
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				dc.DataContext.CommandTimeout = 600;
 				dc.DataContext.ExecuteCommand( "truncate table dbo.SparePartCrossesGroups" );
@@ -57,7 +57,7 @@ namespace RmsAuto.Store.Adm.DynamicData.CustomPages.SparePartCrosses
 
 		protected void _deleteLinksButton_Click( object sender, EventArgs e )
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				dc.DataContext.CommandTimeout = 600;
 				dc.DataContext.ExecuteCommand( "truncate table dbo.SparePartCrossesLinks" );
@@ -68,7 +68,7 @@ namespace RmsAuto.Store.Adm.DynamicData.CustomPages.SparePartCrosses
 
 		protected void Page_PreRender( object sender, EventArgs e )
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				_crossCountLabel.Text = dc.DataContext.SparePartCrosses.Any() ? "Загружены" : "нет";
 				_crossBrandsLabel.Text = dc.DataContext.SparePartCrossesBrands.Any() ? "Загружены" : "нет";

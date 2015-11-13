@@ -44,7 +44,7 @@ namespace RmsAuto.Store.Adm.Controls.AddFile
 			{
 			    int? folderID;
 
-                using( var dc = new DCWrappersFactory<CmsDataContext>() )
+                using( var dc = new DCFactory<CmsDataContext>() )
                 {
                     folderID = FilesDac.GetFolderByName(dc.DataContext, _folderName).FolderID;
                 }
@@ -52,7 +52,7 @@ namespace RmsAuto.Store.Adm.Controls.AddFile
 			        return (int) folderID;
                 else
                 {
-                    using (var dc = new DCWrappersFactory<CmsDataContext>())
+                    using (var dc = new DCFactory<CmsDataContext>())
                     {
                         Folder folder = new Folder();
                         folder.FolderName = _folderName;
@@ -61,7 +61,7 @@ namespace RmsAuto.Store.Adm.Controls.AddFile
                         dc.DataContext.SubmitChanges();
                     }
                     
-                    using (var dc = new DCWrappersFactory<CmsDataContext>())
+                    using (var dc = new DCFactory<CmsDataContext>())
                     {
                         folderID = FilesDac.GetFolderByName(dc.DataContext, _folderName).FolderID;
                     }
@@ -85,7 +85,7 @@ namespace RmsAuto.Store.Adm.Controls.AddFile
 
 		public static string GetFileUrl( int fileID )
 		{
-            using (var dc = new DCWrappersFactory<CmsDataContext>())
+            using (var dc = new DCFactory<CmsDataContext>())
             {
                 File f = FilesDac.GetFile(dc.DataContext, fileID);
                 if (f.FileMimeType.Contains("flash"))
@@ -136,7 +136,7 @@ namespace RmsAuto.Store.Adm.Controls.AddFile
 		{
 			if( e.CommandName == "Delete" )
 			{
-                using (var dc = new DCWrappersFactory<CmsDataContext>())
+                using (var dc = new DCFactory<CmsDataContext>())
 				{
 					File file = dc.DataContext.Files.Where( f => f.FileID == Convert.ToInt32( e.CommandArgument ) ).First();
 					if( file != null )
@@ -155,7 +155,7 @@ namespace RmsAuto.Store.Adm.Controls.AddFile
 
 		void ReloadFiles()
 		{
-            using (var dc = new DCWrappersFactory<CmsDataContext>())
+            using (var dc = new DCFactory<CmsDataContext>())
 			{
                 var bannerID = BannerID;
                 // Режим создания нового баннера

@@ -35,7 +35,7 @@ namespace RmsAuto.Store.Entities
                     string.IsNullOrEmpty(Manufacturer))
                     throw new ValidationException("для указания 'RG кода' или 'номера' необходимо выбрать производителя");
 
-                using (var dc = new DCWrappersFactory<StoreDataContext>())
+                using (var dc = new DCFactory<StoreDataContext>())
                 {
                     if (dc.DataContext.PricingMatrixEntries.SingleOrDefault(
                         e => e.SupplierID == SupplierID &&

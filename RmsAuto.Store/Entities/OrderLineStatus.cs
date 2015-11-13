@@ -45,7 +45,7 @@ namespace RmsAuto.Store.Entities
 				//Нет пока никаих "лайтов" для эмиратов
 				if (AcctgRefCatalog.RmsFranches[s].isLite)
 				{
-				    using (var dc = new DCWrappersFactory<StoreDataContext>(s))
+				    using (var dc = new DCFactory<StoreDataContext>(s))
 				    {
                         DataLoadOptions dlo = new DataLoadOptions();
 						dlo.LoadWith<OrderLineStatuses>(ols => ols.OrderLineStatusesLocs);

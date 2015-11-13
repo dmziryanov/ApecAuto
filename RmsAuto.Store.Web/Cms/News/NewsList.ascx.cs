@@ -18,7 +18,7 @@ namespace RmsAuto.Store.Web.Cms.News
 
 			if( !IsPostBack )
 			{
-				//using (var ctx = new DCWrappersFactory<CmsDataContext>())
+				//using (var ctx = new DCFactory<CmsDataContext>())
 				//{
 				//    _ddSelectYear.Items.Add( new ListItem( "Все года", "" ) );
 				//    _ddSelectYear.Items.AddRange(

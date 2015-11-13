@@ -31,7 +31,7 @@ namespace RmsAuto.Store.Web.Cms
 		
 		public void ProcessRequest( HttpContext context )
 		{
-            using (var dc = new DCWrappersFactory<CmsDataContext>())
+            using (var dc = new DCFactory<CmsDataContext>())
 			{
 				int fileID = Convert.ToInt32(CmsContext.Current.PageParameters["ID"]);
                 File item = dc.DataContext.Files.SingleOrDefault(f => f.FileID == fileID);

@@ -72,7 +72,7 @@ namespace RmsAuto.Store.Adm.Controls.FileManager
 				root.ImageUrl = "~/Controls/FileManager/root.gif";
 				_treeView.Nodes.Add( root );
 
-                using (var dc = new DCWrappersFactory<CmsDataContext>())
+                using (var dc = new DCFactory<CmsDataContext>())
 				{
 					AddChildren( root, dc.DataContext.Folders.Where( f => f.ParentID == null ).OrderBy( f => f.FolderName ).ToArray() );
 				}
@@ -100,7 +100,7 @@ namespace RmsAuto.Store.Adm.Controls.FileManager
 
 		protected void _createFolderBox_Click( object sender, EventArgs e )
 		{
-            using (var dc = new DCWrappersFactory<CmsDataContext>())
+            using (var dc = new DCFactory<CmsDataContext>())
 			{
 				if( string.IsNullOrEmpty( _folderNameBox.Text.Trim() ) )
 					throw new Exception( "" );
@@ -120,7 +120,7 @@ namespace RmsAuto.Store.Adm.Controls.FileManager
 		}
 		protected void _deleteFolderButton_Click( object sender, EventArgs e )
 		{
-            using (var dc = new DCWrappersFactory<CmsDataContext>())
+            using (var dc = new DCFactory<CmsDataContext>())
 			{
 				Folder folder = dc.DataContext.Folders.Where( f => f.FolderID == FolderID ).FirstOrDefault();
 				if( folder != null )
@@ -159,7 +159,7 @@ namespace RmsAuto.Store.Adm.Controls.FileManager
 		{
 			if( e.CommandName == "Delete" )
 			{
-                using (var dc = new DCWrappersFactory<CmsDataContext>())
+                using (var dc = new DCFactory<CmsDataContext>())
 				{
 					File file = dc.DataContext.Files.Where( f => f.FileID == Convert.ToInt32( e.CommandArgument ) ).FirstOrDefault();
 					if( file != null )
@@ -174,7 +174,7 @@ namespace RmsAuto.Store.Adm.Controls.FileManager
 
 		void ReloadFiles()
 		{
-            using (var dc = new DCWrappersFactory<CmsDataContext>())
+            using (var dc = new DCFactory<CmsDataContext>())
 			{
 				_filesRepeater.DataSource = dc.DataContext.Files.Where( f => f.FolderID == FolderID ).OrderBy( f => f.FileName );
 				_filesRepeater.DataBind();

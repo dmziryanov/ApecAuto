@@ -36,7 +36,7 @@ namespace RmsAuto.Store.Adm
 		{
 			if (Page.IsValid)
 			{
-                using (var dc = new DCWrappersFactory<StoreDataContext>(false))
+                using (var dc = new DCFactory<StoreDataContext>(false))
 				{
 					TextBox txtImageNumber = new TextBox();
 					TextBox txtDescription = new TextBox();

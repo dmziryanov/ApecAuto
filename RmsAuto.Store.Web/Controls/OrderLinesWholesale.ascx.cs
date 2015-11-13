@@ -169,7 +169,7 @@ namespace RmsAuto.Store.Web.Controls
 				{
                     _filterStatusBox.Items.Add(new ListItem(status.GetDescription(), "c" + (int)status));
 				}
-                using (var dc = new DCWrappersFactory<StoreDataContext>())
+                using (var dc = new DCFactory<StoreDataContext>())
                 {
                     foreach (var statusElement in dc.DataContext.OrderLineStatuses)
                     {

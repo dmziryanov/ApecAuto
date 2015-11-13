@@ -30,7 +30,7 @@ namespace RmsAuto.Store.Adm.DynamicData.CustomPages.CatalogItems
 
 		protected void Page_PreRender( object sender, EventArgs e )
 		{
-			using( var dc = new DCWrappersFactory<CmsDataContext>() )
+			using( var dc = new DCFactory<CmsDataContext>() )
 			{
 				var groups = dc.DataContext.CatalogItems.GroupBy( c => c.ParentItemID ).ToDictionary( g => g.Key ?? 0 );
 
@@ -67,7 +67,7 @@ namespace RmsAuto.Store.Adm.DynamicData.CustomPages.CatalogItems
 			{
 				if( e.CommandName == "Delete" )
 				{
-                    using (var dc = new DCWrappersFactory<CmsDataContext>())
+                    using (var dc = new DCFactory<CmsDataContext>())
 					{
 						int id = Convert.ToInt32( e.CommandArgument );
 						CatalogItem item = dc.DataContext.CatalogItems.Where( c => c.CatalogItemID == id ).SingleOrDefault();

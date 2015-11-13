@@ -278,6 +278,7 @@ namespace RmsAuto.Store
 
     public enum EventLogerID
     {
+        SQLError = 8000,
         UnknownError = 0,
         BLException = 7000,
         AdditionalLogic = 10000

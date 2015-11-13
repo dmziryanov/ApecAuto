@@ -24,7 +24,7 @@ namespace RmsAuto.Store.Acctg
             string mainPhone,
             ClientSearchMatching matching)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
 
                 List<BriefClientInfo> ret = new List<BriefClientInfo>();
@@ -61,7 +61,7 @@ namespace RmsAuto.Store.Acctg
         {
             var signs = new string[3] { ">=", "=", "=" };
 
-            using (var dc = new DCWrappersFactory<StoreDataContext>(false))
+            using (var dc = new DCFactory<StoreDataContext>(false))
             {
                 dc.SetUnCommit();
                 IEnumerable<BriefClientInfo> rezSearch;
@@ -81,7 +81,7 @@ namespace RmsAuto.Store.Acctg
             if (string.IsNullOrEmpty(email))
                 throw new ArgumentException("email cannot be empty", "email");
             
-			using (var dc = new DCWrappersFactory<StoreDataContext>())
+			using (var dc = new DCFactory<StoreDataContext>())
             {
                 var rezSearch = dc.DataContext.spSelUsersByFields("", email, "");
                 List<BriefClientInfo> ret = new List<BriefClientInfo>();

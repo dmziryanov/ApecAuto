@@ -78,7 +78,7 @@ namespace TestBOConsole
         	
         static void testDCWrappersFactory()
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 		    {
 				var list = dc.DataContext.PricingMatrixEntries.Select(s => s.SupplierID).Distinct().ToList();
 				foreach (var item in list)

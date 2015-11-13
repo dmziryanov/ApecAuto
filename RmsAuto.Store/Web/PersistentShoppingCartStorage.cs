@@ -40,7 +40,7 @@ namespace RmsAuto.Store.Web
 
         public IEnumerable<ShoppingCartItem> LoadItems()
         {
-            using (var context = new DCWrappersFactory<StoreDataContext>())
+            using (var context = new DCFactory<StoreDataContext>())
             {
                 return LoadItems(context.DataContext);
             }
@@ -112,7 +112,7 @@ namespace RmsAuto.Store.Web
 
         public void SaveItems(IEnumerable<ShoppingCartItem> items)
         {
-            using (var context = new DCWrappersFactory<StoreDataContext>())
+            using (var context = new DCFactory<StoreDataContext>())
             {
                 SaveItems(context.DataContext, items);
             }
@@ -133,7 +133,7 @@ namespace RmsAuto.Store.Web
 
         public void ClearItems()
         {
-            using (var context = new DCWrappersFactory<StoreDataContext>())
+            using (var context = new DCFactory<StoreDataContext>())
             {
                 ClearItems(context.DataContext);
             }

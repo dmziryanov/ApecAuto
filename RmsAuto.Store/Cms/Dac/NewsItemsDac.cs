@@ -39,7 +39,7 @@ namespace RmsAuto.Store.Cms.Dac
 
 		public static IEnumerable<NewsItem> GetTopNews( int topCount )
 		{
-			using( var dc = new DCWrappersFactory<CmsDataContext>() )
+			using( var dc = new DCFactory<CmsDataContext>() )
 			{
 				dc.DataContext.DeferredLoadingEnabled = false;
 				return _getTopNews(dc.DataContext, topCount, DateTime.Now, Thread.CurrentThread.CurrentCulture.Name).ToArray();
@@ -48,7 +48,7 @@ namespace RmsAuto.Store.Cms.Dac
 
 		public static IEnumerable<NewsItem> GetTopDiscountNews(int topCount)
 		{
-            using (var dc = new DCWrappersFactory<CmsDataContext>())
+            using (var dc = new DCFactory<CmsDataContext>())
 			{
 				dc.DataContext.DeferredLoadingEnabled = false;
 				return _getTopDiscountNews(dc.DataContext, topCount, DateTime.Now, Thread.CurrentThread.CurrentCulture.Name).ToArray();
@@ -57,7 +57,7 @@ namespace RmsAuto.Store.Cms.Dac
 
 		public static NewsItem GetNewsItem( int id )
 		{
-            using (var dc = new DCWrappersFactory<CmsDataContext>())
+            using (var dc = new DCFactory<CmsDataContext>())
 			{
 				dc.DataContext.DeferredLoadingEnabled = false;
                 return _getNewsItem(dc.DataContext, id, DateTime.Now );
@@ -66,7 +66,7 @@ namespace RmsAuto.Store.Cms.Dac
 
         public static List<NewsItem> GetAllNews(int? year)
         {
-            using (var dc = new  DCWrappersFactory<CmsDataContext>())
+            using (var dc = new  DCFactory<CmsDataContext>())
             {
                 dc.DataContext.DeferredLoadingEnabled = false;
                 return _getAllNews(dc.DataContext, year, DateTime.Now, Thread.CurrentThread.CurrentCulture.Name).ToList();

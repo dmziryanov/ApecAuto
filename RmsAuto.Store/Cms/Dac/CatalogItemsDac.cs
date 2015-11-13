@@ -19,7 +19,7 @@ namespace RmsAuto.Store.Cms.Dac
 
 		public static CatalogItem[] GetCatalogItems(string rootName, string FranchName)
 		{
-            using (var dc = new DCWrappersFactory<CmsDataContext>(FranchName))
+            using (var dc = new DCFactory<CmsDataContext>(FranchName))
 			{
                 _allItem = dc.DataContext.CatalogItems.ToList<CatalogItem>();
                 List<CatalogItem> res = new List<CatalogItem>();
@@ -57,7 +57,7 @@ namespace RmsAuto.Store.Cms.Dac
 
 		public static CatalogItemsLoc[] GetCatalogItemsAllLoc(string InternalFranchName)
 		{
-            using (var dc = new DCWrappersFactory<CmsDataContext>(InternalFranchName))
+            using (var dc = new DCFactory<CmsDataContext>(InternalFranchName))
 			{
 				string query = @"select * from Cms.CatalogItemsLocs";
 				IEnumerable<CatalogItemsLoc> result = dc.DataContext.ExecuteQuery<CatalogItemsLoc>(query);

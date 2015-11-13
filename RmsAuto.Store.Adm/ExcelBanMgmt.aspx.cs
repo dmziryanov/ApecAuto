@@ -49,7 +49,7 @@ namespace RmsAuto.Store.Adm
 
         void DeleteAllBanClientEntries(int uid)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 dc.DataContext.BanClientActions.DeleteAllOnSubmit(_getBanClientEntries(dc.DataContext, uid));
                 dc.DataContext.SubmitChanges();

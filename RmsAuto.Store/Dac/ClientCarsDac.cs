@@ -28,7 +28,7 @@ namespace RmsAuto.Store.Dac
 
         public static IEnumerable<UserGarageCar> GetGarageCars(string clientId)
         {
-            using (var ctx = new DCWrappersFactory<StoreDataContext>())
+            using (var ctx = new DCFactory<StoreDataContext>())
             {
                 return _getClientCars(ctx.DataContext, clientId).ToList();
             }
@@ -36,7 +36,7 @@ namespace RmsAuto.Store.Dac
 
         public static UserGarageCar GetGarageCar(int carId)
         {
-            using (var ctx = new DCWrappersFactory<StoreDataContext>())
+            using (var ctx = new DCFactory<StoreDataContext>())
             {
                 return _getCar(ctx.DataContext, carId).Single();
             }
@@ -44,7 +44,7 @@ namespace RmsAuto.Store.Dac
 
         public static void UpdateGarageCar(int carId, Action<UserGarageCar> fillerAction)
         {
-            using (var ctx = new DCWrappersFactory<StoreDataContext>())
+            using (var ctx = new DCFactory<StoreDataContext>())
             {
                 var car = _getCar(ctx.DataContext, carId).Single();
                 fillerAction(car);
@@ -54,7 +54,7 @@ namespace RmsAuto.Store.Dac
 
         public static void DeleteGarageCar(int carId)
         {
-            using (var ctx = new DCWrappersFactory<StoreDataContext>())
+            using (var ctx = new DCFactory<StoreDataContext>())
             {
                 var car = _getCar(ctx.DataContext, carId).Single();
                 ctx.DataContext.UserGarageCars.DeleteOnSubmit(car);

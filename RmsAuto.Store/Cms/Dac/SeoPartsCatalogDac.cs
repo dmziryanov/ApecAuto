@@ -74,7 +74,7 @@ namespace RmsAuto.Store.Cms.Dac
 
 		public static SeoPartsCatalogItem GetSeoPartsCatalogTree()
 		{
-			using( var dc = new DCWrappersFactory<CmsDataContext>() )
+			using( var dc = new DCFactory<CmsDataContext>() )
 			{
 				dc.DataContext.LoadOptions = GetCatalogItem2DataLoadOptions(SiteContext.CurrentCulture/*Thread.CurrentThread.CurrentCulture.Name*/);
 				dc.DataContext.DeferredLoadingEnabled = false;
@@ -102,7 +102,7 @@ namespace RmsAuto.Store.Cms.Dac
 
 		public static SeoPartsCatalogItem[] GetCatalogItemsByVirtualPath( string[] path )
 		{
-			using( var dc = new DCWrappersFactory<CmsDataContext>() )
+			using( var dc = new DCFactory<CmsDataContext>() )
 			{
 				dc.DataContext.LoadOptions = GetCatalogItem2DataLoadOptions(SiteContext.CurrentCulture/*Thread.CurrentThread.CurrentCulture.Name*/);
 				if (SiteContext.CurrentCulture/*Thread.CurrentThread.CurrentCulture.Name*/ != "ru-RU")
@@ -125,7 +125,7 @@ namespace RmsAuto.Store.Cms.Dac
 
 		public static List<SeoPartsCatalogItem> GetVirtualPathItemsById( int? seoPartsCatalogItemId )
 		{
-			using( var dc = new DCWrappersFactory<CmsDataContext>() )
+			using( var dc = new DCFactory<CmsDataContext>() )
 			{
 				dc.DataContext.LoadOptions = GetCatalogItem2DataLoadOptions(SiteContext.CurrentCulture);
 				if (SiteContext.CurrentCulture != "ru-RU")
@@ -150,7 +150,7 @@ namespace RmsAuto.Store.Cms.Dac
 
 		public static SeoPartsCatalogItem GetCatalogItem( int id )
 		{
-			using( var dc = new DCWrappersFactory<CmsDataContext>())
+			using( var dc = new DCFactory<CmsDataContext>())
 			{
 				//dc.DataContext.LoadOptions = _getCatalogItem2Dlo;
 				//Меняем LoadOptions в зависимости от локали и как следствие не можем пользоваться скомпилированным запросом
@@ -165,7 +165,7 @@ namespace RmsAuto.Store.Cms.Dac
 
 		public static SeoPartsCatalogItem[] GetVisibleChildItems(int id)
 		{
-			using(var dc = new DCWrappersFactory<CmsDataContext>())
+			using(var dc = new DCFactory<CmsDataContext>())
 			{
 				dc.DataContext.LoadOptions = GetCatalogItem2DataLoadOptions(SiteContext.CurrentCulture/*Thread.CurrentThread.CurrentCulture.Name*/);
 				if (SiteContext.CurrentCulture/*Thread.CurrentThread.CurrentCulture.Name*/ != "ru-RU")

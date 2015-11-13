@@ -245,7 +245,7 @@ namespace RmsAuto.Store.BL
             string normalizedPartNumber = NormalizePartNumber( partNumber );
             SparePartItem[] result = null;
 
-            using ( var dc = new DCWrappersFactory<StoreDataContext>() )
+            using ( var dc = new DCFactory<StoreDataContext>() )
             {
                 try
                 {

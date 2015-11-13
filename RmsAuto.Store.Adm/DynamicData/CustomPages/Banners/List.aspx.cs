@@ -39,7 +39,7 @@ namespace RmsAuto.Store.Adm.DynamicData.CustomPages.Banners
             {
                 int id = Convert.ToInt32(e.CommandArgument);
 
-                using (var dc = new DCWrappersFactory<CmsDataContext>())
+                using (var dc = new DCFactory<CmsDataContext>())
                 {
                     try
                     {

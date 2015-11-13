@@ -59,7 +59,7 @@ namespace RmsAuto.Store.Web.Manager.Controls
 
 		public int GetOrderLinesCount(string ClientId, string VaryParam)
 		{
-            using (var DC = new DCWrappersFactory<StoreDataContext>(IsolationLevel.ReadCommitted, false, SiteContext.Current.InternalFranchName, true))
+            using (var DC = new DCFactory<StoreDataContext>(IsolationLevel.ReadCommitted, false, SiteContext.Current.InternalFranchName, true))
             {
                 var ordlns = from n in DC.DataContext.OrderLines
                              join
@@ -74,7 +74,7 @@ namespace RmsAuto.Store.Web.Manager.Controls
 		public OrderLine[] GetOrderLines(int size, int startIndex, string ClientID, string VaryParam)
 		{
 			OrderLine[] res;
-            using (var DC = new DCWrappersFactory<StoreDataContext>(IsolationLevel.ReadCommitted, false, SiteContext.Current.InternalFranchName, true))
+            using (var DC = new DCFactory<StoreDataContext>(IsolationLevel.ReadCommitted, false, SiteContext.Current.InternalFranchName, true))
             {
                 DataLoadOptions options = new DataLoadOptions();
                 options.LoadWith<OrderLine>(l => l.OrderLineStatusChanges);
@@ -186,7 +186,7 @@ namespace RmsAuto.Store.Web.Manager.Controls
             //int[] ids = hfOrderlinesIDS.Value.TrimEnd(';').Split(';').Select(s => int.Parse(s)).ToArray();
             
 
-            //using (var dc = new DCWrappersFactory<StoreDataContext>())
+            //using (var dc = new DCFactory<StoreDataContext>())
             //{
             //    var printLines = from ol in dc.DataContext.OrderLines
             //                     where ids.Contains(ol.OrderLineID)

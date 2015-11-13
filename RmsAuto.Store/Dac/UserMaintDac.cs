@@ -24,7 +24,7 @@ namespace RmsAuto.Store.Dac
             if (entry == null)
                 throw new ArgumentNullException("entry");
 
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 dc.DataContext.UserMaintEntries.InsertOnSubmit(entry);
                 dc.DataContext.SubmitChanges();
@@ -33,7 +33,7 @@ namespace RmsAuto.Store.Dac
 
         public static UserMaintEntry GetEntry(Guid entryUid)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 return _getEntries(dc.DataContext, entryUid).SingleOrDefault();
             }
@@ -41,7 +41,7 @@ namespace RmsAuto.Store.Dac
 
         public static UserMaintEntry[] GetEntries(string username)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 return _getEntriesByUsername(dc.DataContext, username).ToArray();
             }
@@ -50,7 +50,7 @@ namespace RmsAuto.Store.Dac
 
         internal static void SetEntryTime(Guid entryUid, DateTime entryTime)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 _getEntries(dc.DataContext, entryUid).Single().EntryTime = entryTime;
                 dc.DataContext.SubmitChanges();

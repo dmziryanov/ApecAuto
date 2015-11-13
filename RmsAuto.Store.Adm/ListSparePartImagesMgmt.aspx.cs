@@ -86,7 +86,7 @@ namespace RmsAuto.Store.Adm
             }
 
             
-            using(var store = new DCWrappersFactory<StoreDataContext>())
+            using(var store = new DCFactory<StoreDataContext>())
             {
             
                 var param = store.DataContext;

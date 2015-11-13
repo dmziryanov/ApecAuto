@@ -103,7 +103,7 @@ namespace RmsAuto.Store.Adm.DynamicData.CustomPages.Banners
             // Режим создания нового баннера
             if (bannerID == 0)
             {
-                using (var dc = new DCWrappersFactory<CmsDataContext>(false))
+                using (var dc = new DCFactory<CmsDataContext>(false))
 	            {
                     dc.DataContext.Connection.Open();
 	                Cms.Entities.Banners banner = new Cms.Entities.Banners ();
@@ -164,7 +164,7 @@ namespace RmsAuto.Store.Adm.DynamicData.CustomPages.Banners
         {
             Page.Validate("EditGroup");
             if (this.IsValid)
-                using (var dc = new DCWrappersFactory<CmsDataContext>())
+                using (var dc = new DCFactory<CmsDataContext>())
                 {
                     Cms.Entities.Banners b = RmsAuto.Store.Cms.Entities.Banners.GetBannerByID(dc.DataContext, BannerID);
                     b.Name = _txtName.Text;
@@ -188,7 +188,7 @@ namespace RmsAuto.Store.Adm.DynamicData.CustomPages.Banners
 
 	    protected void ButtonDeleteClick(object sender, EventArgs e)
         {
-            using (var dc = new DCWrappersFactory<CmsDataContext>())
+            using (var dc = new DCFactory<CmsDataContext>())
             {
                 try
                 {
@@ -236,7 +236,7 @@ namespace RmsAuto.Store.Adm.DynamicData.CustomPages.Banners
 
         protected void ButtonHtmlForFlashClick(object sender, EventArgs e)
         {
-            using (var dc = new DCWrappersFactory<CmsDataContext>())
+            using (var dc = new DCFactory<CmsDataContext>())
             {
                 Cms.Entities.Banners b = RmsAuto.Store.Cms.Entities.Banners.GetBannerByID(dc.DataContext, BannerID);
                 b.Html = "BANNER_HTML_WRAPPER_FOR_FLASH" + Environment.NewLine +

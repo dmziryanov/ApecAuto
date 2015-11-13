@@ -117,7 +117,7 @@ namespace RmsAuto.Store.Web
 						UnitPrice = part.GetFinalSalePrice( _clientGroup, _personalMarkup )
 					});
 			}
-			using (var dc = new DCWrappersFactory<StoreDataContext>())
+			using (var dc = new DCFactory<StoreDataContext>())
             {
                 Save(dc.DataContext, items);
 			    OnArticleAdded( new ArticleAddedEventArgs( key, qty ) );
@@ -129,7 +129,7 @@ namespace RmsAuto.Store.Web
 			if( items == null )
 				throw new ArgumentNullException( "items" );
 
-			using( var dc = new DCWrappersFactory<StoreDataContext>())
+			using( var dc = new DCFactory<StoreDataContext>())
 			{
 				var existingItems = LoadItems(dc.DataContext);
 
@@ -257,7 +257,7 @@ namespace RmsAuto.Store.Web
 			if( updates == null )
 				throw new ArgumentNullException( "updates" );
 
-			using( var context = new DCWrappersFactory<StoreDataContext>() )
+			using( var context = new DCFactory<StoreDataContext>() )
 			{
                 // deas 28.02.2011 task2401
                 // изменен словарь поиска для обновления ReferenceID
@@ -426,7 +426,7 @@ namespace RmsAuto.Store.Web
 
 		public IEnumerable<ShoppingCartItem> GetItems()
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				dc.DataContext.ExecuteCommand( "SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED" );
 				// timeout 100 seconds.
@@ -455,7 +455,7 @@ namespace RmsAuto.Store.Web
 			if( other == null )
 				throw new ArgumentNullException( "other" );
 
-            using (var context = new DCWrappersFactory<StoreDataContext>())
+            using (var context = new DCFactory<StoreDataContext>())
 			{
 				if( other.GetTotals( context.DataContext ).ItemsCount == 0 )
 					return;

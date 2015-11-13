@@ -256,7 +256,7 @@ namespace RmsAuto.Store.Web.Controls
             byte StatusID;
             if (byte.TryParse(oID, out i) && byte.TryParse(o, out StatusID))
             {
-                using (var ctxStore = new DCWrappersFactory<StoreDataContext>())
+                using (var ctxStore = new DCFactory<StoreDataContext>())
                 {
                     List<OrderLine> OrderLinesLoaded = ctxStore.DataContext.OrderLines.Where(x => x.OrderID == i).ToList();
                     foreach (OrderLine ordln in OrderLinesLoaded)

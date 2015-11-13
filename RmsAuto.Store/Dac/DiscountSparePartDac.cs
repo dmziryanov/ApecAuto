@@ -12,7 +12,7 @@ namespace RmsAuto.Store.Dac
 	{
 		public static string[] GetDiscountSparePartBrands()
 		{
-			using (var dc = new DCWrappersFactory<StoreDataContext>())
+			using (var dc = new DCFactory<StoreDataContext>())
 			{
 				return dc.DataContext.DiscountSpareParts.OrderBy(d => d.Manufacturer)
 					.Select(d => d.Manufacturer)
@@ -22,7 +22,7 @@ namespace RmsAuto.Store.Dac
 
 		public static DiscountSparePart[] GetDiscountSparePart(string brand, int startIndex, int size)
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				return dc.DataContext.DiscountSpareParts
 					.Where(d => d.Manufacturer == brand)
@@ -34,7 +34,7 @@ namespace RmsAuto.Store.Dac
 
 		public static int GetDiscountSparePartCount(string brand)
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				return dc.DataContext.DiscountSpareParts.Where(d => d.Manufacturer == brand).Count();
 			}

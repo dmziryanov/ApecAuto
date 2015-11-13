@@ -18,7 +18,7 @@ namespace RmsAuto.Store.Cms.Dac
 
 		public static TextItem GetTextItem( string id, string culture )
 		{
-            using (var dc = new DCWrappersFactory<CmsDataContext>())
+            using (var dc = new DCFactory<CmsDataContext>())
 			{
                 TextItem rezTI = _getTextItem( dc.DataContext, id, culture );
                 if (rezTI == null)

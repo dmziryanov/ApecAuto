@@ -77,7 +77,7 @@ namespace RmsAuto.Store.Web.Manager
 			{
 				var siteContext = (ManagerSiteContext)SiteContext.Current;
 				int id = Convert.ToInt32(e.CommandArgument);
-                using (var dc = new DCWrappersFactory<StoreDataContext>())
+                using (var dc = new DCFactory<StoreDataContext>())
 				{
 					VinRequest request = dc.DataContext.VinRequests.Where(r => r.Id == id).Single();
 

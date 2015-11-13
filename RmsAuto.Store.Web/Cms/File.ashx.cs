@@ -35,7 +35,7 @@ namespace RmsAuto.Store.Web.Cms
 		public void ProcessRequest( HttpContext context )
 		{
             //SiteContext.Attach(context);
-            using( var dc = new DCWrappersFactory<CmsDataContext>(false) )
+            using( var dc = new DCFactory<CmsDataContext>(false) )
 			{
 			    //Сделать проверку наличия файла
                 //TODO: Вынести общую логику с хендлером файлов основного сайта

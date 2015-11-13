@@ -54,7 +54,7 @@ namespace RmsAuto.Store.Adm
 				string foreignkey = ForeignKeyColumn.GetForeignKeyString( Row );
 				if( !string.IsNullOrEmpty( foreignkey ) )
 				{
-                    using (var dc = new DCWrappersFactory<CmsDataContext>())
+                    using (var dc = new DCFactory<CmsDataContext>())
 					{
 						File file = dc.DataContext.Files.Where( f => f.FileID == Convert.ToInt32( foreignkey ) ).FirstOrDefault();
 						if( file != null )

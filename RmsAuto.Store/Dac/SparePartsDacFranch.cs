@@ -17,7 +17,7 @@ namespace RmsAuto.Store.Dac
 
         public static SparePartFranch Load(SparePartPriceKey key)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 try
                 {
@@ -56,7 +56,7 @@ namespace RmsAuto.Store.Dac
 
         public static List<SparePartFranch> LoadMassive(IEnumerable<SparePartPriceKey> keys)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 try
                 {
@@ -101,7 +101,7 @@ namespace RmsAuto.Store.Dac
 
         public static List<SparePartFranch> LoadMassive(IEnumerable<ShoppingCartAddItem> keys)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 try
                 {
@@ -145,7 +145,7 @@ namespace RmsAuto.Store.Dac
 
         public static List<SparePartFranch> LoadMassive(IEnumerable<ShoppingCartItem> keys)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 try
                 {

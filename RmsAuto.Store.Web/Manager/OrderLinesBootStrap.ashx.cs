@@ -28,7 +28,7 @@ namespace RmsAuto.Store.Web.Manager
             Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(SiteContext.CurrentCulture);
             Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(SiteContext.CurrentCulture);
             
-            using (var ctx = new DCWrappersFactory<StoreDataContext>())
+            using (var ctx = new DCFactory<StoreDataContext>())
             { 
             var IDs = context.Request.Params["IDs"];
 

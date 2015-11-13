@@ -52,7 +52,7 @@ namespace RmsAuto.Store.GlobalDBSettings
                 foreach (string s in FranchNames)
                 {
                     var GS = new GlobalSettings();
-					using (var dc = new DCWrappersFactory<dcCommonDataContext>(s))
+					using (var dc = new DCFactory<dcCommonDataContext>(s))
 					{
 						GS.settings = new List<GlobalSetting>();
 						GS.initialized = true;
@@ -110,7 +110,7 @@ namespace RmsAuto.Store.GlobalDBSettings
 				UpdateSetting(Name, Value);
 				return;
 			}
-			using (var dc = (new DCWrappersFactory<dcCommonDataContext>()).DataContext)
+			using (var dc = (new DCFactory<dcCommonDataContext>()).DataContext)
 			{
 				var setting = new GlobalSetting();
 				setting.Name = Name;
@@ -136,7 +136,7 @@ namespace RmsAuto.Store.GlobalDBSettings
 			}
 			else
 			{
-				using (var dc = (new DCWrappersFactory<dcCommonDataContext>()).DataContext)
+				using (var dc = (new DCFactory<dcCommonDataContext>()).DataContext)
 				{
 					var setting = dc.GlobalSettings.SingleOrDefault(x => x.Name == Name);
 					if (setting == null)

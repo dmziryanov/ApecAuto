@@ -237,7 +237,7 @@
     <Compile Include="Dac\UserMaintDac.cs" />
     <Compile Include="Dac\UserProfileDac.cs" />
     <Compile Include="Dac\VinRequestsDac.cs" />
-    <Compile Include="Data\DCWrappersFactory.cs" />
+    <Compile Include="Data\DCFactory.cs" />
     <Compile Include="Entities\AddToCartSuccessResult.cs" />
     <Compile Include="Entities\City.cs" />
     <Compile Include="Entities\ClientRegistrationDataExt.cs" />

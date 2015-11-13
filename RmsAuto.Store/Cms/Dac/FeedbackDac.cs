@@ -22,7 +22,7 @@ namespace RmsAuto.Store.Cms.Dac
 
 		public static FeedbackRecipient[] GetFeedbackRecipients(string locale)
 		{
-			using( var dc = new DCWrappersFactory<CmsDataContext>() )
+			using( var dc = new DCFactory<CmsDataContext>() )
 			{
 				if (locale != "ru-RU")
 				{
@@ -56,7 +56,7 @@ namespace RmsAuto.Store.Cms.Dac
 
 		public static FeedbackRecipient GetFeedbackRecipient(int id) 
 		{
-			using(var dc = new  DCWrappersFactory<CmsDataContext>())
+			using(var dc = new  DCFactory<CmsDataContext>())
 			{
  				return _getFeedbackRecipient(dc.DataContext, id);
 			}

@@ -19,7 +19,7 @@ namespace RmsAuto.Store.Web.Manager
 
         public void ProcessRequest(HttpContext context)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 var i = dc.DataContext.ExecuteCommand(@"USE [ex_LiteFranchTest_store];
                                                         DROP function [dbo].[fSparePartWithCustomFactorsRMS];");

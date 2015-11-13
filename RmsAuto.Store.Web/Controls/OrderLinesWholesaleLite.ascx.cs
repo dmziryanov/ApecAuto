@@ -156,7 +156,7 @@ namespace RmsAuto.Store.Web.Controls
             var mas = SavedStatuses.Value.Split(';');
             if (mas.Length > 1)
             {
-                using (var ctxStore = new DCWrappersFactory<StoreDataContext>())
+                using (var ctxStore = new DCFactory<StoreDataContext>())
                 {
                     foreach (var pair in mas)
                     {
@@ -208,7 +208,7 @@ namespace RmsAuto.Store.Web.Controls
 				{
 					_filterStatusBox.Items.Add( new ListItem( status.ToTextOrName(), "c" + (int)status ) );
 				}
-                using (var dc = new DCWrappersFactory<StoreDataContext>())
+                using (var dc = new DCFactory<StoreDataContext>())
                 {
                     foreach (var statusElement in dc.DataContext.OrderLineStatuses)
                     {
@@ -488,7 +488,7 @@ namespace RmsAuto.Store.Web.Controls
             byte StatusID;
             if (int.TryParse(oID, out i) && byte.TryParse(o, out StatusID))
             {
-                using (var ctxStore = new DCWrappersFactory<StoreDataContext>())
+                using (var ctxStore = new DCFactory<StoreDataContext>())
                 {
 
                     OrderLine CurOrderLine = ctxStore.DataContext.OrderLines.Where(x => x.OrderLineID == i).FirstOrDefault();

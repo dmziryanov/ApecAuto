@@ -51,7 +51,7 @@ namespace RmsAuto.Store.Dac
 
 		public static User GetUser(string login, string password)
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
                 if (LightBO.IsLight())
                 {
@@ -66,7 +66,7 @@ namespace RmsAuto.Store.Dac
 
         public static User GetUserByUserId(int userId)
         {
-            using (DCWrappersFactory<StoreDataContext> dc = new DCWrappersFactory<StoreDataContext>())
+            using (DCFactory<StoreDataContext> dc = new DCFactory<StoreDataContext>())
             {
                 return _getUsersByUserId(dc.DataContext, userId).SingleOrDefault();
             }
@@ -74,7 +74,7 @@ namespace RmsAuto.Store.Dac
 
 		public static User GetUserByClientId( string clientId )
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				return _getUsersByClientId( dc.DataContext, clientId ).SingleOrDefault();
 			}
@@ -82,7 +82,7 @@ namespace RmsAuto.Store.Dac
 
 		public static User GetUserByUsername( string username )
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				return _getUsersByUsername( dc.DataContext, username ).SingleOrDefault();
 			}
@@ -90,7 +90,7 @@ namespace RmsAuto.Store.Dac
 
         public static string GetAcctgIDByUserID(int userID)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 return _getAcctgIDByUserID(dc.DataContext, userID).SingleOrDefault();
             }

@@ -39,7 +39,7 @@ namespace RmsAuto.Store.Dac
 
         public static IEnumerable<VinRequest> GetRequests(string clientId)
         {
-            using (var ctx = new DCWrappersFactory<StoreDataContext>())
+            using (var ctx = new DCFactory<StoreDataContext>())
             {
                 return _getClientVinRequests(ctx.DataContext, clientId).ToList();
             }
@@ -47,7 +47,7 @@ namespace RmsAuto.Store.Dac
 
         public static VinRequest GetRequest(int requestId)
         {
-            using (var ctx = new DCWrappersFactory<StoreDataContext>())
+            using (var ctx = new DCFactory<StoreDataContext>())
             {
                 return _getVinRequest(ctx.DataContext, requestId).Single();
             }

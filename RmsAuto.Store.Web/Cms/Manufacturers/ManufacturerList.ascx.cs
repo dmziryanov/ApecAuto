@@ -25,7 +25,7 @@ namespace RmsAuto.Store.Web.Cms.Manufacturers
 		}
 		protected void Page_PreRender( object sender, EventArgs e )
 		{
-            using (var dc = new DCWrappersFactory<CmsDataContext>())
+            using (var dc = new DCFactory<CmsDataContext>())
 			{
 				_dataList.DataSource = dc.DataContext.Manufacturers.Where( m => m.ShowInCatalog ).OrderBy( m => m.Name );
 				_dataList.DataBind();

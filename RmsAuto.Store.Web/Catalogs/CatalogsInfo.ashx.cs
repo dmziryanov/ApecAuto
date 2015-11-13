@@ -44,7 +44,7 @@ namespace RmsAuto.Store.Web.Catalogs
                 }
                 else
                 {
-                    using (var cms = new DCWrappersFactory<CmsDataContext>())
+                    using (var cms = new DCFactory<CmsDataContext>())
                     {
                         var Cats = (from x in cms.DataContext.spSelCatalogsFromRms().Where(x => x.Visible == true).OrderBy(x => x.Priority)
                                     select new CatalogJson() { ID = x.Id, Name = x.Name, Description = x.Description, ImageUrl = x.ImageUrl, @ref = x.@ref, }).ToList();

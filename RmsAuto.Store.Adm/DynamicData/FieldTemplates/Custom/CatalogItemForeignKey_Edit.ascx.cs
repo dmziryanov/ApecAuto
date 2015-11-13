@@ -37,7 +37,7 @@ namespace RmsAuto.Store.Adm.DynamicData.FieldTemplates.Custom
 
 		private void PopulateCatalogItems( DropDownList dropDownList )
 		{
-            using (var dc = new DCWrappersFactory<CmsDataContext>())
+            using (var dc = new DCFactory<CmsDataContext>())
 			{
 				var groups = dc.DataContext.CatalogItems.GroupBy( c => c.ParentItemID ).ToDictionary( g => g.Key ?? 0 );
 

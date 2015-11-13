@@ -18,7 +18,7 @@ namespace RmsAuto.Store.Web
 
 		static ReclamationTracking()
         {
-            using ( var dc = new DCWrappersFactory<StoreDataContext>() )
+            using ( var dc = new DCFactory<StoreDataContext>() )
 			{
 				#region === Подгружаем локализации ===
 				DataLoadOptions dlo = new DataLoadOptions();
@@ -72,7 +72,7 @@ namespace RmsAuto.Store.Web
 		/// <param name="rec">рекламация</param>
 		public static int SendReclamation(Reclamation rec)
 		{
-			using (var dc = new DCWrappersFactory<StoreDataContext>())
+			using (var dc = new DCFactory<StoreDataContext>())
 			{
 				//Коннекция открывается в фабрике
                 //dc.DataContext.Connection.Open();
@@ -133,7 +133,7 @@ namespace RmsAuto.Store.Web
 
 		public static Reclamation[] GetReclamations( string clientId, ReclamationFilter filter, ReclamationSortFields sortField, int startIndex, int size )
 		{
-			using ( var dc = new DCWrappersFactory<StoreDataContext>() )
+			using ( var dc = new DCFactory<StoreDataContext>() )
 			{
 				//TODO add DatatLoadOptions if required
 				//DataLoadOptions options = new DataLoadOptions();
@@ -152,7 +152,7 @@ namespace RmsAuto.Store.Web
 
 		public static int GetReclamationsCount( string clientId, ReclamationFilter filter )
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				var reclamations = dc.DataContext.Reclamations.Where( r => r.ClientID == clientId );
 				if ( filter != null )
@@ -165,7 +165,7 @@ namespace RmsAuto.Store.Web
 
 		public static Reclamation GetReclamation( string clientId, int reclamationId )
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				return dc.DataContext.Reclamations.Single( r => r.ClientID == clientId && r.ReclamationID == reclamationId );
 			}
@@ -206,7 +206,7 @@ namespace RmsAuto.Store.Web
 		/// <returns>результат</returns>
 		public static bool IsReclamationExist( int acctgOrderLineID )
 		{
-			using (var dc = new DCWrappersFactory<StoreDataContext>())
+			using (var dc = new DCFactory<StoreDataContext>())
 			{
 				return dc.DataContext.Reclamations.Where( r => r.AcctgOrderLineID == acctgOrderLineID ).Any();
 			}

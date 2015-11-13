@@ -106,7 +106,7 @@ namespace RmsAuto.Store.Acctg.Entities
 			requestXml = Regex.Replace(requestXml, @"<\?xml.*\?>", string.Empty);
 
 			// теперь просто сохраняем его в БД
-			using (var dc = new DCWrappersFactory<StoreDataContext>())
+			using (var dc = new DCFactory<StoreDataContext>())
 			{
 				try
 				{
@@ -142,7 +142,7 @@ namespace RmsAuto.Store.Acctg.Entities
 			requestXml = Regex.Replace(requestXml, @"<\?xml.*\?>", string.Empty);
 
 			// теперь просто сохраняем его в БД
-			//using (var dc = new DCWrappersFactory<StoreDataContext>())
+			//using (var dc = new DCFactory<StoreDataContext>())
 			//{
 				try
 				{
@@ -240,7 +240,7 @@ namespace RmsAuto.Store.Acctg.Entities
             //Теперь список магазинов забираем из своей БД, а вот там ежедневно (или по мере изменения) его должна обновлять 1С посредством хранимки
 
             StoreInfo[] res = null;
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 IEnumerable<StoreInfo> stores;
                 try
@@ -273,7 +273,7 @@ namespace RmsAuto.Store.Acctg.Entities
                 }
                 finally
                 {
-                    //Теперь закрываемся в DCWrappersFactory
+                    //Теперь закрываемся в DCFactory
                 }
             }
             return res;
@@ -331,7 +331,7 @@ namespace RmsAuto.Store.Acctg.Entities
         {
             IEnumerable<EmployeeInfo> rezItems = null;
             // теперь забираем данные из "своей" таблицы, а синхронизация - проблема УС
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 try
                 {

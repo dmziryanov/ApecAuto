@@ -69,7 +69,7 @@ namespace RmsAuto.Store.Adm.DynamicData.CustomPages.SeoPartsCatalogItems
 
 			if( !IsPostBack )
 			{
-				//using (var dc = new DCWrappersFactory<CmsDataContext>())
+				//using (var dc = new DCFactory<CmsDataContext>())
 				//{
 					var catalogItems = SeoPartsCatalogDac.GetVirtualPathItemsById( ParentID );
 

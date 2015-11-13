@@ -70,7 +70,7 @@ namespace RmsAuto.Store.Web.Manager
 				int[] ids = Array.ConvertAll(str, s => int.Parse(s));
 
 				PrintOrderLineInfo[] printLines = null; 
-				using (var dc = new DCWrappersFactory<StoreDataContext>())
+				using (var dc = new DCFactory<StoreDataContext>())
 				{
 					printLines = (from ol in dc.DataContext.OrderLines
 								  where ids.Contains(ol.OrderLineID)

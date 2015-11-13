@@ -68,7 +68,7 @@ namespace RmsAuto.Store.Adm.DynamicData.CustomPages.Banners
 
         protected void Page_PreRender( object sender, EventArgs e )
 		{
-            using (var dc = new DCWrappersFactory<CmsDataContext>())
+            using (var dc = new DCFactory<CmsDataContext>())
 			{
 			    var groups = dc.DataContext.CatalogItems.GroupBy( c => c.ParentItemID ).ToDictionary( g => g.Key ?? 0 );
 

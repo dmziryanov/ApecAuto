@@ -24,7 +24,7 @@ namespace RmsAuto.Store.Dac
         public static SparePartFranch Load(SparePartPriceKey key)
         {
 
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 if (AcctgRefCatalog.RmsFranches[SiteContext.Current.InternalFranchName].InternalFranchName == "rmsauto")
                 {
@@ -60,7 +60,7 @@ namespace RmsAuto.Store.Dac
         {
             if (AcctgRefCatalog.RmsFranches[SiteContext.Current.InternalFranchName].InternalFranchName == "rmsauto")
             {
-                using (var dc = new DCWrappersFactory<StoreDataContext>())
+                using (var dc = new DCFactory<StoreDataContext>())
                 {
                     dc.DataContext.ExecuteCommand("SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED");
                     return LoadMassive(dc.DataContext, keys);
@@ -68,7 +68,7 @@ namespace RmsAuto.Store.Dac
             }
             else
             {
-                using (var dc = new DCWrappersFactory<StoreDataContext>())
+                using (var dc = new DCFactory<StoreDataContext>())
                 {
                     return SparePartsDacFranch.LoadMassive(dc.DataContext, keys);
                 }
@@ -108,7 +108,7 @@ namespace RmsAuto.Store.Dac
 
         public static List<SparePartFranch> LoadMassive(IEnumerable<ShoppingCartAddItem> keys)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 dc.DataContext.ExecuteCommand("SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED");
                 return LoadMassive(dc.DataContext, keys);
@@ -140,7 +140,7 @@ namespace RmsAuto.Store.Dac
 
         public static List<SparePartFranch> LoadMassive(IEnumerable<ShoppingCartItem> keys)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 dc.DataContext.ExecuteCommand("SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED");
                 return LoadMassive(dc.DataContext, keys);

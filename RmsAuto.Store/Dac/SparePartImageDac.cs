@@ -17,7 +17,7 @@ namespace RmsAuto.Store.Dac
 
             //Фото брака хранятся пока что ТОЛЬКО в нашей БД, соответственно брать их откуда-то еще смысла нет
 			//Если данная ситуация изменится то видимо придется делать выборку и у нас и у франчей и делать UNION
-			using (var dc = new /*DCWrappersFactory<*/StoreDataContext/*>*/())
+			using (var dc = new /*DCFactory<*/StoreDataContext/*>*/())
 			{
 				return dc/*.DataContext*/.SparePartImages.Where( 
 					i => i.Manufacturer == parts[0] &&
@@ -30,7 +30,7 @@ namespace RmsAuto.Store.Dac
 		{
 			string[] parts = spid.Split(',');
 
-            using (var dc = new /*DCWrappersFactory<*/StoreDataContext/*>*/())
+            using (var dc = new /*DCFactory<*/StoreDataContext/*>*/())
 			{
 				return dc/*.DataContext*/.SparePartImages.Where(
 					i => i.Manufacturer == parts[0] &&

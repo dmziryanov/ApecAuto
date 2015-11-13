@@ -18,7 +18,7 @@ namespace RmsAuto.Store.Cms.Dac
 
 		public static SparePartGroup[] GetSparePartGroups()
 		{
-			using( var dc = new DCWrappersFactory<CmsDataContext>() )
+			using( var dc = new DCFactory<CmsDataContext>() )
 			{
 				return _getSparePartGroups( dc.DataContext ).ToArray();
 			}

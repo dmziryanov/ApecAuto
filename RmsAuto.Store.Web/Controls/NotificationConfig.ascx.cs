@@ -21,7 +21,7 @@ namespace RmsAuto.Store.Web.Controls
             {
                 Dictionary<byte, string> dNames = new Dictionary<byte, string>();
 
-                using (var dc = new DCWrappersFactory<StoreDataContext>())
+                using (var dc = new DCFactory<StoreDataContext>())
                 {
                     //deas 30.03.2011 task3586
                     // добавлена сортировка и условие отображения
@@ -55,7 +55,7 @@ namespace RmsAuto.Store.Web.Controls
             if ( ddlNotificationFrequency.SelectedIndex == 1 ) {hour = Convert.ToInt32(ddlPeriod.SelectedValue); }
             string statusIds = hfSelectedStatuses.Value;
 
-            using (var DC = new DCWrappersFactory<StoreDataContext>())
+            using (var DC = new DCFactory<StoreDataContext>())
             {
                 DC.DataContext.spUpdUSAlertConfig(SiteContext.Current.User.UserId, hour, statusIds);
             }
@@ -67,7 +67,7 @@ namespace RmsAuto.Store.Web.Controls
         {
             //выставляем настройки рассылки текущего пользователя
             //var alertConfig = ClientAlertConfigDac.GetAlertConfigByClientId( SiteContext.Current.User.AcctgID );
-            var DC = new DCWrappersFactory<StoreDataContext>();
+            var DC = new DCFactory<StoreDataContext>();
             var alertConfig = DC.DataContext.spSelUserSetting( SiteContext.Current.User.UserId ).FirstOrDefault();
 
             if ( alertConfig != null )

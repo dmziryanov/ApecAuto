@@ -59,7 +59,7 @@ namespace RmsAuto.Store.BL
 
 		static OrderBO()
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				//инициализировать условие для определения финальных статусов, статусов подтверждения, статусов для рассчёта суммы
 				var finalStatusExpression = PredicateBuilder.False<OrderLine>();
@@ -124,7 +124,7 @@ namespace RmsAuto.Store.BL
 
 		public static Order LoadOrderData(string clientId, int orderId)
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				DataLoadOptions options = new DataLoadOptions();
 				options.LoadWith<Order>(o => o.OrderLines);
@@ -158,7 +158,7 @@ namespace RmsAuto.Store.BL
 
 		public static OrderLine LoadOrderLineData(string clientId, int orderLineId, bool TrackEnable)
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				
                 DataLoadOptions options = new DataLoadOptions();
@@ -228,7 +228,7 @@ namespace RmsAuto.Store.BL
 				OrderDate = DateTime.Now
 			};
 
-            using (var dc = new DCWrappersFactory<StoreDataContext>(IsolationLevel.ReadUncommitted, false, null, false))
+            using (var dc = new DCFactory<StoreDataContext>(IsolationLevel.ReadUncommitted, false, null, false))
 			{
 				foreach (var item in cartItems)
 				{
@@ -312,7 +312,7 @@ namespace RmsAuto.Store.BL
 					{
 						dc.DataContext.Connection.Close();
 					}
-                    //Теперь закрываемся в DCWrappersFactory
+                    //Теперь закрываемся в DCFactory
 				}
 				return order.OrderID;
 			}
@@ -345,10 +345,10 @@ namespace RmsAuto.Store.BL
 			{
 				order.OrderLines.Add( line );
 			}
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				dc.DataContext.Orders.InsertOnSubmit( order );
-                //DCWrappersFactory начинает транзакцию и так, может не стоит этого делать?
+                //DCFactory начинает транзакцию и так, может не стоит этого делать?
                 dc.DataContext.Transaction = dc.DataContext.Connection.BeginTransaction();
 
 				try
@@ -378,7 +378,7 @@ namespace RmsAuto.Store.BL
 		/// </summary>
 		public static void ResendOrder(int orderId)
 		{
-			using (var dc = new DCWrappersFactory<StoreDataContext>())
+			using (var dc = new DCFactory<StoreDataContext>())
 			{
                 //DataLoadOptions options = new DataLoadOptions();
                 //options.LoadWith<Order>(o => o.OrderLines);
@@ -538,8 +538,8 @@ namespace RmsAuto.Store.BL
 		/// </summary>
 		public static void UpdateOrderLineProcessed(int /*orderLineID*/acctgOrderLineID, byte processed)
 		{
-			using (var dc = new DCWrappersFactory<StoreDataContext>(IsolationLevel.ReadUncommitted, false, null, false))
-            //using (var dc = new DCWrappersFactory<StoreDataContext>())
+			using (var dc = new DCFactory<StoreDataContext>(IsolationLevel.ReadUncommitted, false, null, false))
+            //using (var dc = new DCFactory<StoreDataContext>())
 			{
 				
 				//выставляем байт processed в таблице OrderLinesProcessed (она будет использоваться при перезаливке строк из 1С)
@@ -626,7 +626,7 @@ namespace RmsAuto.Store.BL
 
 		public static DateTime? GetLastOrderLineStatusChangeTime()
 		{
-            using (var context = new DCWrappersFactory<StoreDataContext>())
+            using (var context = new DCFactory<StoreDataContext>())
 			{
 				var lastStatus = context.DataContext
                     .OrderLineStatusChanges
@@ -639,7 +639,7 @@ namespace RmsAuto.Store.BL
 
 		public static void ClearTransferChangesLog()
 		{
-            using (var context = new DCWrappersFactory<StoreDataContext>())
+            using (var context = new DCFactory<StoreDataContext>())
 			{
 				context.DataContext.ExecuteCommand("DELETE FROM dbo.TransferChangesLogEntries");
 			}
@@ -780,7 +780,7 @@ namespace RmsAuto.Store.BL
 			OrderLineChangeReaction clientReaction,
 			DateTime clientReactionTime)
 		{
-            using (var context = new DCWrappersFactory<StoreDataContext>())
+            using (var context = new DCFactory<StoreDataContext>())
             {
                 var line = context.DataContext.OrderLines.Single( l => l.OrderLineID == orderLineId );
 
@@ -841,7 +841,7 @@ namespace RmsAuto.Store.BL
 				log.LogManagerListRequestFailed();
 			}
 
-			using (var dc = new DCWrappersFactory<StoreDataContext>())
+			using (var dc = new DCFactory<StoreDataContext>())
 			{
                 // deas 23.05.2011 task4130 Ускорение работы со статусами
 				//var stRejected = OrderLineStatusUtil.StatusByte(dc, "Rejected");
@@ -922,7 +922,7 @@ namespace RmsAuto.Store.BL
 
 		private static void SendOrderLineTrackingAlerts(string clientId, IDictionary<string, EmployeeInfo> managers, ISendOrderLineTrackingAlertsLog log)
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				DataLoadOptions dlo = new DataLoadOptions();
 				dlo.LoadWith<OrderLine>(l => l.Order);

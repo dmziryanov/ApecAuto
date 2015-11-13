@@ -25,7 +25,7 @@ namespace RmsAuto.Store.Dac
         
         public static UserProfileEntry GetProfileByUserId(int userId)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 return _getEntriesByUserId(dc.DataContext, userId).SingleOrDefault();
             }
@@ -33,7 +33,7 @@ namespace RmsAuto.Store.Dac
 
         public static UserProfileEntry GetProfileByUsername(string username)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 return _getEntriesByUsername(dc.DataContext, username).SingleOrDefault();
             }
@@ -44,7 +44,7 @@ namespace RmsAuto.Store.Dac
             IDictionary<string, object> propValues,
             DateTime activityTime)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 var entry = _getEntriesByUserId(dc.DataContext, userId).SingleOrDefault();
                                 
@@ -71,7 +71,7 @@ namespace RmsAuto.Store.Dac
 
         public static void UpdateActivityTime(int userId, DateTime activityTime)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 var entry = _getEntriesByUserId(dc.DataContext, userId).Single();
                 entry.LastActivityTime = activityTime;

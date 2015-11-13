@@ -29,7 +29,7 @@ namespace RmsAuto.Store.Web.PrivateOffice
         protected override void OnInit(EventArgs e)
         {
             base.OnInit(e);
-            this.DataContext = (new DCWrappersFactory<StoreDataContext>()).DataContext;
+            this.DataContext = (new DCFactory<StoreDataContext>()).DataContext;
         }
         
         protected void Page_Unload(object sender, EventArgs e)

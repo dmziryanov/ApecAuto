@@ -18,7 +18,7 @@ namespace RmsAuto.Store.Cms.Dac
 
         public static SeoShortLink GetSeoShortLink( int id )
         {
-            using (var dc = new DCWrappersFactory<CmsDataContext>())
+            using (var dc = new DCFactory<CmsDataContext>())
             {
                 return _getSeoShortLink( dc.DataContext, id );
             }
@@ -26,7 +26,7 @@ namespace RmsAuto.Store.Cms.Dac
 
         public static List<int> GetLastLink( int countItem, string culture )
         {
-            var DC = new DCWrappersFactory<CmsDataContext>();
+            var DC = new DCFactory<CmsDataContext>();
             return DC.DataContext.SeoShortLinks.Where( t => t.Localization == culture ).OrderByDescending( t => t.UpdateDate ).Take( countItem )
                 .Select( t => t.SeoLinksID ).ToList<int>();
         }

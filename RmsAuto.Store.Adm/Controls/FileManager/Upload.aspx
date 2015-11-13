@@ -39,7 +39,7 @@
 			if( !FileUploadBox.HasFile )
 				throw new Exception( "Âûבונטעו פאיכ" );
 
-            using (var dc = new DCWrappersFactory<CmsDataContext>())
+            using (var dc = new DCFactory<CmsDataContext>())
             {
 				File file = new File();
 				file.FolderID = FolderID;

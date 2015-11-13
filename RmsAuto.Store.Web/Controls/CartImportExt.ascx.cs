@@ -176,7 +176,7 @@ namespace RmsAuto.Store.Web.Controls
                     _multiViewLoadReport.ActiveViewIndex = 2;
                 }
 
-                using (var DC = new DCWrappersFactory<StoreDataContext>())
+                using (var DC = new DCFactory<StoreDataContext>())
                 {
                     var userSet = DC.DataContext.spSelUserSetting(SiteContext.Current.User.UserId).FirstOrDefault();
                     byte PrcExcessPrice = userSet == null ? (byte)0 : userSet.PrcExcessPrice;
@@ -395,7 +395,7 @@ namespace RmsAuto.Store.Web.Controls
             rowsERQty.Clear();
             parts.Clear();
             //импорт строк заказа
-            using (var FDC = new DCWrappersFactory<StoreDataContext>())
+            using (var FDC = new DCFactory<StoreDataContext>())
             {
                 //StoreDataContext DC = new StoreDataContext();
                 StoreDataContext DC = FDC.DataContext;
@@ -658,7 +658,7 @@ namespace RmsAuto.Store.Web.Controls
             rowsER.Clear();
             rowsERQty.Clear();
             //импорт строк заказа
-            using (var DC = new DCWrappersFactory<StoreDataContext>())
+            using (var DC = new DCFactory<StoreDataContext>())
             {
                 var userSet = DC.DataContext.spSelUserSetting(SiteContext.Current.User.UserId).FirstOrDefault();
                 RmsAuto.Acctg.ClientGroup _clientGroup = SiteContext.Current.CurrentClient.Profile.ClientGroup;
@@ -1041,7 +1041,7 @@ namespace RmsAuto.Store.Web.Controls
 
                 // Собираем сумарные остатки
                 Dictionary<SparePartPriceKey, int> groupRows = new Dictionary<SparePartPriceKey, int>();
-                var DC = new DCWrappersFactory<StoreDataContext>();
+                var DC = new DCFactory<StoreDataContext>();
                 foreach ( CartImportRowERQty rERQty in rowsERQty )
                 {
                     SparePartPriceKey SPPK = new SparePartPriceKey( rERQty.manufacturer, rERQty.partNumber, rERQty.supplierId );
@@ -1633,7 +1633,7 @@ namespace RmsAuto.Store.Web.Controls
 			int currentUserID = SiteContext.Current.CurrentClient.Profile.UserId;
 			
 			List<BanClientAction> bans = new List<BanClientAction>();
-			using (var dc = new DCWrappersFactory<StoreDataContext>())
+			using (var dc = new DCFactory<StoreDataContext>())
 			{
 				//Получаем список банов для данного пользователя
 				bans = dc.DataContext.BanClientActions.Where(b => b.UserID == currentUserID).ToList();

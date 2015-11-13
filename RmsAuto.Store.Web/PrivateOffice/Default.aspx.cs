@@ -27,7 +27,7 @@ namespace RmsAuto.Store.Web.PrivateOffice
 		{
 			_pageTitleLiteral.Text = CmsContext.Current.CatalogItem.CatalogItemName;
 
-			using( var dc = new DCWrappersFactory<CmsDataContext>() )
+			using( var dc = new DCFactory<CmsDataContext>() )
 			{
 				int parentId = UrlManager.CatalogItems.PrivateOfficeCatalogItem.CatalogItemID;
 				/*_dataList.DataSource = dc.DataContext.CatalogItems

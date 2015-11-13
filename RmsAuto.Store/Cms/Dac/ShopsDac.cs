@@ -31,7 +31,7 @@ namespace RmsAuto.Store.Cms.Dac
         public static List<Shop> GetShops(string storeId)
         {
             List<Shop> shops;
-            using (var Ctx = new DCWrappersFactory<CmsDataContext>())
+            using (var Ctx = new DCFactory<CmsDataContext>())
             {
                 if (!LightBO.IsLight())
                 {
@@ -110,7 +110,7 @@ namespace RmsAuto.Store.Cms.Dac
 
         public static IEnumerable<Shop> GetShopByID(int ID)
         {
-            using (var Ctx = new DCWrappersFactory<CmsDataContext>())
+            using (var Ctx = new DCFactory<CmsDataContext>())
             {
                 var shops = Ctx.DataContext.Shops.Where(x => x.ShopVisible && x.ShopID == ID).ToList();
 

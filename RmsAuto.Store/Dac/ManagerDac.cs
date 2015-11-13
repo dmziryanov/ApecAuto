@@ -17,7 +17,7 @@ namespace RmsAuto.Store.Dac
 
         public static HandyClientSetEntry[] GetHandySetEntries(int managerId)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 return _getHandySetEntries(dc.DataContext, managerId).ToArray();
             }
@@ -28,7 +28,7 @@ namespace RmsAuto.Store.Dac
             if (entry == null)
                 throw new ArgumentNullException("entry");
 
-            using (var context = new DCWrappersFactory<StoreDataContext>())
+            using (var context = new DCFactory<StoreDataContext>())
             {
                 context.DataContext.HandyClientSetEntries.InsertOnSubmit(entry);
                 if (entry.IsDefault)
@@ -44,7 +44,7 @@ namespace RmsAuto.Store.Dac
 
         public static void SetHandySetEntryAsDefault(int managerId, string clientId)
         {
-            using (var context = new DCWrappersFactory<StoreDataContext>())
+            using (var context = new DCFactory<StoreDataContext>())
             {
                 var hcse = _getHandySetEntries(context.DataContext, managerId).Single(e => e.ClientID == clientId);
                 if (!hcse.IsDefault)
@@ -60,7 +60,7 @@ namespace RmsAuto.Store.Dac
 
         public static void DeleteHandySetEntry(int managerId, string clientId)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 dc.DataContext.HandyClientSetEntries.DeleteOnSubmit(
                     _getHandySetEntries(dc.DataContext, managerId)
@@ -71,7 +71,7 @@ namespace RmsAuto.Store.Dac
 
         public static void DeleteAllHandySetEntries(int managerId)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 dc.DataContext.HandyClientSetEntries.DeleteAllOnSubmit(
                     _getHandySetEntries(dc.DataContext, managerId));
@@ -81,7 +81,7 @@ namespace RmsAuto.Store.Dac
 
         public static HandyClientSetEntry GetDefaultHandySetEntry(int managerId)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 return _getHandySetEntries(dc.DataContext, managerId).SingleOrDefault(e => e.IsDefault);
             }

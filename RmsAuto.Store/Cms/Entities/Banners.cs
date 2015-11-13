@@ -217,7 +217,7 @@ namespace RmsAuto.Store.Cms.Entities
 
         public static List<Banners> GetBannersList(int catalogItemID, byte position)
         {
-			using (var dc = new DCWrappersFactory<CmsDataContext>())
+			using (var dc = new DCFactory<CmsDataContext>())
 			{
 				try
 				{

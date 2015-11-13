@@ -32,7 +32,7 @@ namespace RmsAuto.Store.Cms.Dac
 		/// <returns>ID файла</returns>
 		public static int GetFileIDByName(string fileName)
 		{
-			using (var dc = new DCWrappersFactory<CmsDataContext>())
+			using (var dc = new DCFactory<CmsDataContext>())
 			{
 				return _getFileIDByFileName(dc.DataContext, fileName);
 			}
@@ -40,7 +40,7 @@ namespace RmsAuto.Store.Cms.Dac
 
 		public static string GetFolderPath( int folderID )
 		{
-			using(var dc = new DCWrappersFactory<CmsDataContext>())
+			using(var dc = new DCFactory<CmsDataContext>())
 			{
 				Folder folder = _getFolderById( dc.DataContext, folderID );
 
@@ -96,7 +96,7 @@ namespace RmsAuto.Store.Cms.Dac
 
         public static int GetMaxID()
         {
-            var dc = new DCWrappersFactory<CmsDataContext>();
+            var dc = new DCFactory<CmsDataContext>();
             return GetMaxID(dc.DataContext);
         }
 

@@ -137,7 +137,7 @@ namespace RmsAuto.Store.Web.Cms
                 string[] str = source.ToString().Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
                 int[] ids = Array.ConvertAll(str, s => int.Parse(s));
 
-                using (var dc = new DCWrappersFactory<StoreDataContext>())
+                using (var dc = new DCFactory<StoreDataContext>())
                 {
                     dc.DataContext.DeferredLoadingEnabled = false;
                     Data =
@@ -351,7 +351,7 @@ namespace RmsAuto.Store.Web.Cms
 
             if (int.TryParse(Context.Request["order"], NumberStyles.Integer, CultureInfo.InvariantCulture, out orderID))
             {
-                using (var dc = new DCWrappersFactory<StoreDataContext>())
+                using (var dc = new DCFactory<StoreDataContext>())
                 {
                     dc.DataContext.DeferredLoadingEnabled = false;
                     Data =

@@ -28,7 +28,7 @@ namespace RmsAuto.Store.Dac
 		//}
 		public static ClientAlertConfig GetAlertConfigByClientId(string clientId)
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				return _getAlertConfigByClientId(dc.DataContext, clientId).SingleOrDefault();
 			}
@@ -39,7 +39,7 @@ namespace RmsAuto.Store.Dac
 			int hourOfPeriod,
 			string statusIds)
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				var alertConfig = _getAlertConfigByClientId(dc.DataContext, clientId).SingleOrDefault();
 

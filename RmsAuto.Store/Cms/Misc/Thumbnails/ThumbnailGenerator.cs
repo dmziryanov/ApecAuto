@@ -17,7 +17,7 @@ namespace RmsAuto.Store.Cms.Misc.Thumbnails
 	{
 		public static ThumbnailInfo GetThumbnail( int fileID, string thumbnailGeneratorKey, string r)
 		{
-            //В этом событии все плохо  DCWrappersFactory получает параметр из SiteContext, а он еще не готов 
+            //В этом событии все плохо  DCFactory получает параметр из SiteContext, а он еще не готов 
             ThumbnailGeneratorConfigItem config = ThumbnailGeneratorConfig.Default.Items.GetItem(thumbnailGeneratorKey);
 
             string InternalFranchName = "";
@@ -26,7 +26,7 @@ namespace RmsAuto.Store.Cms.Misc.Thumbnails
             else
                 { InternalFranchName = (string.IsNullOrEmpty(SiteContext._internalFranchName) ? "rmsauto" : SiteContext._internalFranchName); }
 
-            using (var dc = new DCWrappersFactory<CmsDataContext>(InternalFranchName))
+            using (var dc = new DCFactory<CmsDataContext>(InternalFranchName))
 			{
 				File file = FilesDac.GetFile(dc.DataContext, fileID);
 				

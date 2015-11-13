@@ -17,7 +17,7 @@ namespace RmsAuto.Store.Dac
 
 		public static void AddLog( DateTime searchDate, string partNumber, string clientIP )
 		{
-            using (var dc = new DCWrappersFactory<LogDataContext>())
+            using (var dc = new DCFactory<LogDataContext>())
             {
 				dc.DataContext.ExecuteCommand(
 					"insert into SearchSparePartsLog (SearchDate,PartNumber,ClientIP) values ({0},{1},{2})",
@@ -28,7 +28,7 @@ namespace RmsAuto.Store.Dac
 
 		public static void AddLog( DateTime searchDate, string partNumber, string manufacturer, string clientIP )
 		{
-            using (var dc = new DCWrappersFactory<LogDataContext>())
+            using (var dc = new DCFactory<LogDataContext>())
 			{
                 dc.DataContext.ExecuteCommand(
 					"insert into SearchSparePartsLog (SearchDate,PartNumber,Manufacturer,ClientIP) values ({0},{1},{2},{3})",
@@ -39,7 +39,7 @@ namespace RmsAuto.Store.Dac
 
         public static void AddWebServiceLog(DateTime searchDate, string partNumber, string manufacturer, string clientIP, string ClientID)
         {
-            using (var dc = new DCWrappersFactory<LogDataContext>())
+            using (var dc = new DCFactory<LogDataContext>())
             {
                 dc.DataContext.ExecuteCommand(
                     "insert into SearchSparePartsWebServiceLog (SearchDate,PartNumber,Manufacturer,ClientIP, ClientID) values ({0},{1},{2},{3},{4})",

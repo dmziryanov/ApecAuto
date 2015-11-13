@@ -34,7 +34,7 @@ namespace RmsAuto.Store.Web.Cms.Shops
 		protected void Page_PreRender( object sender, EventArgs e )
 		{
             
-			using(var dc = new DCWrappersFactory<CmsDataContext>())
+			using(var dc = new DCFactory<CmsDataContext>())
 			{
 				DataLoadOptions dlo = new DataLoadOptions();
 				dlo.LoadWith<Shop>(s => s.ShopMapFile);

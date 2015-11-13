@@ -129,7 +129,7 @@ namespace RmsAuto.Store.Web
 
 		public static string[] LoadOrderLinesManufacturers( string clientId, int[] orderIDs )
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
                 // deas 23.05.2011 task4130 Ускорение работы со статусами
 			    //var stRejected = OrderLineStatusUtil.StatusByte(dc, "Rejected");
@@ -160,7 +160,7 @@ namespace RmsAuto.Store.Web
 		/// <returns>количество строк заказов</returns>
 		public static OrderLineTotals GetOrderLinesCount( string clientId, /*OrderLineFilter filter*/ object filter )
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
                 // deas 23.05.2011 task4130 Ускорение работы со статусами
 			    //var stRejected = OrderLineStatusUtil.StatusByte(dc, "Rejected");
@@ -205,7 +205,7 @@ namespace RmsAuto.Store.Web
 		/// <returns>строки заказов</returns>
 		public static OrderLine[] GetOrderLines( string clientId, /*OrderLineFilter filter*/ object filter, OrderLineSortFields sortField, int startIndex, int size )
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				DataLoadOptions options = new DataLoadOptions();
 				options.LoadWith<OrderLine>( l => l.OrderLineStatusChanges );
@@ -489,7 +489,7 @@ namespace RmsAuto.Store.Web
 
 		public static OrdersList GetOrders( string clientId, OrderStatusFilter statusFilter, OrderSortFields sort, int startIndex, int size )
 		{
-			using( var dc = new DCWrappersFactory<StoreDataContext>() )
+			using( var dc = new DCFactory<StoreDataContext>() )
 			{
 				DataLoadOptions options = new DataLoadOptions();
 				options.LoadWith<Order>( o => o.OrderLines );
@@ -529,7 +529,7 @@ namespace RmsAuto.Store.Web
 		public static decimal GetNewOrdersSum(string clientId)
 		{
 			decimal sum = 0;
-			using (var dc = new DCWrappersFactory<StoreDataContext>())
+			using (var dc = new DCFactory<StoreDataContext>())
 			{
 				try
 				{
@@ -549,7 +549,7 @@ namespace RmsAuto.Store.Web
         /// <returns>Итоги по заказам</returns>
 		public static OrderTotals GetOrderTotals( string clientId, bool getCurrent )
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 OrderTotals res = new OrderTotals();
 
@@ -622,7 +622,7 @@ namespace RmsAuto.Store.Web
 
 		public static int GetOrderLinesRequiresReactionCount( string clientId )
 		{
-			using( var dc = new DCWrappersFactory<StoreDataContext>() )
+			using( var dc = new DCFactory<StoreDataContext>() )
 			{
 				var lines = dc.DataContext.OrderLines
 					.Where( l => l.Order.ClientID == clientId ).Where( OrderBO.PotentiallyRequiresReactionStatusExpression );
@@ -632,7 +632,7 @@ namespace RmsAuto.Store.Web
 
         public static Order GetOrderById(int OrderId)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 var order = dc.DataContext.Orders.Where(l => l.OrderID == OrderId).FirstOrDefault();
                 return order;
@@ -641,7 +641,7 @@ namespace RmsAuto.Store.Web
 
         public static Order GetOrderByAcctgOrderlineId(int? AcctgId)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 var order = dc.DataContext.OrderLines.Where(l => l.AcctgOrderLineID == AcctgId).FirstOrDefault().Order;
                 return order;
@@ -650,7 +650,7 @@ namespace RmsAuto.Store.Web
 
 		public static OrderLine[] GetOrderLinesRequiresReaction( string clientId, OrderLineSortFields sortField )
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				DataLoadOptions options = new DataLoadOptions();
 				options.LoadWith<OrderLine>( l => l.OrderLineStatusChanges );
@@ -678,7 +678,7 @@ namespace RmsAuto.Store.Web
 
 		public static void GetOrderLinesSummary( string clientId, byte status, out int linesCount, out decimal totalSum )
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				var lines = dc.DataContext.OrderLines
 					.Where( l => l.Order.ClientID == clientId && l.CurrentStatus == status );
@@ -693,7 +693,7 @@ namespace RmsAuto.Store.Web
 
         public static OrdersList GetOrdersByName(string ClientName, int statusFilter, OrderSortFields sort, DateTime lowDate, DateTime hiDate, int startIndex, int size, int AcctgOrderLineId)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 DataLoadOptions options = new DataLoadOptions();
                 options.LoadWith<Order>(o => o.OrderLines);
@@ -824,7 +824,7 @@ namespace RmsAuto.Store.Web
 
         public static OrderLine[] GetOrderLinesForLiteRMM(OrderLineFilter filter, OrderLineSortFields orderLineSortFields, int startIndex, int size)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 DataLoadOptions options = new DataLoadOptions();
                 options.LoadWith<OrderLine>(l => l.OrderLineStatusChanges);
@@ -864,7 +864,7 @@ namespace RmsAuto.Store.Web
 
         public static OrderLineTotals GetOrderLinesCountForRMM(OrderLineFilter filter)
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 DataLoadOptions options = new DataLoadOptions();
                 options.LoadWith<OrderLine>(l => l.OrderLineStatusChanges);

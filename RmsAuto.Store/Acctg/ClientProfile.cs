@@ -22,7 +22,7 @@ namespace RmsAuto.Store.Acctg
             if ( string.IsNullOrEmpty( email ) )
                 throw new ArgumentException( "Email cannot be empty", "email" );
 
-                var DC = new DCWrappersFactory<StoreDataContext>();
+                var DC = new DCFactory<StoreDataContext>();
                 DC.DataContext.spUpdUserEmail(clientId, email);
 				return Acknowledgement.OK;
         }
@@ -139,7 +139,7 @@ namespace RmsAuto.Store.Acctg
 
             RmsAuto.Acctg.ClientGroup clientGroup = tradingVolume == TradingVolume.Retail ? RmsAuto.Acctg.ClientGroup.DefaultRetail : RmsAuto.Acctg.ClientGroup.DefaultWholesale;
 
-            using (var DC = new DCWrappersFactory<StoreDataContext>())
+            using (var DC = new DCFactory<StoreDataContext>())
             {
               
                 var rezIns = DC.DataContext.spInsUsers( login, password, clientName, email, (byte)tradingVolume, (byte)clientCategory,
@@ -168,7 +168,7 @@ namespace RmsAuto.Store.Acctg
 
 
 			spSelUsersByAcctgIDResult gte = null;
-			using (var dc = new DCWrappersFactory<StoreDataContext>())
+			using (var dc = new DCFactory<StoreDataContext>())
 			{
 				gte = dc.DataContext.spSelUsersByAcctgID(clientId).FirstOrDefault();
 			}

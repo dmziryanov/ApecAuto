@@ -120,7 +120,7 @@ namespace RmsAuto.Store.Web.Cms.Banners
 
                 String flashID = fileName.Substring(pstart, pend-pstart);
 
-                String shortName = FilesDac.GetFile((new DCWrappersFactory<CmsDataContext>()).DataContext, fileID).FileName;
+                String shortName = FilesDac.GetFile((new DCFactory<CmsDataContext>()).DataContext, fileID).FileName;
 
                 fileName += "/" + shortName;
                 
@@ -141,7 +141,7 @@ namespace RmsAuto.Store.Web.Cms.Banners
             // пользователь самостоятельно вставил html-обертку, нужно вставить корректные имя и полный путь с учетом роутинга для swf
             else
             {
-                String shortName = FilesDac.GetFile((new DCWrappersFactory<CmsDataContext>()).DataContext, fileID).FileName;
+                String shortName = FilesDac.GetFile((new DCFactory<CmsDataContext>()).DataContext, fileID).FileName;
 
                 fileName += "/" + shortName;
 

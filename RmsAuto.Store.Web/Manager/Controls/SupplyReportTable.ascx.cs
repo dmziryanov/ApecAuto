@@ -60,7 +60,7 @@ namespace RmsAuto.Store.Web.Manager.Controls
 
         public new void DataBind()
         {
-            using (var ctx = new DCWrappersFactory<StoreDataContext>())
+            using (var ctx = new DCFactory<StoreDataContext>())
             {
 
 

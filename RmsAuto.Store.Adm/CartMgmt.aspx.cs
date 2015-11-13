@@ -49,7 +49,7 @@ namespace RmsAuto.Store.Adm
 		protected void _btnClean_Click(object sender, ImageClickEventArgs e)
 		{
 			string clientID = _txtClientID.Text;
-			using (var context = new DCWrappersFactory<StoreDataContext>())
+			using (var context = new DCFactory<StoreDataContext>())
 			{
 				var cartItems = context.DataContext.ShoppingCartItems.Where(i => i.ClientID == clientID);
 				if (cartItems.Count() > 0)
@@ -68,7 +68,7 @@ namespace RmsAuto.Store.Adm
 			if (!string.IsNullOrEmpty(clientId))
 			{
 				List<ShoppingCartItem> cartItems = new List<ShoppingCartItem>();
-				using (var context = new DCWrappersFactory<StoreDataContext>())
+				using (var context = new DCFactory<StoreDataContext>())
 				{
 					cartItems = context.DataContext.ShoppingCartItems.Where(i => i.ClientID == clientId).ToList();
 				}

@@ -15,7 +15,7 @@ namespace RmsAuto.Store.Entities
 
         public static TransferChangesLogEntry Load(int logEntryId)
         {
-            using (var context = new DCWrappersFactory<StoreDataContext>())
+            using (var context = new DCFactory<StoreDataContext>())
             {
                 return context.DataContext.TransferChangesLogEntries.Single(tcle => tcle.LogEntryID == logEntryId);
             }

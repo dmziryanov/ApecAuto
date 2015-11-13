@@ -26,7 +26,7 @@ namespace RmsAuto.Store.Web.Controls
             int StatusID;
             if (int.TryParse(context.Request.Params["OrderLineID"], out i) && int.TryParse(context.Request.Params["newStatus"], out StatusID))
             {
-                using (var ctxStore = new DCWrappersFactory<StoreDataContext>())
+                using (var ctxStore = new DCFactory<StoreDataContext>())
                 {
                     OrderLine CurOrderLine = ctxStore.DataContext.OrderLines.Where(x => x.OrderLineID == i).FirstOrDefault();
                     context.Response.ContentType = "text/plain";

@@ -55,7 +55,7 @@ namespace RmsAuto.Store.Web.Manager
 
         protected void _btnFillReport_Click(object sender, EventArgs e)
         {
-            using (var ctx = new DCWrappersFactory<StoreDataContext>())
+            using (var ctx = new DCFactory<StoreDataContext>())
             {
 
                 var UserId = string.IsNullOrEmpty(ClientSearchList.CurrentUserID) ? -100 : int.Parse(ClientSearchList.CurrentUserID);

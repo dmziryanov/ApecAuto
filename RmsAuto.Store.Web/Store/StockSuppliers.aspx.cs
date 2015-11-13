@@ -31,7 +31,7 @@ namespace RmsAuto.Store.Web.Store
 			base.OnLoad( e );
 
 			var ids = StocksConfiguration.Current.SupplierIds;
-            using (var ctx = new DCWrappersFactory<StoreDataContext>())
+            using (var ctx = new DCFactory<StoreDataContext>())
 			{
                 throw new NotImplementedException();
                 //var mfrs = ctx.DataContext.SpareParts

@@ -68,7 +68,7 @@ namespace RmsAuto.Store.Web.Manager.Controls
 
         public void DataBind()
         {
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
             {
                 string s = @"Select a.UserID, u.ClientName, m.AcctgID, m.ClientName as Manager,  ABS(sum(ISNULL(CashPayments,0))) as CashPayments, ABS(sum(ISNULL(NonCashPayments,0))) as NonCashPayments, ABS(sum(ISNULL(CashReturn,0))) as CashReturn, ABS(sum(ISNULL(NonCashReturn,0))) as NonCashReturn, ABS(sum(ISNULL(GoodsReturn,0))) as GoodsReturn, sum(ISNULL(Supply,0)) as Supply from 
   (

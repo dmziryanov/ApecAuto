@@ -33,12 +33,12 @@ namespace RmsAuto.Store.Web.Manager
 
             List<ClientGroup> cl;
 
-            using (DCWrappersFactory<dcCommonDataContext> DC = new DCWrappersFactory<dcCommonDataContext>())
+            using (DCFactory<dcCommonDataContext> DC = new DCFactory<dcCommonDataContext>())
             {
                  cl = DC.DataContext.ClientGroups.ToList();
             }
 
-            using (var ctx = new DCWrappersFactory<StoreDataContext>())
+            using (var ctx = new DCFactory<StoreDataContext>())
             { 
                 //TODO: доделать проверку на секурность
                 var id = SiteContext.Current.User.UserId;

@@ -199,7 +199,7 @@ namespace RmsAuto.Store.Web.Manager.Controls
 
         protected void _clientGroupName_SelectedIndexChanged(object sender, EventArgs e)
         {
-			//using (var ctx = new DCWrappersFactory<StoreDataContext>())
+			//using (var ctx = new DCFactory<StoreDataContext>())
 			//{
 			//    var s = ctx.DataContext.Users.Where(x => x.UserID ==  data.Profile.UserId).FirstOrDefault();
 			//    s.ClientGroup = int.Parse(_clientGroupName.SelectedValue);
@@ -212,7 +212,7 @@ namespace RmsAuto.Store.Web.Manager.Controls
 
 		protected void btnSave_Click(object sender, EventArgs e)
 		{
-			using (var dc = new DCWrappersFactory<StoreDataContext>())
+			using (var dc = new DCFactory<StoreDataContext>())
 			{
                 //dc.DataContext.Log = new DebuggerWriter();
                 var user = dc.DataContext.Users.Where(x => x.UserID == data.Profile.UserId).FirstOrDefault();
@@ -304,19 +304,19 @@ namespace RmsAuto.Store.Web.Manager.Controls
 			//TODO сделать возможность в фабрике управлять connection string: чтобы иметь возможность выставить свойство MultipleActiveResultSet (MARS)
 			// для того чтобы сделать оба действия в транзакции см. выше и ниже
 
-			using (var dc = new DCWrappersFactory<StoreDataContext>(false))
+			using (var dc = new DCFactory<StoreDataContext>(false))
 			{
 				string query = @"exec dbo.spLightUpdAutoOrder {0}, {1}";
 				dc.DataContext.ExecuteCommand(query, SiteContext.Current.CurrentClient.Profile.UserId, false /* chbIsAutoOrder.Checked */);
 			}
 
-            using (var dc = new DCWrappersFactory<StoreDataContext>(false))
+            using (var dc = new DCFactory<StoreDataContext>(false))
             {
                 string query = @"exec dbo.spLightUpdClientName {0}, {1}";
                 dc.DataContext.ExecuteCommand(query, SiteContext.Current.CurrentClient.Profile.UserId, data.Profile.ClientName /* chbIsAutoOrder.Checked */);
             }
             
-            using (var dc = new DCWrappersFactory<StoreDataContext>(false))
+            using (var dc = new DCFactory<StoreDataContext>(false))
             {
                 string query = @"update dbo.Users set PrepaymentPercent = {0} where UserId = {1}";
                 if (dc.DataContext.ExecuteCommand(query, double.Parse(_prepaymentPercentLabel.Text), SiteContext.Current.CurrentClient.Profile.UserId) == 1)
@@ -325,20 +325,20 @@ namespace RmsAuto.Store.Web.Manager.Controls
                 }
             }
 
-            using (var dc = new DCWrappersFactory<StoreDataContext>(false))
+            using (var dc = new DCFactory<StoreDataContext>(false))
             {
                 string query = @"exec dbo.spLightUpdPaymentDelay {0}, {1}";
                 dc.DataContext.ExecuteCommand(query, SiteContext.Current.CurrentClient.Profile.UserId, int.Parse(_DelayDays.Text));
             }
 
-            using (var dc = new DCWrappersFactory<StoreDataContext>(false))
+            using (var dc = new DCFactory<StoreDataContext>(false))
             {
                 string query = @"exec dbo.spLightUpdPersonalManager {0}, {1}";
                 data.Profile.ManagerId = _managerList.SelectedValue;
                 dc.DataContext.ExecuteCommand(query, SiteContext.Current.CurrentClient.Profile.UserId, _managerList.SelectedValue);
             }
 
-            using (var dc = new DCWrappersFactory<StoreDataContext>(false))
+            using (var dc = new DCFactory<StoreDataContext>(false))
             {
                 string query = @"exec dbo.spLightUpdEmail {0}, {1}";
                 data.Profile.ManagerId = _managerList.SelectedValue;

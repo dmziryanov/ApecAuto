@@ -30,7 +30,7 @@ namespace RmsAuto.Store.BL
 		/// <param name="log">лог отправки</param>
 		public static void SendReclamationTrackingAlerts(ISendReclamationTrackingAlertsLog log)
 		{
-			using (var dc = new DCWrappersFactory<StoreDataContext>())
+			using (var dc = new DCFactory<StoreDataContext>())
 			{
 				var clients = (from u in dc.DataContext.Users.Where( user => user.Role == SecurityRole.Client )
 							   join alert in dc.DataContext.ReclamationAlertInfos on u.AcctgID equals alert.ClientID
@@ -54,7 +54,7 @@ namespace RmsAuto.Store.BL
 
 		private static void SendReclamationTrackingAlerts( string clientID, ISendReclamationTrackingAlertsLog log )
 		{
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				DataLoadOptions options = new DataLoadOptions();
 				options.LoadWith<Reclamation>( r => r.ReclamationStatus );

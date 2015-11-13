@@ -12,7 +12,7 @@ namespace RmsAuto.Store.BL
 		public static List<SupplierInfo> GetSuppliers()
 		{
 			List<SupplierInfo> result = null;
-			using (var dc = new DCWrappersFactory<StoreDataContext>())
+			using (var dc = new DCFactory<StoreDataContext>())
 			{
 				string query = "SELECT SupplierID, DeliveryMinDays, DeliveryMaxDays FROM vSuppliers";
 

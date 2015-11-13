@@ -29,7 +29,7 @@ namespace RmsAuto.Store.Web.PrivateOffice
             // Можем ли получить доступ к VIN запросам?
             new VinRequestUtil().CanVinRequest(this);
 
-            using (var dc = new DCWrappersFactory<StoreDataContext>())
+            using (var dc = new DCFactory<StoreDataContext>())
 			{
 				DataLoadOptions dlo = new DataLoadOptions();
 				dlo.LoadWith<VinRequest>( r => r.VinRequestItems );
