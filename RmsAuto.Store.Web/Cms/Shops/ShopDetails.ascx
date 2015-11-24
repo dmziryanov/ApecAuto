@@ -85,7 +85,7 @@
     });
 </script>
 
-
+        </div>
     <div id="YMapsID-444" class="filialyandexmap">
     </div>
 
@@ -94,6 +94,7 @@
         <iframe id="myframe" src='<%= UrlManager.MakeAbsoluteUrl("") %>/cms/shops/ymap.htm?ID=<%= _item.ShopID %>' width="450px" height="450px" align="middle">
         </iframe>
     </div>
+
 
 
 </th>

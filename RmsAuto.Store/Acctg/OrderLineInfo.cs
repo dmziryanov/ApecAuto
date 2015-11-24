@@ -42,5 +42,8 @@ namespace RmsAuto.Store.Acctg
         
         [XmlElement("LastDateTimeChange")]
         public DateTime? StatusChangeTime { get; set; }
+
+        [XmlElement("InternalFranchName")]
+        public string InternalFranchName { get; set; }
     }
 }

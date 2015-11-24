@@ -7,54 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RmsAuto.Store.Adm {
+namespace RmsAuto.Store.Web.Manager {
     
     
-    public partial class Site {
+    public partial class UploadSpareParts {
         
         /// <summary>
-        /// form1 control.
+        /// fuMain control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.FileUpload fuMain;
         
         /// <summary>
-        /// TopMenu1 control.
+        /// btnUpload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::RmsAuto.Store.Adm.Controls.TopMenu TopMenu1;
+        protected global::System.Web.UI.WebControls.Button btnUpload;
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// lPreloadInfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.Literal lPreloadInfo;
         
         /// <summary>
-        /// _headContentPlaceHolder control.
+        /// pButtons control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder _headContentPlaceHolder;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pButtons;
         
         /// <summary>
-        /// _mainContentPlaceHolder control.
+        /// lSummaryInfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder _mainContentPlaceHolder;
+        protected global::System.Web.UI.WebControls.Literal lSummaryInfo;
     }
 }

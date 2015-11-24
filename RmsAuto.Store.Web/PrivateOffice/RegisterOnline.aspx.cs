@@ -78,6 +78,7 @@ namespace RmsAuto.Store.Web.PrivateOffice
 					ContactPersonSurname = _fillClientProfileExt.ContactPersonSurname,
                     ContactPersonPhone = _fillClientProfileExt.ContactPersonPhone,
                     ContactPersonExtPhone = _fillClientProfileExt.ContactPersonExtPhone,
+                    RegisterAs = _fillClientProfileExt.RegisterAs
                   /*  ContactPersonFax = _fillClientProfileExt.ContactPersonFax,
 					ContactPersonEmail = _fillClientProfileExt.ContactPersonEmail,
                     DeliveryAddress = _fillClientProfileExt.DeliveryAddress,

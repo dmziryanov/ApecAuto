@@ -6,7 +6,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-	<title>APEC</title>
+	<title> </title>
 	<link rel="StyleSheet" href="<%=ResolveUrl("~/css/style.css")%>" type="text/css"/>
     <!--[if lte IE 8]>
 	<link rel="StyleSheet" href="<%= ResolveUrl("~/css/ie8.css")%>" type="text/css" media="screen" />

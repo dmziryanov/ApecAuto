@@ -740,8 +740,8 @@ namespace RmsAuto.Store.Web
                     //case OrderSortFields.TotalDesc: orders = orders.OrderByDescending( o => o.Total); break;
                     //case OrderSortFields.Status: orders = orders.OrderBy(o => o.Status).ThenBy(o => o.OrderID); break;
                     //case OrderSortFields.StatusDesc: orders = orders.OrderByDescending( o => o.Status ).ThenBy( o => o.OrderID ); break;
-                    case OrderSortFields.OrderIdAsc: SortExpr = "ORDER BY OrderID"; break;
-                    case OrderSortFields.OrderIdDesc: SortExpr = "ORDER BY OrderID DESC"; break;
+                    case OrderSortFields.OrderIdAsc: SortExpr = "ORDER BY a.OrderID"; break;
+                    case OrderSortFields.OrderIdDesc: SortExpr = "ORDER BY a.OrderID DESC"; break;
                     case OrderSortFields.Status: SortExpr = "ORDER BY Status"; break;
                 }
 
@@ -759,9 +759,9 @@ namespace RmsAuto.Store.Web
                 if (string.IsNullOrEmpty(ClientName))
                    {
                         orders = dc.DataContext.ExecuteQuery<Order>(@"SELECT  *
-                                                    FROM    (SELECT    ROW_NUMBER() OVER ( "+ SortExpr +@" ) AS RowNum, a.*, b.ClientName
-                                                    FROM    dbo.Orders a, dbo.Users b
-                                                    WHERE   OrderDate >= {0} AND OrderDate <= {1} AND a.UserId = b.UserId AND b.InternalFranchName = {4} " + OrderlineAcctgIdFilter + " " + StatusFilter + @") AS RowConstrainedResult
+                                                    FROM    (SELECT    ROW_NUMBER() OVER ( " + SortExpr + @" ) AS RowNum, a.*, b.ClientName + ' ' + b.ContactPersonPhone as ClientName
+                                                    FROM    dbo.Orders a, dbo.Users b, dbo.OrderLines c
+                                                    WHERE   a.OrderId = C.OrderId and OrderDate >= {0} AND OrderDate <= {1} AND a.UserId = b.UserId AND c.InternalFranchName = {4} " + OrderlineAcctgIdFilter + " " + StatusFilter + @") AS RowConstrainedResult
                                                     WHERE   RowNum > {2}
                                                     AND RowNum <= {2} + {3}
                                                     ORDER BY RowNum", lowDate, hiDate, startIndex, size, SiteContext.Current.InternalFranchName);
@@ -769,8 +769,8 @@ namespace RmsAuto.Store.Web
                         
                     
                         TotalCount = dc.DataContext.ExecuteQuery<int>(@"SELECT  COUNT(*)
-                                                                       FROM    dbo.Orders a, dbo.Users b
-                                                                       WHERE   OrderDate >= {0} AND OrderDate <= {1} AND  a.UserId = b.UserId AND b.InternalFranchName = {2} " + OrderlineAcctgIdFilter + " " + StatusFilter,
+                                                                       FROM    dbo.Orders a, dbo.Users b, dbo.OrderLines c
+                                                                       WHERE   a.OrderId = C.OrderId AND OrderDate >= {0} AND OrderDate <= {1} AND  a.UserId = b.UserId AND c.InternalFranchName = {2} " + OrderlineAcctgIdFilter + " " + StatusFilter,
                                                                        lowDate,
                                                                        hiDate,
                                                                        SiteContext.Current.InternalFranchName).FirstOrDefault();
@@ -781,9 +781,9 @@ namespace RmsAuto.Store.Web
                         if (ClientCount > 0)
                         {
                             orders = dc.DataContext.ExecuteQuery<Order>(@"SELECT  *
-                                                    FROM    (SELECT    ROW_NUMBER() OVER ( " + SortExpr + @" ) AS RowNum, a.*, b.ClientName
-                                                    FROM    dbo.Orders a, dbo.Users b
-                                                    WHERE   OrderDate >= {0} AND OrderDate <= {1} " + OrderlineAcctgIdFilter + " " + StatusFilter + @" AND  a.UserID = b.UserId AND b.InternalFranchName = {4} AND a.ClientId  in ('" + Clients.Select(x => x.ToString()).Aggregate((prev, next) => prev + "','" + next  ) +
+                                                    FROM    (SELECT    ROW_NUMBER() OVER ( " + SortExpr + @" ) AS RowNum, a.*, b.ClientName + ' ' + b.ContactPersonPhone as ClientName
+                                                    FROM    dbo.Orders a, dbo.Users b, dbo.OrderLines c
+                                                    WHERE    a.OrderId = C.OrderId and OrderDate >= {0} AND OrderDate <= {1} " + OrderlineAcctgIdFilter + " " + StatusFilter + @" AND  a.UserID = b.UserId AND c.InternalFranchName = {4} AND a.ClientId  in ('" + Clients.Select(x => x.ToString()).Aggregate((prev, next) => prev + "','" + next) +
                                                             @"')) AS RowConstrainedResult
                                                     WHERE   RowNum > {2} AND RowNum <=  {2} + {3} 
                                                     ORDER BY RowNum", lowDate, hiDate, startIndex, size, AcctgRefCatalog.RmsFranches[SiteContext.Current.InternalFranchName].InternalFranchName);
@@ -791,8 +791,8 @@ namespace RmsAuto.Store.Web
                             try
                             {
                                 TotalCount = dc.DataContext.ExecuteQuery<int>(@"SELECT  COUNT(*)
-                                                                FROM    dbo.Orders a, dbo.Users b 
-                                                                WHERE   OrderDate >= {0} " + OrderlineAcctgIdFilter + " " + StatusFilter + @" AND  a.UserId = b.UserId AND  OrderDate <= {1} AND CAST(a.ClientID as NVarChar(50)) in ('" + Clients.Select(x => x.ToString()).Aggregate((prev, next) => prev + "','" + next  )+ "')", lowDate, hiDate).FirstOrDefault();
+                                                                FROM dbo.Orders a, dbo.Users b,dbo.OrderLines c
+                                                                WHERE a.OrderId = C.OrderId and OrderDate >= {0} " + OrderlineAcctgIdFilter + " " + StatusFilter + @" AND  a.UserId = b.UserId AND  OrderDate <= {1} AND CAST(a.ClientID as NVarChar(50)) in ('" + Clients.Select(x => x.ToString()).Aggregate((prev, next) => prev + "','" + next) + "')", lowDate, hiDate).FirstOrDefault();
                             }
                             catch
                             {
@@ -835,7 +835,7 @@ namespace RmsAuto.Store.Web
                 //var stRejected = OrderLineStatusUtil.StatusByte(dc, "Rejected");
                 var stRejected = OrderLineStatusUtil.StatusByte("Rejected");
 
-                var orderLines = dc.DataContext.OrderLines.AsQueryable(); //пока закоментировано .Where(l => l.CurrentStatus != stRejected);
+                var orderLines = dc.DataContext.OrderLines.Where(x => x.InternalFranchName == SiteContext.Current.InternalFranchName).AsQueryable(); //пока закоментировано .Where(l => l.CurrentStatus != stRejected);
 
                 /*if( filter != null )
                     orderLines = ApplyOrderLineFilter( orderLines, filter );*/

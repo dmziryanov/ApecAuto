@@ -36,7 +36,7 @@
           <th><asp:Literal ID="lSumm" runat="server" Text="Сумма" 
 				  meta:resourcekey="lSummResource1" /></th>
           <th><asp:Literal ID="lDateOnStock" runat="server" 
-				  Text="Дата поступления на склад РМС Авто" 
+				  Text="Дата поступления на склад  " 
 				  meta:resourcekey="lDateOnStockResource1" /><span style="color:red">*</span></th>
           <th><asp:Literal ID="lOrderCode" runat="server" Text="Код заказа" 
 				  meta:resourcekey="lOrderCodeResource1" /></th>

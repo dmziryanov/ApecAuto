@@ -42,7 +42,7 @@
     display: inline-block;
     height: 10px;
     border-left: 1px solid #eaeef4;
-    border-right: 1px solid #2a5ba0;
+    border-right: 1px solid #2e6641;
     vertical-align: middle;
     margin: 0 7px;
 }
@@ -88,7 +88,7 @@
 }
 
 .pager span {
-    background: #2b5a9e;
+    background: #45d076;
     color: #fff;
 }
 
@@ -106,7 +106,7 @@
     white-space:nowrap;
     overflow:hidden;
     text-overflow:ellipsis;
-    background-color:#798aa2;
+    background-color:#45d076;
     line-height:16px;
     color:#fff;
 }
@@ -114,7 +114,7 @@
 .select {
     padding:0;
     width:174px;
-    background-color:#285a9f;
+    background-color:#45d076;
 }
 
 .select a {
@@ -126,7 +126,7 @@
 
 .person_on {
     float:left;
-    background-color:#285a9f;
+    background-color:#45d076;
     padding:7px;
     margin:0 1px 1px 0;
     border-radius:5px;

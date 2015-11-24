@@ -273,4 +273,13 @@
   <data name="Register" xml:space="preserve">
     <value>Зарегистрировать</value>
   </data>
+  <data name="RegisterAs" xml:space="preserve">
+    <value>Вы регистрируетесь как</value>
+  </data>
+  <data name="Seller" xml:space="preserve">
+    <value>Продавец</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>Покупатель</value>
+  </data>
 </root>

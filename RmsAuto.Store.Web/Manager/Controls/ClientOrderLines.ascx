@@ -189,14 +189,10 @@ function CheckOrder(strOrderlinesIDS) {
 		<th><asp:Literal ID="lDetailNumber" runat="server" Text="Part number" meta:resourcekey="lDetailNumberResource1" /></th>
 		<th><asp:Literal ID="lName" runat="server" Text="Description" meta:resourcekey="lNameResource1" /></th>
 		<th nowrap><asp:Literal ID="lQty" runat="server" Text="Q-ty" meta:resourcekey="lQtyResource1" /></th>
-		<th><asp:Literal ID="lPrice" runat="server" Text="Price" 
-				meta:resourcekey="lPriceResource1" /></th>
-		<th><asp:Literal ID="lSumm" runat="server" Text="Total" 
-				meta:resourcekey="lSummResource1" /></th>
-		<th><asp:Literal ID="lDateOnStock" runat="server" Text="Date of arrival to franchisee's stock" 
-				meta:resourcekey="lDateOnStockResource1" /><span style="color:red">*</span></th>
-		<th style="margin-left: 40px"><asp:Literal ID="lStatus" runat="server" Text="Status" 
-				meta:resourcekey="lStatusResource1" /></th>
+		<th><asp:Literal ID="lPrice" runat="server" Text="Price" meta:resourcekey="lPriceResource1" /></th>
+		<th><asp:Literal ID="lSumm" runat="server" Text="Total" meta:resourcekey="lSummResource1" /></th>
+		<th><asp:Literal ID="lDateOnStock" runat="server" Text="Date of arrival to franchisee's stock" meta:resourcekey="lDateOnStockResource1" /><span style="color:red">*</span></th>
+		<th style="margin-left: 40px"><asp:Literal ID="lStatus" runat="server" Text="Status" meta:resourcekey="lStatusResource1" /></th>
 		<%--<th></th>
 		<th></th>
 		<th></th>--%>

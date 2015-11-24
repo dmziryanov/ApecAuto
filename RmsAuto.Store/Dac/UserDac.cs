@@ -53,14 +53,7 @@ namespace RmsAuto.Store.Dac
 		{
             using (var dc = new DCFactory<StoreDataContext>())
 			{
-                if (LightBO.IsLight())
-                {
-                    return _getUsers(dc.DataContext, login, password).Where(x => x.InternalFranchName == SiteContext.Current.InternalFranchName).SingleOrDefault();
-                }
-                else
-                {
                     return _getUsers(dc.DataContext, login, password).SingleOrDefault();
-                }
 			}
 		}
 

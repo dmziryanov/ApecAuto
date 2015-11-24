@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using RmsAuto.Store.Acctg.Entities;
 using RmsAuto.Store.Entities;
 

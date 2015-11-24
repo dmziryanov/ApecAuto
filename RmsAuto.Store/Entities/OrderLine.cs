@@ -139,7 +139,8 @@ namespace RmsAuto.Store.Entities
 
         public bool CanChangeLiteStatus(int StatusID)
         {
-            if ((OrderLineStatusUtil.LowBoundary < StatusID && OrderLineStatusUtil.HiBoundary > StatusID && OrderLineStatusUtil._allStatuses.Where(x => x.OrderLineStatusID == StatusID).Select(x => !x.IsFinal).FirstOrDefault()) ||
+            return true;
+            /*if ((OrderLineStatusUtil.LowBoundary < StatusID && OrderLineStatusUtil.HiBoundary > StatusID && OrderLineStatusUtil._allStatuses.Where(x => x.OrderLineStatusID == StatusID).Select(x => !x.IsFinal).FirstOrDefault()) ||
             (CurrentStatus == OrderLineStatusUtil.FinalRMSState))
             {
                 return true;
@@ -147,7 +148,7 @@ namespace RmsAuto.Store.Entities
             else
             {
                 return false;
-            }
+            }*/
         }
 
         public void ChangeLiteStatus(byte StatusID)

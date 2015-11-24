@@ -83,23 +83,5 @@ namespace RmsAuto.Store.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder _leftContentPlaceHolder;
-        
-        /// <summary>
-        /// PageFooter1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::RmsAuto.Store.Web.Cms.Controls.PageFooter PageFooter1;
-        
-        /// <summary>
-        /// Counter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::RmsAuto.Store.Web.Controls.Counter Counter;
     }
 }

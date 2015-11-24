@@ -127,7 +127,7 @@
     <value />
   </data>
   <data name="lDateOnStockResource1.Text" xml:space="preserve">
-    <value>Дата поступления на склад РМС Авто</value>
+    <value>Дата поступления на склад </value>
   </data>
   <data name="lHeaderHistoryResource1.Text" xml:space="preserve">
     <value>История по строке заказа</value>

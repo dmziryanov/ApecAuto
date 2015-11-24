@@ -20,13 +20,15 @@ namespace RmsAuto.Store.Web.Manager.Controls
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			//_vinRequestsLink.NavigateUrl = RmsAuto.Store.Web.Manager.VinRequestList.GetUrl();
-			if (AcctgRefCatalog.RmsFranches[SiteContext.Current.InternalFranchName].isLite)
+            hlUploadSpareparts.Visible = true;
+            if (AcctgRefCatalog.RmsFranches[SiteContext.Current.InternalFranchName].isLite)
 			{
 				hlSelectClient.Text = Resources.Texts.CustomersList;
 			}
 			else
 			{
 				hlSelectClient.Text = Resources.Texts.SearchСustomer;
+			
 				hlAllOrders.Visible = false;
 				hlUploadStatuses.Visible = false;
                 hlClientLoad.Visible = false;

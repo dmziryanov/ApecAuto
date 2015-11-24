@@ -28,7 +28,7 @@
 				meta:resourcekey="lWelcomeResource1" /></h1>
 		
         <asp:Literal ID="lNeedPhone" runat="server" 
-			Text="Для возможности оформления заказа на нашем сайте, просьба связаться с нашим менеджером по телефону +7(495) 585-5-585." 
+			Text="Для возможности оформления заказа на нашем сайте, необходимо зарегистрироваться" 
 			meta:resourcekey="lNeedPhoneResource1" />
     
     </asp:PlaceHolder>

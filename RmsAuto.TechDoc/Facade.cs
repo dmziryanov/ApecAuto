@@ -311,11 +311,14 @@ namespace RmsAuto.TechDoc
 		public static Dictionary<PartKey, AdditionalInfo> GetAdditionalInfo( IEnumerable<PartKey> keys )
 		{
 			//var brands = keys.Select( k => k.Manufacturer ).Distinct();
+            var list = new List<AdditionalInfo>();
+            return list.GroupBy(ai => ai.Key).ToDictionary(g => g.Key, g => g.First());
+		    
 			var partNumbers = keys.Select( k => k.PartNumber ).Distinct().ToArray();
 
 			using( var ctx = new TecdocBaseDataContext() )
 			{
-				var list = new List<AdditionalInfo>();
+				
 				for( var i = 0 ; i < partNumbers.Length ; i += 2000 )
 				{
 					

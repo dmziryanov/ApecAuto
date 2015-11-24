@@ -111,7 +111,7 @@ img {
 }
 
 a {
-	color:#2a5ba0;
+	color:#2aa064;
 	text-decoration:underline;
 	outline:none;
 	cursor:pointer;
@@ -133,7 +133,7 @@ h1 {
 
 h2 {
 	font:normal 14px/17px Arial, Helvetica, sans-serif;
-	color:#2a5ba0;
+	color:#2aa064;
 	margin:15px 0 15px;
 }
 
@@ -333,7 +333,7 @@ table {
 }
 
 .culture li a.active {
-    background-color:#a02a2a;
+    background-color:#2aa064;
     color:#fff;
 }
 
@@ -376,7 +376,7 @@ table {
 	display:inline-block;
 	height:10px;
 	border-left:1px solid #eaeef4;
-	border-right:1px solid #2a5ba0;
+	border-right:1px solid #2aa064;
 	vertical-align:middle;
 	margin:0 7px;
 }
@@ -448,7 +448,7 @@ table {
 }
 
 .blue {
-	color:#2a5ba0;
+	color:#2aa064;
 }
 
 .button {
@@ -569,7 +569,7 @@ table {
 
 .news .date, .news-list .date {
 	display:block;
-	color:#275ca0;
+	color:#289f68;
 	font-size:15px;
 	font-weight:bold;
 	margin:-3px 0 4px;
@@ -808,7 +808,7 @@ table {
 }
 
 .top-line {
-	background:#285a9f;
+	background:#289f68;
 	border-top:1px solid #fff;
 	border-bottom:1px solid #e1e1e1;
 	height:5px;
@@ -1076,7 +1076,7 @@ table {
 }
 
 .tab_menu .on a {
-	background:#a02a2a;
+	background:#2aa06f;
 	cursor:default;
 }
 
@@ -1252,7 +1252,7 @@ table {
 	text-decoration:underline;
 }
 .pages span span{
-	background:#2b5a9e;
+	background:#2aa06f;
 	color:#fff;}
 .pages .prev, .pages next{
 	display:inline-block;
@@ -1441,7 +1441,7 @@ table {
 }
 
 .steps span {
-    background-color:#a27979;
+    background-color:#79a27d;
 	color:#fff;
 	display:block;
 	position:relative;
@@ -1458,7 +1458,7 @@ table {
 }
 
 .steps .on span {
-	background-color:#a02a2a;
+	background-color:#2aa06f;
     font-weight:bold; 
 }
 

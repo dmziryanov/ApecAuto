@@ -88,7 +88,7 @@ namespace RmsAuto.Store.Web.Controls
 			{
 				foreach( var m in TecDocAggregator.GetModels( int.Parse( _ddBrands.SelectedValue ), null ) )
 				{
-					_ddModels.Items.Add( new ListItem( m.Name.Text.ToUpper(), m.ID.ToString() ) );
+                    _ddModels.Items.Add(new ListItem(m.Name.Tex_Text.ToUpper(), m.ID.ToString()));
 				}
 			}
 			_ddModels.Items.Add( new ListItem( "другая модель", "~" ) );
@@ -104,7 +104,7 @@ namespace RmsAuto.Store.Web.Controls
 			{
 				foreach( var m in TecDocAggregator.GetModifications( int.Parse( _ddModels.SelectedValue ) ) )
 				{
-					_ddModifications.Items.Add( new ListItem( m.Name.Text.ToUpper(), m.ID.ToString() ) );
+                    _ddModifications.Items.Add(new ListItem(m.Name.Tex_Text.ToUpper(), m.ID.ToString()));
 				}
 			}
 			_ddModifications.Items.Add( new ListItem( "другая модификация", "~" ) );

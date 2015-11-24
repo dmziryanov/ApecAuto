@@ -47,7 +47,7 @@ namespace RmsAuto.Store.Web.TecDoc
 
 				//Заголовок
 				_titleLabel.Text = isCarModel ? "Легковые автомобили" : "Грузовые автомобили и автобусы";
-				_subTitleLabel.Text = Server.HtmlEncode( modification.Name.Text );
+                _subTitleLabel.Text = Server.HtmlEncode(modification.Name.Tex_Text);
 
 				//Список модификаций
 				_tecDocPartsTree.ModificationId = modification.ID;
@@ -57,7 +57,7 @@ namespace RmsAuto.Store.Web.TecDoc
 				if( brand != null ) _autoXPLink.NavigateUrl = brand.AutoXPUrl;
 
 				//параметры страницы
-				var text = SeoTecDocTextTemplatesCache.Default.GetPageText( Request.RawUrl, modification.Name.Text );
+                var text = SeoTecDocTextTemplatesCache.Default.GetPageText(Request.RawUrl, modification.Name.Tex_Text);
 				CmsContext.Current.PageFields = new PageFields
 				{
 					Title = text.PageTitle,

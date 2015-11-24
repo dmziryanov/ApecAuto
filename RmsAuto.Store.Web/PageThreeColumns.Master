@@ -233,7 +233,7 @@
         <div class="footer-left">
             &copy;
             <%=DateTime.Now.Year%>
-            ApecAuto.com <a href="http://www.apecauto.com" title="запчасти для иномарок">
+            ApecAuto.com <a href="http://www.spare-auto.com" title="запчасти для иномарок">
             <asp:Literal ID="lInetMag" runat="server" 
 				Text="Интернет-магазин запчастей для иномарок" 
 				meta:resourcekey="lInetMagResource1" /></a>

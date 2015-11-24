@@ -107,6 +107,8 @@ namespace RmsAuto.Store.BL
             public string PartNumber { get; set; }
             public string InternalPartNumber { get; set; }
             public string PartName { get; set; }
+
+            public string Region { get; set; }
             public string PartDescription { get; set; }
             public int SupplierID { get; set; }
             public int DeliveryDaysMin { get; set; }
@@ -255,22 +257,22 @@ namespace RmsAuto.Store.BL
                     string query;
                     IEnumerable<SearchResult> parts;
 
-					if (SiteContext.Current.InternalFranchName == "rmsauto")
+					if ( true/*SiteContext.Current.InternalFranchName == "rmsauto"*/)
 					{
 						if (!searchCrosses)
 						{
 							query = @"select P.Manufacturer as ManufacturerGroup, {1} as ItemType, 0 as DisplayDeliveryDaysMin, 0 as DisplayDeliveryDaysMax, P.* 
-							from fSparePartWithCustomFactors({4}, {0}, null, null) P";
+							from fSparePartWithCustomFactors({4}, {0}, null, null, {5}) P";
 						}
 						else
 						{
 							query = @"select P.Manufacturer as ManufacturerGroup, {1} as ItemType, 0 as DisplayDeliveryDaysMin, 0 as DisplayDeliveryDaysMax, P.* 
-							from fSparePartWithCustomFactors({4}, {0}, null, null) P
+							from fSparePartWithCustomFactors({4}, {0}, null, null, {5}) P
 
 							UNION
 
 							select B2.Manufacturer as ManufacturerGroup, {3} as ItemType, 0 as DisplayDeliveryDaysMin, 0 as DisplayDeliveryDaysMax, P.* 
-							from fSparePartWithCustomFactors({4}, {0}, null, null) P
+							from fSparePartWithCustomFactors({4}, {0}, null, null, {5}) P
 							join SparePartCrossesBrands B1 on P.Manufacturer=B1.Manufacturer
 							join SparePartCrossesBrands B2 on B1.ManufacturerMain=B2.ManufacturerMain 
 							where B2.Manufacturer!=P.Manufacturer
@@ -288,7 +290,7 @@ namespace RmsAuto.Store.BL
 							left join SparePartCrossesBrands B1 on G1.Manufacturer=B1.ManufacturerMain
 							left join SparePartCrossesBrands B2 on G2.Manufacturer=B2.ManufacturerMain
 							/*join SparePartWithCustomFactors P on P.PartNumber=G2.PartNumber and P.Manufacturer=isnull(B2.Manufacturer,G2.Manufacturer)*/
-							cross apply fSparePartWithCustomFactors({4}, G2.PartNumber, isnull(B2.Manufacturer,G2.Manufacturer), null) P
+							cross apply fSparePartWithCustomFactors({4}, G2.PartNumber, isnull(B2.Manufacturer,G2.Manufacturer), null, {5}) P
 							where G1.PartNumber={0} 
 							and not (isnull(B1.Manufacturer,G1.Manufacturer)=P.Manufacturer and G1.PartNumber=P.PartNumber)";
 						}
@@ -299,7 +301,7 @@ namespace RmsAuto.Store.BL
 								(int)SparePartItemType.Exact,
 								(int)SparePartItemType.Transition,
 								(int)SparePartItemType.Analogue,
-								"rms"); //для франча тут будет код франча (для региональных прайсов)
+								"", 0); //для франча тут будет код франча (для региональных прайсов)
 					}
 					else
 					{
@@ -419,6 +421,7 @@ namespace RmsAuto.Store.BL
                             PartNumber = p.PartNumber,
                             InternalPartNumber = p.InternalPartNumber,
                             PartName = p.PartName,
+                            InternalFranchName = p.Region,
                             PartDescription = p.PartDescription,
                             SupplierID = p.SupplierID,
                             DeliveryDaysMin = p.DeliveryDaysMin,

@@ -191,7 +191,7 @@ namespace RmsAuto.Store.BL
 			}
 		}
 
-		public static int CreateOrder(
+		public static IEnumerable<int> CreateOrder(
 			int userId,
 			string clientId,
 			string storeNumber,
@@ -204,8 +204,6 @@ namespace RmsAuto.Store.BL
 		{
 			if (string.IsNullOrEmpty(clientId))
 				throw new ArgumentException("Client' ID cannot be empty", "clientId");
-			if (string.IsNullOrEmpty(storeNumber))
-				throw new ArgumentException("Client' store number cannot be empty", "storeNumber");
 			if (cartItems == null)
 				throw new ArgumentNullException("cartItems");
 			if (cartItems.Count() == 0)
@@ -213,109 +211,97 @@ namespace RmsAuto.Store.BL
 			if (cartItems.Any(i => i.HasIssues))
 				throw new ArgumentException("Shopping cart has unresolved issues", "cartItems");
 
-			var order = new Order()
-			{
-				UserID = userId,
-				ClientID = clientId,
-				StoreNumber = storeNumber,
-				ShippingMethod =
-					!string.IsNullOrEmpty(shippingAddress) ?
-					ShippingMethod.CourierDelivery : ShippingMethod.StorePickup,
-				ShippingAddress = shippingAddress,
-				PaymentMethod = paymentMethod,
-				OrderNotes = orderNotes,
-				CustOrderNum = custOrderNum,
-				OrderDate = DateTime.Now
-			};
 
-            using (var dc = new DCFactory<StoreDataContext>(IsolationLevel.ReadUncommitted, false, null, false))
-			{
-				foreach (var item in cartItems)
-				{
-					order.OrderLines.Add(
-						new OrderLine()
-						{
-							AcctgOrderLineID = -item.ItemID, //temporary ID while order has'n been sent yet (to satisfy unique database constraint 
-							Manufacturer = item.SparePart.Manufacturer,
-							PartNumber = item.SparePart.PartNumber,
-							SupplierID = item.SparePart.SupplierID,
-							ReferenceID = item.ReferenceID,
-							DeliveryDaysMin = item.SparePart.DeliveryDaysMin,
-							DeliveryDaysMax = item.SparePart.DeliveryDaysMax,
-							PartName = item.SparePart.PartName,
-							PartDescription = item.SparePart.PartDescription,
-							WeightPhysical = item.SparePart.WeightPhysical,
-							WeightVolume = item.SparePart.WeightVolume,
-							//если проставлена "вчерашнаяя" цена, то в заказ уходит она
-							UnitPrice = item.UnitPriceYesterday.HasValue ? item.UnitPriceYesterday.Value : item.UnitPrice,
-							Qty = item.Qty,
-							StrictlyThisNumber = item.StrictlyThisNumber,
-							VinCheckupData = item.VinCheckupDataID.HasValue ?
-							ClientCarsDac
-								.GetGarageCar(item.VinCheckupDataID.Value)
-								.ToVinOrderLineComment() :
-							string.Empty,
-							OrderLineNotes = item.ItemNotes,
-                            // deas 23.05.2011 task4130 Ускорение работы со статусами
-                            //CurrentStatus = OrderLineStatusUtil.StatusByte(dc, "PreOrder" /* "New" */)
-                            CurrentStatus = OrderLineStatusUtil.StatusByte( "PreOrder" /* "New" */ )
-						});
-					var itemToDelete = dc.DataContext.ShoppingCartItems.SingleOrDefault(
-						i =>
-							i.ItemID == item.ItemID &&
-							i.ItemVersion == item.ItemVersion);
-					if (itemToDelete == null)
-						throw new BLException("Ошибка создания заказа. Элемент корзины изменен или удален");
-					dc.DataContext.ShoppingCartItems.DeleteOnSubmit(itemToDelete);
-				}
-				dc.DataContext.Orders.InsertOnSubmit(order);
-				dc.DataContext.Connection.Open();
-				dc.DataContext.Transaction = dc.DataContext.Connection.BeginTransaction();
-				try
-				{
-					#region старый вариант ориентированный на веб-сервис
-					//dc.SubmitChanges();
-					//try
-					//{
-					//    SendOrder(ref order, employeeId);
-					//}
-					//catch (Exception ex)
-					//{
-					//    // Не контролируем корректность отправки данных в учетную систему пишем в БД сайта в любом случае все заказы
-					//    Logger.WriteException(ex);
-					//}
+		    using (var dc = new DCFactory<StoreDataContext>(IsolationLevel.ReadUncommitted, false, null, false))
+		    {
+		        foreach (var itemGroup in cartItems.GroupBy(x => x.SparePart.InternalFranchName))
+		        {
+		            var order = new Order()
+		            {
+		                UserID = userId,
+		                ClientID = clientId,
+		                StoreNumber = storeNumber,
+		                ShippingMethod =
+		                    !string.IsNullOrEmpty(shippingAddress)
+		                        ? ShippingMethod.CourierDelivery
+		                        : ShippingMethod.StorePickup,
+		                ShippingAddress = shippingAddress,
+		                PaymentMethod = paymentMethod,
+		                OrderNotes = orderNotes,
+		                CustOrderNum = custOrderNum,
+		                OrderDate = DateTime.Now
+		            };
+                    
+                    dc.DataContext.Connection.Open();
+		            foreach (var item in itemGroup)
+		            {
 
-					//dc.SubmitChanges();
-					//dc.Transaction.Commit();
-					#endregion
-					dc.DataContext.SubmitChanges();
-                    if (SiteContext.Current.InternalFranchName == "rmsauto")
-                    {
-                        SendOrder(dc.DataContext, ref order, employeeId);
-                    }
-                    else
-                    {
-                        SendorderFranch(dc.DataContext, ref order, employeeId);
-                    }
-					dc.DataContext.SubmitChanges();
-                    //dc.SetCommit();
-					dc.DataContext.Transaction.Commit();
-				}
-				catch
-				{
-					dc.DataContext.Transaction.Rollback();
-					throw;
-				}
-				finally
-				{
-					if (dc.DataContext.Connection.State == ConnectionState.Open)
-					{
-						dc.DataContext.Connection.Close();
-					}
-                    //Теперь закрываемся в DCFactory
-				}
-				return order.OrderID;
-			}
+		                order.OrderLines.Add(
+		                    new OrderLine()
+		                    {
+		                        AcctgOrderLineID = -item.ItemID,
+		                        //temporary ID while order has'n been sent yet (to satisfy unique database constraint 
+		                        InternalFranchName = item.SparePart.InternalFranchName,
+		                        Manufacturer = item.SparePart.Manufacturer,
+		                        PartNumber = item.SparePart.PartNumber,
+		                        SupplierID = item.SparePart.SupplierID,
+		                        ReferenceID = item.ReferenceID,
+		                        DeliveryDaysMin = item.SparePart.DeliveryDaysMin,
+		                        DeliveryDaysMax = item.SparePart.DeliveryDaysMax,
+		                        PartName = item.SparePart.PartName,
+		                        PartDescription = item.SparePart.PartDescription,
+		                        WeightPhysical = item.SparePart.WeightPhysical,
+		                        WeightVolume = item.SparePart.WeightVolume,
+		                        //если проставлена "вчерашнаяя" цена, то в заказ уходит она
+		                        UnitPrice = item.UnitPriceYesterday.HasValue ? item.UnitPriceYesterday.Value : item.UnitPrice,
+		                        Qty = item.Qty,
+		                        StrictlyThisNumber = item.StrictlyThisNumber,
+		                        VinCheckupData = item.VinCheckupDataID.HasValue
+		                            ? ClientCarsDac
+		                                .GetGarageCar(item.VinCheckupDataID.Value)
+		                                .ToVinOrderLineComment()
+		                            : string.Empty,
+		                        OrderLineNotes = item.ItemNotes,
+		                        // deas 23.05.2011 task4130 Ускорение работы со статусами
+		                        //CurrentStatus = OrderLineStatusUtil.StatusByte(dc, "PreOrder" /* "New" */)
+		                        CurrentStatus = OrderLineStatusUtil.StatusByte("PreOrder" /* "New" */)
+		                    });
+
+		                var itemToDelete = dc.DataContext.ShoppingCartItems.SingleOrDefault(
+		                    i =>
+		                        i.ItemID == item.ItemID &&
+		                        i.ItemVersion == item.ItemVersion);
+		                if (itemToDelete == null)
+		                    throw new BLException("Ошибка создания заказа. Элемент корзины изменен или удален");
+		                dc.DataContext.ShoppingCartItems.DeleteOnSubmit(itemToDelete);
+		            }
+		            dc.DataContext.Orders.InsertOnSubmit(order);
+		            
+		            dc.DataContext.Transaction = dc.DataContext.Connection.BeginTransaction();
+		            try
+		            {
+		                dc.DataContext.SubmitChanges();
+		                dc.DataContext.Transaction.Commit();
+		                LightBO.SetOrderNoXmlSign(order.OrderID);
+		            }
+		            catch
+		            {
+		                dc.DataContext.Transaction.Rollback();
+		                throw;
+		            }
+
+		            finally
+		            {
+		                if (dc.DataContext.Connection.State == ConnectionState.Open)
+		                {
+		                    dc.DataContext.Connection.Close();
+		                }
+		                //Теперь закрываемся в DCFactory
+		            }
+
+		            yield return order.OrderID;
+		        }
+		    }
 		}
 
 		/// <summary>
@@ -493,7 +479,7 @@ namespace RmsAuto.Store.BL
 						WebOrderLineId = l.OrderLineID,
 						Article = new ArticleInfo
 						{
-							PartNumber = ProcessingPACK( l.PartNumber, l.SupplierID ), //обрабатываем PACK
+							PartNumber = ProcessingPACK(l.PartNumber, l.SupplierID), //обрабатываем PACK
 							Manufacturer = l.Manufacturer,
 							/* Реализована возможность продавать одну и ту же деталь (pn, brand, supplierID) по разным ценам (например если при разной "партионности" разная цена, т.е. 1 шт. - 10р. 10 шт. - 9р.):
 							 * в этом случае данная деталь заливается с разными SupplierID (реальный и "виртуальный"). Т.к. УС ничего не знает о данных "виртуальных" SupplierID, то при отправке в УС
@@ -510,6 +496,7 @@ namespace RmsAuto.Store.BL
 							WeightPhysical = l.WeightPhysical.GetValueOrDefault(),
 							WeightVolume = l.WeightVolume.GetValueOrDefault(),
 							DiscountGroup = l.Part.RgCode
+
 						},
 						FinalSalePrice = l.UnitPrice,
 						Quantity = l.Qty,

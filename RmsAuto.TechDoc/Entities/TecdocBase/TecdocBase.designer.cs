@@ -1142,7 +1142,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DesText_Country", Storage="_Name", ThisKey="COU_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="v_des_texts_Country", Storage="_Name", ThisKey="COU_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
 		public v_des_texts Name
 		{
 			get
@@ -1800,7 +1800,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DesText_Article", Storage="_Name", ThisKey="ART_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="v_des_texts_Article", Storage="_Name", ThisKey="ART_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
 		public v_des_texts Name
 		{
 			get
@@ -1818,7 +1818,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DesText_Article1", Storage="_CompleteName", ThisKey="ART_COMPLETE_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="v_des_texts_Article1", Storage="_CompleteName", ThisKey="ART_COMPLETE_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
 		public v_des_texts CompleteName
 		{
 			get
@@ -2757,7 +2757,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DesText_SearchTreeNode", Storage="_Name", ThisKey="STR_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="v_des_texts_SearchTreeNode", Storage="_Name", ThisKey="STR_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
 		public v_des_texts Name
 		{
 			get
@@ -4176,7 +4176,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DesText_CarType", Storage="_FuelName", ThisKey="TYP_KV_FUEL_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="v_des_texts_CarType", Storage="_FuelName", ThisKey="TYP_KV_FUEL_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
 		public v_des_texts FuelName
 		{
 			get
@@ -4194,7 +4194,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DesText_CarType1", Storage="_BodyName", ThisKey="TYP_KV_BODY_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="v_des_texts_CarType1", Storage="_BodyName", ThisKey="TYP_KV_BODY_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
 		public v_des_texts BodyName
 		{
 			get
@@ -4212,7 +4212,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DesText_CarType2", Storage="_FuelSupplyName", ThisKey="TYP_KV_FUEL_SUPPLY_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="v_des_texts_CarType2", Storage="_FuelSupplyName", ThisKey="TYP_KV_FUEL_SUPPLY_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
 		public v_des_texts FuelSupplyName
 		{
 			get
@@ -4230,7 +4230,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DesText_CarType3", Storage="_EngineName", ThisKey="TYP_KV_ENGINE_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="v_des_texts_CarType3", Storage="_EngineName", ThisKey="TYP_KV_ENGINE_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
 		public v_des_texts EngineName
 		{
 			get
@@ -5433,12 +5433,8 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 				}
 			}
 		}
-
-	    public string Text {
-	        get { return Tex_Text; }
-	    }
-
-	    public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
 		
@@ -5705,7 +5701,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DesText_ArticleCriterion", Storage="_FullName", ThisKey="CRI_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="v_des_texts_ArticleCriterion", Storage="_FullName", ThisKey="CRI_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
 		public v_des_texts FullName
 		{
 			get
@@ -5723,7 +5719,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DesText_ArticleCriterion1", Storage="_Name", ThisKey="CRI_SHORT_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="v_des_texts_ArticleCriterion1", Storage="_Name", ThisKey="CRI_SHORT_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
 		public v_des_texts Name
 		{
 			get
@@ -5741,7 +5737,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DesText_ArticleCriterion2", Storage="_UnitName", ThisKey="CRI_UNIT_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="v_des_texts_ArticleCriterion2", Storage="_UnitName", ThisKey="CRI_UNIT_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
 		public v_des_texts UnitName
 		{
 			get
@@ -6025,7 +6021,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DesText_ArticleCriterionLink", Storage="_ValueIfString", ThisKey="ACR_KV_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="v_des_texts_ArticleCriterionLink", Storage="_ValueIfString", ThisKey="ACR_KV_DES_ID", OtherKey="DES_ID", IsForeignKey=true)]
 		public v_des_texts ValueIfString
 		{
 			get
@@ -6109,7 +6105,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GRD_GRAPHIC", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GRD_GRAPHIC", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary GRD_GRAPHIC
 		{
 			get

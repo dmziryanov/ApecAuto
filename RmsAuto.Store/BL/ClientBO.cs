@@ -230,8 +230,8 @@ namespace RmsAuto.Store.BL
 				regDataExt.CorrespondentBankName,
 				regDataExt.CorrespondentIBAN,
 				regDataExt.CorrespondentSWIFT,
-				regDataExt.CorrespondentBankAddress
-                ).UserId;
+				regDataExt.CorrespondentBankAddress,
+                regDataExt.RegisterAs).UserId;
         }
 
         public static void OfferOnlineAccess( string clientId, string email, Func<Guid, string> makeActivationUrl )
@@ -359,7 +359,8 @@ namespace RmsAuto.Store.BL
 				rd.CorrespondentBankName,
 				rd.CorrespondentIBAN,
 				rd.CorrespondentSWIFT,
-				rd.CorrespondentBankAddress
+				rd.CorrespondentBankAddress,
+                rd.RegisterAs
 				).ClientId;
                 
                 using (var mtx = new DCFactory<StoreDataContext>())

@@ -55,7 +55,7 @@ namespace RmsAuto.Store.Web
             UrlManager.RegisterRoutes(RouteTable.Routes);
             new GlobalDBSettings.GlobalSettings().Init();
 
-			#region === Каталогов Laximo на apec пока не будет ===
+			#region === Каталогов Laximo на   пока не будет ===
 			//try
 			//{
 			//    StringBuilder sb = new StringBuilder();

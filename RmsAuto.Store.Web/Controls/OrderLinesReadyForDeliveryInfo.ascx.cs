@@ -27,7 +27,7 @@ namespace RmsAuto.Store.Web.Controls
 			{
 				_readyForDeliveryLink.Text = string.Format(
 					/*"Готово к выдаче {0} позиций на сумму {1:### ### ##0.00} руб.",*/
-					Resources.Texts.OrderLinesReadyForDelivery + " " + Resources.Texts.DollarShort,
+					Resources.Texts.OrderLinesReadyForDelivery + " " + Resources.Texts.RoubleShort,
 					linesCount,
 					totalSum );
 				_readyForDeliveryLink.NavigateUrl = UrlManager.GetOrderLinesReadyForDeliveryPrintUrl();

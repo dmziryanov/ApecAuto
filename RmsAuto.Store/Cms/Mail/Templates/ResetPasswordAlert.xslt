@@ -50,7 +50,7 @@
 							Best regards,<br />
 							<xsl:value-of select="CompanyName"/> Team
 							<br /><br />
-							<img src="http://www.apecauto.com/images/apec_logo.jpg" border="0" width="160" height="49" alt="APEC logo" />
+							<img src="http://www.spare-auto.com/images/apec_logo.jpg" border="0" width="160" height="49" alt="  logo" />
 							<br /><br />
 							<span style="font-size:14.0pt; font-family:Arial; color:#2a5ba0;">
 								Tel. <xsl:value-of select="Phone"/><br />

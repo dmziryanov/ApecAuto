@@ -241,7 +241,7 @@ table.tel {
 table.tel td span {
 	padding:0px 2px;
 	border-left:1px dashed #cccfd1;
-	color:#952632;
+	color:#2aa064;
 	font-size:13px;
 	font-weight: bold;
 	float:left;
@@ -250,7 +250,7 @@ table.tel td span {
 table.tel td span.code {
 	padding:0px 2px;
 	border-left:0px dashed #cccfd1;
-	color:#fb8c98;
+	color:#bcd9b3;
 	font-size:13px;
 	font-weight: bold;
 }
@@ -770,7 +770,7 @@ table.tel td.img {
 	color: #ffffff; 
 	font-family: tahoma; 
 	font-variant: small-caps;
-	background-color:#295d8a;
+	background-color:#278d60;
 	border:1px solid #cecece;
 }
 .list2 tr.old td.answ2  input.no, .list2 td.answ2 input.no
@@ -788,7 +788,7 @@ table.tel td.img {
 }
 
 .list2 td.shop a {
-	padding-right: 0px; padding-left: 10px; font-weight: bold; font-size: 14px; background: url(../images/str_blue.gif) no-repeat 0px 7px; padding-bottom: 0px; color: #1f5893; padding-top: 0px; font-family: 'trebuchet ms';
+	padding-right: 0px; padding-left: 10px; font-weight: bold; font-size: 14px; background: url(../images/str_blue.gif) no-repeat 0px 7px; padding-bottom: 0px; color: #1f935d; padding-top: 0px; font-family: 'trebuchet ms';
 }
 .list2 td.price {
 	color: #a42735
@@ -1143,19 +1143,12 @@ table.e_list tr.tr td
 }
 .steps td.on
 {
-	background-color:#9c2532;
+	background-color:#2aa064;
 	color:#FFFFFF;
 	padding:5px 3px;
 	font-size:11px;
-	background-color:  #912330;
-    background-image: -webkit-linear-gradient(top, #CE2438, #68030C);
-    background-image: -moz-linear-gradient(top, #CE2438, #68030C);
-    background-image: -ms-linear-gradient(top, #CE2438, #68030C);
-    background-image: -o-linear-gradient(top, #CE2438, #68030C);
-    background-image: linear-gradient(top, #CE2438, #68030C);
     font-size: 13px;
     font-weight: bold;
-    border: 1px solid #68030C;
     border-radius: 3px;
     -moz-border-radius: 3px;
     color: white;
@@ -1258,7 +1251,7 @@ table.e_list tr.tr td
 {
 	
 	/*background:#912330;*/
-	border-bottom:2px solid #326694;
+	border-bottom:2px solid #3cb181;
 	border-right:1px solid #d7d9d9;
 	border-left:1px solid #FFFFFF;
 	padding:7px 7px 7px 12px;
@@ -1269,7 +1262,7 @@ table.e_list tr.tr td
 	font-size:14;
 	text-overflow: ellipsis; /* Добавляем многоточие */	
 	overflow: hidden; /* Обрезаем все, что не помещается в область */
-	background-image: -webkit-linear-gradient(top, #3481C1, #047);
+	background-image: -webkit-linear-gradient(top, #3cb181, #047);
     background-image: -moz-linear-gradient(top, #CE2438, #68030C);
     background-image: -ms-linear-gradient(top, #CE2438, #68030C);
     background-image: -o-linear-gradient(top, #CE2438, #68030C);
@@ -1423,20 +1416,13 @@ div.tabs a:hover
 .tab_menu div.on
 {
 	display:block;
-	background-color:#9c2532;
+	background-color:#2aa064;
 	border-right:2px solid #e9f4ff;
 	float:left;
 	padding:3px 15px 3px 15px;
 	color:#FFFFFF;
-	background-color:#9c2532;
-	color:#FFFFFF;
 	font-size:11px;
     text-shadow: 1px 1px 2px black, 0 0 1em blue;
-    background-image: -webkit-linear-gradient(top, #CE2438, #68030C);
-    background-image: -moz-linear-gradient(top, #CE2438, #68030C);
-    background-image: -ms-linear-gradient(top, #CE2438, #68030C);
-    background-image: -o-linear-gradient(top, #CE2438, #68030C);
-    background-image: linear-gradient(top, #CE2438, #68030C);
     font-size: 13px;
     font-weight: bold;
     border: 1px solid #68030C;

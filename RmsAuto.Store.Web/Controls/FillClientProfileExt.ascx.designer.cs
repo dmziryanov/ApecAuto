@@ -409,6 +409,24 @@ namespace RmsAuto.Store.Web.Controls {
         protected global::RmsAuto.Store.Web.Controls.Phone_Edit _ContactExtPhone;
         
         /// <summary>
+        /// Literal2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Literal2;
+        
+        /// <summary>
+        /// SellerInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList SellerInfo;
+        
+        /// <summary>
         /// _reviewClientInfo control.
         /// </summary>
         /// <remarks>

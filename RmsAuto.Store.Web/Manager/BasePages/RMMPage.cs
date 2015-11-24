@@ -24,5 +24,13 @@ namespace RmsAuto.Store.Web.Manager.BasePages
 					throw new Exception("Access denied.");
 			}
 		}
+
+	    protected void ShowMessage(string message)
+        {
+            Page.ClientScript.RegisterStartupScript(
+                this.GetType(),
+                "__messageBox",
+                "<script type='text/javascript'>alert('" + message + "');</script>");
+        }
 	}
 }

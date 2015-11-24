@@ -26,17 +26,9 @@ namespace RmsAuto.Store.Dac
 
             using (var dc = new DCFactory<StoreDataContext>())
             {
-                if (AcctgRefCatalog.RmsFranches[SiteContext.Current.InternalFranchName].InternalFranchName == "rmsauto")
-                {
-
-                    dc.DataContext.ExecuteCommand("SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED");
-                    return Load(dc.DataContext, key);
-
-                }
-                else
-                {
+             
                     return SparePartsDacFranch.Load(dc.DataContext, key);
-                }
+                
             }
         }
 

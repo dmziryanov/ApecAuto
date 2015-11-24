@@ -14,6 +14,7 @@ using RmsAuto.Store.Entities;
 using RmsAuto.TechDoc.Entities;
 using RmsAuto.Store.Cms.Routing;
 using RmsAuto.Store.Acctg.Entities;
+using PageRouteHandler = RmsAuto.Store.Cms.Routing.PageRouteHandler;
 
 namespace RmsAuto.Store.Adm
 {

@@ -176,7 +176,7 @@ namespace RmsAuto.Store.Web.Manager
 			lSummaryInfo.Text = lSummaryInfo.Text + TextError(reason, arg) + Environment.NewLine;
 		}
 
-		private enum ErrorReason
+	    public enum ErrorReason
 		{
 			FileNotSpecified, FileNotFoundOrEmpty, InvalidFileFormat,
 			ReaderFailed, SingleSheetRequired, 

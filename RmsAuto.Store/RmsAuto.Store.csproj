@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RmsAuto.Store</RootNamespace>
     <AssemblyName>RmsAuto.Store</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>Svn</SccProjectName>
     <SccLocalPath>Svn</SccLocalPath>
@@ -36,6 +36,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -418,10 +419,16 @@
     <EmbeddedResource Include="Cms\Mail\Templates\VinRequestAnswerAlert.xslt" />
     <EmbeddedResource Include="Cms\Mail\Templates\ResetPasswordAlert.xslt" />
     <EmbeddedResource Include="Cms\Mail\Templates\ReclamationTrackingAlert.xslt" />
-    <EmbeddedResource Include="Cms\Mail\Templates\OrderLineTrackingAlert.xslt" />
-    <EmbeddedResource Include="Cms\Mail\Templates\OfferAlert.xslt" />
+    <EmbeddedResource Include="Cms\Mail\Templates\OrderLineTrackingAlert.xslt">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cms\Mail\Templates\OfferAlert.xslt">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cms\Mail\Templates\FeedbackAlert.xslt" />
-    <EmbeddedResource Include="Cms\Mail\Templates\ClientActivationAlertWhSl.xslt" />
+    <EmbeddedResource Include="Cms\Mail\Templates\ClientActivationAlertWhSl.xslt">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cms\Mail\Templates\ClientActivationAlertRet.xslt">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -429,7 +436,9 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Cms\Mail\Templates\CartImportOK.xslt" />
-    <EmbeddedResource Include="Cms\Mail\Templates\CartImportNoAlert.xslt" />
+    <EmbeddedResource Include="Cms\Mail\Templates\CartImportNoAlert.xslt">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cms\Mail\Templates\CartImportAlert.xslt" />
     <EmbeddedResource Include="Web\Resource\EnumResource.en-US.resx" />
     <EmbeddedResource Include="Web\Resource\EnumResource.resx">

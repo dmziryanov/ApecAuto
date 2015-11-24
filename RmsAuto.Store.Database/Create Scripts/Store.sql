@@ -719,7 +719,8 @@ BEGIN
 END
 GO
 
-ALTER TABLE [Cms].[BannersForCatalogItems] WITH CHECK ADD CONSTRAINT [CK_Position]CHECK ([Position] < [Cms].[CheckPosition]([CatalogItemID]))
+ALTER TABLE [Cms].[BannersForCatalogItems] WITH CHECK ADD CONSTRAINT [CK_Position]
+CHECK ([Position] < [Cms].[CheckPosition]([CatalogItemID]))
 GO
 
 ---- Тестирование функции для CONSTRAINT, в примере на вход передается ID корневого раздела каталога

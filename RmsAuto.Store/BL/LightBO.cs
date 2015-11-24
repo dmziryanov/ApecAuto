@@ -143,7 +143,7 @@ namespace RmsAuto.Store.BL
                         if (d != null)
                         {
                             ordln.SupplyPrice = d.UnitPrice;
-                            ordln.SupplierName = "APEC Supplier";
+                            ordln.SupplierName = "  Supplier";
                         }
                         else
                         {
@@ -451,67 +451,10 @@ namespace RmsAuto.Store.BL
             using (var dc = new DCFactory<StoreDataContext>())
             {
                 dc.SetUnCommit();
-
                 string query = @"delete from dbo.OrdersNoXml where OrderID = {0}";
                 dc.DataContext.ExecuteCommand(query, orderId);
-
-                DataLoadOptions options = new DataLoadOptions();
-                options.LoadWith<Order>(o => o.OrderLines);
-
-                Order order = dc.DataContext.Orders.Single(o => o.OrderID == orderId);
-                order.Status = OrderStatus.Processing;
-
-                if (order == null) { throw new ArgumentNullException("order"); }
-                var acctgOrder = new OrderInfo
-                {
-                    ClientId = order.ClientID,
-                    OrderNo = order.OrderID.ToString(),
-                    CustOrderNum = order.CustOrderNum,
-                    OrderDate = order.OrderDate,
-                    DeliveryAddress = order.ShippingAddress,
-                    PaymentType = order.PaymentMethod.ToTextOrName(),
-                    EmployeeId = "",//employeeId,
-                    OrderNotes = order.OrderNotes,
-                    OrderLines = order.OrderLines
-                    .Select<OrderLine, OrderLineInfo>(
-                        l => new OrderLineInfo
-                        {
-                            WebOrderLineId = l.OrderLineID,
-                            Article = new ArticleInfo
-                            {
-                                PartNumber = l.PartNumber,
-                                Manufacturer = l.Manufacturer,
-                                SupplierId = l.SupplierID,
-                                ReferenceID = l.ReferenceID,
-                                DeliveryDaysMin = l.DeliveryDaysMin,
-                                DeliveryDaysMax = l.DeliveryDaysMax,
-                                Description = l.PartDescription,
-                                DescriptionOrig = l.PartName,
-                                InternalPartNumber = (l.Part == null) ? l.PartNumber : l.Part.InternalPartNumber,//l.SparePart.InternalPartNumber,
-                                SupplierPriceWithMarkup = (l.Part == null) ? 1 : l.Part.SupplierPriceWithMarkup,//l.SparePart.SupplierPriceWithMarkup,
-                                SupplierMarkup = (l.Part == null) ? 0 : l.Part.PriceConstantTerm.GetValueOrDefault(),//l.SparePart.PriceConstantTerm.GetValueOrDefault(),
-                                WeightPhysical = l.WeightPhysical.GetValueOrDefault(),
-                                WeightVolume = l.WeightVolume.GetValueOrDefault(),
-                                DiscountGroup = (l.Part == null) ? "" : l.Part.RgCode//l.SparePart.RgCode
-                            },
-                            FinalSalePrice = l.UnitPrice,
-                            Quantity = l.Qty,
-                            StrictlyThisNumber = l.StrictlyThisNumber ? 1 : 0,
-                            VinCheckupData = l.VinCheckupData,
-                            OrderLineNotes = l.OrderLineNotes
-                        }).ToArray()
-                };
-
-                //Сохраняем себестоимость в отправленном заказе
-                foreach (var info in acctgOrder.OrderLines)
-                {
-                   var ordLine = order.OrderLines.Where(x => x.PartNumber == info.Article.PartNumber && x.Manufacturer == info.Article.Manufacturer && x.SupplierID == info.Article.SupplierId).Single();
-                   var i = dc.DataContext.ExecuteQuery<int>("Update dbo.OrderLines SET SupplierPriceWithMarkup = {0}  where OrderLineId = {1}", info.Article.SupplierPriceWithMarkup, ordLine.OrderLineID);
-   
-                }
-
-                OrderService.SendOrder(dc.DataContext, ref acctgOrder);
-                dc.DataContext.SubmitChanges();
+                query = @"Update dbo.Orders SET Status = {1} where OrderID = {0}";
+                dc.DataContext.ExecuteCommand(query, orderId, OrderStatus.Processing);
                 dc.SetCommit();
             }
         }
@@ -838,7 +781,7 @@ select
 
                  if (String.IsNullOrEmpty(ClientName))
                  {
-                     txt = System.IO.File.ReadAllText(@"C:\SiteQueries\DebtReport.txt");
+                    txt = System.IO.File.ReadAllText(@"C:\SiteQueries\DebtReport.txt");
                      return dc.DataContext.ExecuteQuery<OrdersDTO>(txt, start + 1, start + PageSize + 1, EndDate, SiteContext.Current.InternalFranchName).ToList();
                  }
                  else

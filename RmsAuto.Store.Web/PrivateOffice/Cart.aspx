@@ -78,13 +78,7 @@
     <asp:Button ID="_login" runat="server" OnClick="_btnLogon_Click" CssClass="button" Text="Autorization" /> 
     <a class="button" href="<%=UrlManager.GetRegistrationUrl() %>"><%=global::Resources.Texts.Registration %></a>
     <% }
-       else if ( AcctgRefCatalog.RmsStores[SiteContext.Current.CurrentClient.Profile.RmsStoreId] == null )
-       {
-    %>
-		<h3>
-		<%= ErrorClientStore %>
-		</h3>
-    <% }
+      
        else if ( !( CurrentClient.Profile.IsChecked || ( CurrentClient.Profile.TradingVolume == TradingVolume.Retail && CurrentClient.Profile.Category == ClientCategory.Physical ) ) )
        { %>
 		<h3>

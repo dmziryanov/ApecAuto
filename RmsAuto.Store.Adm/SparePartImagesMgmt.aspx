@@ -26,8 +26,8 @@
 			<td>Код поставщика:</td>
 			<td>
 				<asp:DropDownList ID="_ddlSupplierID" runat="server">
-					<asp:ListItem Value="1212" Text="РМС Авто склад скидка -20%"></asp:ListItem>
-					<asp:ListItem Value="1215" Text="РМС Авто склад скидка -50%"></asp:ListItem>
+					<asp:ListItem Value="1212" Text="  склад скидка -20%"></asp:ListItem>
+					<asp:ListItem Value="1215" Text="  склад скидка -50%"></asp:ListItem>
 				</asp:DropDownList>
 			</td>
 			<td></td>

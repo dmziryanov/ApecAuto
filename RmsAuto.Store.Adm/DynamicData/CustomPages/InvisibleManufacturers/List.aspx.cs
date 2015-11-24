@@ -73,7 +73,7 @@ namespace RmsAuto.Store.Adm.DynamicData.CustomPages.InvisibleManufacturers
 
 			foreach (var mod in mods)
 			{
-				TreeNode childNode = new TreeNode(mod.FullName.Text, mod.ID.ToString());
+				TreeNode childNode = new TreeNode(mod.FullName.Tex_Text, mod.ID.ToString());
 				childNode.Checked = mod.Invisible || node.Checked;
 				childNode.PopulateOnDemand = false;
 				childNode.SelectAction = TreeNodeSelectAction.None;
@@ -90,7 +90,7 @@ namespace RmsAuto.Store.Adm.DynamicData.CustomPages.InvisibleManufacturers
 
 			foreach (var model in models)
 			{
-				TreeNode childNode = new TreeNode(model.Name.Text, model.ID.ToString());
+				TreeNode childNode = new TreeNode(model.Name.Tex_Text, model.ID.ToString());
 				childNode.Checked = model.Invisible || node.Checked;
 				childNode.PopulateOnDemand = true;
 				childNode.SelectAction = TreeNodeSelectAction.Expand;

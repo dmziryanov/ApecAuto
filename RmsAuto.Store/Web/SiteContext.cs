@@ -95,7 +95,7 @@ namespace RmsAuto.Store.Web
             //Данный механизм обеспечивает поиск InternalFranchName по урлу хоста из справочника
             //Что позволяет не использовать куку и механизм переключения
             var strUrl = httpContext.Request.Url.Host;
-            _internalFranchName = AcctgRefCatalog.RmsFranches.Items.Where(x => x.Url.Contains(strUrl)).First().InternalFranchName;
+            _internalFranchName = AcctgRefCatalog.RmsFranches.Items.First(x => String.Concat(x.Url,";localhost").Contains(strUrl)).InternalFranchName;
              
             //Возможно это понадобиться в дальнейшем, будет настройка в справочнике лайтов, брать InternalFranchName из Config  или из куки
             // httpContext.Request.Cookies["InternalFranchName"] == null ? ConfigurationManager.AppSettings["InternalFranchName"] : httpContext.Request.Cookies["InternalFranchName"].Value;

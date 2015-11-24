@@ -44,8 +44,8 @@ namespace RmsAuto.Store.Web.TecDoc
                 //Хлебные крошки
 				CmsContext.Current.BreadCrumbSuffix.Add( new BreadCrumbItem( manufacturer.Name, UrlManager.GetTecDocManufacturerHistoryUrl( isCarModel, brand.UrlCode ) ) );
 				CmsContext.Current.BreadCrumbSuffix.Add( new BreadCrumbItem( "Каталог неоригинальных запчастей", UrlManager.GetTecDocManufacturerDetailsUrl( isCarModel, brand.UrlCode ) ) );
-				CmsContext.Current.BreadCrumbSuffix.Add( new BreadCrumbItem( model.Name.Text, UrlManager.GetTecDocModelDetailsUrl( model.ID ) ) );
-				CmsContext.Current.BreadCrumbSuffix.Add( new BreadCrumbItem( modification.Name.Text, UrlManager.GetTecDocModificationDetailsUrl( modification.ID ) ) );
+				CmsContext.Current.BreadCrumbSuffix.Add( new BreadCrumbItem( model.Name.Tex_Text, UrlManager.GetTecDocModelDetailsUrl( model.ID ) ) );
+                CmsContext.Current.BreadCrumbSuffix.Add(new BreadCrumbItem(modification.Name.Tex_Text, UrlManager.GetTecDocModificationDetailsUrl(modification.ID)));
 				CmsContext.Current.BreadCrumbSuffix.Add( new BreadCrumbItem( searchTreeNode.Text, UrlManager.GetTecDocSearchTreeNodeDetailsUrl( modification.ID, searchTreeNode.SearchTreeNodeID ) ) );
 
                 //Заголовок

@@ -79,7 +79,7 @@ namespace RmsAuto.Store.Cms.Mail
 			msg.Subject = data.Subject;
 			msg.Body = data.Body;
 			msg.IsBodyHtml = true;
-            msg.From = new MailAddress("dmziryanov@yandex.ru");
+            msg.From = new MailAddress("spareautocom@yandex.ru");
 
 			var attachAttributes = Attribute.GetCustomAttributes( message.GetType(), typeof( MailAttachmentAttribute ) );
 			foreach( MailAttachmentAttribute item in attachAttributes )
@@ -88,7 +88,7 @@ namespace RmsAuto.Store.Cms.Mail
 			}
 
             var cl =new SmtpClient();
-            cl.Credentials = new NetworkCredential("dmziryanov@yandex.ru", "krakoziabra7");
+            cl.Credentials = new NetworkCredential("spareautocom@yandex.ru", "db76as");
             cl.Port = 25;
             cl.EnableSsl=true;
             cl.Host = "smtp.yandex.ru";

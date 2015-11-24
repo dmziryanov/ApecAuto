@@ -12,7 +12,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RmsAuto.Store.Web</RootNamespace>
     <AssemblyName>RmsAuto.Store.Web</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <SccProjectName>Svn</SccProjectName>
     <SccLocalPath>Svn</SccLocalPath>
     <SccAuxPath>Svn</SccAuxPath>
@@ -27,6 +27,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -64,12 +65,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -82,6 +78,7 @@
     <Reference Include="System.Web.Abstractions">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\System.Web.DataVisualization.dll</HintPath>
@@ -91,13 +88,9 @@
       <HintPath>..\..\..\Windows\assembly\GAC_MSIL\System.Web.DynamicData\3.5.0.0__31bf3856ad364e35\System.Web.DynamicData.dll</HintPath>
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Web.Extensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Drawing" />
@@ -107,6 +100,7 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Controls\CartTop.ascx" />
@@ -257,6 +251,7 @@
     <Content Include="images\trash.png" />
     <Content Include="Manager\Controls\FillClientProfileExt.ascx" />
     <Content Include="Manager\SaleReportTable.aspx" />
+    <Content Include="Manager\UploadSpareParts.aspx" />
     <Content Include="Scripts\common-rmm.js" />
     <Content Include="Scripts\ext-all.js" />
     <Content Include="Scripts\jquery.blockUI.js" />
@@ -847,6 +842,13 @@
     </Compile>
     <Compile Include="Manager\SupplyReportT.aspx.designer.cs">
       <DependentUpon>SupplyReportT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\UploadSpareParts.aspx.cs">
+      <DependentUpon>UploadSpareParts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\UploadSpareParts.aspx.designer.cs">
+      <DependentUpon>UploadSpareParts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manager\UseTestSearch.ashx.cs">
       <DependentUpon>UseTestSearch.ashx</DependentUpon>
@@ -2953,7 +2955,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PrivateOffice\App_LocalResources\Checkout.aspx.resx" />
+    <Content Include="PrivateOffice\App_LocalResources\Checkout.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="PrivateOffice\App_LocalResources\DetailBalance.aspx.resx" />

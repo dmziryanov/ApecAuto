@@ -55,12 +55,9 @@ namespace RmsAuto.Store.Web.Controls
             {
                 if ( TradingVolume == TradingVolume.Wholesale )
                 {
-                    if (SiteContext.Current.InternalFranchName == "rmsauto")
-                        return AcctgRefCatalog.RmsStores.Items.Where(t => t.IsWholesale).First().StoreId;
-                    else
-                    {
+                   
                         return AcctgRefCatalog.RmsStores.Items.First().StoreId;
-                    }
+                    
                 }
 				else
 				{
@@ -126,7 +123,7 @@ namespace RmsAuto.Store.Web.Controls
 /*		public string ContactPersonFax { get { return _ContactFax.Value; } }
 		public string ContactPersonEmail { get { return _txtContactPersonEmail.Text; } }
 		public string DeliveryAddress { get { return _txtDeliveryAddress.Text; } }*/
-
+        public int RegisterAs { get { return int.Parse(SellerInfo.SelectedValue); } }
 		#endregion
 
 		#region === Company details ====
@@ -240,8 +237,8 @@ namespace RmsAuto.Store.Web.Controls
                 {
                     _ddlCountry.Items.Add( new ListItem()
                     {
-                        Text = "Россия",//oCountry.CountryName,
-                        Value = "643",
+                        Text = oCountry.CountryName,
+                        Value = oCountry.CountryID.ToString(),
                         Selected = cCountry == 1
                     } );
                 }
@@ -297,7 +294,7 @@ namespace RmsAuto.Store.Web.Controls
 
         protected void _fillProfileWizard_ActiveStepChanged( object sender, EventArgs e )
         {
-            /*if ( _fillProfileWizard.ActiveStepIndex == _fillProfileWizard.WizardSteps.IndexOf(_contactInfoStep ) )*/
+            if ( _fillProfileWizard.ActiveStepIndex == _fillProfileWizard.WizardSteps.IndexOf(_contactInfoStep ) )
             {
                 Password = _editUser.Password;
             }

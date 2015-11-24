@@ -45,7 +45,7 @@ namespace RmsAuto.Store.Acctg
 				else
                 {
                     dc.DataContext.Log = new DebugTextWriter();
-                    string query = @"select a.UserID as UserID,  AcctgID as ClientID,  ManagerId , ClientName as ClientName, ContactPhone as MainPhone, TradingVolume as TradingVolume, CreationTime, ISNULL(b.isAutoOrder, 0) as isAutoOrder,  isChecked from dbo.Users a LEFT JOIN dbo.UserSettings b ON a.UserID = b.UserID where ClientName like {0} and ContactPhone like {1} and InternalFranchName = {2} AND UserRole = 0";
+                    string query = @"select a.UserID as UserID,  AcctgID as ClientID,  ManagerId , ClientName as ClientName, ContactPhone as MainPhone, TradingVolume as TradingVolume, CreationTime, ISNULL(b.isAutoOrder, 0) as isAutoOrder,  isChecked from dbo.Users a LEFT JOIN dbo.UserSettings b ON a.UserID = b.UserID LEFT JOIN dbo.orders c ON a.UserId = b.Userid LEFT JOIN dbo.OrderLines d ON c.OrderId = d.OrderId where ClientName like {0} and ContactPhone like {1} and d.InternalFranchName = {2} AND UserRole = 0";
 					
                     return dc.DataContext.ExecuteQuery<BriefClientInfo>(query, "%"+clientName+"%", "%"+mainPhone+"%", SiteContext.Current.InternalFranchName).ToList();
                 }
@@ -68,8 +68,8 @@ namespace RmsAuto.Store.Acctg
 
                 dc.DataContext.Log = new DebugTextWriter(); //включить логгер
 
-                
-                    rezSearch = dc.DataContext.ExecuteQuery<BriefClientInfo>(@"select a.AcctgID as ClientID, a.ManagerId , a.ClientName, a.ContactPhone as MainPhone, isChecked, TradingVolume, ISNULL(b.isAutoOrder, 0) as isAutoOrder, a.CreationTime as CreationTime  from dbo.users a LEFT JOIN dbo.UserSettings b ON a.UserID = b.UserID WHERE clientname like '%" + clientName + "%' and ContactPhone like '%" + mainPhone + "%' and InternalFranchName = '" + SiteContext.Current.InternalFranchName + @"' and
+
+                rezSearch = dc.DataContext.ExecuteQuery<BriefClientInfo>(@"select a.AcctgID as ClientID, a.ManagerId , a.ClientName, a.ContactPhone as MainPhone, isChecked, TradingVolume, ISNULL(b.isAutoOrder, 0) as isAutoOrder, a.CreationTime as CreationTime  from dbo.users a LEFT JOIN dbo.UserSettings b  ON a.UserID = b.UserID LEFT JOIN dbo.orders c ON a.UserId = b.Userid LEFT JOIN dbo.OrderLines d ON c.OrderId = d.OrderId WHERE clientname like '%" + clientName + "%' and a.ContactPhone like '%" + mainPhone + "%' and d.InternalFranchName = '" + SiteContext.Current.InternalFranchName + @"' and
                     ISNULL(b.isAutoOrder, 0) " + signs[int.Parse(isAutoOrder)] + (int.Parse(isAutoOrder) - 1) + " and CAST(a.isChecked as int) " + signs[int.Parse(isChecked)+1] + " {0} and a.TradingVolume " + signs[int.Parse(TradingVolume)] + " {1} AND UserRole = 0 " + RegDateMin + RegDateMax + ManagerID, isChecked, (int.Parse(TradingVolume) - 1));
 
                 return rezSearch.ToList();

@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" CodeBehind="Site.master.cs" Inherits="RmsAuto.Store.Adm.Site" %>
+﻿<%@ Master Language="C#" CodeBehind="Site.master.cs" Inherits="RmsAuto.Store.Adm.Site"  %>
 
 <%@ Register src="Controls/TopMenu.ascx" tagname="TopMenu" tagprefix="uc1" %>
 
@@ -28,7 +28,7 @@
 <body class="template">
     <script src="<%= ResolveUrl("~/scripts/jquery-1.6.2.min.js") %>" type="text/javascript"></script>
 <div id="layout">
-    <h2><span class="allcaps">Интернет магазин РМС-АВТО. Администратор</span></h2>
+    <h2><span class="allcaps">Интернет магазин Администратор</span></h2>
     <form id="form1" runat="server">
     <uc1:TopMenu ID="TopMenu1" runat="server" />
     <div>

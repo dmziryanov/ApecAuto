@@ -254,7 +254,7 @@ namespace RmsAuto.Store.Web.Controls
 						//добавить фиктивный запрошенный артикул в блок собственных складов наличия
 						if (!list.Any(p => p.ItemType == SparePartItemType.Exact && p.IsOwnStore))
 						{
-							var additionalInfo = additionalInfos.ContainsKey(searchPartKey) ? additionalInfos[searchPartKey] : null;
+                            AdditionalInfo additionalInfo = additionalInfos.ContainsKey(searchPartKey) ? additionalInfos[searchPartKey] : null;
 
 							list = list.Union(new[]{
 							new SearchResultItem
@@ -273,10 +273,11 @@ namespace RmsAuto.Store.Web.Controls
 							}
 						});
 						}
-						//добавить фиктивный запрошенный артикул (если запрошенного артикула нет среди собственных складов наличия)
+						
+                    //добавить фиктивный запрошенный артикул (если запрошенного артикула нет среди собственных складов наличия)
 						if (!list.Any(p => p.ItemType == SparePartItemType.Exact && p.FinalSalePrice != -1))
 						{
-							var additionalInfo = additionalInfos.ContainsKey(searchPartKey) ? additionalInfos[searchPartKey] : null;
+                            AdditionalInfo additionalInfo = /*additionalInfos.ContainsKey(searchPartKey) ? additionalInfos[searchPartKey] : */ null;
 
 							list = list.Union(new[]{
 							new SearchResultItem

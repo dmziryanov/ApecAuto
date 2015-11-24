@@ -21,6 +21,8 @@ namespace RmsAuto.Store.Web.Controls
 {
     public partial class AllOrders : System.Web.UI.UserControl
     {
+        private static string _rmsautoStoreWebControlsOrderlistGetorderslist = "RmsAuto.Store.Web.Controls.OrderList.GetOrdersList";
+
         public OrderTracking.OrderStatusFilter OrderStatusFilter
         {
             get { return (OrderTracking.OrderStatusFilter)Convert.ToInt32(_objectDataSource.SelectParameters["statusFilter"].DefaultValue); }
@@ -57,7 +59,7 @@ namespace RmsAuto.Store.Web.Controls
 
         private static OrderTracking.OrdersList GetOrdersList(string ClientName, int statusFilter, int sort, DateTime lowdate, DateTime hidate, int startIndex, int size, int AcctgOrderLineId)
         {
-            string key = "RmsAuto.Store.Web.Controls.OrderList.GetOrdersList";
+            string key = _rmsautoStoreWebControlsOrderlistGetorderslist;
             
             
 
@@ -78,7 +80,7 @@ namespace RmsAuto.Store.Web.Controls
                 HttpContext.Current.Items[key] = res;
                 var k = new RmsAuto.Store.Web.OrderTracking.OrderLineFilter() { OrderIDs = res.Orders.Select(x =>  x.OrderID).ToArray() };
                 var lines = OrderTracking.GetOrderLinesForLiteRMM(k, RmsAuto.Store.Web.OrderTracking.OrderLineSortFields.OrderIDAsc, 0, 0);
-                HttpContext.Current.Cache.Insert("RmsAuto.Store.Web.ControlsOrderLinesWholesale.CurrentOrderLines" + SiteContext.Current.User.UserId, lines, null, DateTime.Now.AddMinutes(Convert.ToInt32(ConfigurationManager.AppSettings["CacheDuration"])), new TimeSpan(0, 0, 0));
+                HttpContext.Current.Cache.Insert(key + SiteContext.Current.User.UserId, lines, null, DateTime.Now.AddMinutes(Convert.ToInt32(ConfigurationManager.AppSettings["CacheDuration"])), new TimeSpan(0, 0, 0));
             }
 
             TotalsSum = res.Orders.Sum(x => x.Total);

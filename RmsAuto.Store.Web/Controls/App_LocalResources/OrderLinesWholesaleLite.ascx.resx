@@ -130,7 +130,7 @@
     <value>отображать по:</value>
   </data>
   <data name="lDateOnStockResource1.Text" xml:space="preserve">
-    <value>дата поступления на склад РМС Авто</value>
+    <value>дата поступления на склад</value>
   </data>
   <data name="lDetailNumberResource1.Text" xml:space="preserve">
     <value>номер детали</value>

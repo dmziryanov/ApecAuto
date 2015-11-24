@@ -56,7 +56,10 @@ namespace RmsAuto.Store.Web.Controls
 
                 _placeOrderSuccessPanel.Visible = true;
                 //_placeOrderStatusLabel.Text = "Заказ успешно размещен";
-				_placeOrderNumberLabel.Text = orderNo.ToString();//OrderTracking.GetOrderDisplayNumber( order );
+                _placeOrderNumberLabel.Text = orderNo.Select(x => x.ToString()).Aggregate((x, y) =>
+                {
+                    return x + ";" + y;
+                });//OrderTracking.GetOrderDisplayNumber( order );
 
                 //клиентский номер заказа
                 if ( !string.IsNullOrEmpty( custOrderNum /*order.CustOrderNum*/ ) )
@@ -71,7 +74,7 @@ namespace RmsAuto.Store.Web.Controls
                 }
 
                 //ссылка на печать заказа
-                _orderPrintLink.NavigateUrl = UrlManager.GetOrderPrintUrl( orderNo /*order.OrderID*/ );
+                _orderPrintLink.NavigateUrl = "";// UrlManager.GetOrderPrintUrl( orderNo /*order.OrderID*/ );
                 //_paymentOrderPrintLink.NavigateUrl = UrlManager.GetPaymentOrderPrintUrl(orderNo);
                 //_paymentOrderPrintLinkOpt.NavigateUrl = "~/cms/invoice.ashx?type=payment&order=" + orderNo; /*UrlManager.GetPaymentOrderPrintUrlOpt(orderNo)*/;
 

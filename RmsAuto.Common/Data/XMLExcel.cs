@@ -38,7 +38,7 @@ namespace RmsAuto.Common.Data
                 new XAttribute( XNamespace.Xmlns + "html", _html.NamespaceName ),
                 new XElement( _o + "DocumentProperties",
                     new XAttribute( "xmlns", _o.NamespaceName ),
-                    new XElement( _o + "Author", "APEC" ),
+                    new XElement( _o + "Author", " " ),
                     new XElement( _o + "Version", "12.00" ) ),
                 new XElement( _x + "ExcelWorkbook",
                     new XAttribute( "xmlns", _x.NamespaceName ),

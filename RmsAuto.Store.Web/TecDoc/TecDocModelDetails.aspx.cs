@@ -46,9 +46,9 @@ namespace RmsAuto.Store.Web.TecDoc
 			_titleLabel.Text = isCarModel ? "Легковые автомобили" : "Грузовые автомобили и автобусы";
 
 			StringBuilder sbSubTitle = new StringBuilder();
-			if( model.Name.Text.IndexOf( manufacturer.Name, StringComparison.CurrentCultureIgnoreCase ) < 0 )
+            if (model.Name.Tex_Text.IndexOf(manufacturer.Name, StringComparison.CurrentCultureIgnoreCase) < 0)
 				sbSubTitle.AppendFormat( "{0} ", manufacturer.Name );
-			sbSubTitle.Append( model.Name.Text );
+            sbSubTitle.Append(model.Name.Tex_Text);
 			_subTitleLabel.Text = Server.HtmlEncode( sbSubTitle.ToString() );
 
 			//Список модификаций

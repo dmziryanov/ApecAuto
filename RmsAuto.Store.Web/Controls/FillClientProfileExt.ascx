@@ -179,6 +179,13 @@
                         <th><asp:Literal ID="lContactExtPhone" runat="server" Text="<%$ Resources:RegistrationTexts, PhoneExt %>" /></th>
                         <td><uc1:Phone_Edit ID="_ContactExtPhone" runat="server" Required="false" /></td>
                     </tr>
+                    <tr>
+                        <th><asp:Literal ID="Literal2" runat="server" Text="<%$ Resources:RegistrationTexts, RegisterAs %>" /></th>
+                        <td><asp:RadioButtonList ID="SellerInfo" runat="server" Required="false">
+                                           <asp:ListItem Text="<%$ Resources:RegistrationTexts, Seller %>" Value="1"></asp:ListItem>
+                                           <asp:ListItem Text="<%$ Resources:RegistrationTexts, Customer %>" Value="0"></asp:ListItem>
+                            </asp:RadioButtonList></td>
+                    </tr>
        <%--             <asp:PlaceHolder ID="vregRO_Opt_272" runat="server">
                         <tr>
                             <th><asp:Literal ID="lContactFax" runat="server" Text="<%$ Resources:RegistrationTexts, Fax %>" /></th>

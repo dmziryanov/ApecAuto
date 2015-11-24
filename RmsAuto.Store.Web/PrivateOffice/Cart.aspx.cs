@@ -30,13 +30,13 @@ namespace RmsAuto.Store.Web
             // deas 02.03.2011 task3033
             // добавленна проверка на существование пункта выдачи заказов указанного в профиле клиента
             _btnCheckout.Visible =
-            !CurrentClient.IsGuest &&
-            !CurrentClient.Profile.IsRestricted &&
-            (CurrentClient.Profile.IsChecked ||
-            (CurrentClient.Profile.TradingVolume == TradingVolume.Retail && CurrentClient.Profile.Category == ClientCategory.Physical)) && 
-            (this.ShoppingCartItems1.CartItemsCount > 0) &&
-            !this.ShoppingCartItems1.ContainsBadItems &&
-            ( AcctgRefCatalog.RmsStores[SiteContext.Current.CurrentClient.Profile.RmsStoreId] != null );
+                !CurrentClient.IsGuest &&
+                !CurrentClient.Profile.IsRestricted &&
+                (CurrentClient.Profile.IsChecked ||
+                 (CurrentClient.Profile.TradingVolume == TradingVolume.Retail &&
+                  CurrentClient.Profile.Category == ClientCategory.Physical)) &&
+                (this.ShoppingCartItems1.CartItemsCount > 0) &&
+                !this.ShoppingCartItems1.ContainsBadItems;
             
 			_printLink.NavigateUrl = UrlManager.GetCartPrintUrl();
         }

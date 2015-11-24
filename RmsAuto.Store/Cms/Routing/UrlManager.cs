@@ -792,7 +792,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetOrderListProcessedSearchRedirectURL()
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -816,7 +816,7 @@ namespace RmsAuto.Store.Cms.Routing
 		}
 		public static string GetSearchSparePartsUrl()
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -828,7 +828,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetSearchDiscountSparePartsUrl()
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -840,7 +840,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetSupplierStatisticUrl(string sparePartKey)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -887,7 +887,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetSearchManufacturersUrl()
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -908,7 +908,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetSeoPartsCatalogRootUrl()
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -920,7 +920,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetSeoPartsCatalogUrl(int seoPartsCatalogItemId)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -932,7 +932,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetSeoPartsCatalogUrl(SeoPartsCatalogItem[] seoPartsCatalogItems)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -944,7 +944,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetCatalogUrl(int catalogItemId)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -971,7 +971,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetNewsDetailsUrl(int newsItemId)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -983,7 +983,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetShopDetailsUrl(int shopId)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -996,7 +996,7 @@ namespace RmsAuto.Store.Cms.Routing
 		public static string GetVacancyDetailsUrl(int vacancyId)
 		{
 
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1008,7 +1008,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetManufacturerDetailsUrl(string manufacturerUrlCode)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1023,7 +1023,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetTecDocManufacturerHistoryUrl(bool isCarModel, string manufacturerUrlCode)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1037,7 +1037,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetTecDocManufacturerDetailsUrl(bool isCarModel, string manufacturerUrlCode)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1051,7 +1051,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetTecDocModelDetailsUrl(int modelId)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1064,7 +1064,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetTecDocModificationDetailsUrl(int modificationId)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1076,7 +1076,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetTecDocSearchTreeNodeDetailsUrl(int modificationId, int searchTreeNodeId)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1092,7 +1092,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetTecDocInfoUrl(int articleId)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1104,7 +1104,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetTecDocInfoImagesUrl(int articleId)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1116,7 +1116,7 @@ namespace RmsAuto.Store.Cms.Routing
 		
 		public static string GetTecDocInfoCarsUrl(int articleId)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1128,7 +1128,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetTecDocImageUrl(int id)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1141,7 +1141,7 @@ namespace RmsAuto.Store.Cms.Routing
 		// dan 01.06.2011 task4253 Механизм отображения фотографий брака в результатах поиска.
 		public static string GetSparePartDefectImageUrl(string spid)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1153,7 +1153,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetSparePartDetailsUrl(string sparePartKey)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1167,7 +1167,7 @@ namespace RmsAuto.Store.Cms.Routing
 		// dan 01.06.2011 task4253 Механизм отображения фотографий брака в результатах поиска.
 		public static string GetSparePartsDefectImagesUrl(string additionaInfoKey)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1181,7 +1181,7 @@ namespace RmsAuto.Store.Cms.Routing
 		//dan 13.07.2011 task4770 Механизм возвратов
 		public static string GetReclamationRequestUrl(string orderLineID)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1223,7 +1223,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetCartPrintUrl()
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1235,7 +1235,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetCartImportUrl()
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1247,7 +1247,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetPaymentOrderPrintUrl(int orderID)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1259,7 +1259,7 @@ namespace RmsAuto.Store.Cms.Routing
 
         public static string GetPaymentOrderPrintUrlOpt(int orderID)
         {
-            using (RouteTable.Routes.GetReadLock())
+            
             {
                 VirtualPathData p = RouteTable.Routes.GetVirtualPath(
                     null,
@@ -1271,7 +1271,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetOrderPrintUrl(int orderID)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1283,7 +1283,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetReclamationPrintUrl( int reclamationID )
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1295,7 +1295,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetOrderLinesReadyForDeliveryPrintUrl()
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1308,7 +1308,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetCheckoutUrl()
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1320,7 +1320,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetRegistrationUrl()
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1332,7 +1332,7 @@ namespace RmsAuto.Store.Cms.Routing
 
         public static string GetRegistrationUrlFranch()
         {
-            using (RouteTable.Routes.GetReadLock())
+            
             {
                 VirtualPathData p = RouteTable.Routes.GetVirtualPath(
                     null,
@@ -1354,7 +1354,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetOrderDetailsUrl(int[] orderIds, string backUrl)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1369,7 +1369,7 @@ namespace RmsAuto.Store.Cms.Routing
 
         public static string GetAllOrderDetailsUrl(int[] orderIds, string backUrl)
         {
-            using (RouteTable.Routes.GetReadLock())
+            
             {
                 VirtualPathData p = RouteTable.Routes.GetVirtualPath(
                     null,
@@ -1384,7 +1384,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetOrderLineTracking(int orderLineId, string backUrl)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1396,7 +1396,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetFileUrl(int fileID)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1408,7 +1408,7 @@ namespace RmsAuto.Store.Cms.Routing
 
         /*public static string GetFileUrlRMS(int fileID)
         {
-            using (RouteTable.Routes.GetReadLock())
+            
             {
                 VirtualPathData p = RouteTable.Routes.GetVirtualPath(
                     null,
@@ -1420,7 +1420,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetFlashUrl(int fileID)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1432,7 +1432,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetThumbnailUrl(int fileID, string thumbnailGeneratorKey, string rms)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1451,7 +1451,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetSupplierStatUrl(string sparePartKey)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1463,7 +1463,7 @@ namespace RmsAuto.Store.Cms.Routing
 
         public static string GetClientActivationUrl(Guid activationCode, string FranchCode)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
                 //VirtualPathData p = RouteTable.Routes.GetVirtualPath(
                 //    null,
@@ -1492,7 +1492,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetPasswordRecoveryUrl()
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1504,7 +1504,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetContractTermsFrameUrl()
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1518,7 +1518,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetVinRequestDetailsUrl(int id)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1530,7 +1530,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetVinRequestNewUrl()
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1552,7 +1552,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetNewGarageCarUrl()
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1564,7 +1564,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetGarageCarEditUrl(int id)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1576,7 +1576,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetGarageCarViewUrl(int id)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1593,7 +1593,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetVinRequestAccessDenied()
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1605,7 +1605,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		//public static string GetVinRequestAccessDeniedManager()
 		//{
-		//    using (RouteTable.Routes.GetReadLock())
+		//    
 		//    {
 		//        VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 		//            null,
@@ -1621,7 +1621,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetStockSupplierPartsPage(string mfr)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,
@@ -1633,7 +1633,7 @@ namespace RmsAuto.Store.Cms.Routing
 
 		public static string GetStockSupplierPartsPage(string mfr, int page)
 		{
-			using (RouteTable.Routes.GetReadLock())
+			
 			{
 				VirtualPathData p = RouteTable.Routes.GetVirtualPath(
 					null,

@@ -5,7 +5,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>APEC</title>
+    <title> </title>
 	<link rel="StyleSheet" href="<%=ResolveUrl("~/css/css_new.css")%>" type="text/css" />
 	<script src="<%= ResolveUrl("~/Scripts/jquery-1.6.2.min.js") %>" type="text/javascript"></script>
 </head>

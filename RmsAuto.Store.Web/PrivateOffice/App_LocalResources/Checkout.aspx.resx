@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lNeedPhoneResource1.Text" xml:space="preserve">
-    <value>Для возможности оформления заказа на нашем сайте, просьба связаться с нашим менеджером по телефону +7(495) 585-5-585.</value>
+    <value>Для возможности оформления заказа на нашем сайте, необходимо зарегистрироваться</value>
   </data>
   <data name="lWelcomeResource1.Text" xml:space="preserve">
     <value>Уважаемые Дамы и Господа!</value>

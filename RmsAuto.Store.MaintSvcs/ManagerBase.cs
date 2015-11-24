@@ -89,7 +89,7 @@ namespace RmsAuto.Store.MaintSvcs
 		protected void LogMessageToFile(string message)
 		{
 			//По хорошему нужно брать из настроек
-			string path = "c:\\_testsvc\\apec\\logtemp.txt";
+			string path = "c:\\_testsvc\\ \\logtemp.txt";
 			using (var sw = new StreamWriter(path, true))
 			{
 				sw.WriteLine(message);

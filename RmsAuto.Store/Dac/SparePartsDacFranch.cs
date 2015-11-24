@@ -44,12 +44,10 @@ namespace RmsAuto.Store.Dac
                 throw new ArgumentNullException("key");
 
 		
-			string query = @"SELECT * FROM fSparePartWithCustomFactorsRMS({0},{1},{2},{3},{4})
-							UNION
-							SELECT * FROM fSparePartWithCustomFactors({0},{1},{2},{3},{4})";
+			string query = @"SELECT * FROM fSparePartWithCustomFactors({0},{1},{2},{3},{4})";
 
-			return context.ExecuteQuery<SparePartFranch>( query,
-                AcctgRefCatalog.RmsFranches[SiteContext.Current.InternalFranchName].RegionCode /* код франча для "региональных" прайсов */, 
+			return context.ExecuteQuery<SparePartFranch>(query,
+                "" /* код франча для "региональных" прайсов */, 
 				key.PN, key.Mfr, key.SupplierId,
 				AcctgRefCatalog.RmsFranches[SiteContext.Current.InternalFranchName].AdditionalPeriod /*добавочный период к срокам поставки*/).SingleOrDefault<SparePartFranch>();
         }
@@ -177,8 +175,7 @@ namespace RmsAuto.Store.Dac
             }
 
 			query += @"
-				select s.* from @t as t cross apply fSparePartWithCustomFactorsRMS({0}, t.PartNumber, t.Manufacturer, t.SupplierID, {1}) s
-				union
+
 				select s.* from @t as t cross apply fSparePartWithCustomFactors({0}, t.PartNumber, t.Manufacturer, t.SupplierID, {1}) s";
 
 			IEnumerable<SparePartFranch> parts = context.ExecuteQuery<SparePartFranch>(

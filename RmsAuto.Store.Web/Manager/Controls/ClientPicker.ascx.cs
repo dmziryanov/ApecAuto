@@ -1,25 +1,11 @@
 ﻿using System;
-using System.Collections;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.Security;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Xml.Linq;
-
-using RmsAuto.Acctg;
-using RmsAuto.Store.BL;
-using RmsAuto.Store.Web;
-using RmsAuto.Common.Web;
 using RmsAuto.Store.Acctg;
 
 namespace RmsAuto.Store.Web.Manager.Controls
 {
-	public partial class ClientPicker : System.Web.UI.UserControl
+	public partial class ClientPicker : UserControl
 	{
         public bool NoClientsFound { get; set; }
 

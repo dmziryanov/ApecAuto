@@ -122,6 +122,8 @@ namespace RmsAuto.Store.Entities
 		/// Дополнительный телефон контактного лица
 		/// </summary>
 		public string ContactPersonExtPhone { get; set; }
+        public int RegisterAs { get; set; }
+        
 		/// <summary>
 		/// Факс контактного лица
 		/// </summary>

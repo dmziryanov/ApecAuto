@@ -183,14 +183,9 @@ namespace RmsAuto.Store.Web
 					try
 					{
                         // deas 11.05.2011 task3741 Изменено на более универсальный поиск товара
-                        if (SiteContext.Current.InternalFranchName == "rmsauto")
-                        {
-                            part = SparePartsDac.Load(dc.DataContext, new SparePartPriceKey(item.Key.Mfr, item.Key.PN, item.Key.SupplierId));
-                        }
-                        else
-                        {
+                        
                             part = SparePartsDacFranch.Load(dc.DataContext, new SparePartPriceKey(item.Key.Mfr, item.Key.PN, item.Key.SupplierId));
-                        }
+                        
                         //part = sp.Where(
                         //itm =>
                         //itm.Manufacturer ==  && itm.PartNumber ==  &&
@@ -340,7 +335,7 @@ namespace RmsAuto.Store.Web
 			}
 		}
 
-		public int PlaceOrder(
+		public IEnumerable<int> PlaceOrder(
 			PaymentMethod paymentMethod,
 			string shippingAddress,
 			string orderNotes,

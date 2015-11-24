@@ -136,7 +136,7 @@
     <value>customer order No</value>
   </data>
   <data name="Head_EstDate" xml:space="preserve">
-    <value>delivery date to APEC warehouse</value>
+    <value>delivery date to   warehouse</value>
   </data>
   <data name="Head_OrderDate" xml:space="preserve">
     <value>order date</value>

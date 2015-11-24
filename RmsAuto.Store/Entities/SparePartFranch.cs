@@ -26,6 +26,7 @@ namespace RmsAuto.Store.Entities
 		public string Manufacturer { get; set; }
 		public string PartNumber { get; set; }
 		public string InternalPartNumber { get; set; }
+        public string InternalFranchName { get; set; }
 		public string PartName { get; set; }
 		public string PartDescription { get; set; }
 		public int SupplierID { get; set; }

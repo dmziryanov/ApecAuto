@@ -245,26 +245,13 @@ namespace RmsAuto.Store.Acctg.Entities
                 IEnumerable<StoreInfo> stores;
                 try
                 {
-                    if (SiteContext.Current.InternalFranchName == "rmsauto" || SiteContext.Current.InternalFranchName == null)
-                    {
-                        stores = dc.DataContext.ExecuteQuery<StoreInfo>
-                        ("SELECT StoreId, StoreNumber, StoreName, Address, Phone, IsRetail, IsWholesale FROM Acctg.Shops");
-                    }
-                    else
-                    {
-                        if (AcctgRefCatalog.RmsFranches[SiteContext.Current.InternalFranchName].isLite)
-                        {
-                            stores = dc.DataContext.ExecuteQuery<StoreInfo>
-                            ("SELECT StoreId, StoreNumber, ShopName, ShopAddress as Address, ShopPhones as Phone, IsRetail, IsWholesale FROM Cms.Shops where FranchName='" + SiteContext.Current.InternalFranchName+"'");
-                        }
-                        else
-                        {
+                        
                             stores = dc.DataContext.ExecuteQuery<StoreInfo>
                             ("SELECT StoreId, StoreNumber, ShopName, ShopAddress as Address, ShopPhones as Phone, IsRetail, IsWholesale FROM Cms.Shops");
-                        }
-                    }
+                        
+                    
 
-                    res = stores.ToArray();
+                            res = stores.ToArray();
                 }
                 catch (Exception ex)
                 {

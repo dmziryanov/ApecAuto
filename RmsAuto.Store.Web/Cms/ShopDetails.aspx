@@ -19,23 +19,7 @@
     hs.numberPosition = 'caption';
 
     // Add the slideshow providing the controlbar and the thumbstrip
-    hs.addSlideshow({
-        //slideshowGroup: 'group1',
-        interval: 5000,
-        repeat: false,
-        useControls: true,
-        overlayOptions: {
-            className: 'text-controls',
-            position: 'bottom center',
-            relativeTo: 'viewport',
-            offsetY: -60
-        },
-        thumbstrip: {
-            position: 'bottom center',
-            mode: 'horizontal',
-            relativeTo: 'viewport'
-        }
-    });
+    
 </script>
 	<uc1:ShopDetails ID="_shopDetails" runat="server" />
 </asp:Content>

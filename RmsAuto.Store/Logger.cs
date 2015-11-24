@@ -10,6 +10,7 @@ using RmsAuto.Store.BL;
 using System.IO;
 using RmsAuto.Store.Acctg;
 using System.Configuration;
+using System.Threading;
 
 namespace RmsAuto.Store
 {
@@ -20,17 +21,6 @@ namespace RmsAuto.Store
 
         static Logger()
         {
-                if (!EventLog.SourceExists(LoggerConfiguration.Current.ApplicationName, LoggerConfiguration.Current.MachineName))
-                {
-                    EventLog.CreateEventSource(new EventSourceCreationData(LoggerConfiguration.Current.ApplicationName, LoggerConfiguration.Current.LogName)
-                    {
-                        MachineName = LoggerConfiguration.Current.MachineName,
-                        CategoryResourceFile = LoggerConfiguration.Current.ResourceFile,
-                        CategoryCount = LoggerConfiguration.Current.CategoryCount,
-                        MessageResourceFile = LoggerConfiguration.Current.ResourceFile,
-                        ParameterResourceFile = LoggerConfiguration.Current.ResourceFile
-                    });
-                }
                 _isWork = LoggerConfiguration.Current.LogWork == "on";
 
                 eventLog = new Dictionary<string, EventLog>();

@@ -12,10 +12,12 @@
 	<ul>
 		<li><asp:HyperLink ID="hlRegisterClient" runat="server" NavigateUrl="~/Manager/RegisterClient.aspx"><%= global::Resources.Texts.CreationNewClient %></asp:HyperLink></li>
 		<li><asp:HyperLink ID="hlSelectClient" runat="server" NavigateUrl="~/Manager/SelectClient.aspx"></asp:HyperLink></li>
+        
 		<li><asp:HyperLink ID="hlAllOrders" runat="server" NavigateUrl="~/Manager/AllOrders.aspx"><%= global::Resources.Texts.AllOrders %></asp:HyperLink></li>
 		<li><asp:HyperLink ID="hlUploadStatuses" runat="server" NavigateUrl="~/Manager/UploadStatuses.aspx"><%= global::Resources.Texts.UploadStatuses %></asp:HyperLink></li>
 		<li><asp:HyperLink ID="hlClientLoad" runat="server" NavigateUrl="~/Manager/ClientOrdelinesLoad.aspx"><%= global::Resources.Texts.Dispatches %></asp:HyperLink></li>
 		<li><asp:HyperLink ID="hlClientPayments" runat="server" NavigateUrl="~/Manager/ClientPayments.aspx"><%= global::Resources.Texts.SettlementPayments %></asp:HyperLink></li>
+        <li><asp:HyperLink ID="hlUploadSpareparts" runat="server" NavigateUrl="~/Manager/UploadSpareParts.aspx">Загрузка номенклатуры</asp:HyperLink></li>
     </ul>
 </div>
 <table id="p_reports_header" class="menu_off" runat="server">

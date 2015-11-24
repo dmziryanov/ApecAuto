@@ -15,7 +15,7 @@
 	
     <link rel="StyleSheet" href="<%= ResolveUrl("~/css/themes/base/jquery-ui-1.10.4.custom.min.css")%>" type="text/css" />
 	<link rel="StyleSheet" href="<%= ResolveUrl("~/css/style.css?v=1.1")%>" type="text/css" />
-    <link rel="StyleSheet" href="<%= ResolveUrl("~/css/style_rmm.css?v=1.2")%>" type="text/css" />
+    <link rel="StyleSheet" href="<%= ResolveUrl("~/css/style_rmm.css")%>" type="text/css" />
     <link rel="Stylesheet" href="<%= ResolveUrl("~/css/themes/base/jquery.ui.all.css") %>" type="text/css" />	
 	<link rel="Stylesheet" href="<%= ResolveUrl("~/css/themes/base/ext-theme-neptune-all.css") %>" type="text/css" />	
 	
@@ -109,7 +109,7 @@
 		<div class="container">
 		  <div class="top-line"></div>
 		  <!--end .top-line --> 
-		  Copyright <%=DateTime.Now.Year%>. All rights reserved. APEC (Auto Parts East FZCO)<br />
+		  Copyright <%=DateTime.Now.Year%>. All rights reserved. Spare-Auto.com<br />
 		</div>
 		<!--end .container --> 
 	  </div>

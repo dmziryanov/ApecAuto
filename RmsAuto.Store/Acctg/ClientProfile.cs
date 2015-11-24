@@ -86,7 +86,8 @@ namespace RmsAuto.Store.Acctg
 			string correspondentBankName,
 			string correspondentIBAN,
 			string correspondentSWIFT,
-			string correspondentBankAddress
+			string correspondentBankAddress,
+            int RegisterAs
             )
         {
             if ( string.IsNullOrEmpty( clientName ) )
@@ -134,7 +135,8 @@ namespace RmsAuto.Store.Acctg
 				CorrespondentBankName = correspondentBankName,
 				CorrespondentIBAN = correspondentIBAN,
 				CorrespondentSWIFT = correspondentSWIFT,
-				CorrespondentBankAddress = correspondentBankAddress
+				CorrespondentBankAddress = correspondentBankAddress,
+                RegisterAs = RegisterAs
             };
 
             RmsAuto.Acctg.ClientGroup clientGroup = tradingVolume == TradingVolume.Retail ? RmsAuto.Acctg.ClientGroup.DefaultRetail : RmsAuto.Acctg.ClientGroup.DefaultWholesale;
@@ -154,14 +156,16 @@ namespace RmsAuto.Store.Acctg
 				contactPersonPosition, contactPersonName, contactPersonSurname, contactPersonPhone, contactPersonExtPhone,
 				contactPersonFax, contactPersonEmail, deliveryAddress, companyName, companyRegistrationID, companyAddress,
 				bankName, IBAN, SWIFT, bankAddress, directorName, directorSurname, correspondentBankName,
-				correspondentIBAN, correspondentSWIFT, correspondentBankAddress);
+				correspondentIBAN, correspondentSWIFT, correspondentBankAddress, RegisterAs);
                 profile.UserId = rezIns.ToList().FirstOrDefault().UserID.Value;
             }
 
             return profile;
         }
 
-		public static ClientProfile Load(string clientId)
+        public int RegisterAs { get; set; }
+
+        public static ClientProfile Load(string clientId)
 		{
 			if (string.IsNullOrEmpty(clientId))
 				throw new ArgumentException("ClientId cannot be empty", "clientId");

@@ -10,6 +10,9 @@ using RmsAuto.Common.Misc;
 using RmsAuto.Store.Import;
 using System.Data.SqlClient;
 using System.Configuration;
+using RmsAuto.Store.Cms.Entities;
+using RmsAuto.Store.Entities;
+using File = System.IO.File;
 
 namespace RmsAuto.Store.MaintSvcs
 {
@@ -156,22 +159,32 @@ namespace RmsAuto.Store.MaintSvcs
 
 		private AlarmFile DequeueAlarmFile()
 		{
-			if( _fileQueue.Count == 0 )
+		    List<string> FranchList;
+            using (var dc = new CmsDataContext())
+		    {
+		        FranchList = dc.spSelFranchesFromRms().Select(x => x.InternalFranchName).ToList();
+		    }
+
+		    if( _fileQueue.Count == 0 )
 			{
 				List<AlarmFile> list = new List<AlarmFile>();
-				foreach( ImportEntity importEntity in Enum.GetValues( typeof( ImportEntity ) ) )
-				{
-					list.AddRange(
-						Directory.GetFiles( _paths[ importEntity ], "*" + _ImpExt )
-							.Select( f => new AlarmFile( new FileInfo( f ), importEntity, AlarmFile.AlarmFileType.Import ) )
-						);
+			    foreach (var name in FranchList)
+			    {
+			        foreach (ImportEntity importEntity in Enum.GetValues(typeof (ImportEntity)))
+			        {
+			            list.AddRange(
+			                Directory.GetFiles(_paths[importEntity]+name+@"\", "*" + _ImpExt)
+			                    .Select(f => new AlarmFile(new FileInfo(f), importEntity, AlarmFile.AlarmFileType.Import) {InternalFranchName = name})
+			                );
 
-					list.AddRange(
-						Directory.GetFiles( _paths[ importEntity ], "*" + _DelExt )
-							.Select( f => new AlarmFile( new FileInfo( f ), importEntity, AlarmFile.AlarmFileType.Delete ) )
-						);
-				}
-				foreach( var item in list.OrderBy( f => f.Index ) )
+			            list.AddRange(
+			                Directory.GetFiles(_paths[importEntity]+name+@"\", "*" + _DelExt)
+                                .Select(f => new AlarmFile(new FileInfo(f), importEntity, AlarmFile.AlarmFileType.Delete) { InternalFranchName = name })
+			                );
+			        }
+			    }
+
+			    foreach(var item in list.OrderBy( f => f.Index ))
 				{
 					_fileQueue.Enqueue( item );
 				}
@@ -334,6 +347,8 @@ namespace RmsAuto.Store.MaintSvcs
 			Import,
 			Delete
 		}
+
+	    public string InternalFranchName;
 
 		public int Index { get; private set; }
 		public FileInfo FileInfo { get; private set; }

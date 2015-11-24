@@ -130,7 +130,7 @@
     <value>Show by:</value>
   </data>
   <data name="lDateOnStockResource1.Text" xml:space="preserve">
-    <value>Date of intake to APEC warehouse</value>
+    <value>Date of intake to   warehouse</value>
   </data>
   <data name="lDetailNumberResource1.Text" xml:space="preserve">
     <value>Part number</value>

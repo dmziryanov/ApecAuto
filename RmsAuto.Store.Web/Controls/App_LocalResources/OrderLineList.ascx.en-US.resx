@@ -196,7 +196,7 @@
     <value>customer order number</value>
   </data>
   <data name="lHEstDateResource1.Text" xml:space="preserve">
-    <value>delivery date to APEC warehouse</value>
+    <value>delivery date to   warehouse</value>
   </data>
   <data name="lHManufacturerResource1.Text" xml:space="preserve">
     <value>manufacturer</value>

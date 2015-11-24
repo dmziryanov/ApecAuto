@@ -113,7 +113,7 @@ namespace RmsAuto.Store.Import
 		private static void LogMessageFacadeToFile(string message)
 		{
 			//По хорошему нужно брать из настроек
-			string path = "c:\\_testsvc\\apec\\logtempimportfacade.txt";
+			string path = "c:\\_testsvc\\ \\logtempimportfacade.txt";
 			using (var sw = new StreamWriter(path, true))
 			{
 				sw.WriteLine(message);

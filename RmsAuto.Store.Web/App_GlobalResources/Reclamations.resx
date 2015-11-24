@@ -136,7 +136,7 @@
     <value>номер заказа клиента</value>
   </data>
   <data name="Head_EstDate" xml:space="preserve">
-    <value>дата поступления на склад APEC</value>
+    <value>дата поступления на склад </value>
   </data>
   <data name="Head_OrderDate" xml:space="preserve">
     <value>дата заказа</value>

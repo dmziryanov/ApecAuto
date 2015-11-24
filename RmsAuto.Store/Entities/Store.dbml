@@ -53,6 +53,7 @@
       <Column Name="CurrentStatus" Type="Byte" DbType="tinyint not null" CanBeNull="false" />
       <Column Name="CurrentStatusDate" Type="System.DateTime" CanBeNull="true" />
       <Column Name="Processed" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="InternalFranchName" Type="System.String" DbType="varchar" CanBeNull="false" />
       <Association Name="OrderLine_OrderLine" Member="ChildOrderLines" Storage="_ChildOrderLine" ThisKey="OrderLineID" OtherKey="ParentOrderLineID" Type="OrderLine" />
       <Association Name="OrderLine_OrderLineStatusChange" Member="OrderLineStatusChanges" ThisKey="OrderLineID" OtherKey="OrderLineID" Type="OrderLineStatusChange" />
       <Association Name="OrderLine_OrderLine" Member="ParentOrderLine" ThisKey="ParentOrderLineID" OtherKey="OrderLineID" Type="OrderLine" IsForeignKey="true" />
@@ -791,7 +792,7 @@
     <Parameter Name="CountryID" Parameter="countryID" Type="System.Int32" DbType="Int" />
     <Parameter Name="Locality" Parameter="locality" Type="System.String" DbType="NVarChar(255)" />
     <Parameter Name="ScopeType" Parameter="scopeType" Type="System.String" DbType="NVarChar(255)" />
-    <Parameter Name="" Parameter="howKnow" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="HowKnow" Parameter="howKnow" Type="System.String" DbType="NVarChar(255)" />
     <Parameter Name="ManagerId" Parameter="managerId" Type="System.String" DbType="VarChar(20)" />
     <Parameter Name="ManagerDeptId" Parameter="managerDeptId" Type="System.String" DbType="VarChar(20)" />
     <Parameter Name="IsChecked" Parameter="isChecked" Type="System.Boolean" DbType="Bit" />
@@ -822,6 +823,7 @@
     <Parameter Name="CorrespondentIBAN" Parameter="correspondentIBAN" Type="System.String" DbType="VarChar(200)" />
     <Parameter Name="CorrespondentSWIFT" Parameter="correspondentSWIFT" Type="System.String" DbType="VarChar(200)" />
     <Parameter Name="CorrespondentBankAddress" Parameter="correspondentBankAddress" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="RegisterAs" Parameter="RegisterAs" Type="System.Int32" DbType="int" />
     <ElementType Name="spInsUsersResult">
       <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
