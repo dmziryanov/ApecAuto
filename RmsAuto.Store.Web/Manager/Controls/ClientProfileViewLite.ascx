@@ -377,7 +377,7 @@
 			Limit on orders
 		</th>
 		<td>
-			<asp:TextBox ID="_paymentLimit" runat="server" Width="55px"></asp:TextBox>&nbsp;<%=global::Resources.Texts.DollarShort %>
+			<asp:TextBox ID="_paymentLimit" runat="server" Width="55px"></asp:TextBox>&nbsp;<%=global::Resources.Texts.RoubleShort %>
 			&nbsp; <asp:RangeValidator ID="_paymentLimitRangeValidator" runat="server"
 						ControlToValidate="_paymentLimit"
 						MinimumValue="0"

@@ -8,7 +8,7 @@
 <%--<asp:PlaceHolder runat="server" ID="_cartPlaceHolder">
 	<asp:HyperLink ID="_imgViewCartLink" runat="server"><img src="<%$ Resources:ImagesURL, basket_img %>" runat="server" alt="<%$ Resources:Texts, Cart %>" width="217" height="49" border="0"></asp:HyperLink><div class="basket">
 	<asp:Label ID="_cartInfoLabel" runat="server">
-		<%=global::Resources.Texts.AllParts%> <b><asp:Literal runat="server" ID="_cartCountLiteral" /></b><br /> <%=global::Resources.Texts.OnSumm%> <b><asp:Literal runat="server" ID="_cartSumLiteral" /></b> <%=global::Resources.Texts.DollarShort%>
+		<%=global::Resources.Texts.AllParts%> <b><asp:Literal runat="server" ID="_cartCountLiteral" /></b><br /> <%=global::Resources.Texts.OnSumm%> <b><asp:Literal runat="server" ID="_cartSumLiteral" /></b> <%=global::Resources.Texts.RoubleShort%>
 	</asp:Label>
 	<asp:Label runat="server" ID="_cartEmptyLabel"><asp:Literal ID="lNoParts" runat="server" Text="<%$ Resources:Texts, NoParts %>" /></asp:Label>
 	<br />

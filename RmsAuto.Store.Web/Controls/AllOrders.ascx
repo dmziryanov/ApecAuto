@@ -356,7 +356,7 @@ SelectCountMethod="GetOrdersCount" SelectMethod="GetOrders" UpdateMethod="Update
                 <%= global::Resources.Texts.Total%> 
                 <asp:Label runat="server" 
 		            ID="_totalLabel" CssClass="price" 
-		             /> <%= global::Resources.Texts.DollarShort%>
+		             /> <%= global::Resources.Texts.RussianRouble%>
             </div>
         </div>
     </div>
@@ -367,7 +367,7 @@ SelectCountMethod="GetOrdersCount" SelectMethod="GetOrders" UpdateMethod="Update
 	<br />
 	<b><asp:Literal ID="lAllSumm" runat="server" Text="Total orders" 
 			meta:resourcekey="lAllSummResource1" /></b> <asp:Label runat="server" 
-			ID="_completedOrdersTotalLabel" CssClass="price" /> <%=global::Resources.Texts.DollarShort%>
+			ID="_completedOrdersTotalLabel" CssClass="price" /> <%=global::Resources.Texts.RoubleShort%>
 	<br />
 	<b><asp:Literal ID="lSaleOn" runat="server" Text="Issued on" 
 			meta:resourcekey="lSaleOnResource1" /></b> <asp:Label runat="server" 

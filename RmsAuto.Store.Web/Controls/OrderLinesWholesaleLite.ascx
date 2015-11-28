@@ -244,9 +244,9 @@
             <div class="right">
                 <div runat="server" id="_totalsBlock" class="right_block2">
                 <asp:Literal ID="lSummOnPage" runat="server" Text="Total on page" 
-		                meta:resourcekey="lSummOnPageResource1" />&nbsp;<asp:Label runat="server" ID="_pageTotalLabel" CssClass="price" />&nbsp;<%=global::Resources.Texts.DollarShort %> <br />
+		                meta:resourcekey="lSummOnPageResource1" />&nbsp;<asp:Label runat="server" ID="_pageTotalLabel" CssClass="price" />&nbsp;<%=global::Resources.Texts.RoubleShort %> <br />
                 <asp:Literal ID="lAllSumm" runat="server" Text="Total" 
-		                meta:resourcekey="lAllSummResource1" />&nbsp;<asp:Label runat="server" ID="_totalLabel" CssClass="price" />&nbsp;<%=global::Resources.Texts.DollarShort%>
+		                meta:resourcekey="lAllSummResource1" />&nbsp;<asp:Label runat="server" ID="_totalLabel" CssClass="price" />&nbsp;<%=global::Resources.Texts.RoubleShort%>
                 </div>
                 <div runat="server" id="_pagerSettingsBlock"></div>
             </div>

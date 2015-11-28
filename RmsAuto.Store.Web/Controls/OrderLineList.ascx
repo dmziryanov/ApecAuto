@@ -257,11 +257,11 @@
                 <br />
                 <%= global::Resources.Texts.TotalOnPage%> 
 	                <asp:Label runat="server" ID="_pageTotalLabel" 
-		                CssClass="price" /> <%= global::Resources.Texts.DollarShort%>
+		                CssClass="price" /> <%= global::Resources.Texts.RoubleShort%>
                 <br />
                 <%= global::Resources.Texts.Total%> <asp:Label runat="server" 
 		                ID="_totalLabel" CssClass="price"
-		                    /> <%= global::Resources.Texts.DollarShort%>
+		                    /> <%= global::Resources.Texts.RoubleShort%>
                 </div>
         </div>
 

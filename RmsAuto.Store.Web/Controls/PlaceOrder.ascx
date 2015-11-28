@@ -95,7 +95,7 @@
         <asp:WizardStep ID="_orderReviewStep" runat="server" Title="<%$ Resources:PlaceOrder, PlaceOrderInfo %>" StepType="Finish">
             <div class="cart">
             <br />
-            <span><asp:Literal ID="lAllDetails" runat="server" Text="Всего товаров:" /> <b><%=SiteContext.Current.CurrentClient.Cart.GetAddToOrderTotals().PartsCount%></b> <asp:Literal ID="lOnSumm" runat="server" Text="на сумму" /> <b><% =string.Format( "{0:### ### ##0.00}", SiteContext.Current.CurrentClient.Cart.GetAddToOrderTotals().Total )%></b> <%=global::Resources.Texts.DollarShort%></span>
+            <span><asp:Literal ID="lAllDetails" runat="server" Text="Всего товаров:" /> <b><%=SiteContext.Current.CurrentClient.Cart.GetAddToOrderTotals().PartsCount%></b> <asp:Literal ID="lOnSumm" runat="server" Text="на сумму" /> <b><% =string.Format( "{0:### ### ##0.00}", SiteContext.Current.CurrentClient.Cart.GetAddToOrderTotals().Total )%></b> <%=global::Resources.Texts.RoubleShort%></span>
             <center>
             <table cellpadding="0" cellspacing="0" class="list" width="97%">
                      <tr>
@@ -162,7 +162,7 @@
                 </td>
                 <td>
                      <div class="cart" style="padding:15px;">
-                        <asp:Literal ID="_ltrPaymentMethod" runat="server" />: <b><%=string.Format( "{0:### ### ##0.00}", SiteContext.Current.CurrentClient.Cart.GetAddToOrderTotals().Total )%> <%=global::Resources.Texts.DollarShort%></b>
+                        <asp:Literal ID="_ltrPaymentMethod" runat="server" />: <b><%=string.Format( "{0:### ### ##0.00}", SiteContext.Current.CurrentClient.Cart.GetAddToOrderTotals().Total )%> <%=global::Resources.Texts.RoubleShort%></b>
                     </div>
                 </td>
             </tr>

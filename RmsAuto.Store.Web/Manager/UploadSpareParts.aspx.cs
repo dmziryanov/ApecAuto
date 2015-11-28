@@ -17,7 +17,7 @@ namespace RmsAuto.Store.Web.Manager
     {
         public string GetTemplateUrl()
         {
-            string templateFileName = "SparePartTemplate_eng.xlsx";
+            string templateFileName = "SparePartTemplate_eng.csv";
             int fileID = FilesDac.GetFileIDByName(templateFileName);
             return UrlManager.GetFileUrl(fileID);
         }
@@ -69,9 +69,13 @@ namespace RmsAuto.Store.Web.Manager
             SpreadsheetReader reader = null;
             try
             {
-                var s = Server.MapPath(@"App_data\" + SiteContext.Current.InternalFranchName + @"\");
+                var s = Server.MapPath(@"App_data\prices\" + SiteContext.Current.InternalFranchName + @"\");
                 System.IO.Directory.CreateDirectory(s);
                 file.SaveAs(s + file.FileName);
+                using (var fs = File.Create(s + Path.ChangeExtension(file.FileName, ".imp")))
+                {
+                    fs.Close();
+                }
             }
             catch (Exception ex)
             {

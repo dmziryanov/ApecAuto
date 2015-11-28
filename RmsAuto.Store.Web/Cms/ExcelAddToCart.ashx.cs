@@ -225,7 +225,7 @@ namespace RmsAuto.Store.Web.Cms
                         result.Amount = string.Format("{0:### ### ##0.00}", SiteContext.Current.CurrentClientTotals.Total);
 
                         XMLExcel resFile = new XMLExcel("New Order");
-                        resFile.InitOKImportMess(CustOrderNum, SiteContext.Current.CurrentClient.Profile.ClientName, Resources.Texts.DollarShort);
+                        resFile.InitOKImportMess(CustOrderNum, SiteContext.Current.CurrentClient.Profile.ClientName, Resources.Texts.RoubleShort);
                         var allRows = rowsCart.OrderBy(t => t.rowN).ToList();
                         for (int i = 0; i < allRows.Count; i++)
                         {

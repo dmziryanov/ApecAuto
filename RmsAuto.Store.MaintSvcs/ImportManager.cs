@@ -172,15 +172,28 @@ namespace RmsAuto.Store.MaintSvcs
 			    {
 			        foreach (ImportEntity importEntity in Enum.GetValues(typeof (ImportEntity)))
 			        {
-			            list.AddRange(
-			                Directory.GetFiles(_paths[importEntity]+name+@"\", "*" + _ImpExt)
-			                    .Select(f => new AlarmFile(new FileInfo(f), importEntity, AlarmFile.AlarmFileType.Import) {InternalFranchName = name})
-			                );
+			            if (Directory.Exists(_paths[importEntity] + name + @"\"))
+			            {
+			                list.AddRange(
+			                    Directory.GetFiles(_paths[importEntity] + name + @"\", "*" + _ImpExt)
+			                        .Select(
+			                            f =>
+			                                new AlarmFile(new FileInfo(f), importEntity, AlarmFile.AlarmFileType.Import)
+			                                {
+			                                    InternalFranchName = name
+			                                })
+			                    );
 
-			            list.AddRange(
-			                Directory.GetFiles(_paths[importEntity]+name+@"\", "*" + _DelExt)
-                                .Select(f => new AlarmFile(new FileInfo(f), importEntity, AlarmFile.AlarmFileType.Delete) { InternalFranchName = name })
-			                );
+			                list.AddRange(
+			                    Directory.GetFiles(_paths[importEntity] + name + @"\", "*" + _DelExt)
+			                        .Select(
+			                            f =>
+			                                new AlarmFile(new FileInfo(f), importEntity, AlarmFile.AlarmFileType.Delete)
+			                                {
+			                                    InternalFranchName = name
+			                                })
+			                    );
+			            }
 			        }
 			    }
 

@@ -104,7 +104,7 @@
             <div class="right">
                 <%=global::Resources.Texts.AllParts%> <strong><%=PartsCount%></strong> <span style="visibility:hidden;"> USD</span>
                 <br />
-                <%=global::Resources.Texts.OnSumm%> <strong><% =string.Format("{0:### ### ##0.00}", Total)%></strong> <%=global::Resources.Texts.DollarShort %>
+                <%=global::Resources.Texts.OnSumm%> <strong><% =string.Format("{0:### ### ##0.00}", Total)%></strong> <%=global::Resources.Texts.RoubleShort %>
             </div>
         </div>
     </div>

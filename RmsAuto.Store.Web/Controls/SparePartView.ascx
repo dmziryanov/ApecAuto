@@ -21,7 +21,7 @@
             <td class="title"><%=global::Resources.Texts.WeightVolume %></td><td><%# WeightVolume.HasValue ? Convert.ToString(WeightVolume) : "NA"%></td>
         </tr>
         <tr>
-            <td class="title"><%=global::Resources.Texts.Price %></td><td class="price"><%# ActualPrice.HasValue ? Convert.ToString(ActualPrice)+ " " + Resources.Texts.DollarShort : "NA" %></td>
+            <td class="title"><%=global::Resources.Texts.Price %></td><td class="price"><%# ActualPrice.HasValue ? Convert.ToString(ActualPrice)+ " " + Resources.Texts.RoubleShort : "NA" %></td>
         </tr>
         <tr>
             <td class="title"><%=global::Resources.Texts.DeliveryPeriod %></td><td> <%=global::Resources.Texts.From %> <%# DisplayDeliveryDaysMin %> <%=global::Resources.Texts.To %> <%# DisplayDeliveryDaysMax %> <%=global::Resources.Texts.Days %></td>

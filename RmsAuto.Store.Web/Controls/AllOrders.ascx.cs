@@ -116,7 +116,7 @@ namespace RmsAuto.Store.Web.Controls
         {
             if (!IsPostBack)
             {
-                hiDate.Text = DateTime.Now.ToShortDateString();
+                hiDate.Text = DateTime.Now.AddDays(1).ToShortDateString();
                 //сортировка
                 foreach (OrderTracking.OrderSortFields sortField in Enum.GetValues(typeof(OrderTracking.OrderSortFields)))
                 {

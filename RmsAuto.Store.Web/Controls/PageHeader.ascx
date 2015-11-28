@@ -13,7 +13,7 @@
 			<asp:Literal ID="lCountDetails" runat="server" Text="<%$ Resources:Texts, AllParts %>" />&nbsp;
 			<b><asp:Literal runat="server" ID="_cartCountLiteral" /></b>&nbsp;
 			<asp:Literal ID="lOnSumm" runat="server" Text="<%$ Resources:Texts, OnSumm %>" />&nbsp;
-			<b><asp:Literal runat="server" ID="_cartSumLiteral" /></b> <%=global::Resources.Texts.DollarShort%><br />
+			<b><asp:Literal runat="server" ID="_cartSumLiteral" /></b> <%=global::Resources.Texts.RoubleShort%><br />
 			<asp:Literal ID="_balanceInfoLiteral" runat="server" />
         </asp:Label>
         <img runat="server" id="img3" src="~/images/1pix.gif" alt="" width="1" height="47" border="0">

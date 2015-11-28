@@ -369,11 +369,11 @@
                         <th><asp:Literal ID="lCFContactFirstName" runat="server" Text="<%$ Resources:RegistrationTexts, Name %>" /></th>
                         <td><%= ContactPersonName %></td>
                     </tr>
- <%--                   <tr>
+                    <tr>
                         <th><asp:Literal ID="lCFShippingAddress" runat="server" Text="<%$ Resources:RegistrationTexts, DeliveryAddress %>" /></th>
                         <td><%= DeliveryAddress %></td>
                     </tr>
-                    <asp:PlaceHolder ID="vreg_LegalIP_798" runat="server">
+ <%--                   <asp:PlaceHolder ID="vreg_LegalIP_798" runat="server">
                         <tr>
                             <th></th>
                             <td><span class="blue"><asp:Literal ID="lCFLegal" runat="server" Text="<%$ Resources:RegistrationTexts, CompanyDetails %>" /></span></td>

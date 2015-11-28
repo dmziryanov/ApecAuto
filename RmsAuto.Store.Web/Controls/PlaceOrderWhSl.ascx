@@ -144,7 +144,7 @@
                         <asp:Literal ID="lAllDetails" runat="server" Text="<%$ Resources:PlaceOrder, AllGoods %>" />: <strong>
                         <%=SiteContext.Current.CurrentClient.Cart.GetAddToOrderTotals().PartsCount%></strong> <span style="visibility:hidden;"> USD</span>
                         <br />
-                        <%=global::Resources.Texts.OnSumm %> <strong><% =string.Format( "{0:### ### ##0.00}", SiteContext.Current.CurrentClient.Cart.GetAddToOrderTotals().Total )%></strong> <%=global::Resources.Texts.DollarShort%>
+                        <%=global::Resources.Texts.OnSumm %> <strong><% =string.Format( "{0:### ### ##0.00}", SiteContext.Current.CurrentClient.Cart.GetAddToOrderTotals().Total )%></strong> <%=global::Resources.Texts.RoubleShort%>
                     </div>
                 </div>
             </div>

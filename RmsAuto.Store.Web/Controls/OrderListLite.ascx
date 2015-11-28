@@ -201,22 +201,22 @@ $(function() {
 	            <br />
 	            <b><asp:Literal ID="lOrderOn" runat="server" Text="Заказов на" 
 			            meta:resourcekey="lOrderOnResource1" /></b> <asp:Label runat="server" 
-			            ID="_processingOrdersTotalLabel" CssClass="price" /> <%=global::Resources.Texts.DollarShort%>
+			            ID="_processingOrdersTotalLabel" CssClass="price" /> <%=global::Resources.Texts.RoubleShort%>
 	            <br />
 	            <b><asp:Literal ID="lWorkDetails" runat="server" Text="Позиций в работе на" 
 			            meta:resourcekey="lWorkDetailsResource1" /></b> <asp:Label runat="server" 
-			            ID="_processingLinesTotalLabel" CssClass="price" /> <%=global::Resources.Texts.DollarShort%>
+			            ID="_processingLinesTotalLabel" CssClass="price" /> <%=global::Resources.Texts.RoubleShort%>
 	            </div>
 
 	            <div class="right_block2" id="_archiveOrderTotalsBlock" runat="server" visible="false">
 	            <br />
 	            <b><asp:Literal ID="lAllSumm" runat="server" Text="Общая сумма заказов" 
 			            meta:resourcekey="lAllSummResource1" /></b> <asp:Label runat="server" 
-			            ID="_completedOrdersTotalLabel" CssClass="price" /> <%=global::Resources.Texts.DollarShort%>
+			            ID="_completedOrdersTotalLabel" CssClass="price" /> <%=global::Resources.Texts.RoubleShort%>
 	            <br />
 	            <b><asp:Literal ID="lSaleOn" runat="server" Text="Выдано на" 
 			            meta:resourcekey="lSaleOnResource1" /></b> <asp:Label runat="server" 
-			            ID="_receivedByClientSumLabel" CssClass="price" /> <%=global::Resources.Texts.DollarShort%>
+			            ID="_receivedByClientSumLabel" CssClass="price" /> <%=global::Resources.Texts.RoubleShort%>
 	            </div>
             </asp:PlaceHolder>
         </div>

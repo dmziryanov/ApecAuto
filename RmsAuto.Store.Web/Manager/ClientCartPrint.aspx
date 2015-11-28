@@ -36,7 +36,7 @@
 			
             <b><%= Totals.PartsCount%></b>
 			   <% =global::Resources.Texts.OnSumm %> 
-			<b><% =string.Format("{0:### ### ##0.00}", Totals.Total )%></b> <% =global::Resources.Texts.DollarShort %></div>
+			<b><% =string.Format("{0:### ### ##0.00}", Totals.Total )%></b> <% =global::Resources.Texts.RoubleShort %></div>
 		<asp:Repeater ID="_cartItemsRepeater" runat="server">
 			<HeaderTemplate>
                 <div class="tab-text">

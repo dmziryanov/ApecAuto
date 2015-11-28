@@ -148,9 +148,9 @@
                 </div>
             </div>
             <div class="right" runat="server" id="_totalsBlock">
-                <asp:Literal ID="lSummOnPage" runat="server" Text="Тоtal on page" meta:resourcekey="lSummOnPageResource1" /> <asp:Label runat="server" ID="_pageTotalLabel" CssClass="price" />&nbsp;<%=global::Resources.Texts.DollarShort%>
+                <asp:Literal ID="lSummOnPage" runat="server" Text="Тоtal on page" meta:resourcekey="lSummOnPageResource1" /> <asp:Label runat="server" ID="_pageTotalLabel" CssClass="price" />&nbsp;<%=global::Resources.Texts.RussianRouble%>
                 <br />
-                <asp:Literal ID="lAllSumm" runat="server" Text="Итого" meta:resourcekey="lAllSummResource1" /> <asp:Label runat="server" ID="_totalLabel" CssClass="price" />&nbsp;<%=global::Resources.Texts.DollarShort%>
+                <asp:Literal ID="lAllSumm" runat="server" Text="Итого" meta:resourcekey="lAllSummResource1" /> <asp:Label runat="server" ID="_totalLabel" CssClass="price" />&nbsp;<%=global::Resources.Texts.RoubleShort%>
             </div>
         </div>
     </div>

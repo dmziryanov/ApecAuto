@@ -120,9 +120,9 @@ namespace RmsAuto.Store.Web.Controls
 		public string ContactPersonSurname { get { return _txtContactLastName.Text; } }
 		public string ContactPersonPhone { get { return _ContactPhone.Value; } }
 		public string ContactPersonExtPhone { get { return _ContactExtPhone.Value; } }
-/*		public string ContactPersonFax { get { return _ContactFax.Value; } }
-		public string ContactPersonEmail { get { return _txtContactPersonEmail.Text; } }
-		public string DeliveryAddress { get { return _txtDeliveryAddress.Text; } }*/
+		/*public string ContactPersonFax { get { return _ContactFax.Value; } }
+		public string ContactPersonEmail { get { return _txtContactPersonEmail.Text; } }*/
+        public string DeliveryAddress { get { return lCFShippingAddress.Text; } }
         public int RegisterAs { get { return int.Parse(SellerInfo.SelectedValue); } }
 		#endregion
 

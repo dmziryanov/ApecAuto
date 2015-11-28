@@ -36,7 +36,7 @@
 	    </asp:PlaceHolder>
 		<div><%=global::Resources.Texts.AllParts %>
 			<b><asp:Literal runat="server" ID="_totalCountLiteral" /></b> <% =global::Resources.Texts.OnSumm %> 
-			<b><asp:Literal runat="server" ID="_totalSumLiteral" /></b> <% =global::Resources.Texts.DollarShort %></div>
+			<b><asp:Literal runat="server" ID="_totalSumLiteral" /></b> <% =global::Resources.Texts.RoubleShort %></div>
 		<asp:Repeater ID="_cartItemsRepeater" runat="server">
 			<HeaderTemplate>
                 <div class="tab-text">
@@ -55,13 +55,13 @@
 							<%=global::Resources.Texts.DeliveryPeriod %>
 						</th>
 						<th class="nowrap">
-							<%=global::Resources.Texts.Price %>&nbsp;<%=global::Resources.Texts.DollarWithBrackets %>
+							<%=global::Resources.Texts.Price %>&nbsp;<%=global::Resources.Texts.RoubleShort %>
 						</th>
 						<th class="nowrap">
 							<%=global::Resources.Texts.QtyLC %>
 						</th>
 						<th class="nowrap">
-							<%=global::Resources.Texts.Summ %>&nbsp;<%=global::Resources.Texts.DollarWithBrackets %>
+							<%=global::Resources.Texts.Summ %>&nbsp;<%=global::Resources.Texts.RoubleShort %>
 						</th>
 					</tr>
 			</HeaderTemplate>
