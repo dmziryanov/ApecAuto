@@ -120,8 +120,8 @@ namespace RmsAuto.Store.Web.PrivateOffice
 					.Where(l => l.PartNumber.ToLower().Equals(partNumber.ToLower()))
 					.Where(l => l.CurrentStatus == OrderLineStatusUtil.StatusByte("OrderedFromSupplier") || l.CurrentStatus == OrderLineStatusUtil.StatusByte("ShipmentDelay"))
 					.Where(l => l.EstSupplyDate.Value.Date < DateTime.Now.Date)
-					.Select(l => new { l.AcctgOrderLineID.Value, l.PartNumber } )
-					.ToDictionary(l => l.Value, l => l.PartNumber );
+					.Select(l => new { l.AcctgOrderLineID, l.PartNumber } )
+					.ToDictionary(l => l.AcctgOrderLineID, l => l.PartNumber );
 				string dataForXml = string.Empty;
 				foreach (var item in dataOfOrderLines)
 				{

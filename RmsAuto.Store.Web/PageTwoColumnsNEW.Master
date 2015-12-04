@@ -42,21 +42,7 @@
                 $.datepicker.setDefaults($.datepicker.regional["ru"]);
                 <% } %>
             });
-        hs.graphicsDir = '/css/highslide/graphics/';
-	    hs.showCredits = false;
-	    hs.outlineType = 'rounded-white';
-	    hs.dimmingOpacity = 0.75;
-	    hs.fadeInOut = true;
-	    hs.align = 'center';
-	    hs.padToMinWidth = true;
-	    hs.allowMultipleInstances = false;
-	    hs.blockRightClick = true;
-	    hs.numberOfImagesToPreload = 2;
-	 
-	    var config1 = {
-	        slideshowGroup: 'group1',
-	        transitions: ['expand', 'crossfade']
-	    };
+      
 
     </script>
 

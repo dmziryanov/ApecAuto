@@ -198,7 +198,7 @@ table {
 
 .win-bg
 {
-    background-color:#F4F5F5;
+    background-color:#f4f5f5;
     padding:20px;
 }
 
@@ -227,6 +227,10 @@ table {
 	margin: 0 auto;
 	text-align: left;
 	position:relative;
+}
+
+.footer .container {
+    background:url(../images/textura.png) repeat-x 0px 7px;
 }
 
 .main-indent {
@@ -299,7 +303,7 @@ table {
 	border-top:5px solid #289f68;
 	border-bottom:4px solid #b9baba;
 	text-align:right;
-	background:#fff url(../images/header-l.png) no-repeat 0 0;
+	
 	position:relative;
 }
 
@@ -463,7 +467,7 @@ table {
 	-webkit-border-radius:5px;
 	behavior: url(../scripts/PIE.htc);
 	padding:0 3px;
-	border:none;
+	border:#2aa064;
 	height:20px;
 }
 

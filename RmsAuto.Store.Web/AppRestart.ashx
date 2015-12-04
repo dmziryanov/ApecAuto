@@ -51,8 +51,8 @@ public class AppRestart : IHttpHandler, System.Web.SessionState.IRequiresSession
         //cookie.Expires = DateTime.Now.AddMonths(1);
         //context.Response.Cookies.Add(cookie);
         
-        //context.Response.ContentType = "plain/text";
-        //context.Response.Write("ok");
+        context.Response.ContentType = "plain/text";
+        context.Response.Write((int?)HttpContext.Current.Session["UserPageViewsCount"]);
 
     }
  

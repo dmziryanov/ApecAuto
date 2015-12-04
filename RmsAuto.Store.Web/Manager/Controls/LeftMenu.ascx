@@ -6,6 +6,7 @@
     <tr>
         <td class="icon"><span><img id="Img1" runat="server" src="/images/menu-off.png" width="9" height="9" /></span></td>
         <td><a href="#"><%= global::Resources.Texts.WorkWithClients %></a></td>
+
     </tr>
 </table>
 <div class="submenu">
@@ -17,7 +18,7 @@
 		<li><asp:HyperLink ID="hlUploadStatuses" runat="server" NavigateUrl="~/Manager/UploadStatuses.aspx"><%= global::Resources.Texts.UploadStatuses %></asp:HyperLink></li>
 		<li><asp:HyperLink ID="hlClientLoad" runat="server" NavigateUrl="~/Manager/ClientOrdelinesLoad.aspx"><%= global::Resources.Texts.Dispatches %></asp:HyperLink></li>
 		<li><asp:HyperLink ID="hlClientPayments" runat="server" NavigateUrl="~/Manager/ClientPayments.aspx"><%= global::Resources.Texts.SettlementPayments %></asp:HyperLink></li>
-        <li><asp:HyperLink ID="hlUploadSpareparts" runat="server" NavigateUrl="~/Manager/UploadSpareParts.aspx">Загрузка номенклатуры</asp:HyperLink></li>
+        <li><asp:HyperLink ID="hlUploadSpareparts" runat="server" NavigateUrl="~/Manager/UploadSpareParts.aspx"><%= global::Resources.Texts.UploadSpareparts %></asp:HyperLink></li>
     </ul>
 </div>
 <table id="p_reports_header" class="menu_off" runat="server">

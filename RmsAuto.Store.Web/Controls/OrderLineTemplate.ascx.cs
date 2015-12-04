@@ -76,14 +76,14 @@ namespace RmsAuto.Store.Web.Controls
 				case SecurityRole.Client:
                     if (line.Processed == (byte)Processed.NotProcessed)
                         return UrlManager.GetOrderListProcessedSearchRedirectURL(line.Manufacturer, line.PartNumber, true,
-                            line.SupplierID, /*line.OrderLineID*/line.AcctgOrderLineID.Value);
+                            line.SupplierID, /*line.OrderLineID*/line.AcctgOrderLineID);
                     else
                         return "";
                 case SecurityRole.Manager:
                     if (line.Processed == (byte)Processed.NotProcessed)
                     {
                         return UrlManager.GetOrderListProcessedSearchRedirectURL(line.Manufacturer, line.PartNumber, true,
-                            line.SupplierID, /*line.OrderLineID*/line.AcctgOrderLineID.Value);
+                            line.SupplierID, /*line.OrderLineID*/line.AcctgOrderLineID);
                     }
                     else
                         return "";

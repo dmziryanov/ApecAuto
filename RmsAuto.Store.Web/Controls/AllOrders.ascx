@@ -1,8 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AllOrders.ascx.cs" Inherits="RmsAuto.Store.Web.Controls.AllOrders" %>
 <%@ Import Namespace="RmsAuto.Store.Entities" %>
 <%@ Import Namespace="RmsAuto.Common.Misc" %>
-<%@ Import Namespace="RmsAuto.Store.Web" %>
-<%@ Import Namespace="RmsAuto.Store.Acctg" %>
 <%@ Import Namespace="RmsAuto.Store.BL" %>
  
 <%@ Register assembly="RmsAuto.Common" namespace="RmsAuto.Common.Web.UI" tagprefix="cc1" %>

@@ -1291,7 +1291,7 @@ namespace RmsAuto.Store.Entities
 		
 		private string _OrderLineNotes;
 		
-		private System.Nullable<int> _AcctgOrderLineID;
+		private int _AcctgOrderLineID;
 		
 		private System.Nullable<int> _ParentOrderLineID;
 		
@@ -1355,7 +1355,7 @@ namespace RmsAuto.Store.Entities
     partial void OnVinCheckupDataChanged();
     partial void OnOrderLineNotesChanging(string value);
     partial void OnOrderLineNotesChanged();
-    partial void OnAcctgOrderLineIDChanging(System.Nullable<int> value);
+    partial void OnAcctgOrderLineIDChanging(int value);
     partial void OnAcctgOrderLineIDChanged();
     partial void OnParentOrderLineIDChanging(System.Nullable<int> value);
     partial void OnParentOrderLineIDChanged();
@@ -1737,9 +1737,9 @@ namespace RmsAuto.Store.Entities
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AcctgOrderLineID", DbType="Int NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AcctgOrderLineID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=18)]
-		public System.Nullable<int> AcctgOrderLineID
+		public int AcctgOrderLineID
 		{
 			get
 			{

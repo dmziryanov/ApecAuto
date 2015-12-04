@@ -9,7 +9,7 @@
 	<ItemTemplate>
 		<div class="item">
 		<span class="date"><%#Eval( "NewsItemDate", "{0:dd.MM.yyyy}" )%></span>
-		<a id="A1" href="<%#UrlManager.GetNewsDetailsUrl((int)Eval("NewsItemID"))%>" runat="server">
+		<a id="A1" href="<%=UrlManager.GetNewsDetailsUrl((int)Eval("NewsItemID"))%>">
 			<span class="pict">
 				<img width="157" height="117" src="<%#Eval("IconFileID")!=null ? GetFileUrl((int)Eval("IconFileID")) : ""%>" alt="">
 			</span>

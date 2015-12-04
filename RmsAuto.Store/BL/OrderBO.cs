@@ -239,7 +239,7 @@ namespace RmsAuto.Store.BL
 		                order.OrderLines.Add(
 		                    new OrderLine()
 		                    {
-		                        AcctgOrderLineID = -item.ItemID,
+		                       
 		                        //temporary ID while order has'n been sent yet (to satisfy unique database constraint 
 		                        InternalFranchName = item.SparePart.InternalFranchName,
 		                        Manufacturer = item.SparePart.Manufacturer,
@@ -452,7 +452,7 @@ namespace RmsAuto.Store.BL
 					wl.AcctgOrderLineID = al.AcctgOrderLineId;
 				}
 
-				if (order.OrderLines.FirstOrDefault(l => !l.AcctgOrderLineID.HasValue) != null)
+				if (order.OrderLines.FirstOrDefault() != null)
 					throw new BLException("Ошибка отправки заказа. Не принято одна или более позиций заказа");
 			}
         }
@@ -514,7 +514,7 @@ namespace RmsAuto.Store.BL
 				wl.AcctgOrderLineID = al.AcctgOrderLineId;
 			}
 
-			if (order.OrderLines.FirstOrDefault(l => !l.AcctgOrderLineID.HasValue) != null)
+			if (order.OrderLines.FirstOrDefault() != null)
 				throw new BLException("Ошибка отправки заказа. Не принято одна или более позиций заказа");
 		}
 
@@ -771,8 +771,8 @@ namespace RmsAuto.Store.BL
             {
                 var line = context.DataContext.OrderLines.Single( l => l.OrderLineID == orderLineId );
 
-                if ( !line.AcctgOrderLineID.HasValue )
-                    throw new InvalidOperationException( "Строка не имеет идентификатора OrderLineHW.  отправка реакции невозможна" );
+               /* if ( !line.AcctgOrderLineID.HasValue )
+                    throw new InvalidOperationException( "Строка не имеет идентификатора OrderLineHW.  отправка реакции невозможна" );*/
 
                 var status = line.OrderLineStatusChanges.OrderBy( olsc => olsc.StatusChangeTime ).Last();
 

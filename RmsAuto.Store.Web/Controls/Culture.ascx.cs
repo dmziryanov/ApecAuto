@@ -13,6 +13,7 @@ namespace RmsAuto.Store.Web.Controls
         {
             if (SiteContext.CurrentCulture == "en-US") lnkCultureEN.CssClass = "active";
             if (SiteContext.CurrentCulture == "ru-RU") lnkCultureRU.CssClass = "active";
+            if (SiteContext.CurrentCulture == "de-DE") lnkCultureDE.CssClass = "active";
         }
 
         protected void Culture_Click(object sender, EventArgs e)

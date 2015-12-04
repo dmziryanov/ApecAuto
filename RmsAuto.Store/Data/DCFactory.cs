@@ -35,7 +35,7 @@ namespace RmsAuto.Store.Data
     {
         private bool _openConnection = true; //параметр указывающий нужно ли открывать коннекцию в фабрике или это будет сделано явно вне ее
         private T _dataContext;
-        private string _connectionStringTemplate = "Data Source={0};Initial Catalog={1};Integrated Security=False; Max Pool Size=600; Connection Timeout = 100;User Id = sa; password = Newboyintown12";
+        private string _connectionStringTemplate = "Data Source={0};Initial Catalog={1};Integrated Security=False; Max Pool Size=600; Connection Timeout = 100;" + (ConfigurationManager.AppSettings["UseLocalBase"] == "true" ? "Integrated Security=true" : "User Id = sa; password = Newboyintown12");
         private bool _disposed;
         private bool _commit;
         private string _internalFranchName;

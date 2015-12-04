@@ -12,8 +12,8 @@ namespace RmsAuto.Store.Acctg
         public static readonly CurrencyRate RurRate =
             new CurrencyRate
             {
-                CurrencyCode = "Руб.",
-                CurrencyName = "Рубли",
+                CurrencyCode = "usd.",
+                CurrencyName = "U. S. Dollars",
                 LastDate = DateTime.Now,
                 Rate = 1.0m
             };

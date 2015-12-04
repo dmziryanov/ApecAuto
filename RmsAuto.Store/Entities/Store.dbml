@@ -47,7 +47,7 @@
       <Column Name="StrictlyThisNumber" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="VinCheckupData" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
       <Column Name="OrderLineNotes" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="AcctgOrderLineID" Type="System.Int32" DbType="Int NULL" CanBeNull="true" />
+      <Column Name="AcctgOrderLineID" Type="System.Int32" CanBeNull="false"  />
       <Column Name="ParentOrderLineID" Type="System.Int32" DbType="Int NULL" CanBeNull="true" />
       <Column Name="EstSupplyDate" Type="System.DateTime" DbType="DateTime NULL" CanBeNull="true" />
       <Column Name="CurrentStatus" Type="Byte" DbType="tinyint not null" CanBeNull="false" />

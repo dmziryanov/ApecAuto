@@ -1,7 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="OrderList.ascx.cs" Inherits="RmsAuto.Store.Web.Controls.OrderList" %>
 <%@ Import Namespace="RmsAuto.Store.Entities" %>
 <%@ Import Namespace="RmsAuto.Common.Misc" %>
-<%@ Import Namespace="RmsAuto.Store.Web" %>
 
 <%@ Register assembly="RmsAuto.Common" namespace="RmsAuto.Common.Web.UI" tagprefix="cc1" %>
 
@@ -123,7 +122,7 @@ $( function() {
 			</td>
 			<td ID="td3" runat="server" 
 				Visible='<%# OrderStatusFilter==RmsAuto.Store.Web.OrderTracking.OrderStatusFilter.ActiveOrders %>'>
-				<%# ((OrderStatus)Eval("Status")).GetDescription() %>
+				<%# ((OrderStatus)Eval("Status"))%>
 			</td>
 			<td ID="td4" runat="server" 
 				Visible='<%# OrderStatusFilter==RmsAuto.Store.Web.OrderTracking.OrderStatusFilter.ActiveOrders %>'>

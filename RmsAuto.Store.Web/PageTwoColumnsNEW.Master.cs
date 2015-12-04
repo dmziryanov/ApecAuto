@@ -11,7 +11,10 @@ namespace RmsAuto.Store.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (((int?)Session["UserPageViewsCount"]).HasValue)
+                Session["UserPageViewsCount"] = (int)Session["UserPageViewsCount"] + 1;
+            else
+                Session["UserPageViewsCount"] = 0;
         }
     }
 }

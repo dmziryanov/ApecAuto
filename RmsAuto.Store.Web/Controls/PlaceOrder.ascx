@@ -1,6 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="PlaceOrder.ascx.cs" Inherits="RmsAuto.Store.Web.Controls.PlaceOrder" %>
 <%@ Import Namespace="RmsAuto.Store.Web" %>
-<%@ Import Namespace="RmsAuto.Store.Entities" %>
 <%@ Register src="WizardTopSideBar.ascx" tagname="WizardTopSideBar" tagprefix="uc1" %>
 <%@ Register src="ShippingOptions.ascx" tagname="ShippingOptions" tagprefix="uc1" %>
 <%@ Register src="~/Cms/TextItems/TextItemControl.ascx" tagname="TextItemControl" tagprefix="uc1" %>

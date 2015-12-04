@@ -208,13 +208,13 @@
     <value>Re:</value>
   </data>
   <data name="RoubleFull" xml:space="preserve">
-    <value>Рубль</value>
+    <value>U. S. Dollars</value>
   </data>
   <data name="RoublesFull" xml:space="preserve">
-    <value>Рубли</value>
+    <value>U. S. Dollars</value>
   </data>
   <data name="RoubleShort" xml:space="preserve">
-    <value>р.</value>
+    <value>usd</value>
   </data>
   <data name="VIN" xml:space="preserve">
     <value>VIN</value>
@@ -784,10 +784,10 @@
     <value>Изменение в заказе</value>
   </data>
   <data name="RoubleWithBrackets" xml:space="preserve">
-    <value>(руб)</value>
+    <value>(usd)</value>
   </data>
   <data name="RussianRouble" xml:space="preserve">
-    <value>российский рубль</value>
+    <value>U. S. Dollars</value>
   </data>
   <data name="SearchAnotherDate" xml:space="preserve">
     <value>искать с другим сроком поставки</value>
@@ -949,7 +949,7 @@
     <value>Строки заказов</value>
   </data>
   <data name="Currency" xml:space="preserve">
-    <value>руб.</value>
+    <value>usd.</value>
   </data>
   <data name="Validate" xml:space="preserve">
     <value>Оформить</value>
@@ -1049,6 +1049,36 @@
   </data>
   <data name="SettlementPayments" xml:space="preserve">
     <value>Взаиморасчёты</value>
+  </data>
+  <data name="UploadSpareparts" xml:space="preserve">
+    <value>Загрузка номенклатуры</value>
+  </data>
+  <data name="RegionInfo" xml:space="preserve">
+    <value>Ваш код региона (последняя колонка в файле)</value>
+  </data>
+  <data name="UploadSparepartsInfo" xml:space="preserve">
+     <value>
+        Файл должен содержать следующие колонки, разделенные табуляцией и иметь расширение csv
+        1. Номер строки - целое число;
+        2. Идетификатор размера SizeID - целое число (пока для всех 1) ;
+        3. Производитель - тип строка длина до 50 ;
+        4. Код детали ОЕМ - тип строка длина до 50 (Внимание по этому номеру производится поиск основной и аналогов!) ;
+        5. Внутренний код детали ОЕМ - тип строка длина до 50 (Это дополнительный, может быть любым на ваше усмотрение); 
+        6. Название, тип строка длина до 255 ;
+        7. Описание, строка до 255 ;
+        8. Вес.;
+        9. Объем.;
+        10. Цена. Числовой формат. Разделитель дробной части: '.' ;
+        11. Доступное количество на вашем складе ;
+        12. Минимальный срок поставки клиенту (в вашем регионе);
+        13. Максимальный срок поставки клиенту (в вашем регионе);
+        14. Номер поставщика (число, указываете ваш любой номер, идентифицируюший поставщика) ВАЖНО! файл может содержать номеклатуру одного поставщика, для всех строк этот параметр должен быть одинаковый. Старые строки этого поставщика удаляются;
+        15. Минимальное количество для заказа (целое число);
+        16. Дополнительный код, по умочанию равен 1;
+        17. Постоянная ценобразующая (добавляется к основной цене и равна 0). Разделитель дробной части: '.';
+        18. Номер группы деталей (заполняется 0);
+		    19. Ваш личный код в случае несовпадения, детали не загрузятся;
+       </value>
   </data>
   <data name="BalanceList" xml:space="preserve">
     <value>Взаиморасчёты</value>

@@ -74,6 +74,12 @@ a:hover {
 .footer a {
 	color:#f99404;
 }
+
+.ShowQuestion {
+    background:url(../images/print_logo.en.png) no-repeat 0px 8px;
+    border: green 1px;
+}
+
 ul.menu {
 	padding:0px;
 	margin:0px;

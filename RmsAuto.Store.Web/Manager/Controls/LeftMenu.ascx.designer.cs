@@ -40,15 +40,6 @@ namespace RmsAuto.Store.Web.Manager.Controls {
         protected global::System.Web.UI.WebControls.HyperLink hlSelectClient;
         
         /// <summary>
-        /// hlUploadSpareparts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlUploadSpareparts;
-        
-        /// <summary>
         /// hlAllOrders control.
         /// </summary>
         /// <remarks>
@@ -83,6 +74,15 @@ namespace RmsAuto.Store.Web.Manager.Controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hlClientPayments;
+        
+        /// <summary>
+        /// hlUploadSpareparts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlUploadSpareparts;
         
         /// <summary>
         /// p_reports_header control.

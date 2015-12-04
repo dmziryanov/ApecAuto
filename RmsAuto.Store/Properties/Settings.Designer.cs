@@ -55,5 +55,16 @@ namespace RmsAuto.Store.Properties {
                 return ((string)(this["ex_rmsauto_storeConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ADMIN-PC\\ADM;Initial Catalog=ex_apecautoR_log;Integrated Security=Tru" +
+            "e;Persist Security Info=True")]
+        public string ex_apecautoR_logConnectionString {
+            get {
+                return ((string)(this["ex_apecautoR_logConnectionString"]));
+            }
+        }
     }
 }

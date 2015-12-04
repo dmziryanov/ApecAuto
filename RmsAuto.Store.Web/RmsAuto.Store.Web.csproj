@@ -248,6 +248,7 @@
     <Content Include="images\mi\menu_text_reports.jpg" />
     <Content Include="images\play.png" />
     <Content Include="images\ramka.png" />
+    <Content Include="images\textura.png" />
     <Content Include="images\trash.png" />
     <Content Include="Manager\Controls\FillClientProfileExt.ascx" />
     <Content Include="Manager\SaleReportTable.aspx" />
@@ -264,6 +265,9 @@
     <Content Include="_app_offline.htm" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="answerSubmit2.ashx.cs">
+      <DependentUpon>answerSubmit2.ashx</DependentUpon>
+    </Compile>
     <Compile Include="App_GlobalResources\CartImport.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -358,6 +362,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Requests.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Texts.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Texts.resx</DependentUpon>
     </Compile>
     <Compile Include="App_GlobalResources\Texts.en-US.designer.cs">
       <AutoGen>True</AutoGen>
@@ -1621,11 +1630,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="App_GlobalResources\Texts.Designer.cs">
-      <DependentUpon>Texts.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Cms\Catalog\BreadCrumbs.ascx.cs">
       <DependentUpon>BreadCrumbs.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2546,8 +2550,8 @@
   <ItemGroup>
     <Content Include="App_GlobalResources\Texts.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>Texts.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Texts.designer.cs</LastGenOutput>
     </Content>
     <Content Include="css\css_forum.css" />
   </ItemGroup>
@@ -3162,6 +3166,8 @@
     <Content Include="App_Data\rms4.p12" />
     <Content Include="PageTwoColumnsNEW.Master" />
     <Content Include="Cms\ExcelAddToCart.ashx" />
+    <Content Include="answerSubmit.ashx" />
+    <Content Include="answerSubmit2.ashx" />
     <None Include="css\highslide\graphics\Outlines\Outlines.psd" />
     <Content Include="Manager\PaymentsBootStrap.ashx" />
     <Content Include="Manager\OrderLinesBootStrap.ashx" />

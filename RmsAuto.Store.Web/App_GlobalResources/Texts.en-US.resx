@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BBBold" xml:space="preserve">
     <value>Boldface font</value>
@@ -208,13 +208,13 @@
     <value>Re:</value>
   </data>
   <data name="RoubleFull" xml:space="preserve">
-    <value>Rouble</value>
+    <value>U. S. Dollars</value>
   </data>
   <data name="RoublesFull" xml:space="preserve">
-    <value>Roubles</value>
+    <value>U. S. Dollars</value>
   </data>
   <data name="RoubleShort" xml:space="preserve">
-    <value>rub.</value>
+    <value>usd</value>
   </data>
   <data name="VIN" xml:space="preserve">
     <value>VIN</value>
@@ -784,10 +784,10 @@
     <value>Changes in the order</value>
   </data>
   <data name="RoubleWithBrackets" xml:space="preserve">
-    <value>(rouble)</value>
+    <value>usd</value>
   </data>
   <data name="RussianRouble" xml:space="preserve">
-    <value>Russian rouble</value>
+    <value>U. S. Dollar</value>
   </data>
   <data name="SearchAnotherDate" xml:space="preserve">
     <value>Search for one with another delivery terms</value>
@@ -1175,5 +1175,34 @@
   </data>
   <data name="SendDelete" xml:space="preserve">
     <value>Send/Delete</value>
+  </data>
+  <data name="UploadSpareparts" xml:space="preserve">
+    <value>Upload spareparts</value>
+  </data>
+  <data name="UploadSparepartsInfo" xml:space="preserve">
+    <value>File should contain following columns, tab separated, and have *.csv extension:
+       1 name="RowNumber" type="BIGINT"; 
+       2 name="SizeID" type="INT" ;
+       3 name="Manufacturer" type="STRING" ;
+       4 name="PartNumber" type="STRING" maxLength="50";
+       5. name="InternalPartNumber" type="STRING";
+       6. name="PartName" type="STRING" maxLength="255";
+       7. name="PartDescription" type="STRING" isNullable="true" maxLength="255";
+       8. name="WeightPhysical" type="DECIMAL" isNullable="true";
+       9. name="WeightVolume" type="DECIMAL" isNullable="true";
+       10. name="InitialPrice" type="DECIMAL";
+       11. name="QtyInStock" type="INT" isNullable="true";
+       12. name="DeliveryDaysMin" type="INT";
+       13. name="DeliveryDaysMax" type="INT";
+       14. name="SupplierID" type="INT";
+       15. name="MinOrderQty" type="INT" isNullable="true";
+       16. name="RgCode" type="STRING" isNullable="true";
+       17. name="PriceConstantTerm" type="DECIMAL";
+       18. name="SparePartGroupID" type="INT" isNullable="true";
+       19. name="Region" type="STRING" isNullable="true" ;
+       </value>
+  </data>
+  <data name="RegionInfo" xml:space="preserve">
+    <value>Your Region code (Last Column in file)</value>
   </data>
 </root>

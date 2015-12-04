@@ -75,7 +75,7 @@
             <asp:ListItem Text="18:00 - 19:00" Value="18"></asp:ListItem>
             <asp:ListItem Text="19:00 - 20:00" Value="19"></asp:ListItem>
             <asp:ListItem Text="20:00 - 21:00" Value="20"></asp:ListItem>
-            <asp:ListItem Text="03:00 - 04:00" Value="3""></asp:ListItem>
+            <asp:ListItem Text="03:00 - 04:00" Value="3"></asp:ListItem>
         </asp:DropDownList>
     </div>
     <div class="clearfloat"></div>

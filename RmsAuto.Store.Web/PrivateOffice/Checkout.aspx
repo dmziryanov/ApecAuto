@@ -2,7 +2,6 @@
 <%@ Register src="~/Controls/PlaceOrder.ascx" tagname="PlaceOrder" tagprefix="uc1" %>
 <%@ Register src="~/Controls/PlaceOrderWhSl.ascx" tagname="PlaceOrderWhSl" tagprefix="uc4" %>
 <%@ Register src="~/Controls/LeftMenu.ascx" tagname="LeftMenu" tagprefix="uc2" %>
-<%@ Register src="~/Controls/PageHeader.ascx" tagname="PageHeader" tagprefix="uc3" %>
 <%@ Register src="~/PrivateOffice/AuthorizationControl.ascx" tagname="AuthorizationControl" tagprefix="uc2" %>
 <%@ Register TagPrefix="rmsauto" Namespace="RmsAuto.Store.Web" Assembly="RmsAuto.Store" %>
 

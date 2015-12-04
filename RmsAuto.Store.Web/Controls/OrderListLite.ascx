@@ -1,8 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="OrderListLite.ascx.cs" Inherits="RmsAuto.Store.Web.Controls.OrderListLite" %>
 <%@ Import Namespace="RmsAuto.Store.Entities" %>
 <%@ Import Namespace="RmsAuto.Common.Misc" %>
-<%@ Import Namespace="RmsAuto.Store.Web" %>
-<%@ Import Namespace="RmsAuto.Store.Acctg" %>
 <%@ Register assembly="RmsAuto.Common" namespace="RmsAuto.Common.Web.UI" tagprefix="cc1" %>
 
 <asp:ObjectDataSource runat="server" ID="_objectDataSource" EnablePaging="True" 

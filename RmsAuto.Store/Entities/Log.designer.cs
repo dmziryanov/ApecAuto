@@ -22,7 +22,7 @@ namespace RmsAuto.Store.Entities
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ex_rmsauto_log")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ex_apecautoR_log")]
 	public partial class LogDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -76,6 +76,13 @@ namespace RmsAuto.Store.Entities
 			{
 				return this.GetTable<SearchSparePartsWebServiceLog>();
 			}
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CreateEvent")]
+		public int CreateEvent([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string data)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), data);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	

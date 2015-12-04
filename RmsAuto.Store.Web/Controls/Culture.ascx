@@ -8,6 +8,12 @@
         <b></b>
     </asp:LinkButton>
 </li>
+    <li>
+    <asp:LinkButton ID="lnkCultureDE" runat="server" OnClick="Culture_Click" CommandArgument="de-DE">
+        DE
+        <b></b>
+    </asp:LinkButton>
+</li>
 <li>
     <asp:LinkButton ID="lnkCultureRU" runat="server" OnClick="Culture_Click" CommandArgument="ru-RU">
         RU

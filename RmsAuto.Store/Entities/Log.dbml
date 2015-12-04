@@ -1,6 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Database Name="ex_rmsauto_log" Class="LogDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=1ctest;Initial Catalog=ex_rmsauto_log;Integrated Security=True;Persist Security Info=True" SettingsObjectName="RmsAuto.Store.Properties.Settings" SettingsPropertyName="ex_rmsauto_logConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ex_apecautoR_log" Class="LogDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=W2008R2SQL1\SQL1;Initial Catalog=ex_apecautoR_log;Integrated Security=True" SettingsObjectName="RmsAuto.Store.Properties.Settings" SettingsPropertyName="ex_rmsauto_logConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.SearchSparePartsLog" Member="SearchSparePartsLogs">
     <Type Name="SearchSparePartsLog">
       <Column Name="SearchDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
@@ -18,4 +17,8 @@
       <Column Name="Manufacturer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Function Name="dbo.CreateEvent" Method="CreateEvent">
+    <Parameter Name="data" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

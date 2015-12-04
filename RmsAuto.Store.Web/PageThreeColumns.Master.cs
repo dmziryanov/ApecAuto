@@ -47,6 +47,7 @@ namespace RmsAuto.Store.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
+         
             //CmsContext.Current.CatalogItem = UrlManager.CatalogItems.RootCatalogItem;
             if (SiteContext.Current.User != null && SiteContext.Current.User.Role == SecurityRole.Manager)
             {

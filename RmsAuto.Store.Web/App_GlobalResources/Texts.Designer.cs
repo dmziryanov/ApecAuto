@@ -898,7 +898,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to руб..
+        ///   Looks up a localized string similar to usd..
         /// </summary>
         internal static string Currency {
             get {
@@ -2410,6 +2410,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ваш код региона (последняя колонка в файле).
+        /// </summary>
+        internal static string RegionInfo {
+            get {
+                return ResourceManager.GetString("RegionInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Регистрация нового клиента.
         /// </summary>
         internal static string RegisterNewClient {
@@ -2536,7 +2545,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Рубль.
+        ///   Looks up a localized string similar to U. S. Dollars.
         /// </summary>
         internal static string RoubleFull {
             get {
@@ -2545,7 +2554,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Рубли.
+        ///   Looks up a localized string similar to U. S. Dollars.
         /// </summary>
         internal static string RoublesFull {
             get {
@@ -2554,7 +2563,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to р..
+        ///   Looks up a localized string similar to usd.
         /// </summary>
         internal static string RoubleShort {
             get {
@@ -2563,7 +2572,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to (руб).
+        ///   Looks up a localized string similar to (usd).
         /// </summary>
         internal static string RoubleWithBrackets {
             get {
@@ -2581,7 +2590,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to российский рубль.
+        ///   Looks up a localized string similar to U. S. Dollars.
         /// </summary>
         internal static string RussianRouble {
             get {
@@ -2856,6 +2865,31 @@ namespace Resources {
         internal static string TypeOfPayment {
             get {
                 return ResourceManager.GetString("TypeOfPayment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Загрузка номенклатуры.
+        /// </summary>
+        internal static string UploadSpareparts {
+            get {
+                return ResourceManager.GetString("UploadSpareparts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///        Файл должен содержать следующие колонки, разделенные табуляцией и иметь расширение csv
+        ///        1. Номер строки - целое число;
+        ///        2. Идетификатор размера SizeID - целое число (пока для всех 1) ;
+        ///        3. Производитель - тип строка длина до 50 ;
+        ///        4. Код детали ОЕМ - тип строка длина до 50 (Внимание по этому номеру производится поиск основной и аналогов!) ;
+        ///        5. Внутренний код детали ОЕМ - тип строка длина до 50 (Это дополнительный, может быть любым на ваше усмотрение); 
+        ///    [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string UploadSparepartsInfo {
+            get {
+                return ResourceManager.GetString("UploadSparepartsInfo", resourceCulture);
             }
         }
         
