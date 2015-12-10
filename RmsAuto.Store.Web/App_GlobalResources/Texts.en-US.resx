@@ -598,7 +598,7 @@
     <value>Vehicle in the garage</value>
   </data>
   <data name="Cart" xml:space="preserve">
-    <value>Cart</value>
+    <value>Your cart</value>
   </data>
   <data name="CatalogOfNotOriginalParts" xml:space="preserve">
     <value>Aftermarket catalogue</value>
@@ -1204,5 +1204,8 @@
   </data>
   <data name="RegionInfo" xml:space="preserve">
     <value>Your Region code (Last Column in file)</value>
+  </data>
+  <data name="IdentityText" xml:space="preserve">
+    <value>Your identifier</value>
   </data>
 </root>

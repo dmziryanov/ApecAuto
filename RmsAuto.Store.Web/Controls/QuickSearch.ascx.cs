@@ -37,7 +37,7 @@ namespace RmsAuto.Store.Web.Controls
             if (!Page.IsPostBack)
             {
                 txtPartNumber.Value = HttpUtility.UrlDecode(Request.QueryString["pn"]);
-                cbSearchCrosses.Checked = (Request.QueryString["st"] == "0"?false:true);
+                cbSearchCrosses.Checked = true;// (Request.QueryString["st"] == "0"?false:true);
             }
 
 //            _floatingSearchFormLink.OnClientSearch = 

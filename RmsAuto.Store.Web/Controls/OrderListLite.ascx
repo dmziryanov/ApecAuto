@@ -131,7 +131,7 @@ $(function() {
 				        <asp:DropDownList DataSourceID="AllStatuses" DataTextField="Client" 
                             DataValueField="OrderLineStatusID" style="width: 60%;" 
                             runat="server"  ID="_StatusBoxList"      />
-				        <asp:Button CommandName="Update" class="button" runat="server" ID="ImageButton2" Text="Update" />
+				        <asp:Button CommandName="Update" class="btn btn-success" runat="server" ID="ImageButton2" Text="Update" />
 				        <%--  SelectedValue='<%# Bind("Status") %>'--%> 
 				        <td><%# ((OrderStatus)Eval("Status")).ToTextOrName() %></td>
 			        </td>

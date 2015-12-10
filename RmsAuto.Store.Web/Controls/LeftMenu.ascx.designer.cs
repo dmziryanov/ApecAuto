@@ -13,24 +13,6 @@ namespace RmsAuto.Store.Web.Controls {
     public partial class LeftMenu {
         
         /// <summary>
-        /// QuickSearch1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::RmsAuto.Store.Web.Controls.QuickSearch QuickSearch1;
-        
-        /// <summary>
-        /// MainMenu1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::RmsAuto.Store.Web.Cms.Catalog.MainMenu MainMenu1;
-        
-        /// <summary>
         /// phVisa control.
         /// </summary>
         /// <remarks>
@@ -38,15 +20,6 @@ namespace RmsAuto.Store.Web.Controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder phVisa;
-        
-        /// <summary>
-        /// HelpMenu1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::RmsAuto.Store.Web.Cms.Catalog.HelpMenu HelpMenu1;
         
         /// <summary>
         /// _pingControlPlaceHolder control.

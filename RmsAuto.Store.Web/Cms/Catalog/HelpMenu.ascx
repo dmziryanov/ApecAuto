@@ -1,20 +1,23 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="HelpMenu.ascx.cs" Inherits="RmsAuto.Store.Web.Cms.Catalog.HelpMenu" EnableViewState="false" %>
-<div class="block">
-	<div class="title"><span class="icon"><img src="/images/help.png" width="17" height="17" alt="" /></span><%=global::Resources.Texts.Help %></div>
+<div class="dropdown" style="padding-left: 5px; float: right; display: inline-block">
 	<asp:Repeater ID="helpMenuRepeater" runat="server">
 		<HeaderTemplate>
-			<div class="in">
-			<ul class="help">
+            <button class="btn btn-info btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <%=global::Resources.Texts.Help %>
+            <span class="caret"></span>
+                
+            </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 		</HeaderTemplate>
 		<ItemTemplate>
 			<li>
-				<asp:HyperLink runat="server" ID="HyperLink1" Visible='<%# !(bool)Eval("IsSelected") %>' NavigateUrl='<%# Eval("Url") %>' Text='<%# Server.HtmlEncode( (string)Eval("Name") ) %>' />
+				<asp:HyperLink runat="server" CssClass="btn btn-info" ID="HyperLink1" Visible='<%# !(bool)Eval("IsSelected") %>' NavigateUrl='<%# Eval("Url") %>' Text='<%# Server.HtmlEncode( (string)Eval("Name") ) %>' />
 				<asp:Literal runat="server" ID="Literal1" Visible='<%# Eval("IsSelected") %>' Text='<%# Server.HtmlEncode( (string)Eval("Name") ) %>' />
 			</li>
 		</ItemTemplate>
 		<FooterTemplate>
 			</ul>
-			</div>
+			
 		</FooterTemplate>
 	</asp:Repeater>
 </div>

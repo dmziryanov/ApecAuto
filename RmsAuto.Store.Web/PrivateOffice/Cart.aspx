@@ -76,7 +76,7 @@
     <h3>
         <%=global::Resources.Texts.NeedAutorization %></h3>
     <asp:Button ID="_login" runat="server" OnClick="_btnLogon_Click" CssClass="button" Text="Autorization" /> 
-    <a class="button" href="<%=UrlManager.GetRegistrationUrl() %>"><%=global::Resources.Texts.Registration %></a>
+    <a class="btn btn-success" href="<%=UrlManager.GetRegistrationUrl() %>"><%=global::Resources.Texts.Registration %></a>
     <% }
       
        else if ( !( CurrentClient.Profile.IsChecked || ( CurrentClient.Profile.TradingVolume == TradingVolume.Retail && CurrentClient.Profile.Category == ClientCategory.Physical ) ) )

@@ -27,13 +27,13 @@ namespace RmsAuto.Store.Web.TecDoc.Controls
 
 		protected void Page_PreRender( object sender, EventArgs e )
 		{
-			var parts = Facade.ListParts( ModificationId, SearchTreeNodeId );
+			var parts = Facade.ListParts( ModificationId, SearchTreeNodeId ).ToList();
 
 			_repeater.DataSource =
-				from p in parts
-				group p by p.Article.Supplier into g
-				orderby g.Key.Name
-				select g;
+				(from p in parts
+				group p by p.Article.Name into g
+				orderby g.Key == null ? "" : g.Key.Tex_Text
+				select g).ToList();
 			_repeater.DataBind();
 		}
 	}

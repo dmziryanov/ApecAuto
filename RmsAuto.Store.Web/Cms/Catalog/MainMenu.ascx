@@ -25,6 +25,10 @@
         }
     }
 
+    function redirect(path) {
+        window.location = path;
+    }
+
 </script>
 
 <uc2:LeftMenuCtl ID="_leftMenuCtl"
@@ -33,35 +37,31 @@
                  ChildsPlaceholderName="childsPlaceHolder"
                  CatalogItemMenuType="CommonMenu">
     <RootElement>
-        <table class="menu-off">
-            <tr>
-                <td class="icon" onclick="javascript:clickParent(<%# Container.ItemId %>);"><span><img id="img1" runat="server" src='<%# "~/images/menu-off.png" %>' width="9" height="9" alt="" style='<%# Container.Node.HasChildNodes?"cursor:pointer;": "" %>' /></span></td>
-                <td class="<%# Container.Node.Description %>"><a href="<%# Container.Node.Url %>"<%# Container.NewWindow ? " target=\"_blank\"" : String.Empty %>><%# Container.Node.Title %></a></td>
-            </tr>
-        </table>
-        <asp:PlaceHolder runat="server" Visible="<%# Container.Node.HasChildNodes %>">
-            <div style="display:none" id="p_<%# Container.ItemId %>" class="submenu"><ul>
+           <div class="dropdown" style="float: left;">
+            <button class="m_active btn btn-default dropdown-toggle" onclick="redirect('<%# Container.Node.Url %>');" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <%# Container.Node.Title %>
+            </button>
+            
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <asp:PlaceHolder ID="childsPlaceHolder" runat="server" />
-            </ul></div>
-        </asp:PlaceHolder>
+            </ul>
+            </div>
     </RootElement>
     <RootElementSelected>
-        <table class="menu-on active">
-            <tr>
-                <td class="icon" onclick="javascript:clickParent(<%# Container.ItemId %>);"><span class="tl"><img id="img3" runat="server" src='<%# "~/images/menu-on.png" %>' width="9" height="6" alt="" style='<%# Container.Node.HasChildNodes?"cursor:pointer;":"" %>'/></span></td>
-                <td class="<%# Container.Node.Description %>"><a href="<%# Container.Node.Url %>"<%# Container.NewWindow ? " target=\"_blank\"" : String.Empty %>><%# Container.Node.Title %></a></td>
-            </tr>
-        </table>
-        <asp:PlaceHolder runat="server" Visible="<%# Container.Node.HasChildNodes %>">
-            <div id="p_<%# Container.ItemId %>" class="submenu"><ul>
+            <div class="dropdown" style="float: left;">
+            <button class="m_active btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <%# Container.Node.Title %>
+            </button>
+            
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <asp:PlaceHolder ID="childsPlaceHolder" runat="server" />
-            </ul></div>
-        </asp:PlaceHolder>
+            </ul>
+            </div>
     </RootElementSelected>
     <ChildElement>
-        <li><a href="<%# Container.Node.Url %>"<%# Container.NewWindow ? " target=\"_blank\"" : String.Empty %>><%# Container.Node.Title %></a></li>
+        <li><a href="<%# Container.Node.Url %>"><%# Container.Node.Title %></a></li>
     </ChildElement>
     <ChildElementSelected>
-        <li><span class="active"><%# Container.Node.Title %></span></li>
+        <li><a class="m_active" href="<%# Container.Node.Url %>"<%# Container.NewWindow ? " target=\"_blank\"" : String.Empty %>><%# Container.Node.Title %></a></li>
     </ChildElementSelected>
 </uc2:LeftMenuCtl>

@@ -12,15 +12,15 @@
 			if (pn.length > 0)
 			{
 				var urlPattern = '<%=GetSearchManufacturersUrlPattern()%>';
-			
-				document.location.href = urlPattern
-					.replace( '{pn}', encodeURIComponent(pn) )
-					.replace( '{sc}', document.getElementById('<%=cbSearchCrosses.ClientID %>').checked ? '1' : '0' );
+
+			    document.location.href = urlPattern
+			        .replace('{pn}', encodeURIComponent(pn))
+			        .replace('{sc}', 1); // document.getElementById('=cbSearchCrosses.ClientID %>').checked ? '1' : '0' );
             
 				return true;
 			}
-			document.getElementById('<%=partNumberError.ClientID %>').innerHTML = '<%= global::Resources.Texts.EnterPartNumber %>';
-    		document.getElementById('<%=partNumberError.ClientID %>').style.display = 'block';
+			$('<%=txtPartNumber.ClientID %>').insertAfter('<%= global::Resources.Texts.EnterPartNumber %>');
+    		
     	}
         catch (ex)
         {
@@ -31,24 +31,15 @@
 	
 </script>
 <div class="block search" onkeypress="if(event.keyCode==13) { doSearch(); return false; }">
-	<div class="title"> <span class="icon"><img src="/images/search.png" width="16" height="16" alt="/"></span> <%= global::Resources.Texts.SparePartsSearch %> </div>
+	<div class="lefttitle"><%= global::Resources.Texts.SparePartsSearch %> </div>
 	<!--end .title -->
 	<div class="in">
-		<div class="form">
-		<div class="input">
-			<input id="txtPartNumber" runat="server" placeholder="<%$ Resources:Texts, ByPartNo %>" type="text">
-		</div>
-		<div id="partNumberError" class="error" style="display:none" runat="server"></div>
-		<label>
-			<input type="checkbox" id="cbSearchCrosses" runat="server">
-			<asp:Literal ID="Literal1" runat="server" Text="<%$ Resources:Texts, SearchAnalogs %>" />
-		</label>
-		<input class="button" value="<%= global::Resources.Texts.Search %>" type="button" onclick="doSearch()"/>
-		</div>
+        <input style="border: none; margin-top: 4px;"  id="txtPartNumber" runat="server" placeholder="<%$ Resources:Texts, ByPartNo %>" type="text"/>&nbsp
+       <span onclick="doSearch()" class="glyphicon glyphicon-search" aria-hidden="true"></span>
 	</div>
-	<!--end .in --> 
-<%--	<cc1:FloatingSearchFormLink ID="_floatingSearchFormLink" runat="server"><asp:Literal ID="lFloatingSearch" runat="server" Text="Открепить" /></cc1:FloatingSearchFormLink>--%>
 </div>
+<input type="checkbox" id="cbSearchCrosses" Visible="false" runat="server"/>&nbsp
+<div id="partNumberError" class="error" Visible="false" style="display:none" runat="server"></div>
 
 
 

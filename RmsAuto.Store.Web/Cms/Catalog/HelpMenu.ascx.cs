@@ -34,7 +34,7 @@ namespace RmsAuto.Store.Web.Cms.Catalog
                         ID = c.CatalogItemID,
                         Name = c.CatalogItemName,
                         Url = UrlManager.GetCatalogUrl( c.CatalogItemID ),
-                        IsSelected = CmsContext.Current.CatalogPath.Where( p => p.CatalogItemID == c.CatalogItemID ).Count() != 0
+                        IsSelected = CmsContext.Current.CatalogPath.Any( p => p.CatalogItemID == c.CatalogItemID )
                     };
 
                 helpMenuRepeater.DataSource = items;

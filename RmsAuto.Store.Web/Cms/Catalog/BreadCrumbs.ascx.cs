@@ -1,22 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.Security;
+﻿using System.Collections.Generic;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Xml.Linq;
 using RmsAuto.Store.Cms.Routing;
-using System.Web.UI.MobileControls;
-using System.Collections.Generic;
 
 namespace RmsAuto.Store.Web.Cms.Catalog
 {
-	public partial class BreadCrumbs : System.Web.UI.UserControl
+	public partial class BreadCrumbs : UserControl
 	{
 		public bool RenderCurrentNodeAsLink
 		{

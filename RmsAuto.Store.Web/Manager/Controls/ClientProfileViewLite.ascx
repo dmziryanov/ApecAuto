@@ -398,7 +398,7 @@
 	</tr>
 	<tr>
 		<th></th>
-		<td><asp:Button ID="btnSave" runat="server" Text="Save" class="button" OnClick="btnSave_Click" /></td>
+		<td><asp:Button ID="btnSave" runat="server" Text="Save" class="btn btn-success" OnClick="btnSave_Click" /></td>
 	</tr>
 </table>
 </div>

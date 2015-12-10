@@ -2,19 +2,19 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 29.875, 18.875" name="TecdocBase">
   <DataContextMoniker Name="/TecdocBaseDataContext" />
   <nestedChildShapes>
-    <classShape Id="671a424e-d2cf-4803-bab9-fdefdfde4793" absoluteBounds="11.25, 14, 2, 2.15549967447917">
+    <classShape Id="671a424e-d2cf-4803-bab9-fdefdfde4793" absoluteBounds="11.25, 14.875, 2, 2.15549967447917">
       <DataClassMoniker Name="/TecdocBaseDataContext/Model" />
       <nestedChildShapes>
-        <elementListCompartment Id="a5e9ac0f-6416-4df1-bcf4-f4fa769caa15" absoluteBounds="11.265000000596046, 14.46000000089407, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a5e9ac0f-6416-4df1-bcf4-f4fa769caa15" absoluteBounds="11.265000000596046, 15.33500000089407, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="6c040128-8ec2-41c2-ac15-bb67d2421229" absoluteBounds="11.25, 9.875, 2, 2.5401025390625005">
+    <classShape Id="6c040128-8ec2-41c2-ac15-bb67d2421229" absoluteBounds="11.25, 9.25, 2, 2.5401025390625005">
       <DataClassMoniker Name="/TecdocBaseDataContext/Manufacturer" />
       <nestedChildShapes>
-        <elementListCompartment Id="eb55a54c-86ec-4d1f-9db4-89263b960c7c" absoluteBounds="11.265000000596046, 10.33500000089407, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="eb55a54c-86ec-4d1f-9db4-89263b960c7c" absoluteBounds="11.265000000596046, 9.71000000089407, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(13.25 : 12.4151025390625); (13.625 : 12.7901025390625); (13.625 : 13.625); (13.25 : 14)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(12.25 : 11.7901025390625); (12.25 : 14.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TecdocBaseDataContext/Manufacturer/Manufacturer_Model" />
       <nodes>
         <classShapeMoniker Id="6c040128-8ec2-41c2-ac15-bb67d2421229" />
@@ -33,7 +33,7 @@
         <elementListCompartment Id="2ad9c7f7-0a5a-474f-9c86-845c10c29a05" absoluteBounds="17.515, 4.5850000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(9.25 : 6.70314136940554); (9.29166416666667 : 6.70314136940554 : JumpStart); (9.45833083333333 : 6.70314136940554 : JumpEnd); (9.66666916666667 : 6.70314136940554 : JumpStart); (9.83333583333333 : 6.70314136940554 : JumpEnd); (11.5416666666667 : 6.70314136940554 : JumpStart); (11.7083333333333 : 6.70314136940554 : JumpEnd); (13.5416666666667 : 6.70314136940554 : JumpStart); (13.7083333333333 : 6.70314136940554 : JumpEnd); (16.2916666666667 : 6.70314136940554 : JumpStart); (16.4583333333333 : 6.70314136940554 : JumpEnd); (18.0572018231817 : 6.70314136940554); (18.0572018231817 : 5.89589680989583)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(9.25 : 6.70314136940554); (9.32291416666667 : 6.70314136940554 : JumpStart); (9.64583333333333 : 6.70314136940554 : JumpEnd); (11.4791666666667 : 6.70314136940554 : JumpStart); (11.6458333333333 : 6.70314136940554 : JumpEnd); (13.8854166666667 : 6.70314136940554 : JumpStart); (14.0520833333333 : 6.70314136940554 : JumpEnd); (16.2916666666667 : 6.70314136940554 : JumpStart); (16.4583333333333 : 6.70314136940554 : JumpEnd); (18.0572018231817 : 6.70314136940554); (18.0572018231817 : 5.89589680989583)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TecdocBaseDataContext/Country/Country_Supplier" />
       <nodes>
         <classShapeMoniker Id="23cc9995-8e9c-4b07-9000-8ffb9f384753" />
@@ -70,14 +70,14 @@
         <elementListCompartment Id="9c0c5486-48fe-4852-ab5a-942a5d902a9d" absoluteBounds="26.89, 2.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(19.0616254524806 : 5.89589680989583); (19.0616254524806 : 8.33735270182292); (18.7690842382945 : 8.33735270182292 : JumpStart); (18.6024175716279 : 8.33735270182292 : JumpEnd); (17.75 : 8.33735270182292)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(19.0616254524806 : 5.89589680989583); (19.0616254524806 : 8.33735270182292); (18.7690842382945 : 8.33735270182292 : JumpStart); (18.6024175716279 : 8.33735270182292 : JumpEnd); (17.75 : 8.33735270182292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TecdocBaseDataContext/Supplier/Supplier_Article" />
       <nodes>
         <classShapeMoniker Id="2755f833-4ebf-44ba-949d-7b28a1d45d72" />
         <classShapeMoniker Id="54e6e997-668a-4843-b11c-07698168ef79" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(17.75 : 7.22199625651042); (18.6024175716279 : 7.22199625651042 : JumpStart); (18.7690842382945 : 7.22199625651042 : JumpEnd); (18.9782921191473 : 7.22199625651042 : JumpStart); (19.1449587858139 : 7.22199625651042 : JumpEnd); (20.4479166666667 : 7.22199625651042 : JumpStart); (20.6145833333333 : 7.22199625651042 : JumpEnd); (22.9791666666667 : 7.22199625651042 : JumpStart); (23.1458333333333 : 7.22199625651042 : JumpEnd); (25 : 7.22199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(17.75 : 7.22199625651042); (18.6024175716279 : 7.22199625651042 : JumpStart); (18.7690842382945 : 7.22199625651042 : JumpEnd); (25 : 7.22199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TecdocBaseDataContext/Article/Article_ArticleLink" />
       <nodes>
         <classShapeMoniker Id="54e6e997-668a-4843-b11c-07698168ef79" />
@@ -163,7 +163,7 @@
         <classShapeMoniker Id="d36eba29-576c-425b-9f1f-740bd7e69cf1" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(12.2044994318592 : 15.9178898111979); (12.2044994318592 : 16.4196665470854); (15.5 : 16.4196665470854)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(13.25 : 16.26849609375); (15.5 : 16.26849609375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TecdocBaseDataContext/Model/Model_CarType" />
       <nodes>
         <classShapeMoniker Id="671a424e-d2cf-4803-bab9-fdefdfde4793" />
@@ -198,7 +198,7 @@
         <classShapeMoniker Id="9ce5bfcf-928b-48fe-b1d6-f16cb3de9c4f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(16.375 : 6.875); (16.375 : 5.6362939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(16.375 : 6.875); (16.375 : 5.6362939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TecdocBaseDataContext/Article/Article_GraphicsToArticleLink" />
       <nodes>
         <classShapeMoniker Id="54e6e997-668a-4843-b11c-07698168ef79" />
@@ -217,13 +217,13 @@
         <elementListCompartment Id="cfe5646d-3730-4593-b457-a3272514acd6" absoluteBounds="19.515, 7.8350000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="47280188-cd72-4333-af95-c7aef9f620c0" absoluteBounds="10, 4.875, 2, 1.5785953776041666">
+    <classShape Id="47280188-cd72-4333-af95-c7aef9f620c0" absoluteBounds="9.875, 4.75, 2, 1.5785953776041666">
       <DataClassMoniker Name="/TecdocBaseDataContext/Brand" />
       <nestedChildShapes>
-        <elementListCompartment Id="58ef2452-4fe3-465b-9479-12223f1ec360" absoluteBounds="10.015, 5.3350000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="58ef2452-4fe3-465b-9479-12223f1ec360" absoluteBounds="9.89, 5.2100000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(17.75 : 8.99642618815104); (18.6024175716279 : 8.99642618815104 : JumpStart); (18.7690842382945 : 8.99642618815104 : JumpEnd); (19.5 : 8.99642618815104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(17.75 : 8.99642618815104); (19.5 : 8.99642618815104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TecdocBaseDataContext/Article/Article_ArticleLookup" />
       <nodes>
         <classShapeMoniker Id="54e6e997-668a-4843-b11c-07698168ef79" />
@@ -236,44 +236,30 @@
         <elementListCompartment Id="d45c8a10-55e2-45f7-a6b7-bcd96674d05b" absoluteBounds="8.515, 12.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="61fc528b-17a6-45b5-982a-8192374e6a8c" absoluteBounds="11.25, 12.75, 2, 1.1939925130208344">
+    <classShape Id="61fc528b-17a6-45b5-982a-8192374e6a8c" absoluteBounds="13.875, 14.25, 2, 1.1939925130208344">
       <DataClassMoniker Name="/TecdocBaseDataContext/CdsText" />
       <nestedChildShapes>
-        <elementListCompartment Id="7d8e697d-ee2f-4f85-be29-89f09de7a315" absoluteBounds="11.265, 13.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7d8e697d-ee2f-4f85-be29-89f09de7a315" absoluteBounds="13.89, 14.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(12.2187475 : 13.9439925130208); (12.2187475 : 14)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(13.875 : 15.1594962565104); (13.25 : 15.1594962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TecdocBaseDataContext/CdsText/CdsText_Model" />
       <nodes>
         <classShapeMoniker Id="61fc528b-17a6-45b5-982a-8192374e6a8c" />
         <classShapeMoniker Id="671a424e-d2cf-4803-bab9-fdefdfde4793" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(13.25 : 13.3469962565104); (13.5416666666667 : 13.3469962565104 : JumpStart); (13.7083333333333 : 13.3469962565104 : JumpEnd); (15.5 : 13.3469962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(15.875 : 14.8469962565104); (17.75 : 14.8469962565104); (17.75 : 14.7122713216146); (17.5 : 14.7122713216146)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TecdocBaseDataContext/CdsText/CdsText_CarType" />
       <nodes>
         <classShapeMoniker Id="61fc528b-17a6-45b5-982a-8192374e6a8c" />
         <classShapeMoniker Id="419e8edc-d549-40ff-9021-553f8801a57b" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(13.25 : 12.9859981282552); (13.5416666666667 : 12.9859981282552 : JumpStart); (13.7083333333333 : 12.9859981282552 : JumpEnd); (15.5 : 12.9859981282552)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(13.875 : 14.8469962565104); (13.625 : 14.8469962565104); (13.625 : 14.7122713216146); (15.5 : 14.7122713216146)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TecdocBaseDataContext/CdsText/CdsText_CarType1" />
       <nodes>
         <classShapeMoniker Id="61fc528b-17a6-45b5-982a-8192374e6a8c" />
-        <classShapeMoniker Id="419e8edc-d549-40ff-9021-553f8801a57b" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(9.23437375 : 13.4711531575521); (9.23437375 : 16.9839472829729); (15.5 : 16.9839472829729)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/DesText_CarType" />
-      <nodes>
-        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
-        <classShapeMoniker Id="419e8edc-d549-40ff-9021-553f8801a57b" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(9.898439375 : 13.4711531575521); (9.898439375 : 16.5378398496491); (15.5 : 16.5378398496491)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/DesText_CarType1" />
-      <nodes>
-        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
         <classShapeMoniker Id="419e8edc-d549-40ff-9021-553f8801a57b" />
       </nodes>
     </associationConnector>
@@ -289,60 +275,11 @@
         <elementListCompartment Id="b636977a-db4f-46fd-9f20-a954a281250b" absoluteBounds="2.8899999999999997, 2.46, 2.5949999999999998, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8.7929684375 : 12.375); (8.7929684375 : 7.12854248046875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/DesText_Country" />
-      <nodes>
-        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
-        <classShapeMoniker Id="23cc9995-8e9c-4b07-9000-8ffb9f384753" />
-      </nodes>
-    </associationConnector>
     <associationConnector edgePoints="[(6.46875 : 11.625); (6.46875 : 3.07774983723958); (5.5 : 3.07774983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TecdocBaseDataContext/ArticleCriterion/ArticleCriterion_ArticleCriterionLink" />
       <nodes>
         <classShapeMoniker Id="db248802-bdee-4b46-aae3-38e67eefedd7" />
         <classShapeMoniker Id="935a772b-b378-4465-8291-d303c1191852" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(9.3749975 : 12.375); (9.3749975 : 2.50762241861979); (5.5 : 2.50762241861979)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/DesText_ArticleCriterionLink" />
-      <nodes>
-        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
-        <classShapeMoniker Id="935a772b-b378-4465-8291-d303c1191852" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 12.923076578776); (7.75 : 12.923076578776)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/DesText_ArticleCriterion" />
-      <nodes>
-        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
-        <classShapeMoniker Id="db248802-bdee-4b46-aae3-38e67eefedd7" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 12.586538289388); (7.75 : 12.586538289388)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/DesText_ArticleCriterion1" />
-      <nodes>
-        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
-        <classShapeMoniker Id="db248802-bdee-4b46-aae3-38e67eefedd7" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 13.2596148681641); (7.75 : 13.2596148681641)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/DesText_ArticleCriterion2" />
-      <nodes>
-        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
-        <classShapeMoniker Id="db248802-bdee-4b46-aae3-38e67eefedd7" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(10.15625375 : 12.375); (10.15625375 : 8.60020182291666); (11.5416666666667 : 8.60020182291666 : JumpStart); (11.7083333333333 : 8.60020182291666 : JumpEnd); (15.75 : 8.60020182291666)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/DesText_Article" />
-      <nodes>
-        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
-        <classShapeMoniker Id="54e6e997-668a-4843-b11c-07698168ef79" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(10.359379375 : 12.375); (10.359379375 : 9.23120611328125); (11.5416666666667 : 9.23120611328125 : JumpStart); (11.7083333333333 : 9.23120611328125 : JumpEnd); (15.75 : 9.23120611328125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/DesText_Article1" />
-      <nodes>
-        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
-        <classShapeMoniker Id="54e6e997-668a-4843-b11c-07698168ef79" />
       </nodes>
     </associationConnector>
     <classShape Id="89401fbb-ba56-4cdc-bef7-5f9c7bb411f8" absoluteBounds="15.5, 0.5, 2, 1.1939925130208333">
@@ -384,35 +321,14 @@
         <classShapeMoniker Id="ebfe9439-ccbc-4e60-852d-8ae7c673cf9d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(9.7500025 : 12.375); (9.7500025 : 3.92484781901042); (15.8658784451862 : 3.92484781901042 : JumpStart); (16.0325451118528 : 3.92484781901042 : JumpEnd); (26.5 : 3.92484781901042); (26.5 : 3.45894490559896); (26.875 : 3.45894490559896)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/DesText_SearchTreeNode" />
-      <nodes>
-        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
-        <classShapeMoniker Id="2a214697-d7f9-44ca-a9d0-fca0d9f41c53" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.835934375 : 13.4711531575521); (8.835934375 : 17.3223810080229); (15.5 : 17.3223810080229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/DesText_CarType2" />
-      <nodes>
-        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
-        <classShapeMoniker Id="419e8edc-d549-40ff-9021-553f8801a57b" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(10.2304721875 : 13.4711531575521); (10.2304721875 : 16.760893566311); (15.5 : 16.760893566311)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/DesText_CarType3" />
-      <nodes>
-        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
-        <classShapeMoniker Id="419e8edc-d549-40ff-9021-553f8801a57b" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(11.625 : 6.29984781901042); (11.625 : 9.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(11.5625 : 6.32859537760417); (11.5625 : 9.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TecdocBaseDataContext/Brand/Brand_Manufacturer" />
       <nodes>
         <classShapeMoniker Id="47280188-cd72-4333-af95-c7aef9f620c0" />
         <classShapeMoniker Id="6c040128-8ec2-41c2-ac15-bb67d2421229" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(12 : 6.38869466145833); (13.5416666666667 : 6.38869466145833 : JumpStart); (13.7083333333333 : 6.38869466145833 : JumpEnd); (16.2916666666667 : 6.38869466145833 : JumpStart); (16.4583333333333 : 6.38869466145833 : JumpEnd); (17.9738684898484 : 6.38869466145833 : JumpStart); (18.140535156515 : 6.38869466145833 : JumpEnd); (18.6024175716279 : 6.38869466145833 : JumpStart); (18.7690842382945 : 6.38869466145833 : JumpEnd); (18.9782921191473 : 6.38869466145833 : JumpStart); (19.1449587858139 : 6.38869466145833 : JumpEnd); (20.53125 : 6.38869466145833); (20.53125 : 7.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.875 : 5.53929768880208); (12.375 : 5.53929768880208); (12.375 : 6.5112939453125); (13.8854166666667 : 6.5112939453125 : JumpStart); (14.0520833333333 : 6.5112939453125 : JumpEnd); (16.2916666666667 : 6.5112939453125 : JumpStart); (16.4583333333333 : 6.5112939453125 : JumpEnd); (17.9738684898484 : 6.5112939453125 : JumpStart); (18.140535156515 : 6.5112939453125 : JumpEnd); (18.6024175716279 : 6.5112939453125 : JumpStart); (18.7690842382945 : 6.5112939453125 : JumpEnd); (18.9782921191473 : 6.5112939453125 : JumpStart); (19.1449587858139 : 6.5112939453125 : JumpEnd); (20.5 : 6.5112939453125); (20.5 : 7.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TecdocBaseDataContext/Brand/Brand_ArticleLookup" />
       <nodes>
         <classShapeMoniker Id="47280188-cd72-4333-af95-c7aef9f620c0" />
@@ -425,11 +341,95 @@
         <elementListCompartment Id="088a04c3-3094-4663-8c7a-cb2afe0e3855" absoluteBounds="12.64, 5.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(15.75 : 7.70634841145833); (13.625 : 7.70634841145833); (13.625 : 6.2612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(15.75 : 8.03125); (13.96875 : 8.03125); (13.96875 : 6.2612939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TecdocBaseDataContext/Article/Article_SupersededArticle" />
       <nodes>
         <classShapeMoniker Id="54e6e997-668a-4843-b11c-07698168ef79" />
         <classShapeMoniker Id="0e92a5b7-b42d-4466-bd52-359ea314d4d1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.875 : 12.375); (8.875 : 7.3381982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/v_des_texts_Country" />
+      <nodes>
+        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
+        <classShapeMoniker Id="23cc9995-8e9c-4b07-9000-8ffb9f384753" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.0625025 : 12.375); (10.0625025 : 8.6406275); (10.2291704166667 : 8.6406275 : JumpStart); (10.3958370833333 : 8.6406275 : JumpEnd); (15.75 : 8.6406275)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/v_des_texts_Article" />
+      <nodes>
+        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
+        <classShapeMoniker Id="54e6e997-668a-4843-b11c-07698168ef79" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.31250375 : 12.375); (10.31250375 : 7.68472162109375); (13.8854166666667 : 7.68472162109375 : JumpStart); (14.0520833333333 : 7.68472162109375 : JumpEnd); (15.75 : 7.68472162109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/v_des_texts_Article1" />
+      <nodes>
+        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
+        <classShapeMoniker Id="54e6e997-668a-4843-b11c-07698168ef79" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.5625 : 12.375); (9.5625 : 3.97679768880208); (15.8658784451862 : 3.97679768880208 : JumpStart); (16.0325451118528 : 3.97679768880208 : JumpEnd); (26.875 : 3.97679768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/v_des_texts_SearchTreeNode" />
+      <nodes>
+        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
+        <classShapeMoniker Id="2a214697-d7f9-44ca-a9d0-fca0d9f41c53" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.5 : 13.0171823736572); (12.1666666666667 : 13.0171823736572 : JumpStart); (12.3333333333333 : 13.0171823736572 : JumpEnd); (15.5 : 13.0171823736572)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/v_des_texts_CarType" />
+      <nodes>
+        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
+        <classShapeMoniker Id="419e8edc-d549-40ff-9021-553f8801a57b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.5 : 12.718684245402); (12.1666666666667 : 12.718684245402 : JumpStart); (12.3333333333333 : 12.718684245402 : JumpEnd); (15.5 : 12.718684245402)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/v_des_texts_CarType1" />
+      <nodes>
+        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
+        <classShapeMoniker Id="419e8edc-d549-40ff-9021-553f8801a57b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.5 : 13.355587443339); (12.1666666666667 : 13.355587443339 : JumpStart); (12.3333333333333 : 13.355587443339 : JumpEnd); (15.5 : 13.355587443339)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/v_des_texts_CarType2" />
+      <nodes>
+        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
+        <classShapeMoniker Id="419e8edc-d549-40ff-9021-553f8801a57b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.5 : 12.484342122701); (12.1666666666667 : 12.484342122701 : JumpStart); (12.3333333333333 : 12.484342122701 : JumpEnd); (15.5 : 12.484342122701)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/v_des_texts_CarType3" />
+      <nodes>
+        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
+        <classShapeMoniker Id="419e8edc-d549-40ff-9021-553f8801a57b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 12.9719962565104); (7.75 : 12.9719962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/v_des_texts_ArticleCriterion" />
+      <nodes>
+        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
+        <classShapeMoniker Id="db248802-bdee-4b46-aae3-38e67eefedd7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 12.6109981282552); (7.75 : 12.6109981282552)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/v_des_texts_ArticleCriterion1" />
+      <nodes>
+        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
+        <classShapeMoniker Id="db248802-bdee-4b46-aae3-38e67eefedd7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 13.3329943847656); (7.75 : 13.3329943847656)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/v_des_texts_ArticleCriterion2" />
+      <nodes>
+        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
+        <classShapeMoniker Id="db248802-bdee-4b46-aae3-38e67eefedd7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.4062475 : 12.375); (9.4062475 : 2.50762241861979); (5.5 : 2.50762241861979)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TecdocBaseDataContext/v_des_texts/v_des_texts_ArticleCriterionLink" />
+      <nodes>
+        <classShapeMoniker Id="81629acf-584a-4e79-a8af-69c8c9d3bd07" />
+        <classShapeMoniker Id="935a772b-b378-4465-8291-d303c1191852" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

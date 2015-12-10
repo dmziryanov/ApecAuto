@@ -59,8 +59,7 @@ namespace RmsAuto.Store.Web.Controls
 		{
 			try
 			{
-				_cartCountLiteral.Text = SiteContext.Current.CurrentClientTotals.PartsCount.ToString();
-				_cartSumLiteral.Text = string.Format( "{0:### ### ##0.00}", SiteContext.Current.CurrentClientTotals.Total );
+				
                 // deas 15.03.2011 task2626
                 // добавлено заполнение текста о балансе и просроченной задолженности
                 StringBuilder sbBalance = new StringBuilder("");
@@ -97,14 +96,11 @@ namespace RmsAuto.Store.Web.Controls
                     { sbBalance.Append(string.Format("<br /> <font size='1'>(Ваш менеджер: {0})</font>", "не назначен")); }
                 }
 
-                _balanceInfoLiteral.Text = sbBalance.ToString();
-
-				_cartPlaceHolder.Visible = true;
 			}
 			catch(Exception ex)
 			{
 				Logger.WriteException(ex);
-				_cartPlaceHolder.Visible = false;
+				
 			}
 		}
         protected void _btnLogoff_Click(object sender, EventArgs e)
@@ -121,16 +117,7 @@ namespace RmsAuto.Store.Web.Controls
         {
             bool isAuthenticated = Context.User.Identity.IsAuthenticated;
             
-            _btnLogon.Visible = !isAuthenticated;
-            _btnLogoff.Visible = isAuthenticated;
-            
-            _btnViewCartLink.Visible = !Context.User.IsInRole("Manager");
-            _btnViewCartInfo.Visible = !Context.User.IsInRole("Manager");
-            _imgViewCart.Visible = !Context.User.IsInRole("Manager");
-            			
-            _btnViewCartLink.NavigateUrl = UrlManager.GetCartUrl();
-            _imgViewCartLink.NavigateUrl = UrlManager.GetCartUrl();
-            _btnViewCabinetLink.NavigateUrl = UrlManager.GetPrivateOfficeUrl();
+           
         }
     }
 }

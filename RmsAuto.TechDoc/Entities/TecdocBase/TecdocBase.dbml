@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ex_tecdocs" Class="TecdocBaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=1ctest;Initial Catalog=ex_tecdocs;Integrated Security=True;Persist Security Info=True" SettingsObjectName="RmsAuto.TechDoc.Properties.Settings" SettingsPropertyName="ex_tecdocsConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.TECDOC_TOF_MODELS" Member="Models">
+  <Table Name="dbo.TOF_MODELS" Member="Models">
     <Type Name="Model">
       <Column Name="MOD_ID" Storage="_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MOD_MFA_ID" Storage="_ManufacturerID" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
@@ -14,40 +14,40 @@
       <Association Name="CdsText_Model" Member="Name" ThisKey="MOD_CDS_ID" OtherKey="cds_ID" Type="CdsText" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TECDOC_TOF_MANUFACTURERS" Member="Manufacturers">
+  <Table Name="dbo.TOF_MANUFACTURERS" Member="Manufacturers">
     <Type Name="Manufacturer">
-      <Column Name="MFA_ID" Member="ID" Type="System.Int32" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MFA_PC_MFC" Member="IsCarManufacturer" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="MFA_CV_MFC" Member="IsTruckManufacturer" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="MFA_AXL_MFC" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="MFA_ENG_MFC" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="MFA_ENG_TYP" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="MFA_MFC_CODE" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="MFA_BRAND" Member="Name" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="MFA_ID" Member="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MFA_PC_MFC" Member="IsCarManufacturer" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MFA_CV_MFC" Member="IsTruckManufacturer" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MFA_AXL_MFC" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MFA_ENG_MFC" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MFA_ENG_TYP" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MFA_MFC_CODE" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MFA_BRAND" Member="Name" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="MFA_MF_NR" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Manufacturer_Model" Member="Models" ThisKey="ID" OtherKey="MOD_MFA_ID" Type="Model" />
       <Association Name="Brand_Manufacturer" Member="Brand" Storage="_AfterMarketBrand" ThisKey="MFA_MF_NR" OtherKey="BRA_MF_NR" Type="Brand" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TECDOC_TOF_COUNTRIES" Member="Countries">
+  <Table Name="dbo.TOF_COUNTRIES" Member="Countries">
     <Type Name="Country">
-      <Column Name="COU_ID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="COU_ID" Type="System.Int32" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="COU_CC" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
       <Column Name="COU_DES_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="COU_CURRENCY_CODE" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
       <Column Name="COU_ISO2" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
-      <Column Name="COU_IS_GROUP" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="COU_IS_GROUP" Type="System.Int32" DbType="SmallInt NOT NULL" CanBeNull="false" />
       <Association Name="Country_Supplier" Member="Suppliers" ThisKey="COU_ID" OtherKey="SUP_COU_ID" Type="Supplier" />
-      <Association Name="DesText_Country" Member="Name" ThisKey="COU_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
+      <Association Name="v_des_texts_Country" Member="Name" ThisKey="COU_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TECDOC_TOF_SUPPLIERS" Member="Suppliers">
     <Type Name="Supplier">
-      <Column Name="SUP_ID" Member="ID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="SUP_BRAND" Member="Name" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
-      <Column Name="SUP_SUPPLIER_NR" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="SUP_COU_ID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="SUP_IS_HESS" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SUP_ID" Member="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SUP_BRAND" Member="Name" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SUP_SUPPLIER_NR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUP_COU_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUP_IS_HESS" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Supplier_Article" Member="Articles" ThisKey="ID" OtherKey="SupplierID" Type="Article" />
       <Association Name="Country_Supplier" Member="Country" ThisKey="SUP_COU_ID" OtherKey="COU_ID" Type="Country" IsForeignKey="true" />
     </Type>
@@ -56,32 +56,32 @@
     <Type Name="Article">
       <Column Name="ART_ID" Member="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ART_ARTICLE_NR" Member="ArticleNumber" Storage="_ART_ARTICLE_NR" Type="System.String" DbType="VarChar(66) NOT NULL" CanBeNull="false" />
-      <Column Name="ART_SUP_ID" Member="SupplierID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ART_SUP_ID" Member="SupplierID" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
       <Column Name="ART_DES_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ART_COMPLETE_DES_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ART_PACK_SELFSERVICE" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="ART_MATERIAL_MARK" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="ART_REPLACEMENT" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="ART_ACCESSORY" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ART_PACK_SELFSERVICE" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ART_MATERIAL_MARK" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ART_REPLACEMENT" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ART_ACCESSORY" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
       <Column Name="ART_BATCH_SIZE1" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ART_BATCH_SIZE2" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Article_ArticleLink" Member="ArticleLinks" ThisKey="ID" OtherKey="LA_ART_ID" Type="ArticleLink" />
       <Association Name="Article_ArticleLookup" Member="ArticleLookups" ThisKey="ID" OtherKey="ARL_ART_ID" Type="ArticleLookup" />
       <Association Name="Article_SupersededArticle" Member="SupersededArticles" ThisKey="ID" OtherKey="SUA_ART_ID" Type="SupersededArticle" />
       <Association Name="Supplier_Article" Member="Supplier" ThisKey="SupplierID" OtherKey="ID" Type="Supplier" IsForeignKey="true" />
-      <Association Name="DesText_Article" Member="Name" ThisKey="ART_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
-      <Association Name="DesText_Article1" Member="CompleteName" ThisKey="ART_COMPLETE_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
+      <Association Name="v_des_texts_Article" Member="Name" ThisKey="ART_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
+      <Association Name="v_des_texts_Article1" Member="CompleteName" ThisKey="ART_COMPLETE_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TECDOC_TOF_GENERIC_ARTICLES" Member="GenericArticles">
+  <Table Name="dbo.TOF_GENERIC_ARTICLES" Member="GenericArticles">
     <Type Name="GenericArticle">
       <Column Name="GA_ID" Member="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="GA_NR" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GA_NR" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
       <Column Name="GA_DES_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="GA_DES_ID_STANDARD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="GA_DES_ID_ASSEMBLY" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="GA_DES_ID_INTENDED" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="GA_UNIVERSAL" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GA_UNIVERSAL" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
       <Association Name="GenericArticle_ArticleLink" Member="ArticleLinks" ThisKey="ID" OtherKey="LA_GA_ID" Type="ArticleLink" />
       <Association Name="GenericArticle_GenericArticleToStrLink" Member="StrLinks" ThisKey="ID" OtherKey="GenericArticleID" Type="GenericArticleToStrLink" />
     </Type>
@@ -97,33 +97,33 @@
       <Association Name="GenericArticle_ArticleLink" Member="GenericArticle" ThisKey="LA_GA_ID" OtherKey="ID" Type="GenericArticle" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TECDOC_TOF_STR_LOOKUP" Member="SearchLookups">
+  <Table Name="dbo.TOF_STR_LOOKUP" Member="SearchLookups">
     <Type Name="SearchLookup">
-      <Column Name="STL_LNG_ID" Member="LanguageId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="STL_LNG_ID" Member="LanguageId" Type="System.Int32" DbType="SmallInt NOT NULL" CanBeNull="false" />
       <Column Name="STL_SEARCH_TEXT" Member="SearchText" Type="System.String" DbType="VarChar(180) NOT NULL" CanBeNull="false" />
       <Column Name="STL_STR_ID" Member="SearchTreeNodeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="STL_GA_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="SearchTreeNode_SearchLookup" Member="SearchTreeNode" ThisKey="SearchTreeNodeID" OtherKey="ID" Type="SearchTreeNode" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TECDOC_TOF_SEARCH_TREE" Member="SearchTreeNodes">
+  <Table Name="dbo.TOF_SEARCH_TREE" Member="SearchTreeNodes">
     <Type Name="SearchTreeNode">
       <Column Name="STR_ID" Member="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="STR_ID_PARENT" Member="ParentNodeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="STR_TYPE" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="STR_LEVEL" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="STR_TYPE" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="STR_LEVEL" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
       <Column Name="STR_DES_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="STR_SORT" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="STR_SORT" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
       <Column Name="STR_NODE_NR" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="SearchTreeNode_SearchLookup" Member="SearchLookups" ThisKey="ID" OtherKey="SearchTreeNodeID" Type="SearchLookup" />
       <Association Name="SearchTreeNode_SearchTreeNode" Member="ChildNodes" ThisKey="ID" OtherKey="ParentNodeID" Type="SearchTreeNode" />
       <Association Name="SearchTreeNode_StrFamilyTree" Member="ChildFamilyNodes" ThisKey="ID" OtherKey="ParentStrID" Type="StrFamilyTree" />
       <Association Name="SearchTreeNode_GenericArticleToStrLink" Member="GenericArticleLinks" ThisKey="ID" OtherKey="StrID" Type="GenericArticleToStrLink" />
       <Association Name="SearchTreeNode_SearchTreeNode" Member="ParentNode" ThisKey="ParentNodeID" OtherKey="ID" Type="SearchTreeNode" IsForeignKey="true" />
-      <Association Name="DesText_SearchTreeNode" Member="Name" ThisKey="STR_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
+      <Association Name="v_des_texts_SearchTreeNode" Member="Name" ThisKey="STR_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TECDOC_TOF_STR_FAMILY_TREE" Member="StrFamilyTrees">
+  <Table Name="dbo.TOF_STR_FAMILY_TREE" Member="StrFamilyTrees">
     <Type Name="StrFamilyTree">
       <Column Name="SFT_ANCESTOR_STR_ID" Member="ParentStrID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="SFT_DESCENDANT_STR_ID" Member="ChildStrID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -131,7 +131,7 @@
       <Association Name="SearchTreeNode_StrFamilyTree1" Member="ChildTreeNode" ThisKey="ChildStrID" OtherKey="ID" Type="SearchTreeNode" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TECDOC_TOF_LINK_GA_STR" Member="GenericArticleToStrLinks">
+  <Table Name="dbo.TOF_LINK_GA_STR" Member="GenericArticleToStrLinks">
     <Type Name="GenericArticleToStrLink">
       <Column Name="LGS_STR_ID" Member="StrID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="LGS_GA_ID" Member="GenericArticleID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -139,7 +139,7 @@
       <Association Name="SearchTreeNode_GenericArticleToStrLink" Member="SearchTreeNode" ThisKey="StrID" OtherKey="ID" Type="SearchTreeNode" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TECDOC_TOF_TYPES" Member="CarTypes">
+  <Table Name="dbo.TOF_TYPES" Member="CarTypes">
     <Type Name="CarType">
       <Column Name="TYP_ID" Member="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TYP_CDS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -153,9 +153,9 @@
       <Column Name="TYP_HP_FROM" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TYP_HP_UPTO" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TYP_CCM" Member="EngineVolume" Storage="_TYP_CCM" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TYP_CYLINDERS" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="TYP_DOORS" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="TYP_TANK" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TYP_CYLINDERS" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TYP_DOORS" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TYP_TANK" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
       <Column Name="TYP_KV_VOLTAGE_DES_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TYP_KV_ABS_DES_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TYP_KV_ASR_DES_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -175,17 +175,17 @@
       <Column Name="TYP_KV_DRIVE_DES_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TYP_KV_TRANS_DES_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TYP_KV_FUEL_SUPPLY_DES_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TYP_VALVES" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="TYP_CTM" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="TYP_LA_CTM" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="TYP_VALVES" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TYP_CTM" Type="System.Byte[]" DbType="Binary(32)" CanBeNull="true" />
+      <Column Name="TYP_LA_CTM" Type="System.Byte[]" DbType="Binary(32)" CanBeNull="true" />
       <Association Name="CarType_ArticleLinkToCarTypeLink" Member="ArticleLinkToCarTypeLinks" ThisKey="ID" OtherKey="CarTypeID" Type="ArticleLinkToCarTypeLink" />
       <Association Name="Model_CarType" Member="Model" ThisKey="TYP_MOD_ID" OtherKey="MOD_ID" Type="Model" IsForeignKey="true" />
       <Association Name="CdsText_CarType" Member="FullName" ThisKey="TYP_CDS_ID" OtherKey="cds_ID" Type="CdsText" IsForeignKey="true" />
       <Association Name="CdsText_CarType1" Member="Name" ThisKey="TYP_MMT_CDS_ID" OtherKey="cds_ID" Type="CdsText" IsForeignKey="true" />
-      <Association Name="DesText_CarType" Member="FuelName" ThisKey="TYP_KV_FUEL_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
-      <Association Name="DesText_CarType1" Member="BodyName" ThisKey="TYP_KV_BODY_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
-      <Association Name="DesText_CarType2" Member="FuelSupplyName" ThisKey="TYP_KV_FUEL_SUPPLY_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
-      <Association Name="DesText_CarType3" Member="EngineName" ThisKey="TYP_KV_ENGINE_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
+      <Association Name="v_des_texts_CarType" Member="FuelName" ThisKey="TYP_KV_FUEL_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
+      <Association Name="v_des_texts_CarType1" Member="BodyName" ThisKey="TYP_KV_BODY_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
+      <Association Name="v_des_texts_CarType2" Member="FuelSupplyName" ThisKey="TYP_KV_FUEL_SUPPLY_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
+      <Association Name="v_des_texts_CarType3" Member="EngineName" ThisKey="TYP_KV_ENGINE_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TECDOC_TOF_LINK_LA_TYP" Member="ArticleLinkToCarTypeLinks">
@@ -193,7 +193,7 @@
       <Column Name="LAT_TYP_ID" Member="CarTypeID" Storage="_ModificationID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="LAT_LA_ID" Member="ArticleLinkID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="LAT_GA_ID" Member="GenericArticleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="LAT_SUP_ID" Member="SupplierID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="LAT_SUP_ID" Member="SupplierID" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
       <Column Name="LAT_SORT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="GenericArticle_ArticleLinkToCarTypeLink" Member="GenericArticle" ThisKey="GenericArticleID" OtherKey="ID" Type="GenericArticle" IsForeignKey="true" />
       <Association Name="ArticleLink_ArticleLinkToCarTypeLink" Member="ArticleLink" ThisKey="ArticleLinkID" OtherKey="ID" Type="ArticleLink" IsForeignKey="true" />
@@ -201,10 +201,10 @@
       <Association Name="CarType_ArticleLinkToCarTypeLink" Member="CarType" ThisKey="CarTypeID" OtherKey="ID" Type="CarType" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TECDOC_TOF_LINK_GRA_ART" Member="GraphicsToArticleLinks">
+  <Table Name="dbo.TOF_LINK_GRA_ART" Member="GraphicsToArticleLinks">
     <Type Name="GraphicsToArticleLink">
       <Column Name="LGA_ART_ID" Storage="_ArticleId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="LGA_SORT" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="LGA_SORT" Type="System.Int32" DbType="SmallInt NOT NULL" CanBeNull="false" />
       <Column Name="LGA_GRA_ID" Storage="_GraphicsId" Type="System.String" DbType="VarChar(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="Article_GraphicsToArticleLink" Member="Article" ThisKey="LGA_ART_ID" OtherKey="ID" Type="Article" IsForeignKey="true" />
       <Association Name="Graphics_GraphicsToArticleLink" Member="Graphics" ThisKey="LGA_GRA_ID" OtherKey="ID" Type="Graphics" IsForeignKey="true" />
@@ -218,24 +218,24 @@
       <Column Name="ModelID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.TECDOC_TOF_ART_LOOKUP" Member="ArticleLookups">
+  <Table Name="dbo.TOF_ART_LOOKUP" Member="ArticleLookups">
     <Type Name="ArticleLookup">
       <Column Name="ARL_ART_ID" Storage="_ArticleID" Type="System.Int32" DbType="Int" IsPrimaryKey="true" CanBeNull="true" />
       <Column Name="ARL_SEARCH_NUMBER" Member="SearchNumber" Type="System.String" DbType="VarChar(105)" CanBeNull="true" />
       <Column Name="ARL_KIND" Storage="_Type" Type="System.Char" DbType="Char(1)" IsPrimaryKey="true" CanBeNull="true" />
-      <Column Name="ARL_BRA_ID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ARL_BRA_ID" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
       <Column Name="ARL_DISPLAY_NR" Member="DisplayNumber" Storage="_PartNumber" Type="System.String" DbType="VarChar(105)" CanBeNull="true" />
-      <Column Name="ARL_BLOCK" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="ARL_SORT" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ARL_BLOCK" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ARL_SORT" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
       <Association Name="Article_ArticleLookup" Member="Article" ThisKey="ARL_ART_ID" OtherKey="ID" Type="Article" IsForeignKey="true" />
       <Association Name="Brand_ArticleLookup" Member="Brand" Storage="_AfterMarketBrand" ThisKey="ARL_BRA_ID" OtherKey="ID" Type="Brand" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TECDOC_TOF_BRANDS" Member="Brands">
+  <Table Name="dbo.TOF_BRANDS" Member="Brands">
     <Type Name="Brand">
-      <Column Name="BRA_ID" Member="ID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="BRA_MFC_CODE" Member="Code" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
-      <Column Name="BRA_BRAND" Member="Name" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="BRA_ID" Member="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BRA_MFC_CODE" Member="Code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="BRA_BRAND" Member="Name" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="BRA_MF_NR" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Brand_Manufacturer" Member="Manufacturers" ThisKey="BRA_MF_NR" OtherKey="MFA_MF_NR" Type="Manufacturer" />
     </Type>
@@ -252,65 +252,65 @@
       <Column Name="Tex_Text" Storage="_Text" Type="System.String" DbType="VarChar(1200)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TECDOC_TOF_CRITERIA" Member="ArticleCriteria">
+  <Table Name="dbo.TOF_CRITERIA" Member="ArticleCriteria">
     <Type Name="ArticleCriterion">
-      <Column Name="CRI_ID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CRI_ID" Type="System.Int32" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="CRI_DES_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CRI_SHORT_DES_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="CRI_UNIT_DES_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="CRI_TYPE" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
-      <Column Name="CRI_KT_ID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="CRI_IS_INTERVAL" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="CRI_SUCCESSOR" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CRI_KT_ID" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CRI_IS_INTERVAL" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CRI_SUCCESSOR" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
       <Association Name="ArticleCriterion_ArticleCriterionLink" Member="ArticleCriterionLinks" ThisKey="CRI_ID" OtherKey="ACR_CRI_ID" Type="ArticleCriterionLink" />
-      <Association Name="DesText_ArticleCriterion" Member="FullName" ThisKey="CRI_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
-      <Association Name="DesText_ArticleCriterion1" Member="Name" ThisKey="CRI_SHORT_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
-      <Association Name="DesText_ArticleCriterion2" Member="UnitName" ThisKey="CRI_UNIT_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
+      <Association Name="v_des_texts_ArticleCriterion" Member="FullName" ThisKey="CRI_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
+      <Association Name="v_des_texts_ArticleCriterion1" Member="Name" ThisKey="CRI_SHORT_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
+      <Association Name="v_des_texts_ArticleCriterion2" Member="UnitName" ThisKey="CRI_UNIT_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TECDOC_TOF_ARTICLE_CRITERIA" Member="ArticleCriterionLinks">
     <Type Name="ArticleCriterionLink">
       <Column Name="ACR_ART_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ACR_GA_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ACR_SORT" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="ACR_CRI_ID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ACR_SORT" Type="System.Int32" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ACR_CRI_ID" Type="System.Int32" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ACR_VALUE" Member="ValueIfNumeric" Storage="_ACR_VALUE" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
       <Column Name="ACR_KV_DES_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ACR_DISPLAY" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ACR_DISPLAY" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
       <Association Name="ArticleCriterion_ArticleCriterionLink" Member="ArticleCriterion" ThisKey="ACR_CRI_ID" OtherKey="CRI_ID" Type="ArticleCriterion" IsForeignKey="true" />
-      <Association Name="DesText_ArticleCriterionLink" Member="ValueIfString" ThisKey="ACR_KV_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
+      <Association Name="v_des_texts_ArticleCriterionLink" Member="ValueIfString" ThisKey="ACR_KV_DES_ID" OtherKey="DES_ID" Type="v_des_texts" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TECDOC_TOF_GRA_DATA" Member="GraphicsDatas">
+  <Table Name="dbo.TOF_GRA_DATA" Member="GraphicsDatas">
     <Type Name="GraphicsData">
       <Column Name="GRD_ID" Member="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="GRD_GRAPHIC" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
-  <Table Name="dbo.TECDOC_TOF_GRAPHICS" Member="Graphics">
+  <Table Name="dbo.TOF_GRAPHICS" Member="Graphics">
     <Type Name="Graphics">
-      <Column Name="GRA_SUP_ID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GRA_SUP_ID" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
       <Column Name="GRA_ID" Member="ID" Type="System.String" DbType="VarChar(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="GRA_DOC_TYPE" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
-      <Column Name="GRA_LNG_ID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GRA_LNG_ID" Type="System.Int32" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="GRA_GRD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="GRA_TYPE" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GRA_TYPE" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
       <Column Name="GRA_NORM" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
-      <Column Name="GRA_SUPPLIER_NR" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="GRA_TAB_NR" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GRA_SUPPLIER_NR" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GRA_TAB_NR" Type="System.Int32" DbType="SmallInt" CanBeNull="true" />
       <Column Name="GRA_DES_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="DocumentType_Graphics" Member="DocumentType" ThisKey="GRA_DOC_TYPE" OtherKey="DOC_TYPE" Type="DocumentType" IsForeignKey="true" />
       <Association Name="GraphicsData_Graphics" Member="GraphicsData" ThisKey="GRA_GRD_ID" OtherKey="ID" Type="GraphicsData" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TECDOC_TOF_DOC_TYPES" Member="DocumentTypes">
+  <Table Name="dbo.TOF_DOC_TYPES" Member="DocumentTypes">
     <Type Name="DocumentType">
       <Column Name="DOC_TYPE" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="DOC_EXTENSION" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
       <Association Name="DocumentType_Graphics" Member="Graphics" ThisKey="DOC_TYPE" OtherKey="GRA_DOC_TYPE" Type="Graphics" />
     </Type>
   </Table>
-  <Table Name="dbo.TECDOC_TOF_SUPERSEDED_ARTICLES" Member="SupersededArticles">
+  <Table Name="dbo.TOF_SUPERSEDED_ARTICLES" Member="SupersededArticles">
     <Type Name="SupersededArticle">
       <Column Name="SUA_ART_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="SUA_NUMBER" Type="System.String" DbType="VarChar(66) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />

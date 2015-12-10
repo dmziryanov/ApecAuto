@@ -19,7 +19,7 @@
 <ItemTemplate>
         <tr>
             <td>
-                <%# Eval("Name.Text") %>
+                <%# Eval("Name.Tex_Text") %>
             </td>
             <td>
                 <%=global::Resources.Texts.AC_From %>
@@ -28,7 +28,7 @@
                 <%# Eval("DateTo") %>
             </td>
             <td>
-                <%# Eval("BodyName.Text") %>
+                <%# Eval("BodyName.Tex_Text") %>
             </td>
             <td>
                 <%# GetEngineVolume(Container.DataItem as RmsAuto.TechDoc.Entities.TecdocBase.CarType) %>
@@ -37,7 +37,7 @@
                 <%# Eval("TYP_HP_FROM")%>
             </td>
             <td>
-                <%# Eval("FuelSupplyName.Text") %>
+                <%# Eval("FuelSupplyName.Tex_Text") %>
             </td>
         </tr>
 </ItemTemplate>    

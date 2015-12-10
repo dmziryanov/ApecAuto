@@ -7,7 +7,8 @@
 <%@ Register src="Cms/Controls/MetaTags.ascx" tagname="MetaTags" tagprefix="uc2" %>
 <%@ Register Src="~/Controls/Counter.ascx" TagPrefix="uc1" TagName="Counter" %>
 <%@ Register Src="~/Controls/Culture.ascx" TagPrefix="culture" TagName="Culture" %>
-
+<%@ Register src="~/controls/QuickSearch.ascx" tagname="QuickSearch" tagprefix="uc1" %>
+<%@ Register src="~/Cms/Catalog/MainMenu.ascx" tagname="MainMenu" tagprefix="uc2" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,6 +19,8 @@
 	<link rel="shortcut icon" href="<%= ResolveUrl("~/favicon.ico")%>" type="image/x-icon" />
 	<link rel="StyleSheet" href="<%= ResolveUrl("~/css/themes/base/jquery-ui-1.10.4.custom.min.css")%>" type="text/css" />
 	<link rel="StyleSheet" href="<%= ResolveUrl("~/css/style.css")%>" type="text/css" />
+    <link rel="StyleSheet" href="<%= ResolveUrl("~/css/bootstrap-theme.min.css")%>" type="text/css" />
+    <link rel="StyleSheet" href="<%= ResolveUrl("~/css/bootstrap.min.css")%>" type="text/css" />
     
 	<!--[if lte IE 8]>
 	<link rel="StyleSheet" href="<%= ResolveUrl("~/css/ie8.css")%>" type="text/css" media="screen" />
@@ -88,6 +91,19 @@
 
         
     </script>
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-71032172-1', 'auto');
+        ga('send', 'pageview');
+
+</script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -96,35 +112,21 @@
 		<uc1:LogonRight ID="LogonRight1" runat="server" />
 	</div>
 	<div class="wrapper">
-	  <div class="main-bg">
-		<div class="main-indent">
-		  <div class="container"></div>
-		  <!--end .container --> 
-		</div>
-		<!--end .main-indent --> 
-	  </div>
-	  <!--end .main-bg -->
 	  <div class="container">
 		<div class="main-indent">
 		  <header class="header">
-			<div class="mainContent">
-			    <a href="http://www.spare-auto.com/Cabinet/Feedback.aspx">Please send us a feedback</a>
-			  <div class="top-block">
-			        
-                  <culture:Culture runat="server" />
-				<div class="logo"><a href="<%=ResolveUrl("~")%>"></a></div>
-                <asp:Image ImageUrl="<%$ Resources:ImagesURL, header_img_new %>" Width="744" Height="91" AlternateText="" runat="server" />
-				<%--<img src="/images/header-r.png" width="744" height="91" alt="" />--%>
-			  </div>
-			  <!--end .top-block --> 
+              <div class="mainContent">
+			  <div class="links"><a href="http://www.spare-auto.com/Cabinet/Feedback.aspx">Please send us a feedback</a><span class="sep"></span><uc1:LogonLogoff ID="LogonLogoff1" runat="server" /> <span class="sep"></span><a href="<%=UrlManager.GetRegistrationUrl()%>"><%=global::Resources.Texts.Registration %></a><span class="sep"></span><a href="#" id="infeatures"><%=global::Resources.Texts.AddInFeatures %></a> </div><uc1:CartTop id="cart1" runat="server" />
+              <div class="top-block">
+			    <div class="logo"><a href="<%=ResolveUrl("~")%>"></a></div>
+                <uc1:QuickSearch ID="QuickSearch1" runat="server" />
+		      </div>
 			</div>
-			<!--end .mainContent -->
-			<div class="r-aside">
-			  <div class="links"> <uc1:LogonLogoff ID="LogonLogoff1" runat="server" /> <span class="sep"></span><a href="<%=UrlManager.GetRegistrationUrl()%>"><%=global::Resources.Texts.Registration %></a><span class="sep"></span><a href="#" id="infeatures"><%=global::Resources.Texts.AddInFeatures %></a> </div>
-			  <!--end .links -->
-				<uc1:CartTop id="cart1" runat="server" />
-			</div>
-			<!--end .r-aside --> 
+			
+			  
+          <culture:Culture runat="server" /> 
+				
+			
 		  </header>
 		  <!-- end .header-->
 		  <div class="content">
@@ -132,9 +134,7 @@
 			  <asp:ContentPlaceHolder ID="_mainContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
 			</div>
 			<!-- end .mainContent-->
-			<aside class="r-aside">
-				<asp:ContentPlaceHolder ID="_rightContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
-			</aside>
+			
 			<aside class="l-aside">
 				<asp:ContentPlaceHolder ID="_leftContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
 				<!--end .side-menu -->
@@ -201,7 +201,7 @@
                 <input type="checkbox" class="answer" value= "I don't understand how to sale and promote my products"/>I don't understand how to promote my products<br>
                 <input type="checkbox" class="answer" value= "I don't need any spareparts."/>I don't need any spareparts.<br>
         <br>
-                <input type="button" id="CloseButton" value="Submit" class="button"/>
+                <input type="button" id="CloseButton" value="Submit" class="btn btn-success"/>
         </div>
         
     </form>

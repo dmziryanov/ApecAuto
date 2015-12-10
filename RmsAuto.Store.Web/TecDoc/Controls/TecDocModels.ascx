@@ -11,7 +11,7 @@
 		<tr>
 			<td>
 				<a href="<%#GetModelUrl((int)Eval("ID"))%>">
-					<%#Server.HtmlEncode((string)Eval("Name.Text"))%>
+					<%#Server.HtmlEncode((string)Eval("Name.Tex_Text"))%>
 				</a>
 			</td>
 			<td>

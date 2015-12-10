@@ -58,6 +58,15 @@ namespace RmsAuto.Store.Web {
         protected global::RmsAuto.Store.Web.Controls.CartTop cart1;
         
         /// <summary>
+        /// QuickSearch1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::RmsAuto.Store.Web.Controls.QuickSearch QuickSearch1;
+        
+        /// <summary>
         /// _mainContentPlaceHolder control.
         /// </summary>
         /// <remarks>
@@ -65,15 +74,6 @@ namespace RmsAuto.Store.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder _mainContentPlaceHolder;
-        
-        /// <summary>
-        /// _rightContentPlaceHolder control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder _rightContentPlaceHolder;
         
         /// <summary>
         /// _leftContentPlaceHolder control.

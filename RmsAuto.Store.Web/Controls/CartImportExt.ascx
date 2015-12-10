@@ -577,7 +577,7 @@
         <p class="buttons">
             <asp:LinkButton ID="LinkButton1" runat="server" CssClass="button" CommandName="SwitchViewByID" CommandArgument="_viewLoad"><asp:Literal ID="lReload2" runat="server" Text="<%$ Resources:CartImport, Reload %>" /></asp:LinkButton> 
 <%--            <asp:LinkButton ID="lbAddToCart" CssClass="button" runat="server" OnClick="lbAddToCart_Click"><asp:Literal ID="lLoadToCart" runat="server" Text="<%$ Resources:CartImport, UploadToCart %>" /></asp:LinkButton> --%>
-            <a id="addToCart" href="#" class="button"><asp:Literal ID="Literal1" runat="server" Text="<%$ Resources:CartImport, UploadToCart %>" /></a>
+            <a id="addToCart" href="#" class="btn btn-success"><asp:Literal ID="Literal1" runat="server" Text="<%$ Resources:CartImport, UploadToCart %>" /></a>
             <input id="sendOKToEmail" type="checkbox" /><label for="sendOKToEmail"><asp:Literal Text="<%$ Resources:CartImport, SendUploadedOrderToEmail %>" runat="server" /></label>
             <input id="sendErrorToEmail" type="checkbox" /><label for="sendErrorToEmail"><asp:Literal Text="<%$ Resources:CartImport, SendListErrorToEmail %>" runat="server" /></label>
         </p>

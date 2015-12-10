@@ -214,7 +214,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Всего товаров:.
+        ///   Looks up a localized string similar to Всего:.
         /// </summary>
         internal static string AllParts {
             get {
@@ -1492,6 +1492,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ИД клинта.
+        /// </summary>
+        internal static string IdentityText {
+            get {
+                return ResourceManager.GetString("IdentityText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Информация.
         /// </summary>
         internal static string Info {
@@ -1987,7 +1996,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to на сумму.
+        ///   Looks up a localized string similar to на .
         /// </summary>
         internal static string OnSumm {
             get {

@@ -335,7 +335,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TECDOC_TOF_MODELS")]
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TOF_MODELS")]
 	public partial class Model : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
@@ -635,7 +635,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TECDOC_TOF_MANUFACTURERS")]
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TOF_MANUFACTURERS")]
 	public partial class Manufacturer : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
@@ -643,15 +643,15 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		
 		private int _ID;
 		
-		private System.Nullable<bool> _IsCarManufacturer;
+		private System.Nullable<int> _IsCarManufacturer;
 		
-		private System.Nullable<bool> _IsTruckManufacturer;
+		private System.Nullable<int> _IsTruckManufacturer;
 		
-		private System.Nullable<short> _MFA_AXL_MFC;
+		private System.Nullable<int> _MFA_AXL_MFC;
 		
-		private System.Nullable<short> _MFA_ENG_MFC;
+		private System.Nullable<int> _MFA_ENG_MFC;
 		
-		private System.Nullable<short> _MFA_ENG_TYP;
+		private System.Nullable<int> _MFA_ENG_TYP;
 		
 		private string _MFA_MFC_CODE;
 		
@@ -669,15 +669,15 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnIsCarManufacturerChanging(System.Nullable<bool> value);
+    partial void OnIsCarManufacturerChanging(System.Nullable<int> value);
     partial void OnIsCarManufacturerChanged();
-    partial void OnIsTruckManufacturerChanging(System.Nullable<bool> value);
+    partial void OnIsTruckManufacturerChanging(System.Nullable<int> value);
     partial void OnIsTruckManufacturerChanged();
-    partial void OnMFA_AXL_MFCChanging(System.Nullable<short> value);
+    partial void OnMFA_AXL_MFCChanging(System.Nullable<int> value);
     partial void OnMFA_AXL_MFCChanged();
-    partial void OnMFA_ENG_MFCChanging(System.Nullable<short> value);
+    partial void OnMFA_ENG_MFCChanging(System.Nullable<int> value);
     partial void OnMFA_ENG_MFCChanged();
-    partial void OnMFA_ENG_TYPChanging(System.Nullable<short> value);
+    partial void OnMFA_ENG_TYPChanging(System.Nullable<int> value);
     partial void OnMFA_ENG_TYPChanged();
     partial void OnMFA_MFC_CODEChanging(string value);
     partial void OnMFA_MFC_CODEChanged();
@@ -694,7 +694,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="MFA_ID", Storage="_ID", DbType="SmallInt NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="MFA_ID", Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int ID
 		{
 			get
@@ -714,8 +714,8 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="MFA_PC_MFC", Storage="_IsCarManufacturer", DbType="Bit")]
-		public System.Nullable<bool> IsCarManufacturer
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="MFA_PC_MFC", Storage="_IsCarManufacturer", DbType="SmallInt")]
+		public System.Nullable<int> IsCarManufacturer
 		{
 			get
 			{
@@ -734,8 +734,8 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="MFA_CV_MFC", Storage="_IsTruckManufacturer", DbType="Bit")]
-		public System.Nullable<bool> IsTruckManufacturer
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="MFA_CV_MFC", Storage="_IsTruckManufacturer", DbType="SmallInt")]
+		public System.Nullable<int> IsTruckManufacturer
 		{
 			get
 			{
@@ -755,7 +755,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MFA_AXL_MFC", DbType="SmallInt")]
-		public System.Nullable<short> MFA_AXL_MFC
+		public System.Nullable<int> MFA_AXL_MFC
 		{
 			get
 			{
@@ -775,7 +775,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MFA_ENG_MFC", DbType="SmallInt")]
-		public System.Nullable<short> MFA_ENG_MFC
+		public System.Nullable<int> MFA_ENG_MFC
 		{
 			get
 			{
@@ -795,7 +795,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MFA_ENG_TYP", DbType="SmallInt")]
-		public System.Nullable<short> MFA_ENG_TYP
+		public System.Nullable<int> MFA_ENG_TYP
 		{
 			get
 			{
@@ -814,7 +814,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MFA_MFC_CODE", DbType="VarChar(30)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MFA_MFC_CODE", DbType="VarChar(10)")]
 		public string MFA_MFC_CODE
 		{
 			get
@@ -834,7 +834,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="MFA_BRAND", Storage="_Name", DbType="VarChar(60)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="MFA_BRAND", Storage="_Name", DbType="VarChar(20)")]
 		public string Name
 		{
 			get
@@ -958,13 +958,13 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TECDOC_TOF_COUNTRIES")]
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TOF_COUNTRIES")]
 	public partial class Country : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private short _COU_ID;
+		private int _COU_ID;
 		
 		private string _COU_CC;
 		
@@ -974,7 +974,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		
 		private string _COU_ISO2;
 		
-		private short _COU_IS_GROUP;
+		private int _COU_IS_GROUP;
 		
 		private EntitySet<Supplier> _Suppliers;
 		
@@ -984,7 +984,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnCOU_IDChanging(short value);
+    partial void OnCOU_IDChanging(int value);
     partial void OnCOU_IDChanged();
     partial void OnCOU_CCChanging(string value);
     partial void OnCOU_CCChanged();
@@ -994,7 +994,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
     partial void OnCOU_CURRENCY_CODEChanged();
     partial void OnCOU_ISO2Changing(string value);
     partial void OnCOU_ISO2Changed();
-    partial void OnCOU_IS_GROUPChanging(short value);
+    partial void OnCOU_IS_GROUPChanging(int value);
     partial void OnCOU_IS_GROUPChanged();
     #endregion
 		
@@ -1006,7 +1006,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_COU_ID", DbType="SmallInt NOT NULL", IsPrimaryKey=true)]
-		public short COU_ID
+		public int COU_ID
 		{
 			get
 			{
@@ -1110,7 +1110,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_COU_IS_GROUP", DbType="SmallInt NOT NULL")]
-		public short COU_IS_GROUP
+		public int COU_IS_GROUP
 		{
 			get
 			{
@@ -1199,15 +1199,15 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private short _ID;
+		private int _ID;
 		
 		private string _Name;
 		
-		private System.Nullable<short> _SUP_SUPPLIER_NR;
+		private System.Nullable<int> _SUP_SUPPLIER_NR;
 		
-		private System.Nullable<short> _SUP_COU_ID;
+		private System.Nullable<int> _SUP_COU_ID;
 		
-		private System.Nullable<short> _SUP_IS_HESS;
+		private System.Nullable<int> _SUP_IS_HESS;
 		
 		private EntitySet<Article> _Articles;
 		
@@ -1217,15 +1217,15 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIDChanging(short value);
+    partial void OnIDChanging(int value);
     partial void OnIDChanged();
     partial void OnNameChanging(string value);
     partial void OnNameChanged();
-    partial void OnSUP_SUPPLIER_NRChanging(System.Nullable<short> value);
+    partial void OnSUP_SUPPLIER_NRChanging(System.Nullable<int> value);
     partial void OnSUP_SUPPLIER_NRChanged();
-    partial void OnSUP_COU_IDChanging(System.Nullable<short> value);
+    partial void OnSUP_COU_IDChanging(System.Nullable<int> value);
     partial void OnSUP_COU_IDChanged();
-    partial void OnSUP_IS_HESSChanging(System.Nullable<short> value);
+    partial void OnSUP_IS_HESSChanging(System.Nullable<int> value);
     partial void OnSUP_IS_HESSChanged();
     #endregion
 		
@@ -1236,8 +1236,8 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="SUP_ID", Storage="_ID", DbType="SmallInt NOT NULL", IsPrimaryKey=true)]
-		public short ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="SUP_ID", Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID
 		{
 			get
 			{
@@ -1256,7 +1256,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="SUP_BRAND", Storage="_Name", DbType="VarChar(60)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="SUP_BRAND", Storage="_Name", DbType="VarChar(20)")]
 		public string Name
 		{
 			get
@@ -1276,8 +1276,8 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SUP_SUPPLIER_NR", DbType="SmallInt")]
-		public System.Nullable<short> SUP_SUPPLIER_NR
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SUP_SUPPLIER_NR", DbType="Int")]
+		public System.Nullable<int> SUP_SUPPLIER_NR
 		{
 			get
 			{
@@ -1296,8 +1296,8 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SUP_COU_ID", DbType="SmallInt")]
-		public System.Nullable<short> SUP_COU_ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SUP_COU_ID", DbType="Int")]
+		public System.Nullable<int> SUP_COU_ID
 		{
 			get
 			{
@@ -1320,8 +1320,8 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SUP_IS_HESS", DbType="SmallInt")]
-		public System.Nullable<short> SUP_IS_HESS
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SUP_IS_HESS", DbType="Int")]
+		public System.Nullable<int> SUP_IS_HESS
 		{
 			get
 			{
@@ -1380,7 +1380,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 					}
 					else
 					{
-						this._SUP_COU_ID = default(Nullable<short>);
+						this._SUP_COU_ID = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Country");
 				}
@@ -1430,19 +1430,19 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		
 		private string _ART_ARTICLE_NR;
 		
-		private System.Nullable<short> _SupplierID;
+		private System.Nullable<int> _SupplierID;
 		
 		private System.Nullable<int> _ART_DES_ID;
 		
 		private System.Nullable<int> _ART_COMPLETE_DES_ID;
 		
-		private System.Nullable<short> _ART_PACK_SELFSERVICE;
+		private System.Nullable<int> _ART_PACK_SELFSERVICE;
 		
-		private System.Nullable<short> _ART_MATERIAL_MARK;
+		private System.Nullable<int> _ART_MATERIAL_MARK;
 		
-		private System.Nullable<short> _ART_REPLACEMENT;
+		private System.Nullable<int> _ART_REPLACEMENT;
 		
-		private System.Nullable<short> _ART_ACCESSORY;
+		private System.Nullable<int> _ART_ACCESSORY;
 		
 		private System.Nullable<int> _ART_BATCH_SIZE1;
 		
@@ -1468,19 +1468,19 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
     partial void OnIDChanged();
     partial void OnArticleNumberChanging(string value);
     partial void OnArticleNumberChanged();
-    partial void OnSupplierIDChanging(System.Nullable<short> value);
+    partial void OnSupplierIDChanging(System.Nullable<int> value);
     partial void OnSupplierIDChanged();
     partial void OnART_DES_IDChanging(System.Nullable<int> value);
     partial void OnART_DES_IDChanged();
     partial void OnART_COMPLETE_DES_IDChanging(System.Nullable<int> value);
     partial void OnART_COMPLETE_DES_IDChanged();
-    partial void OnART_PACK_SELFSERVICEChanging(System.Nullable<short> value);
+    partial void OnART_PACK_SELFSERVICEChanging(System.Nullable<int> value);
     partial void OnART_PACK_SELFSERVICEChanged();
-    partial void OnART_MATERIAL_MARKChanging(System.Nullable<short> value);
+    partial void OnART_MATERIAL_MARKChanging(System.Nullable<int> value);
     partial void OnART_MATERIAL_MARKChanged();
-    partial void OnART_REPLACEMENTChanging(System.Nullable<short> value);
+    partial void OnART_REPLACEMENTChanging(System.Nullable<int> value);
     partial void OnART_REPLACEMENTChanged();
-    partial void OnART_ACCESSORYChanging(System.Nullable<short> value);
+    partial void OnART_ACCESSORYChanging(System.Nullable<int> value);
     partial void OnART_ACCESSORYChanged();
     partial void OnART_BATCH_SIZE1Changing(System.Nullable<int> value);
     partial void OnART_BATCH_SIZE1Changed();
@@ -1540,7 +1540,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="ART_SUP_ID", Storage="_SupplierID", DbType="SmallInt")]
-		public System.Nullable<short> SupplierID
+		public System.Nullable<int> SupplierID
 		{
 			get
 			{
@@ -1608,7 +1608,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ART_PACK_SELFSERVICE", DbType="SmallInt")]
-		public System.Nullable<short> ART_PACK_SELFSERVICE
+		public System.Nullable<int> ART_PACK_SELFSERVICE
 		{
 			get
 			{
@@ -1628,7 +1628,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ART_MATERIAL_MARK", DbType="SmallInt")]
-		public System.Nullable<short> ART_MATERIAL_MARK
+		public System.Nullable<int> ART_MATERIAL_MARK
 		{
 			get
 			{
@@ -1648,7 +1648,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ART_REPLACEMENT", DbType="SmallInt")]
-		public System.Nullable<short> ART_REPLACEMENT
+		public System.Nullable<int> ART_REPLACEMENT
 		{
 			get
 			{
@@ -1668,7 +1668,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ART_ACCESSORY", DbType="SmallInt")]
-		public System.Nullable<short> ART_ACCESSORY
+		public System.Nullable<int> ART_ACCESSORY
 		{
 			get
 			{
@@ -1793,7 +1793,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 					}
 					else
 					{
-						this._SupplierID = default(Nullable<short>);
+						this._SupplierID = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Supplier");
 				}
@@ -1893,7 +1893,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TECDOC_TOF_GENERIC_ARTICLES")]
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TOF_GENERIC_ARTICLES")]
 	public partial class GenericArticle : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
@@ -1901,7 +1901,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		
 		private int _ID;
 		
-		private System.Nullable<short> _GA_NR;
+		private System.Nullable<int> _GA_NR;
 		
 		private int _GA_DES_ID;
 		
@@ -1911,7 +1911,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		
 		private System.Nullable<int> _GA_DES_ID_INTENDED;
 		
-		private System.Nullable<short> _GA_UNIVERSAL;
+		private System.Nullable<int> _GA_UNIVERSAL;
 		
 		private EntitySet<ArticleLink> _ArticleLinks;
 		
@@ -1923,7 +1923,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnGA_NRChanging(System.Nullable<short> value);
+    partial void OnGA_NRChanging(System.Nullable<int> value);
     partial void OnGA_NRChanged();
     partial void OnGA_DES_IDChanging(int value);
     partial void OnGA_DES_IDChanged();
@@ -1933,7 +1933,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
     partial void OnGA_DES_ID_ASSEMBLYChanged();
     partial void OnGA_DES_ID_INTENDEDChanging(System.Nullable<int> value);
     partial void OnGA_DES_ID_INTENDEDChanged();
-    partial void OnGA_UNIVERSALChanging(System.Nullable<short> value);
+    partial void OnGA_UNIVERSALChanging(System.Nullable<int> value);
     partial void OnGA_UNIVERSALChanged();
     #endregion
 		
@@ -1965,7 +1965,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GA_NR", DbType="SmallInt")]
-		public System.Nullable<short> GA_NR
+		public System.Nullable<int> GA_NR
 		{
 			get
 			{
@@ -2065,7 +2065,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GA_UNIVERSAL", DbType="SmallInt")]
-		public System.Nullable<short> GA_UNIVERSAL
+		public System.Nullable<int> GA_UNIVERSAL
 		{
 			get
 			{
@@ -2399,11 +2399,11 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TECDOC_TOF_STR_LOOKUP")]
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TOF_STR_LOOKUP")]
 	public partial class SearchLookup
 	{
 		
-		private short _LanguageId;
+		private int _LanguageId;
 		
 		private string _SearchText;
 		
@@ -2416,7 +2416,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="STL_LNG_ID", Storage="_LanguageId", DbType="SmallInt NOT NULL")]
-		public short LanguageId
+		public int LanguageId
 		{
 			get
 			{
@@ -2480,7 +2480,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TECDOC_TOF_SEARCH_TREE")]
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TOF_SEARCH_TREE")]
 	public partial class SearchTreeNode : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
@@ -2490,13 +2490,13 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		
 		private System.Nullable<int> _ParentNodeID;
 		
-		private System.Nullable<short> _STR_TYPE;
+		private System.Nullable<int> _STR_TYPE;
 		
-		private System.Nullable<short> _STR_LEVEL;
+		private System.Nullable<int> _STR_LEVEL;
 		
 		private System.Nullable<int> _STR_DES_ID;
 		
-		private System.Nullable<short> _STR_SORT;
+		private System.Nullable<int> _STR_SORT;
 		
 		private System.Nullable<int> _STR_NODE_NR;
 		
@@ -2518,13 +2518,13 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
     partial void OnIDChanged();
     partial void OnParentNodeIDChanging(System.Nullable<int> value);
     partial void OnParentNodeIDChanged();
-    partial void OnSTR_TYPEChanging(System.Nullable<short> value);
+    partial void OnSTR_TYPEChanging(System.Nullable<int> value);
     partial void OnSTR_TYPEChanged();
-    partial void OnSTR_LEVELChanging(System.Nullable<short> value);
+    partial void OnSTR_LEVELChanging(System.Nullable<int> value);
     partial void OnSTR_LEVELChanged();
     partial void OnSTR_DES_IDChanging(System.Nullable<int> value);
     partial void OnSTR_DES_IDChanged();
-    partial void OnSTR_SORTChanging(System.Nullable<short> value);
+    partial void OnSTR_SORTChanging(System.Nullable<int> value);
     partial void OnSTR_SORTChanged();
     partial void OnSTR_NODE_NRChanging(System.Nullable<int> value);
     partial void OnSTR_NODE_NRChanged();
@@ -2581,7 +2581,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STR_TYPE", DbType="SmallInt")]
-		public System.Nullable<short> STR_TYPE
+		public System.Nullable<int> STR_TYPE
 		{
 			get
 			{
@@ -2601,7 +2601,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STR_LEVEL", DbType="SmallInt")]
-		public System.Nullable<short> STR_LEVEL
+		public System.Nullable<int> STR_LEVEL
 		{
 			get
 			{
@@ -2645,7 +2645,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STR_SORT", DbType="SmallInt")]
-		public System.Nullable<short> STR_SORT
+		public System.Nullable<int> STR_SORT
 		{
 			get
 			{
@@ -2832,7 +2832,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TECDOC_TOF_STR_FAMILY_TREE")]
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TOF_STR_FAMILY_TREE")]
 	public partial class StrFamilyTree : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
@@ -2976,7 +2976,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TECDOC_TOF_LINK_GA_STR")]
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TOF_LINK_GA_STR")]
 	public partial class GenericArticleToStrLink : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
@@ -3136,7 +3136,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TECDOC_TOF_TYPES")]
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TOF_TYPES")]
 	public partial class CarType : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
@@ -3166,11 +3166,11 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		
 		private System.Nullable<int> _TYP_CCM;
 		
-		private System.Nullable<short> _TYP_CYLINDERS;
+		private System.Nullable<int> _TYP_CYLINDERS;
 		
-		private System.Nullable<short> _TYP_DOORS;
+		private System.Nullable<int> _TYP_DOORS;
 		
-		private System.Nullable<short> _TYP_TANK;
+		private System.Nullable<int> _TYP_TANK;
 		
 		private System.Nullable<int> _TYP_KV_VOLTAGE_DES_ID;
 		
@@ -3210,11 +3210,11 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		
 		private System.Nullable<int> _TYP_KV_FUEL_SUPPLY_DES_ID;
 		
-		private System.Nullable<short> _TYP_VALVES;
+		private System.Nullable<int> _TYP_VALVES;
 		
-		private string _TYP_CTM;
+		private byte[] _TYP_CTM;
 		
-		private string _TYP_LA_CTM;
+		private byte[] _TYP_LA_CTM;
 		
 		private EntitySet<ArticleLinkToCarTypeLink> _ArticleLinkToCarTypeLinks;
 		
@@ -3260,11 +3260,11 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
     partial void OnTYP_HP_UPTOChanged();
     partial void OnEngineVolumeChanging(System.Nullable<int> value);
     partial void OnEngineVolumeChanged();
-    partial void OnTYP_CYLINDERSChanging(System.Nullable<short> value);
+    partial void OnTYP_CYLINDERSChanging(System.Nullable<int> value);
     partial void OnTYP_CYLINDERSChanged();
-    partial void OnTYP_DOORSChanging(System.Nullable<short> value);
+    partial void OnTYP_DOORSChanging(System.Nullable<int> value);
     partial void OnTYP_DOORSChanged();
-    partial void OnTYP_TANKChanging(System.Nullable<short> value);
+    partial void OnTYP_TANKChanging(System.Nullable<int> value);
     partial void OnTYP_TANKChanged();
     partial void OnTYP_KV_VOLTAGE_DES_IDChanging(System.Nullable<int> value);
     partial void OnTYP_KV_VOLTAGE_DES_IDChanged();
@@ -3304,11 +3304,11 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
     partial void OnTYP_KV_TRANS_DES_IDChanged();
     partial void OnTYP_KV_FUEL_SUPPLY_DES_IDChanging(System.Nullable<int> value);
     partial void OnTYP_KV_FUEL_SUPPLY_DES_IDChanged();
-    partial void OnTYP_VALVESChanging(System.Nullable<short> value);
+    partial void OnTYP_VALVESChanging(System.Nullable<int> value);
     partial void OnTYP_VALVESChanged();
-    partial void OnTYP_CTMChanging(string value);
+    partial void OnTYP_CTMChanging(byte[] value);
     partial void OnTYP_CTMChanged();
-    partial void OnTYP_LA_CTMChanging(string value);
+    partial void OnTYP_LA_CTMChanging(byte[] value);
     partial void OnTYP_LA_CTMChanged();
     #endregion
 		
@@ -3578,7 +3578,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TYP_CYLINDERS", DbType="SmallInt")]
-		public System.Nullable<short> TYP_CYLINDERS
+		public System.Nullable<int> TYP_CYLINDERS
 		{
 			get
 			{
@@ -3598,7 +3598,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TYP_DOORS", DbType="SmallInt")]
-		public System.Nullable<short> TYP_DOORS
+		public System.Nullable<int> TYP_DOORS
 		{
 			get
 			{
@@ -3618,7 +3618,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TYP_TANK", DbType="SmallInt")]
-		public System.Nullable<short> TYP_TANK
+		public System.Nullable<int> TYP_TANK
 		{
 			get
 			{
@@ -4034,7 +4034,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TYP_VALVES", DbType="SmallInt")]
-		public System.Nullable<short> TYP_VALVES
+		public System.Nullable<int> TYP_VALVES
 		{
 			get
 			{
@@ -4053,8 +4053,8 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TYP_CTM", DbType="VarChar(250)")]
-		public string TYP_CTM
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TYP_CTM", DbType="Binary(32)")]
+		public byte[] TYP_CTM
 		{
 			get
 			{
@@ -4073,8 +4073,8 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TYP_LA_CTM", DbType="VarChar(250)")]
-		public string TYP_LA_CTM
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TYP_LA_CTM", DbType="Binary(32)")]
+		public byte[] TYP_LA_CTM
 		{
 			get
 			{
@@ -4293,7 +4293,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		
 		private int _GenericArticleID;
 		
-		private System.Nullable<short> _SupplierID;
+		private System.Nullable<int> _SupplierID;
 		
 		private int _LAT_SORT;
 		
@@ -4315,7 +4315,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
     partial void OnArticleLinkIDChanged();
     partial void OnGenericArticleIDChanging(int value);
     partial void OnGenericArticleIDChanged();
-    partial void OnSupplierIDChanging(System.Nullable<short> value);
+    partial void OnSupplierIDChanging(System.Nullable<int> value);
     partial void OnSupplierIDChanged();
     partial void OnLAT_SORTChanging(int value);
     partial void OnLAT_SORTChanged();
@@ -4391,7 +4391,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="LAT_SUP_ID", Storage="_SupplierID", DbType="SmallInt")]
-		public System.Nullable<short> SupplierID
+		public System.Nullable<int> SupplierID
 		{
 			get
 			{
@@ -4555,7 +4555,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TECDOC_TOF_LINK_GRA_ART")]
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TOF_LINK_GRA_ART")]
 	public partial class GraphicsToArticleLink : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
@@ -4563,7 +4563,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		
 		private int _ArticleId;
 		
-		private short _LGA_SORT;
+		private int _LGA_SORT;
 		
 		private string _GraphicsId;
 		
@@ -4577,7 +4577,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
     partial void OnCreated();
     partial void OnLGA_ART_IDChanging(int value);
     partial void OnLGA_ART_IDChanged();
-    partial void OnLGA_SORTChanging(short value);
+    partial void OnLGA_SORTChanging(int value);
     partial void OnLGA_SORTChanged();
     partial void OnLGA_GRA_IDChanging(string value);
     partial void OnLGA_GRA_IDChanged();
@@ -4615,7 +4615,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LGA_SORT", DbType="SmallInt NOT NULL")]
-		public short LGA_SORT
+		public int LGA_SORT
 		{
 			get
 			{
@@ -4849,7 +4849,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TECDOC_TOF_ART_LOOKUP")]
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TOF_ART_LOOKUP")]
 	public partial class ArticleLookup : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
@@ -4861,13 +4861,13 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		
 		private System.Nullable<char> _Type;
 		
-		private System.Nullable<short> _ARL_BRA_ID;
+		private System.Nullable<int> _ARL_BRA_ID;
 		
 		private string _PartNumber;
 		
-		private System.Nullable<short> _ARL_BLOCK;
+		private System.Nullable<int> _ARL_BLOCK;
 		
-		private System.Nullable<short> _ARL_SORT;
+		private System.Nullable<int> _ARL_SORT;
 		
 		private EntityRef<Article> _Article;
 		
@@ -4883,13 +4883,13 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
     partial void OnSearchNumberChanged();
     partial void OnARL_KINDChanging(System.Nullable<char> value);
     partial void OnARL_KINDChanged();
-    partial void OnARL_BRA_IDChanging(System.Nullable<short> value);
+    partial void OnARL_BRA_IDChanging(System.Nullable<int> value);
     partial void OnARL_BRA_IDChanged();
     partial void OnDisplayNumberChanging(string value);
     partial void OnDisplayNumberChanged();
-    partial void OnARL_BLOCKChanging(System.Nullable<short> value);
+    partial void OnARL_BLOCKChanging(System.Nullable<int> value);
     partial void OnARL_BLOCKChanged();
-    partial void OnARL_SORTChanging(System.Nullable<short> value);
+    partial void OnARL_SORTChanging(System.Nullable<int> value);
     partial void OnARL_SORTChanged();
     #endregion
 		
@@ -4965,7 +4965,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ARL_BRA_ID", DbType="SmallInt")]
-		public System.Nullable<short> ARL_BRA_ID
+		public System.Nullable<int> ARL_BRA_ID
 		{
 			get
 			{
@@ -5009,7 +5009,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ARL_BLOCK", DbType="SmallInt")]
-		public System.Nullable<short> ARL_BLOCK
+		public System.Nullable<int> ARL_BLOCK
 		{
 			get
 			{
@@ -5029,7 +5029,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ARL_SORT", DbType="SmallInt")]
-		public System.Nullable<short> ARL_SORT
+		public System.Nullable<int> ARL_SORT
 		{
 			get
 			{
@@ -5121,13 +5121,13 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TECDOC_TOF_BRANDS")]
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TOF_BRANDS")]
 	public partial class Brand : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private short _ID;
+		private int _ID;
 		
 		private string _Code;
 		
@@ -5141,7 +5141,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIDChanging(short value);
+    partial void OnIDChanging(int value);
     partial void OnIDChanged();
     partial void OnCodeChanging(string value);
     partial void OnCodeChanged();
@@ -5157,8 +5157,8 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="BRA_ID", Storage="_ID", DbType="SmallInt NOT NULL", IsPrimaryKey=true)]
-		public short ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="BRA_ID", Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID
 		{
 			get
 			{
@@ -5177,7 +5177,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="BRA_MFC_CODE", Storage="_Code", DbType="VarChar(60)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="BRA_MFC_CODE", Storage="_Code", DbType="VarChar(10)")]
 		public string Code
 		{
 			get
@@ -5197,7 +5197,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="BRA_BRAND", Storage="_Name", DbType="VarChar(60)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="BRA_BRAND", Storage="_Name", DbType="VarChar(20)")]
 		public string Name
 		{
 			get
@@ -5455,13 +5455,13 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TECDOC_TOF_CRITERIA")]
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TOF_CRITERIA")]
 	public partial class ArticleCriterion : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private short _CRI_ID;
+		private int _CRI_ID;
 		
 		private int _CRI_DES_ID;
 		
@@ -5471,11 +5471,11 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		
 		private char _CRI_TYPE;
 		
-		private System.Nullable<short> _CRI_KT_ID;
+		private System.Nullable<int> _CRI_KT_ID;
 		
-		private System.Nullable<short> _CRI_IS_INTERVAL;
+		private System.Nullable<int> _CRI_IS_INTERVAL;
 		
-		private System.Nullable<short> _CRI_SUCCESSOR;
+		private System.Nullable<int> _CRI_SUCCESSOR;
 		
 		private EntitySet<ArticleCriterionLink> _ArticleCriterionLinks;
 		
@@ -5489,7 +5489,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnCRI_IDChanging(short value);
+    partial void OnCRI_IDChanging(int value);
     partial void OnCRI_IDChanged();
     partial void OnCRI_DES_IDChanging(int value);
     partial void OnCRI_DES_IDChanged();
@@ -5499,11 +5499,11 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
     partial void OnCRI_UNIT_DES_IDChanged();
     partial void OnCRI_TYPEChanging(char value);
     partial void OnCRI_TYPEChanged();
-    partial void OnCRI_KT_IDChanging(System.Nullable<short> value);
+    partial void OnCRI_KT_IDChanging(System.Nullable<int> value);
     partial void OnCRI_KT_IDChanged();
-    partial void OnCRI_IS_INTERVALChanging(System.Nullable<short> value);
+    partial void OnCRI_IS_INTERVALChanging(System.Nullable<int> value);
     partial void OnCRI_IS_INTERVALChanged();
-    partial void OnCRI_SUCCESSORChanging(System.Nullable<short> value);
+    partial void OnCRI_SUCCESSORChanging(System.Nullable<int> value);
     partial void OnCRI_SUCCESSORChanged();
     #endregion
 		
@@ -5517,7 +5517,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRI_ID", DbType="SmallInt NOT NULL", IsPrimaryKey=true)]
-		public short CRI_ID
+		public int CRI_ID
 		{
 			get
 			{
@@ -5629,7 +5629,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRI_KT_ID", DbType="SmallInt")]
-		public System.Nullable<short> CRI_KT_ID
+		public System.Nullable<int> CRI_KT_ID
 		{
 			get
 			{
@@ -5649,7 +5649,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRI_IS_INTERVAL", DbType="SmallInt")]
-		public System.Nullable<short> CRI_IS_INTERVAL
+		public System.Nullable<int> CRI_IS_INTERVAL
 		{
 			get
 			{
@@ -5669,7 +5669,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRI_SUCCESSOR", DbType="SmallInt")]
-		public System.Nullable<short> CRI_SUCCESSOR
+		public System.Nullable<int> CRI_SUCCESSOR
 		{
 			get
 			{
@@ -5798,15 +5798,15 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		
 		private int _ACR_GA_ID;
 		
-		private short _ACR_SORT;
+		private int _ACR_SORT;
 		
-		private short _ACR_CRI_ID;
+		private int _ACR_CRI_ID;
 		
 		private string _ACR_VALUE;
 		
 		private System.Nullable<int> _ACR_KV_DES_ID;
 		
-		private System.Nullable<short> _ACR_DISPLAY;
+		private System.Nullable<int> _ACR_DISPLAY;
 		
 		private EntityRef<ArticleCriterion> _ArticleCriterion;
 		
@@ -5820,15 +5820,15 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
     partial void OnACR_ART_IDChanged();
     partial void OnACR_GA_IDChanging(int value);
     partial void OnACR_GA_IDChanged();
-    partial void OnACR_SORTChanging(short value);
+    partial void OnACR_SORTChanging(int value);
     partial void OnACR_SORTChanged();
-    partial void OnACR_CRI_IDChanging(short value);
+    partial void OnACR_CRI_IDChanging(int value);
     partial void OnACR_CRI_IDChanged();
     partial void OnValueIfNumericChanging(string value);
     partial void OnValueIfNumericChanged();
     partial void OnACR_KV_DES_IDChanging(System.Nullable<int> value);
     partial void OnACR_KV_DES_IDChanged();
-    partial void OnACR_DISPLAYChanging(System.Nullable<short> value);
+    partial void OnACR_DISPLAYChanging(System.Nullable<int> value);
     partial void OnACR_DISPLAYChanged();
     #endregion
 		
@@ -5880,7 +5880,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ACR_SORT", DbType="SmallInt NOT NULL")]
-		public short ACR_SORT
+		public int ACR_SORT
 		{
 			get
 			{
@@ -5900,7 +5900,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ACR_CRI_ID", DbType="SmallInt NOT NULL", IsPrimaryKey=true)]
-		public short ACR_CRI_ID
+		public int ACR_CRI_ID
 		{
 			get
 			{
@@ -5968,7 +5968,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ACR_DISPLAY", DbType="SmallInt")]
-		public System.Nullable<short> ACR_DISPLAY
+		public System.Nullable<int> ACR_DISPLAY
 		{
 			get
 			{
@@ -6014,7 +6014,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 					}
 					else
 					{
-						this._ACR_CRI_ID = default(short);
+						this._ACR_CRI_ID = default(int);
 					}
 					this.SendPropertyChanged("ArticleCriterion");
 				}
@@ -6060,7 +6060,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TECDOC_TOF_GRA_DATA")]
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TOF_GRA_DATA")]
 	public partial class GraphicsData : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
@@ -6105,7 +6105,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GRD_GRAPHIC", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GRD_GRAPHIC", DbType="Image", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary GRD_GRAPHIC
 		{
 			get
@@ -6146,29 +6146,29 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TECDOC_TOF_GRAPHICS")]
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TOF_GRAPHICS")]
 	public partial class Graphics : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private System.Nullable<short> _GRA_SUP_ID;
+		private System.Nullable<int> _GRA_SUP_ID;
 		
 		private string _ID;
 		
 		private byte _GRA_DOC_TYPE;
 		
-		private short _GRA_LNG_ID;
+		private int _GRA_LNG_ID;
 		
 		private System.Nullable<int> _GRA_GRD_ID;
 		
-		private System.Nullable<short> _GRA_TYPE;
+		private System.Nullable<int> _GRA_TYPE;
 		
 		private string _GRA_NORM;
 		
-		private System.Nullable<short> _GRA_SUPPLIER_NR;
+		private System.Nullable<int> _GRA_SUPPLIER_NR;
 		
-		private System.Nullable<short> _GRA_TAB_NR;
+		private System.Nullable<int> _GRA_TAB_NR;
 		
 		private System.Nullable<int> _GRA_DES_ID;
 		
@@ -6180,23 +6180,23 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnGRA_SUP_IDChanging(System.Nullable<short> value);
+    partial void OnGRA_SUP_IDChanging(System.Nullable<int> value);
     partial void OnGRA_SUP_IDChanged();
     partial void OnIDChanging(string value);
     partial void OnIDChanged();
     partial void OnGRA_DOC_TYPEChanging(byte value);
     partial void OnGRA_DOC_TYPEChanged();
-    partial void OnGRA_LNG_IDChanging(short value);
+    partial void OnGRA_LNG_IDChanging(int value);
     partial void OnGRA_LNG_IDChanged();
     partial void OnGRA_GRD_IDChanging(System.Nullable<int> value);
     partial void OnGRA_GRD_IDChanged();
-    partial void OnGRA_TYPEChanging(System.Nullable<short> value);
+    partial void OnGRA_TYPEChanging(System.Nullable<int> value);
     partial void OnGRA_TYPEChanged();
     partial void OnGRA_NORMChanging(string value);
     partial void OnGRA_NORMChanged();
-    partial void OnGRA_SUPPLIER_NRChanging(System.Nullable<short> value);
+    partial void OnGRA_SUPPLIER_NRChanging(System.Nullable<int> value);
     partial void OnGRA_SUPPLIER_NRChanged();
-    partial void OnGRA_TAB_NRChanging(System.Nullable<short> value);
+    partial void OnGRA_TAB_NRChanging(System.Nullable<int> value);
     partial void OnGRA_TAB_NRChanged();
     partial void OnGRA_DES_IDChanging(System.Nullable<int> value);
     partial void OnGRA_DES_IDChanged();
@@ -6210,7 +6210,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GRA_SUP_ID", DbType="SmallInt")]
-		public System.Nullable<short> GRA_SUP_ID
+		public System.Nullable<int> GRA_SUP_ID
 		{
 			get
 			{
@@ -6274,7 +6274,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GRA_LNG_ID", DbType="SmallInt NOT NULL", IsPrimaryKey=true)]
-		public short GRA_LNG_ID
+		public int GRA_LNG_ID
 		{
 			get
 			{
@@ -6318,7 +6318,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GRA_TYPE", DbType="SmallInt")]
-		public System.Nullable<short> GRA_TYPE
+		public System.Nullable<int> GRA_TYPE
 		{
 			get
 			{
@@ -6358,7 +6358,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GRA_SUPPLIER_NR", DbType="SmallInt")]
-		public System.Nullable<short> GRA_SUPPLIER_NR
+		public System.Nullable<int> GRA_SUPPLIER_NR
 		{
 			get
 			{
@@ -6378,7 +6378,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GRA_TAB_NR", DbType="SmallInt")]
-		public System.Nullable<short> GRA_TAB_NR
+		public System.Nullable<int> GRA_TAB_NR
 		{
 			get
 			{
@@ -6490,7 +6490,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TECDOC_TOF_DOC_TYPES")]
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TOF_DOC_TYPES")]
 	public partial class DocumentType : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
@@ -6604,7 +6604,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TECDOC_TOF_SUPERSEDED_ARTICLES")]
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TOF_SUPERSEDED_ARTICLES")]
 	public partial class SupersededArticle : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		

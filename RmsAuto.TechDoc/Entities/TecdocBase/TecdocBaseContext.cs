@@ -30,8 +30,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
             //_filterProvider.ApplyFilter(manufacturers, VisibilityFilterType.Country);
 
             var manufacturers1 = (from m in this.Manufacturers
-                                 join cd in this.CountryDeliveries on m.ID equals cd.ManufacturerID
-                                 where (m.IsCarManufacturer == true || m.IsTruckManufacturer == true) && countriesIds.Contains(cd.CountryID)
+                                 where (m.IsCarManufacturer == 1 || m.IsTruckManufacturer == 1)
                                  select m).Distinct().OrderBy(m => m.Name);
 			
 			var manufacturers = manufacturers1.ToList();
@@ -120,11 +119,9 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
             //_filterProvider.ApplyFilter( models, VisibilityFilterType.Country );
 
             var ret = from m in this.Models
-                      join cd in this.CountryDeliveries on m.ID equals cd.ModelID
-                      where (m.MOD_MFA_ID == manufacturerID &&
+                       where (m.MOD_MFA_ID == manufacturerID &&
                              m.IsCarModel == (isCarModel ? 1 : 0) &&
-                             m.MOD_CDS_ID.HasValue) &&
-                             countriesIds.Contains(cd.CountryID)
+                             m.MOD_CDS_ID.HasValue)
                       orderby m.Name.Tex_Text
                       select m;
 
@@ -145,18 +142,18 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 		public Model GetModel( int modelId, bool showAll, IEnumerable<int> countriesIds )
 		{
             int res;
-            if (countriesIds.Count() > 0)
+       /*     if (countriesIds.Count() > 0)
             {
                 res = this.CountryDeliveries.Where(cd => countriesIds.Contains(cd.CountryID) && cd.ModelID == modelId).Count();
             }
             else
             {
                 res = 1;
-            }
+            }*/
 
-            if (res > 0)
+            //if (res > 0)
             {
-                var models = this.Models.Where(m => m.ID == modelId).ToList();
+                var models = this.Models.Where(m => m.MOD_ID == modelId).ToList();
                 if (!showAll)
                 {
                     _filterProvider.ApplyFilter(models, VisibilityFilterType.Model);
@@ -201,9 +198,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
             //_filterProvider.ApplyFilter( ret, VisibilityFilterType.Country );
 
             var ret = (from ct in this.CarTypes
-                       where ct.TYP_MOD_ID == modelID 
-						&& this.CountryDeliveries.Any( cd => cd.TypeID==ct.ID && countriesIds.Contains(cd.CountryID) )
-                       select ct).OrderBy(ct => ct.Name.Tex_Text).ToList();
+                       where ct.TYP_MOD_ID == modelID select ct).OrderBy(ct => ct.Name.Tex_Text).ToList();
 
 			if( !showAll )
 			{
@@ -222,7 +217,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
             //_filterProvider.ApplyFilter( ret, VisibilityFilterType.Country );
             int res;
 
-            if (countriesIds.Count() > 0)
+   /*         if (countriesIds.Count() > 0)
             {
                 res = this.CountryDeliveries.Where(cd => countriesIds.Contains(cd.CountryID) && cd.TypeID == modificationID).Count();
             }
@@ -230,7 +225,7 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
             {
                 res = 1;
             }
-            if (res > 0)
+            if (res > 0)*/
             {
                 var ret = this.CarTypes.Where(ct => ct.ID == modificationID).ToList();
                 if (!showAll)
@@ -313,8 +308,8 @@ namespace RmsAuto.TechDoc.Entities.TecdocBase
 											  where ac.ACR_ART_ID == la.LA_ART_ID
 											  select ac.ACR_CRI_ID ).Any()
 						};
-
-			return res.ToList().Distinct().OrderBy( p => p.Article.Supplier.Name ).ThenBy( p => p.Article.ArticleNumber ).ToList();
+            /*OrderBy( p => p.Article.Supplier.Name )*/
+			return res.ToList().Distinct().OrderBy( p => p.Article.ArticleNumber ).ToList();
 		}
 
 		public IEnumerable<CarType> GetAppliedCars( int artID )

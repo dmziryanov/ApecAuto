@@ -15,7 +15,7 @@
         <tr>
             <td><%# this.PartInfo.Article.Supplier.Name %></td>
             <td><%# this.PartInfo.Article.ArticleNumber %></td>
-            <td><%# this.PartInfo.Article.CompleteName.Text %></td>
+            <td><%# this.PartInfo.Article.CompleteName.Tex_Text %></td>
             <td>
                 <asp:Repeater ID="_rptConsNumebrs" runat="server" DataSource="<%# this.PartInfo.OriginalNumbers %>">
                     <ItemTemplate>

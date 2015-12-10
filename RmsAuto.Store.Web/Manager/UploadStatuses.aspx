@@ -6,7 +6,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="_textContentPlaceHolder" runat="server">
 	<h3>Status upload</h3>
 	<p>
-	<a href='<%= this.GetTemplateUrl() %>' class="button">File upload example</a>
+	<a href='<%= this.GetTemplateUrl() %>' class="btn btn-success">File upload example</a>
 	<br/>
 	<br/>
 	<asp:FileUpload ID="fuMain" runat="server" />&nbsp; 

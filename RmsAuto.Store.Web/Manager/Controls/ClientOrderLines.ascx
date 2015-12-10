@@ -268,7 +268,7 @@ function CheckOrder(strOrderlinesIDS) {
 			ID="_totalLabel" CssClass="price" /><%=global::Resources.Texts.RoubleShort%> </div><div runat="server" id="_pagerSettingsBlock">--%>
 		
 	</div>
-	<a href='#' style="visibility:hidden" id="lbShip" class="button" onclick="return GatherStatuses(this);">Dispatch</a>
+	<a href='#' style="visibility:hidden" id="lbShip" class="btn btn-success" onclick="return GatherStatuses(this);">Dispatch</a>
     <div id="filter" style="margin-top:10px;">
         <h3>Commercial Invoice</h3>
         <div>
@@ -282,7 +282,7 @@ function CheckOrder(strOrderlinesIDS) {
                     <td><asp:TextBox ID="txtCountryOfOrigin1" runat="server" Width="180px" /></td>
                 </tr>
             </table>
-            <asp:LinkButton ID="lbCommercialInvoice" runat="server" class="button" OnClientClick="return GatherStatuses(this);" onclick="lbCommercialInvoice_Click">Commercial Invoice</asp:LinkButton>
+            <asp:LinkButton ID="lbCommercialInvoice" runat="server" class="btn btn-success" OnClientClick="return GatherStatuses(this);" onclick="lbCommercialInvoice_Click">Commercial Invoice</asp:LinkButton>
         </div>
         <h3>Invoice Cum Packing List</h3>
         <div>
@@ -300,7 +300,7 @@ function CheckOrder(strOrderlinesIDS) {
                     <td><asp:TextBox ID="txtTotalWeight" runat="server" Width="80px" /></td>
                 </tr>
             </table>
-            <asp:LinkButton runat="server" ID="lbPackingInvoice" class="button" OnClientClick="return GatherStatuses(this);" onclick="lbPackingInvoice_Click">Invoice Cum Packing List</asp:LinkButton>
+            <asp:LinkButton runat="server" ID="lbPackingInvoice" class="btn btn-success" OnClientClick="return GatherStatuses(this);" onclick="lbPackingInvoice_Click">Invoice Cum Packing List</asp:LinkButton>
         </div>
     </div>
 </div>

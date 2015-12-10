@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BBBold" xml:space="preserve">
     <value>Полужирный</value>
@@ -535,13 +535,13 @@
     <value>Итого на странице</value>
   </data>
   <data name="AllParts" xml:space="preserve">
-    <value>Всего товаров:</value>
+    <value>Всего:</value>
   </data>
   <data name="NoData" xml:space="preserve">
     <value>нет данных</value>
   </data>
   <data name="OnSumm" xml:space="preserve">
-    <value>на сумму</value>
+    <value>на </value>
   </data>
   <data name="OrderBy" xml:space="preserve">
     <value>сортировать по:</value>
@@ -777,6 +777,7 @@
   <data name="Registration" xml:space="preserve">
     <value>Регистрация</value>
   </data>
+  
   <data name="RememberMe" xml:space="preserve">
     <value>запомнить меня</value>
   </data>
@@ -1057,7 +1058,7 @@
     <value>Ваш код региона (последняя колонка в файле)</value>
   </data>
   <data name="UploadSparepartsInfo" xml:space="preserve">
-     <value>
+    <value>
         Файл должен содержать следующие колонки, разделенные табуляцией и иметь расширение csv
         1. Номер строки - целое число;
         2. Идетификатор размера SizeID - целое число (пока для всех 1) ;
@@ -1205,5 +1206,8 @@
   </data>
   <data name="Wholesale" xml:space="preserve">
     <value>Розница</value>
+  </data>
+  <data name="IdentityText" xml:space="preserve">
+    <value>ИД клинта</value>
   </data>
 </root>

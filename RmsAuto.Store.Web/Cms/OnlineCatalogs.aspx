@@ -13,8 +13,6 @@
 
 	<uc3:TecDocManufacturers ID="_tecDocManufacturers" runat="server" />
 	<br />
-	<uc2:ManufacturerList ID="_manufacturerList" runat="server" />
-	
 </asp:Content>
 
 

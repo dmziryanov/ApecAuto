@@ -22,15 +22,6 @@ namespace RmsAuto.Store.Web.Controls {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtPartNumber;
         
         /// <summary>
-        /// partNumberError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl partNumberError;
-        
-        /// <summary>
         /// cbSearchCrosses control.
         /// </summary>
         /// <remarks>
@@ -40,12 +31,12 @@ namespace RmsAuto.Store.Web.Controls {
         protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox cbSearchCrosses;
         
         /// <summary>
-        /// Literal1 control.
+        /// partNumberError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl partNumberError;
     }
 }

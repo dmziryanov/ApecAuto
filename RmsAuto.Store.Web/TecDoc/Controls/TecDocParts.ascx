@@ -31,7 +31,7 @@
 	<ItemTemplate>
 		<tr>
 			<td colspan="4" class="title_name">
-				<%#Server.HtmlEncode((string)Eval("Key.Name"))%>
+				
 			</td>
 		</tr>
 		<asp:Repeater runat="server" ID="_subRepeater" DataSource='<%#Container.DataItem%>'>
@@ -51,7 +51,7 @@
 						<%#Server.HtmlEncode( (string)Eval( "Article.ArticleNumber" ) )%>
 					</td>
 					<td>
-						<%#Server.HtmlEncode( (string)Eval( "Article.CompleteName.Text" ) )%>
+						<%#Server.HtmlEncode( (string)Eval( "Article.CompleteName.Tex_Text" ) )%>
 					</td>
 					<td>
 						<a href="<%#GetSearchResultsUrl((string)Eval("Article.Supplier.Name"), (string)Eval("Article.ArticleNumber") )%>">

@@ -183,7 +183,7 @@
                         <th><asp:Literal ID="Literal2" runat="server" Text="<%$ Resources:RegistrationTexts, RegisterAs %>" /></th>
                         <td><asp:RadioButtonList ID="SellerInfo" runat="server" Required="false">
                                            <asp:ListItem Text="<%$ Resources:RegistrationTexts, Seller %>" Value="1"></asp:ListItem>
-                                           <asp:ListItem Text="<%$ Resources:RegistrationTexts, Customer %>" Value="0"></asp:ListItem>
+                                           <asp:ListItem Selected="True" Text="<%$ Resources:RegistrationTexts, Customer %>" Value="0"></asp:ListItem>
                             </asp:RadioButtonList></td>
                     </tr>
        <%--             <asp:PlaceHolder ID="vregRO_Opt_272" runat="server">

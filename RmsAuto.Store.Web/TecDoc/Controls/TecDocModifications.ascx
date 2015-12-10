@@ -15,7 +15,7 @@
 		<tr>
 			<td>
 				<a href="<%#GetModificationUrl((int)Eval("ID"))%>">
-					<%#Server.HtmlEncode((string)Eval("Name.Text"))%>
+					<%#Server.HtmlEncode((string)Eval("Name.Tex_Text"))%>
 				</a>
 			</td>
 			<td style="text-align: center">
@@ -25,9 +25,9 @@
 				<%#Eval( "TYP_HP_FROM" )%>
 			</td>
 			<td>
-				<%#Eval( "EngineName.Text" )%>
+				<%#Eval( "EngineName.Tex_Text" )%>
 				<br />
-				<%#Eval( "FuelSupplyName.Text" )%>
+				<%#Eval( "FuelSupplyName.Tex_Text" )%>
 			</td>
 			<td>
 				<%#Eval("DateFrom")%>

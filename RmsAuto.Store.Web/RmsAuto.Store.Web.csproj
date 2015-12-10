@@ -108,6 +108,8 @@
     <Content Include="Controls\Counter.ascx" />
     <Content Include="Controls\Culture.ascx" />
     <Content Include="Controls\LogonLogoff.ascx" />
+    <Content Include="css\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap.min.css" />
     <Content Include="css\style_print.css" />
     <Content Include="css\ie8.css" />
     <Content Include="css\style.css" />
@@ -253,12 +255,15 @@
     <Content Include="Manager\Controls\FillClientProfileExt.ascx" />
     <Content Include="Manager\SaleReportTable.aspx" />
     <Content Include="Manager\UploadSpareParts.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\common-rmm.js" />
     <Content Include="Scripts\ext-all.js" />
     <Content Include="Scripts\jquery.blockUI.js" />
     <Content Include="Scripts\jquery.jmsajax.min.js" />
     <Content Include="Scripts\knockout-3.1.0.js" />
     <Content Include="Scripts\litetabs.jquery.js" />
+    <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\src\grid\groupingStore.js" />
     <Content Include="Scripts\src\grid\groupingView.js" />
     <Content Include="Scripts\src\grid\groupSummary.js" />
@@ -2348,7 +2353,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\cart.png" />
-    <Content Include="images\crumbs.png" />
     <Content Include="images\empty.gif" />
     <Content Include="images\header-r.png" />
     <Content Include="images\help.png" />
@@ -2858,7 +2862,9 @@
     <Content Include="images\mi\menu_text_sklad.en.gif" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Cms\Manufacturers\App_LocalResources\ManufacturerDetails.ascx.resx" />
+    <Content Include="Cms\Manufacturers\App_LocalResources\ManufacturerDetails.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Cms\Manufacturers\App_LocalResources\ManufacturerList.ascx.resx" />
@@ -2888,7 +2894,9 @@
     <Content Include="Cms\App_LocalResources\Error403.aspx.resx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Cms\App_LocalResources\Error404.aspx.resx" />
+    <Content Include="Cms\App_LocalResources\Error404.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Cms\App_LocalResources\Error500.aspx.resx" />

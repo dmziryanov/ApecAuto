@@ -38,14 +38,5 @@ namespace RmsAuto.Store.Web.Cms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::RmsAuto.Store.Web.TecDoc.Controls.TecDocManufacturers _tecDocManufacturers;
-        
-        /// <summary>
-        /// _manufacturerList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::RmsAuto.Store.Web.Cms.Manufacturers.ManufacturerList _manufacturerList;
     }
 }

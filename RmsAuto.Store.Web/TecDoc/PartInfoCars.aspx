@@ -23,7 +23,7 @@
             <br />
             <uc1:TecdocPartAppliedCarsInfo id="_tdACInfo" runat="server" />
             <br />
-            <div class="text-right"><a href="javascript:self.close()" class="button"><%=global::Resources.Texts.Close %></a></div>
+            <div class="text-right"><a href="javascript:self.close()" class="btn btn-success"><%=global::Resources.Texts.Close %></a></div>
         </div>
     </div>
     </form>

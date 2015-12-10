@@ -373,7 +373,7 @@ SelectCountMethod="GetOrdersCount" SelectMethod="GetOrders" UpdateMethod="Update
 	</div>
 	<div>
 		<asp:Button runat="server" ID="_showOrdersButton" CssClass="button" onclick="_showOrdersButton_Click" Text="Show Orders" />&nbsp
-		<a runat="server" ID="_ordersBootstrap" onclick="return fordersBootstrap();" class="button" href="#">Download orders lines</a>
+		<a runat="server" ID="_ordersBootstrap" onclick="return fordersBootstrap();" class="btn btn-success" href="#">Download orders lines</a>
 	</div>
 	
 </asp:PlaceHolder>

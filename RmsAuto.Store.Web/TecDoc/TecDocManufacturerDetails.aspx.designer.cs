@@ -22,15 +22,6 @@ namespace RmsAuto.Store.Web.TecDoc {
         protected global::RmsAuto.Store.Web.Controls.LeftMenu LeftMenu1;
         
         /// <summary>
-        /// PageHeader1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::RmsAuto.Store.Web.Controls.PageHeader PageHeader1;
-        
-        /// <summary>
         /// _titleLabel control.
         /// </summary>
         /// <remarks>

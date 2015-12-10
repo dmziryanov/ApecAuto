@@ -185,10 +185,12 @@ namespace RmsAuto.TechDoc
 			using( var ctx = new TecdocBaseDataContext() )
 			{
 				var dlo = new DataLoadOptions();
-				dlo.LoadWith<Article>( a => a.Supplier );
-				dlo.LoadWith<Article>( a => a.CompleteName );
+				dlo.LoadWith<Article>( a => a.ArticleNumber);
+                dlo.LoadWith<Article>(a => a.Name);
+                dlo.LoadWith<Article>(a => a.CompleteName);
+                dlo.LoadWith<Article>(a => a.Supplier);
 				ctx.LoadOptions = dlo;
-				return ctx.ListParts( modificationId, searchTreeNodeId );
+				return ctx.ListParts( modificationId, searchTreeNodeId ).ToList();
 			}
 		}
 

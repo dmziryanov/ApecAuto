@@ -254,7 +254,7 @@
     </div>
 </div>
 
-<asp:Button class="button" OnClientClick="UpdateStatuses();" 
+<asp:Button class="btn btn-success" OnClientClick="UpdateStatuses();" 
     runat="server"  ID="UpdateAllStatusesBtn" Text="Update all statuses" 
     EnableTheming="True" />
 

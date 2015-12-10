@@ -17,7 +17,9 @@ using RmsAuto.Store.Data;
 
 namespace RmsAuto.Store.Web.Cms.Manufacturers
 {
-	public partial class ManufacturerList : System.Web.UI.UserControl
+    
+
+    public partial class ManufacturerList : System.Web.UI.UserControl
 	{
 		protected string GetManufacturerDetailsUrl( string urlCode )
 		{

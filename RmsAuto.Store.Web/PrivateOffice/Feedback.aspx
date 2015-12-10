@@ -60,8 +60,7 @@
                         Columns="50" Rows="10" Width="450px" Height="140px" CssClass="fdb" 
 					    meta:resourcekey="_messageBoxResource1"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="_messageBox" ValidationGroup="FeedbackGroup"
-                        ErrorMessage="<%$ Resources:Exceptions, EnterText %>" Display="Dynamic" meta:resourcekey="RequiredFieldValidatorResource2" 
-					    ></asp:RequiredFieldValidator>
+                        ErrorMessage="<%$ Resources:Exceptions, EnterText %>" Display="Dynamic" meta:resourcekey="RequiredFieldValidatorResource2"></asp:RequiredFieldValidator>
                 </li>
                 <asp:PlaceHolder ID="_phUnauthorized1" runat="server">
                     <li>

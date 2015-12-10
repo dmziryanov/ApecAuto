@@ -120,7 +120,7 @@
 		</asp:Repeater>
 	</div>
 	<div class="footer">
-	    <a href="javascript:window.print()" class="button">Print</a>
+	    <a href="javascript:window.print()" class="btn btn-success">Print</a>
 	</div>
 </div>	
 </body>

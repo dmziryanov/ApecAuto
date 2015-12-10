@@ -3,17 +3,17 @@
 <asp:Repeater runat="server" ID="_repeater">
 	<HeaderTemplate>
 		<div class="context">
+    <ol class="breadcrumb">
 	</HeaderTemplate>
 <ItemTemplate>
-<asp:HyperLink runat="server" ID="_hl1" NavigateUrl='<%#Eval("Url")%>' Visible='<%#Container.ItemIndex!=_itemsCount-1%>'><%# //Server.HtmlEncode((string)Eval("Name"))
-                                                                                                                         	Eval("Name")%></asp:HyperLink>
-<%--<asp:Literal runat="server" ID="_li1" Visible='<%#Container.ItemIndex==_itemsCount-1%>' Text='<%# Server.HtmlEncode((string)Eval("Name"))%>' />--%>
-<span><asp:Literal runat="server" ID="_li1" Visible='<%#Container.ItemIndex==_itemsCount-1%>' Text='<%# Eval("Name")%>' /></span>
+    <li><asp:HyperLink runat="server" ID="_hl1" NavigateUrl='<%#Eval("Url")%>' Visible='<%#Container.ItemIndex!=_itemsCount-1%>'><%# Eval("Name")%></asp:HyperLink></li>
+    <asp:Literal runat="server" ID="_li1" Visible='<%#Container.ItemIndex==_itemsCount-1%>' Text='<%# Eval("Name")%>' />
 </ItemTemplate>
 <%--<SeparatorTemplate>
 &gt;
 </SeparatorTemplate>--%>
 	<FooterTemplate>
-		</div>
+		</ol>
+        </div>
 	</FooterTemplate>
 </asp:Repeater>

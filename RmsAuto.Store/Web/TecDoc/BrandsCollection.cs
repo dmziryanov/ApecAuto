@@ -81,8 +81,8 @@ namespace RmsAuto.Store.Web.TecDoc
 			{
 				RmsAuto.TechDoc.Entities.TecdocBase.Manufacturer manufacturer;
 				manufacturers.TryGetValue( brand.Name, out manufacturer );
-				if( manufacturer != null && ( manufacturer.IsCarManufacturer == true && brand.VehicleType == RmsAuto.Store.Cms.Entities.VehicleType.Car
-						|| manufacturer.IsTruckManufacturer == true && brand.VehicleType == RmsAuto.Store.Cms.Entities.VehicleType.Truck ) )
+				if( manufacturer != null && ( manufacturer.IsCarManufacturer == 1 && brand.VehicleType == RmsAuto.Store.Cms.Entities.VehicleType.Car
+						|| manufacturer.IsTruckManufacturer == 1 && brand.VehicleType == RmsAuto.Store.Cms.Entities.VehicleType.Truck ) )
 				{
 					var item = new BrandItem( brand, manufacturer );
 					list.Add( item );

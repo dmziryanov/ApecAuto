@@ -27,5 +27,7 @@ namespace RmsAuto.Store.Web.TecDoc
 			Brand = brand;
 			Manufacturer = manufacturer;
 		}
+
+        
 	}
 }

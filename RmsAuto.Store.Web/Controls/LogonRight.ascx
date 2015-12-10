@@ -6,7 +6,7 @@
   
         <% if (!Page.User.Identity.IsAuthenticated) { %>
 
-		<div class="block" onkeypress="javascript: if(event.keyCode==13) { <%=Page.GetPostBackClientEvent(btnLogin, String.Empty)%>; return false; }">
+		<div class="block center" onkeypress="javascript: if(event.keyCode==13) { <%=Page.GetPostBackClientEvent(btnLogin, String.Empty)%>; return false; }">
 		    <div class="title"> <span class="icon"><img src="/images/lock.png" width="12" height="16" alt="/"></span> <%=global::Resources.Texts.MembersLogin %> </div>
 			<!--end .title -->
 			<div class="in">
