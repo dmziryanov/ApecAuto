@@ -12,7 +12,7 @@
 	<uc1:ClientSubMenu ID="_clientSubMenu" runat="server" />
 
 	<div class="right_block">
-	    <asp:HyperLink ID="_backLink" runat="server" Text="Back to orders list" CssClass="button"></asp:HyperLink>
+	    <asp:HyperLink ID="_backLink" runat="server" Text="Back to orders list" Class="btn btn-primary btn-sm"></asp:HyperLink>
 	</div>
 
 	<h1><asp:Literal runat="server" ID="_pageTitleLiteral" /></h1>

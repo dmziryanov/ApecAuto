@@ -162,11 +162,11 @@
 		</table>
 		<asp:Button ID="_searchButton" runat="server" 
 				Text="Фильтровать" OnClick="_searchButton_Click" 
-				meta:resourcekey="_searchButtonResource1" CssClass="button" />
+				meta:resourcekey="_searchButtonResource1" Class="btn btn-primary btn-sm" />
 		<asp:Button ID="_clearFilterButton" runat="server" 
 				Text="Очистить фильтр" CausesValidation="False" 
 				OnClick="_clearFilterButton_Click" 
-				meta:resourcekey="_clearFilterButtonResource1" CssClass="button" />
+				meta:resourcekey="_clearFilterButtonResource1" Class="btn btn-primary btn-sm" />
 	</div>
 </div>
 

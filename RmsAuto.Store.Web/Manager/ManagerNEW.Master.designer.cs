@@ -22,13 +22,31 @@ namespace RmsAuto.Store.Web.Manager {
         protected global::System.Web.UI.HtmlControls.HtmlForm form2;
         
         /// <summary>
-        /// ManagerInfo1 control.
+        /// LeftMenu2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::RmsAuto.Store.Web.Manager.Controls.ManagerInfo ManagerInfo1;
+        protected global::RmsAuto.Store.Web.Manager.Controls.LeftMenu LeftMenu2;
+        
+        /// <summary>
+        /// _leftContentPlaceHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder _leftContentPlaceHolder;
+        
+        /// <summary>
+        /// ManagerInfo2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::RmsAuto.Store.Web.Manager.Controls.ManagerInfo ManagerInfo2;
         
         /// <summary>
         /// _headerContentPlaceHolder control.
@@ -56,32 +74,5 @@ namespace RmsAuto.Store.Web.Manager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder _mainContentPlaceHolder;
-        
-        /// <summary>
-        /// QuickSearch1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::RmsAuto.Store.Web.Controls.QuickSearch QuickSearch1;
-        
-        /// <summary>
-        /// LeftMenu1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::RmsAuto.Store.Web.Manager.Controls.LeftMenu LeftMenu1;
-        
-        /// <summary>
-        /// _leftContentPlaceHolder control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder _leftContentPlaceHolder;
     }
 }

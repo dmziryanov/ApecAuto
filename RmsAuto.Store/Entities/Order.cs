@@ -26,9 +26,9 @@ namespace RmsAuto.Store.Entities
 
         public decimal PrepaymentPercent { get; set; }
 
-        private int _PaymentLimit;
+        private int? _PaymentLimit;
 
-        public int PaymentLimit { get { return _PaymentLimit < 0 ? int.MaxValue : _PaymentLimit; } set { _PaymentLimit = value; } }
+        public int? PaymentLimit { get { return _PaymentLimit < 0 ? int.MaxValue : _PaymentLimit; } set { _PaymentLimit = value; } }
 
         //public decimal Total
         //{

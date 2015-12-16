@@ -25,7 +25,7 @@
     <br />
     <div style="margin:10px 0;">
         <asp:Button runat="server" ID="btnSave" Text="<%$ Resources:Texts, Save %>" 
-			OnClick="btnSave_Click" CssClass="button"/>
+			OnClick="btnSave_Click" Class="btn btn-primary btn-sm"/>
     </div>
     <div>
         <uc1:TextItemControl ID="TextItemControl1" runat="server" TextItemID="UserSetting.PrcExcessPriceConfig"

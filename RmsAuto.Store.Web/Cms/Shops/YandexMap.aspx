@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/PageTwoColumns.Master" CodeBehind="YandexMap.aspx.cs" Inherits="RmsAuto.Store.Web.Cms.YandexMap" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/PageTwoColumnsNEW.Master" CodeBehind="YandexMap.aspx.cs" Inherits="RmsAuto.Store.Web.Cms.YandexMap" %>
 <%@ Register src="ShopDetails.ascx" tagname="ShopDetails" tagprefix="uc1" %>
 <%@ Register src="ShopEmployeeList.ascx" tagname="ShopEmployeeList" tagprefix="uc2" %>
 <%@ Register src="~/Controls/PageHeader.ascx" tagname="PageHeader" tagprefix="uc1" %>
@@ -6,7 +6,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="_leftContentPlaceHolder" runat="server">
     <uc1:LeftMenu ID="_leftMenu" runat="server" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="_headerContentPlaceHolder" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="_mainContentPlaceHolder" runat="server">
     <uc1:PageHeader ID="_pageHeader" runat="server" RenderCurrentNodeAsLink="True" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="_textContentPlaceHolder" runat="server">
@@ -51,7 +51,7 @@ function getRegionParam()
 
 function getIDParam() {
     var results = window.location.pathname.split('/');
-    return results[5].split('.')[0];
+    return 1;
 }
 
 
@@ -148,7 +148,6 @@ YMaps.jQuery(function() {
 });
 </script>
 
-<h2><%= Server.HtmlEncode(r == null ? Cities.Find(x => x.CityID == firstShop.CityID).Name : r.RegionName)%></h2>
 
 
 <div id="YMapsID-5758" class="filialyandexmap" style="width:70%;height:700px;float:left;"></div>

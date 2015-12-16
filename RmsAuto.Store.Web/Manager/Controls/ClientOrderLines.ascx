@@ -152,7 +152,7 @@ function CheckOrder(strOrderlinesIDS) {
 <input runat="server"  enableviewstate="true" id="hfVaryParam" type="hidden" value="" />
 <div style="width:20%;float:left; height: 400px; min-width: 300px;">
 		<asp:TextBox id="_txtClientName" runat="server" Width="194px" EnableViewState="true"></asp:TextBox>&nbsp;
-		<asp:Button ID="_btnSearchClient" CssClass="button" runat="server" Text="Search" onclick="_btnSearchClient_Click" />
+		<asp:Button ID="_btnSearchClient" Class="btn btn-primary btn-sm" runat="server" Text="Search" onclick="_btnSearchClient_Click" />
 	
 	<br />
 	<br />
@@ -268,7 +268,7 @@ function CheckOrder(strOrderlinesIDS) {
 			ID="_totalLabel" CssClass="price" /><%=global::Resources.Texts.RoubleShort%> </div><div runat="server" id="_pagerSettingsBlock">--%>
 		
 	</div>
-	<a href='#' style="visibility:hidden" id="lbShip" class="btn btn-success" onclick="return GatherStatuses(this);">Dispatch</a>
+	<a href='#' style="visibility:hidden" id="lbShip" Class="btn btn-primary btn-sm" onclick="return GatherStatuses(this);">Dispatch</a>
     <div id="filter" style="margin-top:10px;">
         <h3>Commercial Invoice</h3>
         <div>
@@ -282,7 +282,7 @@ function CheckOrder(strOrderlinesIDS) {
                     <td><asp:TextBox ID="txtCountryOfOrigin1" runat="server" Width="180px" /></td>
                 </tr>
             </table>
-            <asp:LinkButton ID="lbCommercialInvoice" runat="server" class="btn btn-success" OnClientClick="return GatherStatuses(this);" onclick="lbCommercialInvoice_Click">Commercial Invoice</asp:LinkButton>
+            <asp:LinkButton ID="lbCommercialInvoice" runat="server" Class="btn btn-primary btn-sm" OnClientClick="return GatherStatuses(this);" onclick="lbCommercialInvoice_Click">Commercial Invoice</asp:LinkButton>
         </div>
         <h3>Invoice Cum Packing List</h3>
         <div>
@@ -300,7 +300,7 @@ function CheckOrder(strOrderlinesIDS) {
                     <td><asp:TextBox ID="txtTotalWeight" runat="server" Width="80px" /></td>
                 </tr>
             </table>
-            <asp:LinkButton runat="server" ID="lbPackingInvoice" class="btn btn-success" OnClientClick="return GatherStatuses(this);" onclick="lbPackingInvoice_Click">Invoice Cum Packing List</asp:LinkButton>
+            <asp:LinkButton runat="server" ID="lbPackingInvoice" Class="btn btn-primary btn-sm" OnClientClick="return GatherStatuses(this);" onclick="lbPackingInvoice_Click">Invoice Cum Packing List</asp:LinkButton>
         </div>
     </div>
 </div>

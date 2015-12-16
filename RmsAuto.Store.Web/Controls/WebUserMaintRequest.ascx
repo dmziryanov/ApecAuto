@@ -25,7 +25,7 @@
     </ul>
 </div> 
 <div style="margin:10px 0 0 180px;">
-    <asp:Button ID="_btnSubmit" CssClass="button" runat="server" Text="<%$Resources:Texts, Send %>" onclick="_btnSubmit_Click"/>
+    <asp:Button ID="_btnSubmit" Class="btn btn-primary btn-sm" runat="server" Text="<%$Resources:Texts, Send %>" onclick="_btnSubmit_Click"/>
 </div>
 </asp:Panel>
 <uc1:ConfirmationMessage ID="ConfirmationMessage1" runat="server" Visible="false" 

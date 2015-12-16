@@ -16,7 +16,7 @@
 		</div>
     </ItemTemplate>
 </asp:Repeater>
-<div class="person select">
+<div class="btn btn-primary btn-sm">
     <asp:HyperLink ID="_lnkSelectClient" runat="server" Text="<%$ Resources:Texts, AddCustomer %>" NavigateUrl="~/Manager/SelectClient.aspx"></asp:HyperLink>
 </div>
 

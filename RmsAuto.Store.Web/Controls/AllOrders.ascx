@@ -194,7 +194,7 @@ SelectCountMethod="GetOrdersCount" SelectMethod="GetOrders" UpdateMethod="Update
             </tr>
             <tr>
                 <td></td>
-                <td colspan="3"><asp:Button ID="_btnSearchClient" runat="server" Text="<%$ Resources:Texts, Search %>" CssClass="button" Width="54px" onclick="_btnSearchClient_Click" /></td>
+                <td colspan="3"><asp:Button ID="_btnSearchClient" runat="server" Text="<%$ Resources:Texts, Search %>" CssClass="btn btn-primary btn-sm" Width="54px" onclick="_btnSearchClient_Click" /></td>
             </tr>
         </table>
     </div>
@@ -372,8 +372,8 @@ SelectCountMethod="GetOrdersCount" SelectMethod="GetOrders" UpdateMethod="Update
 			ID="_receivedByClientSumLabel" CssClass="price" /> <%=global::Resources.Texts.DollarShort%>
 	</div>
 	<div>
-		<asp:Button runat="server" ID="_showOrdersButton" CssClass="button" onclick="_showOrdersButton_Click" Text="Show Orders" />&nbsp
-		<a runat="server" ID="_ordersBootstrap" onclick="return fordersBootstrap();" class="btn btn-success" href="#">Download orders lines</a>
+		<asp:Button runat="server" ID="_showOrdersButton" CssClass="btn btn-primary btn-sm" onclick="_showOrdersButton_Click" Text="Show Orders" />&nbsp
+		<a runat="server" ID="_ordersBootstrap" onclick="return fordersBootstrap();" Class="btn btn-primary btn-sm" href="#">Download orders lines</a>
 	</div>
 	
 </asp:PlaceHolder>

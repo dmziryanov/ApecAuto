@@ -117,6 +117,11 @@ namespace RmsAuto.Store.Web.Controls
             return UrlManager.GetSupplierStatisticUrl(key.ToString());
         }
 
+        protected string GetSellerMessageUrl(string InternalFranchName)
+        {
+            return UrlManager.GetSellerMessageUrl(InternalFranchName);
+        }
+
 		protected void Page_Init( object sender, EventArgs e )
 		{
 			if( !IsPostBack )
@@ -530,7 +535,7 @@ namespace RmsAuto.Store.Web.Controls
 				( (Label)e.Item.FindControl( "_lblKey" ) ).Text = partKey.ToString();
 
 				var txtQty = (TextBox)e.Item.FindControl( "_txtQty" );
-				var btnAddToCart = (ImageButton)e.Item.FindControl( "_btnAddToCart" );
+				var btnAddToCart = (LinkButton)e.Item.FindControl( "_btnAddToCart" );
 				var qtyPlaceHolder = (PlaceHolder)e.Item.FindControl( "_qtyPlaceHolder" );
 
 				btnAddToCart.OnClientClick = string.Format( "return validate_qty('{0}');", txtQty.ClientID );

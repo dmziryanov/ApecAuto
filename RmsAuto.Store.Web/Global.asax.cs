@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.IO;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web.Routing;
@@ -9,11 +10,30 @@ using Laximo.Guayaquil.Data;
 using RmsAuto.Store.Cms.Routing;
 using RmsAuto.Store.Web.LaximoCatalogs;
 using System.Web;
+using System.Web.Mvc;
+using System.Web.Optimization;
+using Castle.Core.Resource;
+using Castle.MicroKernel.Registration;
+using Castle.Windsor;
+using Castle.Windsor.Configuration.Interpreters;
+using Inspinia_MVC5;
+
 
 namespace RmsAuto.Store.Web
 {
-    public class Global : System.Web.HttpApplication
+    public class Global : System.Web.HttpApplication, IContainerAccessor
 	{
+          private static IWindsorContainer _container;
+        public IWindsorContainer Container
+        {
+            get { return _container; }
+        }
+
+        public Global()
+        {
+
+        }
+
 		#region === Пароль и путь к сертификату для каталогов Laximo ===
 		private static string CertPath
         {
@@ -52,6 +72,24 @@ namespace RmsAuto.Store.Web
 
         protected void Application_Start(object sender, EventArgs e)
         {
+            var filename = "assembly://Rmsauto.Store.Web/windsor.config.xml";
+            IResource resource = new AssemblyResource(filename);
+            _container = new WindsorContainer(new XmlInterpreter(resource));
+            RegisterRoutes(RouteTable.Routes);
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            //add all of the controllers to the container
+            foreach (var type in Assembly.GetExecutingAssembly().GetTypes())
+            {
+                if (typeof(IController).IsAssignableFrom(type))
+                {
+                    _container.Register(Component.For(type).LifestylePerWebRequest());
+                }
+            }
+
+            ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory());
+
+            
             UrlManager.RegisterRoutes(RouteTable.Routes);
             new GlobalDBSettings.GlobalSettings().Init();
 
@@ -86,6 +124,38 @@ namespace RmsAuto.Store.Web
 
         protected void Session_Start(object sender, EventArgs e)
         {
+        }
+
+        public static void RegisterRoutes(RouteCollection routes)
+        {
+/*            routes.IgnoreRoute("{*favicon}", new { favicon = @"(.#1#)?favicon.ico(/.*)?" });
+
+            routes.Add(new Route("{controller}/{action}/{id}", new MvcRouteHandler())
+            {
+                Defaults = new RouteValueDictionary(new { action = "Index", id = "" }),
+            });*/
+
+
+            routes.Add(new Route("MessageController/{action}/{id}", new MvcRouteHandler())
+            {
+                Defaults = new RouteValueDictionary(new { action = "SellerMessage", id = "" }),
+            });
+
+
+            routes.Add(new Route("Message.aspx", new MvcRouteHandler())
+            {
+                Defaults = new RouteValueDictionary(new { controller = "Message", action = "SellerMessage", id = "" }),
+            });
+
+            routes.Add(new Route("SendMessage.aspx", new MvcRouteHandler())
+            {
+                Defaults = new RouteValueDictionary(new { controller = "Message", action = "Send", id = "" }),
+            });
+
+            routes.Add(new Route("CloseMessage.aspx", new MvcRouteHandler())
+            {
+                Defaults = new RouteValueDictionary(new { controller = "Message", action = "CloseMessage", id = "" }),
+            });
         }
 
         Regex regex = new Regex("^[A-Za-z0-9-]*(\\.[A-Za-z]{2,})$", RegexOptions.Compiled | RegexOptions.IgnoreCase);

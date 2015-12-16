@@ -39,13 +39,12 @@
 	
 	<asp:View runat="server" ID="_activeOrdersView" >
 		<%--<span class="right_block"><asp:LinkButton runat="server" ID="LinkButton8" Text="<%$ Resources:Texts, ForWholesale %>" CommandName="SwitchViewByID" CommandArgument="_wholesaleView"></asp:LinkButton></span>--%>
-		<div class="tab_menu">
-			<div><asp:LinkButton runat="server" ID="LinkButton5" Text="<%$ Resources:Texts, RequiredConfirm %>" CommandName="SwitchViewByID" CommandArgument="_requiresReactionView"></asp:LinkButton></div>
-			<div class="on"><asp:LinkButton runat="server" ID="LinkButton6" Text="<%$ Resources:Texts, OrderList %>" CommandName="SwitchViewByID" CommandArgument="_activeOrdersView"></asp:LinkButton></div>
-			<div><asp:LinkButton runat="server" ID="LinkButton7" Text="<%$ Resources:Texts, ArchiveOrders %>" CommandName="SwitchViewByID" CommandArgument="_archiveOrdersView"></asp:LinkButton></div>
-			<div><asp:LinkButton runat="server" ID="LinkButton16" Text="<%$ Resources:Texts, AnalysisOrders %>" CommandName="SwitchViewByID" CommandArgument="_analysisOrdersView"></asp:LinkButton></div>
+		<div>
+			<asp:LinkButton  class="btn btn-default sm" runat="server" ID="LinkButton5" Text="<%$ Resources:Texts, RequiredConfirm %>" CommandName="SwitchViewByID" CommandArgument="_requiresReactionView"></asp:LinkButton>
+			<asp:LinkButton  class="btn btn-primary sm" runat="server" ID="LinkButton6" Text="<%$ Resources:Texts, OrderList %>" CommandName="SwitchViewByID" CommandArgument="_activeOrdersView"></asp:LinkButton>
+			<asp:LinkButton  class="btn btn-default sm" runat="server" ID="LinkButton7" Text="<%$ Resources:Texts, ArchiveOrders %>" CommandName="SwitchViewByID" CommandArgument="_archiveOrdersView"></asp:LinkButton>
+			<asp:LinkButton  class="btn btn-default sm"  runat="server" ID="LinkButton16" Text="<%$ Resources:Texts, AnalysisOrders %>" CommandName="SwitchViewByID" CommandArgument="_analysisOrdersView"></asp:LinkButton>
 		</div>
-
 		<uc3:OrderList runat="server" ID="OrderList1" OrderStatusFilter="ActiveOrders" />
 	</asp:View>
 	

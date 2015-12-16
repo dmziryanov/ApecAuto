@@ -2,7 +2,7 @@
 
 <div style="height: 400px;">
 	<asp:TextBox id="_txtClientName" runat="server" Width="194px" EnableViewState="true"></asp:TextBox>&nbsp 
-	<asp:Button ID="_btnSearchClient" CssClass="button" runat="server" Text="Find" onclick="_btnSearchClient_Click" />
+	<asp:Button ID="_btnSearchClient" Class="btn btn-primary btn-sm" runat="server" Text="Find" onclick="_btnSearchClient_Click" />
 	<br />
 	<br />
 	<asp:ListBox ID="_listSearchResults" runat="server" onselectedindexchanged="_listSearchResults_SelectedIndexChanged" 

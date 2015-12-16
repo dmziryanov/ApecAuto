@@ -28,6 +28,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,6 +48,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\..\BookSample\BookSample\bin\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\..\SimpleLogin\VendingMachineApp\VendingMachine\bin\Castle.Windsor.dll</HintPath>
+    </Reference>
     <Reference Include="DataStreams1, Version=5.9.0.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\DataStreams1.dll</HintPath>
@@ -59,9 +69,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\HtmlAgilityPack.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\Newtonsoft.Json\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -90,17 +104,49 @@
     </Reference>
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.40804.0\lib\net40\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVC5_Full_Version\Inspinia_MVC5\bin\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Routing">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.WebPages">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.Mobile" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Controls\CartTop.ascx" />
@@ -108,8 +154,11 @@
     <Content Include="Controls\Counter.ascx" />
     <Content Include="Controls\Culture.ascx" />
     <Content Include="Controls\LogonLogoff.ascx" />
-    <Content Include="css\bootstrap-theme.min.css" />
+    <Content Include="css\animate.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\style_inspinia.css" />
     <Content Include="css\style_print.css" />
     <Content Include="css\ie8.css" />
     <Content Include="css\style.css" />
@@ -248,11 +297,14 @@
     <Content Include="images\gradient_stripe_1px.jpg" />
     <Content Include="images\header_img_manager.en.jpg" />
     <Content Include="images\mi\menu_text_reports.jpg" />
+    <Content Include="images\persona.png" />
     <Content Include="images\play.png" />
     <Content Include="images\ramka.png" />
     <Content Include="images\textura.png" />
     <Content Include="images\trash.png" />
+    <Content Include="landing.html" />
     <Content Include="Manager\Controls\FillClientProfileExt.ascx" />
+    <Content Include="Manager\MailBox.aspx" />
     <Content Include="Manager\SaleReportTable.aspx" />
     <Content Include="Manager\UploadSpareParts.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -267,12 +319,16 @@
     <Content Include="Scripts\src\grid\groupingStore.js" />
     <Content Include="Scripts\src\grid\groupingView.js" />
     <Content Include="Scripts\src\grid\groupSummary.js" />
+    <Content Include="Store\SellerInfo.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <EmbeddedResource Include="windsor.config.xml" />
     <Content Include="_app_offline.htm" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="answerSubmit2.ashx.cs">
       <DependentUpon>answerSubmit2.ashx</DependentUpon>
     </Compile>
+    <Compile Include="AppStart.cs" />
     <Compile Include="App_GlobalResources\CartImport.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -394,6 +450,7 @@
     <Compile Include="BasePages\PageWithUrlState.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="BundleConfig.cs" />
     <Compile Include="Catalogs\BatterySearch.aspx.cs">
       <DependentUpon>BatterySearch.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -524,6 +581,8 @@
     <Compile Include="Cms\ShopYaCoordList.ashx.cs">
       <DependentUpon>ShopYaCoordList.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controls\AllOrders.ascx.cs">
       <DependentUpon>AllOrders.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -811,6 +870,13 @@
     </Compile>
     <Compile Include="Cms\Invoice.ashx.cs">
       <DependentUpon>Invoice.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\MailBox.aspx.cs">
+      <DependentUpon>MailBox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\MailBox.aspx.designer.cs">
+      <DependentUpon>MailBox.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manager\ManagerNEW.Master.cs">
       <DependentUpon>ManagerNEW.Master</DependentUpon>
@@ -1533,6 +1599,13 @@
     </Compile>
     <Compile Include="Store\SearchDiscountSpareParts.aspx.designer.cs">
       <DependentUpon>SearchDiscountSpareParts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Store\SellerInfo.aspx.cs">
+      <DependentUpon>SellerInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Store\SellerInfo.aspx.designer.cs">
+      <DependentUpon>SellerInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Store\SparePartDefects.aspx.cs">
       <DependentUpon>SparePartDefects.aspx</DependentUpon>
@@ -2313,6 +2386,14 @@
     <Compile Include="ReferencesDemo.aspx.designer.cs">
       <DependentUpon>ReferencesDemo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Home\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WindsorControllerFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Laximo.Guayaquil.Data\Laximo.Guayaquil.Data.csproj">
@@ -3201,6 +3282,9 @@
     <Content Include="Manager\SaleReport.ashx" />
     <Content Include="ExcelTemplates\Invoice_payment.xlsx" />
     <Content Include="ExcelTemplates\Client_list_template.xlsx" />
+    <Content Include="Views\Message\SellerMessage.cshtml" />
+    <Content Include="packages.config" />
+    <Content Include="Views\Message\CloseMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Laximo.resx">
@@ -3471,7 +3555,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="css\patterns\" />
     <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="Scripts\NewFolder1\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

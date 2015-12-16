@@ -99,6 +99,7 @@
 				            <th><asp:Literal ID="lTextDay" runat="server" Text="Days from moment of last renewval, d." /></th>
 			            <% } %>
 			            <th><%=global::Resources.Texts.Price %></th>
+                        
 			            <% if (IsManagerMode)
 			               { %>
 			            <th class="nowrap"><%=DiscountName1%><span class="info" title="1-st level of price (offer to persons, who successfully registered on our site)"></span></th>
@@ -106,6 +107,8 @@
 			            <th class="nowrap"><%=DiscountName3%><span class="info" title="this price is effective if month amount of purchasing exeeds 12 000 $ (Now it's showing to unregistered users)"></span></th>
  			            <% } %>
 			            <th colspan="2">&nbsp;</th>
+                        <th><%=global::Resources.Texts.ContactSupplier %></th>
+                        
 	               </tr>
 		            <asp:Repeater ID="_partsRepeater" runat="server"
 			            onitemcommand="_partsRepeater_ItemCommand" 
@@ -261,7 +264,14 @@
 						            </asp:PlaceHolder>
 					            </td>
 					            <td align="center">
-					               <asp:ImageButton ImageUrl="~/images/search_basket.png" CssClass="cart-button" ID="_btnAddToCart" runat="server" CommandName="AddToCart" Text="<%$ Resources:Texts, AddToCartLC %>"  Visible='<%# !IsRestricted && Convert.ToDecimal(((SearchResultItem)Container.DataItem).FinalSalePrice) != 0 %>' />
+					                <asp:LinkButton CssClass="fa fa-shopping-cart" ID="_btnAddToCart" runat="server" CommandName="AddToCart" Text="<%$ Resources:Texts, AddToCartLC %>"  Visible='<%# !IsRestricted && Convert.ToDecimal(((SearchResultItem)Container.DataItem).FinalSalePrice) != 0 %>'/>
+                                    </td>
+                               <td>
+                                    <a target="_blank" <%--onclick="info=window.open(this.href,'','width=332,height=352,scrollbars=no,resizable=no'); info.focus(); return false;"  --%>
+                                        href="<%# GetSellerMessageUrl(((SearchResultItem)Container.DataItem).SparePart.InternalFranchName)%>" data-toggle="tooltip" data-placement="left" title="Сообщение продавцу"> 
+                                    <i class="fa fa-envelope-o"></i></a>
+                                    <a  href="#">
+                                    <i class="fa fa-info-circle"></i></a>
 					            </td>
 				            </asp:PlaceHolder>
 				            <asp:PlaceHolder ID="PlaceHolder13" runat="server" Visible='<%# !((SearchResultItem)Container.DataItem).ShowPrices %>'>
@@ -320,3 +330,31 @@
 		
     </asp:PlaceHolder>
 </div>
+                    <div class="modal inmodal fade" id="myModal5" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                    <h4 class="modal-title">Modal title</h4>
+                                    <small class="font-bold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        <strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                        printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                                        remaining essentially unchanged.
+                                    </p>
+                                    <p>
+                                        <strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                        printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                                        remaining essentially unchanged.
+                                    </p>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>

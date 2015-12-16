@@ -38,9 +38,9 @@ namespace RmsAuto.Store.Web.Controls
         {
             try
             {
-                var store = AcctgRefCatalog.RmsStores[SiteContext.Current.CurrentClient.Profile.RmsStoreId];
+                /*var store = AcctgRefCatalog.RmsStores[SiteContext.Current.CurrentClient.Profile.RmsStoreId];
                 if ( store == null )
-                    throw new Exception( string.Format( "Client profile error: unknown RmsStoreId='{0}'", SiteContext.Current.CurrentClient.Profile.RmsStoreId ) );
+                    /*throw new Exception( string.Format( "Client profile error: unknown RmsStoreId='{0}'", SiteContext.Current.CurrentClient.Profile.RmsStoreId ) );#1#*/
 
 				string custOrderNum = _txtCustOrderNum.Text;
 				var orderNo = SiteContext.Current.CurrentClient.Cart.PlaceOrder(
@@ -49,7 +49,7 @@ namespace RmsAuto.Store.Web.Controls
                     _txtOrderNotes.InnerText,
                     !string.IsNullOrEmpty( _txtCustOrderNum.Text ) ? _txtCustOrderNum.Text : null,
                     SiteContext.Current.CurrentClient.Profile.ManagerId,
-                    store.StoreNumber );
+                    "StoreNumber" );
 
                 //Заккомментили т.к. если тут выпадаем в ошибку, то заказ ушел, а пользователь увидит Error и отправит заказ еще раз
 				//var order = OrderBO.LoadOrderData( SiteContext.Current.CurrentClient.Profile.ClientId, orderNo );

@@ -595,7 +595,7 @@ namespace RmsAuto.Store.Cms.Routing
             routes.Add(
                       "Maps",
                       new CatalogDependentRoute(CatalogItems.ShopListCatalogItem.CatalogItemPath,
-                          @"{Map}/{Region}/{ID}.aspx",
+                          @"Map.aspx",
                           new RouteValueDictionary { { "ID", @"\d+" } },
                           new RouteValueDictionary { { "Url", "~/Cms/Shops/YandexMap.aspx" } },
                           new PageRouteHandler())
@@ -849,6 +849,11 @@ namespace RmsAuto.Store.Cms.Routing
 				return p.VirtualPath + "?ID=" + HttpUtility.HtmlEncode(sparePartKey);
 			}
 		}
+
+        public static string GetSellerMessageUrl(string InternalFranchName)
+        {
+                return "Message.aspx?ID=" + InternalFranchName;
+        }
 
 
 		public static string GetSearchSparePartsUrl(string manufacturer, string partNumber)

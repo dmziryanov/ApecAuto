@@ -32,8 +32,8 @@
 		</table>
 		<br />
 		<asp:Button ID="_searchButton" runat="server" 
-				Text="<%$ Resources:Texts, Filter %>" CssClass="button" OnClick="_searchButton_Click"/> <asp:Button ID="_clearFilterButton" runat="server" 
-				Text="<%$ Resources:Texts, ClearFilters %>" CssClass="button" CausesValidation="False" 
+				Text="<%$ Resources:Texts, Filter %>" Class="btn btn-primary btn-sm" OnClick="_searchButton_Click"/> <asp:Button ID="_clearFilterButton" runat="server" 
+				Text="<%$ Resources:Texts, ClearFilters %>" Class="btn btn-primary btn-sm" CausesValidation="False" 
 				OnClick="_clearFilterButton_Click"/>
 	</div>
 </div>

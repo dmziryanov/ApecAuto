@@ -234,7 +234,7 @@
 	        </tr>
 	        <tr>
 		        <th></th>
-		        <td><asp:Button ID="btnSendRequest" runat="server" CssClass="button" Text="Отправить заявку" 
+		        <td><asp:Button ID="btnSendRequest" runat="server" Class="btn btn-primary btn-sm" Text="Отправить заявку" 
 				        OnClick="btnSendRequest_Click" meta:resourcekey="btnSendRequestResource1" /></td>
 	        </tr>
         </table>

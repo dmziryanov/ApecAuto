@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+<components>
+<component id="MessageRepository"
+             service="RmsAuto.Store.Messages.IMessageRepository,   RmsAuto.Store"
+             type="RmsAuto.Store.Messages.MessageRepository,   RmsAuto.Store"/>
+</components>
+</configuration>

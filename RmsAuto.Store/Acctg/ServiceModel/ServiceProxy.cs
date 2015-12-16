@@ -322,14 +322,6 @@ namespace RmsAuto.Store.Acctg.Entities
             {
                 try
                 {
-					if (LightBO.IsLight())
-					{
-						if (SiteContext.Current != null)
-							rezItems = dc.DataContext.ExecuteQuery<EmployeeInfo>("SELECT * FROM Acctg.EmployeesRef where InternalFranchName = '" + SiteContext.Current.InternalFranchName + "'").ToArray();
-						else
-							rezItems = dc.DataContext.ExecuteQuery<EmployeeInfo>("SELECT * FROM Acctg.EmployeesRef").ToArray();
-					}
-					else
 					rezItems = dc.DataContext.ExecuteQuery<EmployeeInfo>("SELECT * FROM Acctg.EmployeesRef").ToArray();
                 }
                 catch (Exception ex)

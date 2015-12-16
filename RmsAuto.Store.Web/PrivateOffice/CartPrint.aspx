@@ -19,6 +19,10 @@
         <img runat=server src="<%$ Resources:ImagesURL, print_logo %>" align=left />
         <table class="tel">
             <tr>
+                <td><span><%= SellerName %></span></td>
+                <td><span><%= SellerAddress %></span></td>
+            </tr>
+            <tr>
                 <td><span><%= Phone %></span>
                 <td class="img"><img id="Img1" runat="server" src="~/images/tel_img2.gif" alt="" width="14" height="20" border="0" /></td>
             </tr>
@@ -119,7 +123,7 @@
 		</asp:Repeater>
 	</div>
 	<div class="footer">
-	    <a href="javascript:window.print()" class="btn btn-success">Print</a>
+	    <a href="javascript:window.print()" Class="btn btn-primary btn-sm">Print</a>
 	</div>
 </div>	
 </body>

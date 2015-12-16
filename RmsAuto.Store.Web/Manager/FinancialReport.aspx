@@ -37,8 +37,8 @@
   
                 Date from: <asp:TextBox class="date" ID="RegDateMin" runat="server" Width="100"></asp:TextBox> 
 	            till: <asp:TextBox class="date" ID="RegDateMax" runat="server" Width="100"></asp:TextBox> 
-	            &nbsp;<asp:Button ID="_btnFillReport" runat="server" Text="Display" CssClass="button"  onclick="_btnFillReport_Click" />
-	            &nbsp;<asp:Button ID="_btnUnloadReport" runat="server" Text="Download" CssClass="button" visible="false" OnClientClick="window.open('FinancialReport.ashx')" />
+	            &nbsp;<asp:Button ID="_btnFillReport" runat="server" Text="Display" Class="btn btn-primary btn-sm"  onclick="_btnFillReport_Click" />
+	            &nbsp;<asp:Button ID="_btnUnloadReport" runat="server" Text="Download" Class="btn btn-primary btn-sm" visible="false" OnClientClick="window.open('FinancialReport.ashx')" />
 		        <uc3:finreporttable ID="srt" runat="server" />
             </td>
         </tr>

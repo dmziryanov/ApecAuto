@@ -15,7 +15,7 @@
         <uc1:FillClientProfile ID="_fillClientProfile" runat="server" />
         <uc1:FillClientProfileExt ID="_fillClientProfileExt" runat="server" />
         <br />
-        <asp:Button ID="_btnRegister" CssClass="button" runat="server" Text="<%$ Resources:RegistrationTexts, Register %>" onclick="_btnRegister_Click" /> 
+        <asp:Button ID="_btnRegister" Class="btn btn-primary btn-sm" runat="server" Text="<%$ Resources:RegistrationTexts, Register %>" onclick="_btnRegister_Click" /> 
     </div>    
     <div id="_msgPane" runat="server" visible="false">
         <% if (ProfileCreated)

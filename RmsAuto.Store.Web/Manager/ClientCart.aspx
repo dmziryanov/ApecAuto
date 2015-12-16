@@ -17,7 +17,7 @@
 	    <hr />
 	    <h4>Order placement parameters</h4>
 	    <uc1:OrderOptions id="_orderOptions" runat="server" />
-	    <asp:LinkButton ID="_btnPlaceOrder" runat="server" CssClass="button" Text="<%$Resources:Texts, PlaceAnOrder %>" 
+	    <asp:LinkButton ID="_btnPlaceOrder" runat="server" Class="btn btn-primary btn-sm" Text="<%$Resources:Texts, PlaceAnOrder %>" 
 	    OnClientClick="javascript:return validateAndConfirm()" onclick="_btnPlaceOrder_Click" />
     </asp:Panel>
     <asp:Label runat="server" ID="_errorLabel" CssClass="error" EnableViewState="false" />    

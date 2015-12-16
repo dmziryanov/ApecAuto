@@ -361,12 +361,12 @@ namespace RmsAuto.Store.BL
         }
 
         //TODO: вынести данные методы в загрузку профиля клиента
-        public static int GetPaymentLimit(int userID)
+        public static int? GetPaymentLimit(int userID)
         {
             using (var dc = new DCFactory<StoreDataContext>(false))
             {
                 string query = @"select PaymentLimit from dbo.UserSettings where UserID = {0}";
-                return dc.DataContext.ExecuteQuery<int>(query, userID).FirstOrDefault();
+                return dc.DataContext.ExecuteQuery<int?>(query, userID).FirstOrDefault();
             }
         }
 

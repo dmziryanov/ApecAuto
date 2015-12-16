@@ -201,7 +201,7 @@
                 <input type="checkbox" class="answer" value= "I don't understand how to sale and promote my products"/>I don't understand how to promote my products<br>
                 <input type="checkbox" class="answer" value= "I don't need any spareparts."/>I don't need any spareparts.<br>
         <br>
-                <input type="button" id="CloseButton" value="Submit" class="btn btn-success"/>
+                <input type="button" id="CloseButton" value="Submit" Class="btn btn-primary btn-sm"/>
         </div>
         
     </form>

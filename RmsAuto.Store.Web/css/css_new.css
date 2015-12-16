@@ -501,11 +501,13 @@ table.tel td.img {
     float:left;
     width:230px;
 }
-.footer 
+.centerfooter 
 {
-	border-top:0px solid #d7e9f2;
-	margin-bottom:10px;
+    text-align: center;
+    background: #1f935d;
+    display: inline-block;
 }
+
 .footer-left {
 	margin:0px 0px 0px 34px;
 	float:left;
@@ -1322,16 +1324,15 @@ table.e_list tr.tr td
 	padding:0px 0px 0px 0px;
 }
 
-.manager_top .links {
+.manager_toplinks {
 	padding:5px 0px 5px 5px;
 	float:left;
+    color: #1f935d !important;
 }
 
 .manager_top .links a {
 	color:#81929c;
 	font-size:12px;
-	font-family: 'Trebuchet MS';
-	background:url(../images/str_blue.gif) no-repeat 0px 7px;
 	padding:0px 0px 0px 10px;
 	margin-left:0px;
 }

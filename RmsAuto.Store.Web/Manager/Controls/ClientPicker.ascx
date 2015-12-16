@@ -5,7 +5,7 @@
 	Main phone number: <asp:TextBox ID="_txtPhone" runat="server"></asp:TextBox> 
 
 	<asp:Button ID="_btnSearchClient" runat="server" Text="<%$ Resources:Texts, Search %>" 
-		onclick="_btnSearchClient_Click" CssClass="button" />
+		onclick="_btnSearchClient_Click" Class="btn btn-primary btn-sm" />
 </div>
 
 <br />    

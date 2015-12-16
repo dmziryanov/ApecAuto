@@ -35,9 +35,25 @@ namespace RmsAuto.Store.Web.PrivateOffice
 		{
 			get
 			{
-				return AcctgRefCatalog.RmsFranches[SiteContext.Current.InternalFranchName].Phone;
+				return AcctgRefCatalog.RmsFranches[Cart.GetItems().First().SparePart.InternalFranchName].Phone;
 			}
 		}
+
+        public string SellerName
+        {
+            get
+            {
+                return AcctgRefCatalog.RmsFranches[Cart.GetItems().First().SparePart.InternalFranchName].Name;
+            }
+        }
+
+        public string SellerAddress
+        {
+            get
+            {
+                return AcctgRefCatalog.RmsFranches[Cart.GetItems().First().SparePart.InternalFranchName].Address;
+            }
+        }
 
 		protected ShoppingCart Cart;
 

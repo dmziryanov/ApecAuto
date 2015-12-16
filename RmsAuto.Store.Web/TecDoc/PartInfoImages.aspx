@@ -23,7 +23,7 @@
             <br />
             <uc1:TecdocImageView ID="_tivImages" runat="server" />
             <br />
-            <div class="text-right"><a href="javascript:self.close()" class="btn btn-success"><%=global::Resources.Texts.Close %></a></div>
+            <div class="text-right"><a href="javascript:self.close()" Class="btn btn-primary btn-sm"><%=global::Resources.Texts.Close %></a></div>
         </div>
     </div>
     </form>

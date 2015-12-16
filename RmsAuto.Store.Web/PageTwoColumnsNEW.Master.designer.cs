@@ -40,15 +40,6 @@ namespace RmsAuto.Store.Web {
         protected global::RmsAuto.Store.Web.Controls.LogonLogoff LogonLogoff1;
         
         /// <summary>
-        /// QuickSearch1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::RmsAuto.Store.Web.Controls.QuickSearch QuickSearch1;
-        
-        /// <summary>
         /// MainMenu1 control.
         /// </summary>
         /// <remarks>
@@ -58,6 +49,15 @@ namespace RmsAuto.Store.Web {
         protected global::RmsAuto.Store.Web.Cms.Catalog.MainMenu MainMenu1;
         
         /// <summary>
+        /// QuickSearch1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::RmsAuto.Store.Web.Controls.QuickSearch QuickSearch1;
+        
+        /// <summary>
         /// LogonRight1 control.
         /// </summary>
         /// <remarks>
@@ -65,33 +65,6 @@ namespace RmsAuto.Store.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::RmsAuto.Store.Web.Controls.LogonRight LogonRight1;
-        
-        /// <summary>
-        /// BreadCrumbs1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::RmsAuto.Store.Web.Cms.Catalog.BreadCrumbs BreadCrumbs1;
-        
-        /// <summary>
-        /// _mainContentPlaceHolder control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder _mainContentPlaceHolder;
-        
-        /// <summary>
-        /// _textContentPlaceHolder control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder _textContentPlaceHolder;
         
         /// <summary>
         /// cart1 control.
@@ -119,5 +92,32 @@ namespace RmsAuto.Store.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder _leftContentPlaceHolder;
+        
+        /// <summary>
+        /// BreadCrumbs1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::RmsAuto.Store.Web.Cms.Catalog.BreadCrumbs BreadCrumbs1;
+        
+        /// <summary>
+        /// _mainContentPlaceHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder _mainContentPlaceHolder;
+        
+        /// <summary>
+        /// _textContentPlaceHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder _textContentPlaceHolder;
     }
 }

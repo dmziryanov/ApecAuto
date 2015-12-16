@@ -22,7 +22,7 @@
     <div id="_errorMessage" runat="server" style="font-weight: bold; color: #FF0000" />
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
     <div style="margin:10px 0 0 180px;">
-        <asp:Button ID="_btnLogin" CssClass="button" runat="server" Text="<%$ Resources:Texts, SystemEntrance %>" onclick="_btnLogin_Click" />
+        <asp:Button ID="_btnLogin" Class="btn btn-primary btn-sm" runat="server" Text="<%$ Resources:Texts, SystemEntrance %>" onclick="_btnLogin_Click" />
         <br /><br />
         <p><asp:HyperLink runat="server" ID="_registerLink"><asp:Literal ID="lRegistration" runat="server" Text="<%$ Resources:Texts, Registration %>" /></asp:HyperLink>&nbsp;&nbsp;<asp:HyperLink runat="server" ID="_recoverPasswordLink"><asp:Literal ID="lChangePassword" runat="server" Text="<%$ Resources:Texts, ForgotChangePassword %>" /></asp:HyperLink></p>
     </div>

@@ -33,7 +33,7 @@
 			<th>
 			</th>
 			<td>
-				<asp:LinkButton runat="server" ID="_createAccountButton"  Text="Send invitation" CssClass="button" ImageUrl="~/images/mng_sendreg_btn.gif" 
+				<asp:LinkButton runat="server" ID="_createAccountButton"  Text="Send invitation" Class="btn btn-primary btn-sm" ImageUrl="~/images/mng_sendreg_btn.gif" 
 					onclick="_createAccountButton_Click" />
 			</td>
 		</tr>

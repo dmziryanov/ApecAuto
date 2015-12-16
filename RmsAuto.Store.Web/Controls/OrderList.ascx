@@ -181,7 +181,7 @@ $( function() {
                 </li>
             </ul>
         </div>
-        <asp:Button runat="server" ID="_showOrdersButton" CssClass="button" Text="<%$ Resources:Texts, ToShowTheOrder %>" onclick="_showOrdersButton_Click"  />
+        <asp:Button runat="server" ID="_showOrdersButton" Class="btn btn-primary btn-sm" Text="<%$ Resources:Texts, ToShowTheOrder %>" onclick="_showOrdersButton_Click"  />
         
 	</div>
     <div class="right">

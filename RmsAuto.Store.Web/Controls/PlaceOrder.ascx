@@ -199,9 +199,9 @@
 				<asp:Literal ID="lClientNumberView" runat="server" Text="Ваш номер заказа:" /> <asp:Label runat="server" ID="_custOrderNumLabel" />
 				</asp:PlaceHolder>
 				<br /><br />
-				    <asp:HyperLink runat="server" ID="_orderPrintLink" Target="_blank" CssClass="button"><asp:Literal ID="lPrintOrder" runat="server" Text="<%$ Resources:PlaceOrder, PrintOrder %>" /></asp:HyperLink>
-                    <asp:HyperLink  Visible="false" runat="server" ID="_paymentOrderPrintLink" Target="_blank" CssClass="button"><asp:Literal ID="lPrintPayment" runat="server" Text="Print an receipt" /></asp:HyperLink><nobr><asp:Label Visible="false" ID="divider" CssClass="GrayTextStyle" runat="server" Text=" / " /><nobr>
-    		        <asp:HyperLink Visible="false" runat="server" ID="_paymentOrderPrintLinkOpt" Target="_blank" CssClass="button"><asp:Literal ID="optPrintPayment" runat="server" Text="Print an account" /></asp:HyperLink>
+				    <asp:HyperLink runat="server" ID="_orderPrintLink" Target="_blank" Class="btn btn-primary btn-sm"><asp:Literal ID="lPrintOrder" runat="server" Text="<%$ Resources:PlaceOrder, PrintOrder %>" /></asp:HyperLink>
+                    <asp:HyperLink  Visible="false" runat="server" ID="_paymentOrderPrintLink" Target="_blank" Class="btn btn-primary btn-sm"><asp:Literal ID="lPrintPayment" runat="server" Text="Print an receipt" /></asp:HyperLink><nobr><asp:Label Visible="false" ID="divider" CssClass="GrayTextStyle" runat="server" Text=" / " /><nobr>
+    		        <asp:HyperLink Visible="false" runat="server" ID="_paymentOrderPrintLinkOpt" Target="_blank" Class="btn btn-primary btn-sm"><asp:Literal ID="optPrintPayment" runat="server" Text="Print an account" /></asp:HyperLink>
 				<br />
 				<div class="link_block"><asp:HyperLink ID="_backLink" runat="server" Text="<%$ Resources:Texts, MainPage %>" /></div>
 			</asp:Panel>

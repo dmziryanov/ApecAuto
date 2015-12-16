@@ -11,7 +11,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="_textContentPlaceHolder" runat="server">
 
 	<div class="right_block">
-	    <asp:HyperLink ID="_backLink" runat="server" CssClass="button" Text="Back to orders list"></asp:HyperLink>
+	    <asp:HyperLink ID="_backLink" runat="server" Class="btn btn-primary btn-sm" Text="Back to orders list"></asp:HyperLink>
 	</div>
 
 	<h1><asp:Literal runat="server" ID="_pageTitleLiteral" /></h1>

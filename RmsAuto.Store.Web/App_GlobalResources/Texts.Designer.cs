@@ -808,6 +808,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Связаться с продавцом.
+        /// </summary>
+        internal static string ContactSupplier {
+            get {
+                return ResourceManager.GetString("ContactSupplier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Условия договора.
         /// </summary>
         internal static string ContractTerms {
@@ -2428,6 +2437,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ПРОДАВЦАМ.
+        /// </summary>
+        internal static string RegisterAsSeller {
+            get {
+                return ResourceManager.GetString("RegisterAsSeller", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Регистрация нового клиента.
         /// </summary>
         internal static string RegisterNewClient {
@@ -2890,11 +2908,11 @@ namespace Resources {
         ///   Looks up a localized string similar to 
         ///        Файл должен содержать следующие колонки, разделенные табуляцией и иметь расширение csv
         ///        1. Номер строки - целое число;
-        ///        2. Идетификатор размера SizeID - целое число (пока для всех 1) ;
+        ///        2. Идентификатор размера SizeID - целое число (пока для всех 1) ;
         ///        3. Производитель - тип строка длина до 50 ;
         ///        4. Код детали ОЕМ - тип строка длина до 50 (Внимание по этому номеру производится поиск основной и аналогов!) ;
         ///        5. Внутренний код детали ОЕМ - тип строка длина до 50 (Это дополнительный, может быть любым на ваше усмотрение); 
-        ///    [rest of string was truncated]&quot;;.
+        ///   [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string UploadSparepartsInfo {
             get {

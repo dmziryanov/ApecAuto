@@ -6,25 +6,25 @@
   
         <% if (!Page.User.Identity.IsAuthenticated) { %>
 
-		<div class="block center" onkeypress="javascript: if(event.keyCode==13) { <%=Page.GetPostBackClientEvent(btnLogin, String.Empty)%>; return false; }">
-		    <div class="title"> <span class="icon"><img src="/images/lock.png" width="12" height="16" alt="/"></span> <%=global::Resources.Texts.MembersLogin %> </div>
+		<div class="panel panel-primary" onkeypress="javascript: if(event.keyCode==13) { <%=Page.GetPostBackClientEvent(btnLogin, String.Empty)%>; return false; }">
+		    <div class="panel-heading"> <span class="icon"><img src="/images/lock.png" width="12" height="16" alt="/"></span> <%=global::Resources.Texts.MembersLogin %> </div>
 			<!--end .title -->
-			<div class="in">
+			<div class="panel-body">
 				<div class="input">
-					<input id="txtLogin" runat="server" placeholder="<%$ Resources:Texts, EnterYourName %>" type="text" maxlength="20">
-					<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Text="*"
+					<input class="form-control" id="txtLogin" runat="server" placeholder="<%$ Resources:Texts, EnterYourName %>" type="text" maxlength="20"/>
+				    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Text="*"
                             ErrorMessage="<%$ Resources:ValidatorsMessages, EmptyLogin %>" ControlToValidate="txtLogin" ValidationGroup="LogonRightGroup"></asp:RequiredFieldValidator>
 				</div>
 				<!--end .input -->
 				<div class="input">
-					<input id="txtPassword" runat="server" placeholder="<%$ Resources:Texts, EnterYourPassword %>" type="password" maxlength="10">
-					<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" Text="*"
+				    <input class="form-control" id="txtPassword" runat="server" placeholder="<%$ Resources:Texts, EnterYourPassword %>" type="password" maxlength="10"/>
+				    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" Text="*"
                             ErrorMessage="<%$ Resources:ValidatorsMessages, EmptyPassword %>" ControlToValidate="txtPassword" ValidationGroup="LogonRightGroup"></asp:RequiredFieldValidator>
 				</div>
 				<!--end .input -->
 				<asp:Label ID="errMessage" runat="server" EnableViewState="false" CssClass="error" />
 				<a href="<%=UrlManager.GetPasswordRecoveryUrl()%>"><asp:Literal ID="Literal1" runat="server" Text="<%$ Resources:Texts, ForgotPassword %>"></asp:Literal></a>
-				<asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" CssClass="button" Text="<%$ Resources:Texts, Login %>" ValidationGroup="LogonRightGroup" />
+				<asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Class="btn btn-primary btn-sm" Text="<%$ Resources:Texts, Login %>" ValidationGroup="LogonRightGroup" />
 			</div>
 			<!--end .in -->
         </div>

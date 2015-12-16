@@ -64,12 +64,7 @@ a:hover {
 .header_main a, .header_main a:hover {
 	color:#455589;
 }
-.footer {
-	background-color: #455589;
-	text-align:right;
-	padding:10px;
-	color:#FFFFFF;
-}
+
 
 .footer a {
 	color:#f99404;

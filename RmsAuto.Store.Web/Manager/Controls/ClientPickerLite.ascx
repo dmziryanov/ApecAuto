@@ -31,7 +31,7 @@
 	                    </asp:DropDownList>
                     </td>
                     <td>&nbsp;&nbsp;&nbsp;<%= global::Resources.Texts.Manager %>:</td>
-                    <td><asp:DropDownList runat="server" ID="_managerList" AutoPostBack="False" DataTextField="FullName" DataValueField="EmployeeID" Width="208"></asp:DropDownList></td>
+                    <td><asp:DropDownList Visible="false" runat="server" ID="_managerList" AutoPostBack="False" DataTextField="FullName" DataValueField="EmployeeID" Width="208"></asp:DropDownList></td>
                 </tr>
                 <tr>
                     <td colspan="4">
@@ -40,7 +40,7 @@
                 </tr>
             </asp:PlaceHolder>
         </table>
-        <asp:Button ID="_btnSearchClient" runat="server" Text="<%$ Resources:Texts, Find %>" OnClick="_btnSearchClient_Click" CssClass="button" />
+        <asp:Button ID="_btnSearchClient" runat="server" Text="<%$ Resources:Texts, Find %>" OnClick="_btnSearchClient_Click" Class="btn btn-primary btn-sm" />
 		<asp:HyperLink ID="ClientBootstrap" CssClass='button' runat="server" Text="<%$ Resources:Texts, Download %>" Visible="false" />	   
 <%--	Type of a client:
         <asp:DropDownList ID="_clientType" runat="server">

@@ -29,5 +29,6 @@ namespace RmsAuto.Store.Acctg
         public string Icq { get; set; }
 
         public string Phone { get; set; }
+        public string InternalFranchName { get; set; }
     }
 }

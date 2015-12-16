@@ -175,7 +175,7 @@
 			             ID="_clearFilterButton" onclick="_clearFilterButton_Click" CausesValidation="False" 
 			             meta:resourcekey="_clearFilterButtonResource1" Text="очистить фильтр">
             </asp:LinkButton></div>
-                    <asp:Button runat="server" ID="_searchButton" CssClass="button" ImageUrl="<%$ Resources:ImagesURL, filter_btn %>" onclick="_searchButton_Click" 
+                    <asp:Button runat="server" ID="_searchButton" Class="btn btn-primary btn-sm" ImageUrl="<%$ Resources:ImagesURL, filter_btn %>" onclick="_searchButton_Click" 
 			             meta:resourcekey="_searchButtonResource1" /></td>
 	            </tr>
 	            </tbody>
@@ -254,7 +254,7 @@
     </div>
 </div>
 
-<asp:Button class="btn btn-success" OnClientClick="UpdateStatuses();" 
+<asp:Button Class="btn btn-primary btn-sm" OnClientClick="UpdateStatuses();" 
     runat="server"  ID="UpdateAllStatusesBtn" Text="Update all statuses" 
     EnableTheming="True" />
 

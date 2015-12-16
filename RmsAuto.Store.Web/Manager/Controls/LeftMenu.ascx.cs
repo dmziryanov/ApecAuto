@@ -16,11 +16,15 @@ namespace RmsAuto.Store.Web.Manager.Controls
 {
     public partial class LeftMenu : System.Web.UI.UserControl
     {
+        protected void _logoffButton_Click(object sender, EventArgs e)
+        {
+            LogonService.Logoff();
+        }
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			//_vinRequestsLink.NavigateUrl = RmsAuto.Store.Web.Manager.VinRequestList.GetUrl();
-            hlUploadSpareparts.Visible = true;
+      /*      hlUploadSpareparts.Visible = true;
             if (AcctgRefCatalog.RmsFranches[SiteContext.Current.InternalFranchName].isLite)
 			{
 				hlSelectClient.Text = Resources.Texts.CustomersList;
@@ -35,7 +39,7 @@ namespace RmsAuto.Store.Web.Manager.Controls
                 hlClientPayments.Visible = false;
                 p_reports.Visible = false;
                 p_reports_header.Visible = false;
-			}
+			}*/
 		}
     }
 }

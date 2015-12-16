@@ -1,0 +1,108 @@
+﻿@using System.Web.Optimization
+@using RmsAuto.Store.Acctg
+@using RmsAuto.Store.Web
+@inherits System.Web.Mvc.WebViewPage
+
+@{
+    ViewBag.Title = "ComposeEmail";
+}
+
+<link href="@Url.Content("../../Scripts/plugins/jquery-ui/jquery-ui.css")" rel="stylesheet" type="text/css" />
+
+<!-- Primary Inspinia style -->
+<!-- Primary Inspinia style -->
+@Styles.Render("~/css/css")
+@Styles.Render("~/font-awesome/css")
+<!-- Section for main scripts render -->
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/plugins/slimScroll")
+@Scripts.Render("~/bundles/inspinia")
+
+<!-- Skin config script - only for demo purpose-->
+@Scripts.Render("~/bundles/skinConfig")
+@Styles.Render("~/plugins/summernoteStyles")
+@Scripts.Render("~/plugins/summernote")
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.summernote').summernote();
+        $('#submitbtn').click(function () {
+            $.ajax(
+            {
+                method: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                url: 'SendMessage.aspx?ID=@HttpContext.Current.Request["ID"]',
+                data: JSON.stringify({From: '@HttpContext.Current.User.Identity.Name', InternalFranchName: '@HttpContext.Current.Request["ID"]', message: $('.summernote').html() }),
+                dataType: 'json',
+                success: function () { window.location = "CloseMessage.aspx" }
+            });
+        });
+    });
+
+</script>
+
+
+
+@Styles.Render("~/plugins/summernoteStyles")
+@Scripts.Render("~/plugins/summernote")
+
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-lg-9 animated fadeInRight">
+            <div class="mail-box-header">
+                <div class="pull-right tooltip-demo">
+                    <a id="submitbtn" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="Отправить"><i class="fa fa-reply"></i>Отправить</a>
+                    <a onclick=" window.close(); " class=" btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Отмена"><i class="fa fa-times"></i>Отмена</a>
+                </div>
+                <h2>
+                    Сообщение продавцу
+                </h2>
+                <h3>(Здесь вы можете оставить заказ на деталь, заказать обратный звонок, обязательно укажите как с вами связаться!)</h3>
+            </div>
+
+            <div class="mail-box">
+                <div class="mail-body">
+                    <form class="form-horizontal" method="get">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Кому:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value=@AcctgRefCatalog.RmsFranches[HttpContext.Current.Request["ID"]].Name></input>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Тема:</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="">
+                            </div>
+                        </div>
+                        <div class="mail-text h-200">
+
+                            <div class="summernote">
+                                <h3>Здравствуйте! </h3>
+                                я хотел бы ...
+
+                                с мной можно связаться: ...
+                                <br />
+                                <br />
+
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+
+                </div>
+
+
+                <div class="mail-body text-right tooltip-demo">
+
+                </div>
+                <div class="clearfix"></div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>

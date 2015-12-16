@@ -59,7 +59,7 @@
 							<asp:Label ID="_errorMessage" runat="server" ForeColor="Red"></asp:Label>
 						</p>
 							
-						<asp:Button runat="server" ID="btnSend" Text="Send" CssClass="button"
+						<asp:Button runat="server" ID="btnSend" Text="Send" Class="btn btn-primary btn-sm"
 							OnClick="btnSend_Click" ValidationGroup="DateTime" 
 							meta:resourcekey="btnSendResource1" />
 						<br />
@@ -108,7 +108,7 @@
 										ControlToValidate="txtPartNumber" />
                                 </li>
                                 <li>
-                                    <asp:Button runat="server" ID="ibSendNonDeliveryRequest" Text="Send" OnClick="ibSendNonDeliveryRequest_Click" CssClass="button" ValidationGroup="vgroup" />
+                                    <asp:Button runat="server" ID="ibSendNonDeliveryRequest" Text="Send" OnClick="ibSendNonDeliveryRequest_Click" Class="btn btn-primary btn-sm" ValidationGroup="vgroup" />
                                 </li>
                             </ul>
                         </div>						

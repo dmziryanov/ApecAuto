@@ -87,10 +87,10 @@
 	            </tbody>
 	            <tbody runat="server" id="_filters2Block"  class="filters2">
 	            <tr>
-	             <td colspan="12"><div style="float:right;"><asp:LinkButton runat="server" CssClass="button"
+	             <td colspan="12"><div style="float:right;"><asp:LinkButton runat="server" Class="btn btn-primary btn-sm"
 			             ID="_clearFilterButton" onclick="_clearFilterButton_Click" CausesValidation="False" 
 			             meta:resourcekey="_clearFilterButtonResource1" Text="очистить фильтр">
-            </asp:LinkButton></div><asp:LinkButton CssClass="button" runat="server" ID="_searchButton" Text="Filter"
+            </asp:LinkButton></div><asp:LinkButton Class="btn btn-primary btn-sm" runat="server" ID="_searchButton" Text="Filter"
 						            ImageUrl="<%$ Resources:ImagesURL, filter_btn %>" onclick="_searchButton_Click" 
 			             meta:resourcekey="_searchButtonResource1" /></td>
 	            </tr>

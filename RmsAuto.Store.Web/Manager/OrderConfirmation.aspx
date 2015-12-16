@@ -10,5 +10,5 @@
 	<h1>Order is successfully placed</h1>
 	Customer: <% =SiteContext.Current.CurrentClient.Profile.ClientName %><br />
 	Order's number: <% =OrderNumber %><br />
-	<asp:LinkButton ID="_btnContinue" runat="server" CssClass="button" Text="Continue" />	
+	<asp:LinkButton ID="_btnContinue" runat="server" Class="btn btn-primary btn-sm" Text="Continue" />	
 </asp:Content>

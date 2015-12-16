@@ -41,8 +41,8 @@
     DisplayCancelButton="false" CancelButtonText="Отмена" CancelDestinationPageUrl="~/Default.aspx"
     OnCancelButtonClick="_placeOrderWizard_CancelButtonClick" CssClass="wizard_form"
     StartNextButtonText="Send Order" DisplaySideBar="false" Width="100%" 
-    CancelButtonType="Button" CancelButtonStyle-CssClass="button"
-    StartNextButtonType="Button" StepNextButtonText="Send Order" StartNextButtonStyle-CssClass="button">
+    CancelButtonType="Button" CancelButtonStyle-CssClass="btn btn-primary btn-sm"
+    StartNextButtonType="Button" StepNextButtonText="Send Order" StartNextButtonStyle-CssClass="btn btn-primary btn-sm">
     <HeaderTemplate>
         <h1>
             <asp:Literal ID="lHeaderPlaceOrder" runat="server" Text="<%$ Resources:PlaceOrder, PlaceOrderInfo %>" /></h1>
@@ -182,10 +182,10 @@
                 </asp:PlaceHolder>
                 <br />
                 <br />
-            	<asp:HyperLink runat="server" ID="_orderPrintLink" Target="_blank" CssClass="button"><asp:Literal ID="lPrintOrder" runat="server" Text="<%$ Resources:PlaceOrder, PrintOrder %>" /></asp:HyperLink>&nbsp;
-            	 <%--<asp:HyperLink Visible="false" runat="server" ID="_paymentOrderPrintLink" Target="_blank" CssClass="button"><asp:Literal ID="lPrintPayment" runat="server" Text="Распечатать квитанцию" /></asp:HyperLink><br />
+            	<asp:HyperLink runat="server" ID="_orderPrintLink" Target="_blank" Class="btn btn-primary btn-sm"><asp:Literal ID="lPrintOrder" runat="server" Text="<%$ Resources:PlaceOrder, PrintOrder %>" /></asp:HyperLink>&nbsp;
+            	 <%--<asp:HyperLink Visible="false" runat="server" ID="_paymentOrderPrintLink" Target="_blank" Class="btn btn-primary btn-sm"><asp:Literal ID="lPrintPayment" runat="server" Text="Распечатать квитанцию" /></asp:HyperLink><br />
             	<asp:Label Visible="false" ID="divider" CssClass="GrayTextStyle" runat="server" Text=" / " /><br/>
-			   <asp:HyperLink Visible="false" runat="server" ID="_paymentOrderPrintLinkOpt" Target="_blank" CssClass="button"><asp:Literal ID="optPrintPayment" runat="server" Text="Invoice payment" /></asp:HyperLink><br />--%>
+			   <asp:HyperLink Visible="false" runat="server" ID="_paymentOrderPrintLinkOpt" Target="_blank" Class="btn btn-primary btn-sm"><asp:Literal ID="optPrintPayment" runat="server" Text="Invoice payment" /></asp:HyperLink><br />--%>
                 <br />
                 <div class="link_block">
                     <asp:HyperLink ID="_backLink" runat="server" Text="<%$ Resources:Texts, MainPage %>" /></div>

@@ -74,7 +74,7 @@
                 <li>
                     <uc1:TextItemControl runat="server" ID="TextBlock" ShowHeader="True" TextItemID="FeedbackHint" />
 	                <br />
-                    <asp:Button ID="_sendButton" OnClick="_sendButton_Click" CssClass="button" runat="server" Text="<%$ Resources:Texts, Send %>"
+                    <asp:Button ID="_sendButton" OnClick="_sendButton_Click" Class="btn btn-primary btn-sm" runat="server" Text="<%$ Resources:Texts, Send %>"
                             ValidationGroup="FeedbackGroup" meta:resourcekey="_sendButtonResource1" />
                 </li>
             </ul>

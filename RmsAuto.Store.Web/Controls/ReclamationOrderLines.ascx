@@ -29,8 +29,8 @@
 				<td><asp:TextBox ID="_filterPartNumber" runat="server"></asp:TextBox></td>
 			</tr>
 		</table>
-		<asp:Button ID="_searchButton" CssClass="button" runat="server" Text="<%$ Resources:Texts, Filter %>" OnClick="_searchButton_Click" />
-		<asp:Button ID="_clearFilterButton" CssClass="button" runat="server" Text="<%$ Resources:Texts, ClearFilters %>" CausesValidation="false" OnClick="_clearFilterButton_Click" />
+		<asp:Button ID="_searchButton" Class="btn btn-primary btn-sm" runat="server" Text="<%$ Resources:Texts, Filter %>" OnClick="_searchButton_Click" />
+		<asp:Button ID="_clearFilterButton" Class="btn btn-primary btn-sm" runat="server" Text="<%$ Resources:Texts, ClearFilters %>" CausesValidation="false" OnClick="_clearFilterButton_Click" />
 	</div>
 </div>
 

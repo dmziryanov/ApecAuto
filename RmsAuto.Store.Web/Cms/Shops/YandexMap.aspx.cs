@@ -17,58 +17,23 @@ namespace RmsAuto.Store.Web.Cms
         protected int ShopsLoaded;
         protected Shop firstShop;
         protected List<City> Cities = null;
-        protected Region r;  
-		
-        protected void Page_Load( object sender, EventArgs e )
-		{
-            Shop [] shops = null;
-            Shop [] Allshops = null;
-           
-        
-            if (CmsContext.Current.PageParameters["Region"] == "City")
-            {
-                using (var Ctx = new dcCommonDataContext())
-                {
-                    Cities = Ctx.Cities.Where(x => x.CityID.ToString() == CmsContext.Current.PageParameters["ID"]).ToList();
-                }
+        protected Region r;
 
-                shops = ShopsDac.GetShopByCityID(Convert.ToInt32(CmsContext.Current.PageParameters["ID"])).ToArray();
-                shops = shops.Where(s => s.isRMS != true).ToArray();
-                ShopsLoaded = shops.Length;
-                firstShop = shops.FirstOrDefault();
-              
-                CityRepeater.DataSource = getShops(ref shops);
-                CityRepeater.DataBind();
-            }
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            Shop[] shops = null;
+            Shop[] Allshops = null;
 
-            if (CmsContext.Current.PageParameters["Region"] == "Region")
-            {
-                // Ссылка "Центральный офис" использует алгоритм отображения магазинов по региону
-                // "100" - 'регион' "Центральный офис"
-                if ("100" == CmsContext.Current.PageParameters["ID"])
-                {
-                    Shop[] sl = (new CmsDataContext()).Shops.Where(x => x.isRMS == true).ToArray();
-                    CityRepeater.DataSource = getShops(ref sl);
-                    CityRepeater.DataBind(); return;
-                }
-                
-             
-                using (var Ctx = new dcCommonDataContext())
-                {
-                    Cities = Ctx.Cities.Where(x => x.RegionID.ToString() == CmsContext.Current.PageParameters["ID"]).ToList();
-                    r = Ctx.Regions.Where(x => x.RegionID.ToString() == CmsContext.Current.PageParameters["ID"]).FirstOrDefault();
-                }
 
-                Cities.Add(new City() { CityID = null });
-                Allshops = ShopsDac.GetShopByRegionID(Convert.ToInt32(CmsContext.Current.PageParameters["ID"])).ToArray();
-                ShopsLoaded = Allshops.Count();
-                firstShop = Allshops.FirstOrDefault();
+            Allshops = ShopsDac.GetShops("").ToArray();
+            ShopsLoaded = Allshops.Count();
+            firstShop = Allshops.FirstOrDefault();
 
-                CityRepeater.DataSource = getShops(ref Allshops);
-                CityRepeater.DataBind();
-            }
-		}
-        object [] getShops(ref Shop[] sl)
+            CityRepeater.DataSource = getShops(ref Allshops);
+            CityRepeater.DataBind();
+
+        }
+        object[] getShops(ref Shop[] sl)
         {
             var Ctx = new dcCommonDataContext();
             List<object> ol = new List<object>();

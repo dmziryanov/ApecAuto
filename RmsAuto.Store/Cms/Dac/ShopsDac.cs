@@ -33,14 +33,18 @@ namespace RmsAuto.Store.Cms.Dac
             List<Shop> shops;
             using (var Ctx = new DCFactory<CmsDataContext>())
             {
-                if (!LightBO.IsLight())
-                {
                     shops = Ctx.DataContext.Shops.Where(x => x.ShopVisible).OrderByDescending(x => x.ShopPriority).ToList();
-                }
-                else
-                {
-                    shops = Ctx.DataContext.Shops.Where(x => x.ShopVisible && x.InternalFranchName == SiteContext.Current.InternalFranchName).OrderByDescending(x => x.ShopPriority).ToList();
-                }
+            }
+
+            return shops;
+        }
+
+        public static List<Shop> GetShopsByFranchName(string InternalFranchName)
+        {
+            List<Shop> shops;
+            using (var Ctx = new DCFactory<CmsDataContext>())
+            {
+                shops = Ctx.DataContext.Shops.Where(x => x.ShopVisible && x.InternalFranchName == InternalFranchName).OrderByDescending(x => x.ShopPriority).ToList();
             }
 
             return shops;

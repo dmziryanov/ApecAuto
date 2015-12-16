@@ -45,8 +45,8 @@
                 Date from: <asp:TextBox class="date" ID="RegDateMin" runat="server"></asp:TextBox> 
 	            Date till: <asp:TextBox class="date" ID="RegDateMax" runat="server"></asp:TextBox> 
 	            Order #: <asp:TextBox ID="OrderId" runat="server"></asp:TextBox> 
-	            <asp:Button ID="_btnFillReport" runat="server" Text="Display" CssClass="button" onclick="_btnFillReport_Click" />
-                &nbsp;   <asp:Button ID="_btnUnloadReport" runat="server" visible="false" Text="Download" CssClass="button"  />
+	            <asp:Button ID="_btnFillReport" runat="server" Text="Display" Class="btn btn-primary btn-sm" onclick="_btnFillReport_Click" />
+                &nbsp;   <asp:Button ID="_btnUnloadReport" runat="server" visible="false" Text="Download" Class="btn btn-primary btn-sm"  />
 		        <uc3:SaleReportTable ID="srt" runat="server" />
 		        <div id="AjaxLoadDialog" style="width: 100%; vertical-align: middle; text-align: center; height: 100%;">
                     <div style="width: 100%; visibility:hidden; vertical-align: middle; text-align: center; height: 100%;">

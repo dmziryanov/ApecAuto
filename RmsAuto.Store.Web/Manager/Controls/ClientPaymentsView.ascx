@@ -28,7 +28,7 @@
 
 <div style="width:20%; float:left; height: 400px; min-width: 300px;">
 	<asp:TextBox id="_txtClientName" runat="server" Width="194px" EnableViewState="true"></asp:TextBox>&nbsp 
-	<asp:Button ID="_btnSearchClient" CssClass="button" runat="server" Text="<%$Resources:Texts, Search %>" onclick="_btnSearchClient_Click" />
+	<asp:Button ID="_btnSearchClient" Class="btn btn-primary btn-sm" runat="server" Text="<%$Resources:Texts, Search %>" onclick="_btnSearchClient_Click" />
 	<br />
 	<br />
 	<asp:ListBox  ID="_listSearchResults" runat="server" onselectedindexchanged="_listSearchResults_SelectedIndexChanged" 
@@ -61,15 +61,15 @@
 	<div>
 	    <%= global::Resources.Texts.KindOfPayment %>:&nbsp<asp:RadioButtonList ID="_rblPaymentMethod" runat="server" />
 	</div>&nbsp<asp:TextBox ID="txtInputPayment" runat="server" />
-	    <asp:Button ID="btnInputPayment" runat="server" Text="<%$Resources:Texts, Enter %>" CssClass="button" onclick="btnInputPayment_Click" />
+	    <asp:Button ID="btnInputPayment" runat="server" Text="<%$Resources:Texts, Enter %>" Class="btn btn-primary btn-sm" onclick="btnInputPayment_Click" />
 	<br />
     <br />
 	<%= global::Resources.Texts.Balance %>:&nbsp;<%# CurrentClientBalance %>
 	<br />
 	<%= global::Resources.Texts.DateFrom %>:&nbsp;<asp:TextBox CssClass="date" runat="server" ID="_DateFrom" Text="" AutoPostBack="False" Width="100" />		
     &nbsp;&nbsp;<%= global::Resources.Texts.DateTill %>:&nbsp;<asp:TextBox CssClass="date" runat="server" ID="_DateTo" Text="" AutoPostBack="False" Width="100"  />
-    &nbsp;<asp:Button ID="btnSearchPayments" runat="server" Text="<%$Resources:Texts, BalanceListView %>" CssClass="button" onclick="btnSearchPayments_Click" />
-    <asp:HyperLink ID="PaymentsBootstrap" CssClass="button" runat="server" Text="<%$Resources:Texts, Download %>" Visible="true" />
+    &nbsp;<asp:Button ID="btnSearchPayments" runat="server" Text="<%$Resources:Texts, BalanceListView %>" Class="btn btn-primary btn-sm" onclick="btnSearchPayments_Click" />
+    <asp:HyperLink ID="PaymentsBootstrap" Class="btn btn-primary btn-sm" runat="server" Text="<%$Resources:Texts, Download %>" Visible="true" />
 	<br />
 	<br />
     <div class="tab-text">

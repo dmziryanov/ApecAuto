@@ -27,9 +27,9 @@
 </asp:ScriptManager>
 <asp:Wizard ID="_fillProfileWizard" runat="server" OnFinishButtonClick="_fillProfileWizard_FinishButtonClick"
     OnActiveStepChanged="_fillProfileWizard_ActiveStepChanged" DisplaySideBar="false"
-    Width="100%" StartNextButtonStyle-CssClass="button" StartNextButtonText="<%$ Resources:Texts, Next %>" StartNextButtonType="Button" StepNextButtonStyle-CssClass="button" StepNextButtonText="<%$ Resources:Texts, Next %>" StepNextButtonType="Button"
-    StepPreviousButtonStyle-CssClass="button" StepPreviousButtonText="<%$ Resources:Texts, Back %>" StepPreviousButtonType="Button"
-    FinishPreviousButtonStyle-CssClass="button" FinishPreviousButtonType="Button" FinishPreviousButtonText="<%$ Resources:Texts, Back %>" FinishCompleteButtonStyle-CssClass="button"
+    Width="100%" StartNextButtonStyle-CssClass="btn btn-primary btn-sm" StartNextButtonText="<%$ Resources:Texts, Next %>" StartNextButtonType="Button" StepNextButtonStyle-CssClass="btn btn-primary btn-sm" StepNextButtonText="<%$ Resources:Texts, Next %>" StepNextButtonType="Button"
+    StepPreviousButtonStyle-CssClass="btn btn-primary btn-sm" StepPreviousButtonText="<%$ Resources:Texts, Back %>" StepPreviousButtonType="Button"
+    FinishPreviousButtonStyle-CssClass="btn btn-primary btn-sm" FinishPreviousButtonType="Button" FinishPreviousButtonText="<%$ Resources:Texts, Back %>" FinishCompleteButtonStyle-CssClass="btn btn-primary btn-sm"
     FinishCompleteButtonType="Button" FinishCompleteButtonText="<%$ Resources:Texts, GetRegistered %>">
     <NavigationStyle CssClass="wizard_btn" />
     <SideBarStyle CssClass="wizard_left" />
@@ -39,12 +39,12 @@
             <tr>
                 <uc1:WizardTopSideBar runat="server">
                     <StepElement>
-                        <td style="width:25%;">
+                        <td style="width:25%;" class="btn btn-default btn-sm">
                             <span><%# Container.StepTitle %></span>
                         </td>
                     </StepElement>
                     <StepElementSelected>
-                        <td class="on" style="width:25%;">
+                        <td class="btn btn-primary btn-sm" style="width:25%;">
                             <span><%# Container.StepTitle %></span>
                         </td>
                     </StepElementSelected>
@@ -59,7 +59,7 @@
                     <tr>
                         <th><asp:Literal ID="lEmail" runat="server" Text="<%$ Resources:Texts, Email %>" />: *</th>
                         <td>
-                            <asp:TextBox ID="_txtEmail" runat="server" Width="165px"></asp:TextBox>
+                            <asp:TextBox CssClass="form-control" ID="_txtEmail" runat="server" Width="165px"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="_emailRequiredValidator" runat="server" ControlToValidate="_txtEmail"
                                 Display="Dynamic" ErrorMessage="<%$ Resources:ValidatorsMessages, EmptyEmail %>"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="_txtEmail"
@@ -86,7 +86,7 @@
                     </tr>
                     <tr>
                         <th><asp:Literal ID="lLocalyti" runat="server" Text="<%$ Resources:RegistrationTexts, City %>" />: *</th>
-                        <td><asp:TextBox ID="_txtLocality" runat="server" Width="222px"></asp:TextBox>
+                        <td><asp:TextBox CssClass="form-control" ID="_txtLocality" runat="server" Width="222px"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="rfvLocality" runat="server" ControlToValidate="_txtLocality"
                                 ErrorMessage="<%$ Resources:ValidatorsMessages, CityNotSpecified %>" Display="Dynamic"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator12" runat="server"
@@ -181,10 +181,15 @@
                     </tr>
                     <tr>
                         <th><asp:Literal ID="Literal2" runat="server" Text="<%$ Resources:RegistrationTexts, RegisterAs %>" /></th>
-                        <td><asp:RadioButtonList ID="SellerInfo" runat="server" Required="false">
-                                           <asp:ListItem Text="<%$ Resources:RegistrationTexts, Seller %>" Value="1"></asp:ListItem>
-                                           <asp:ListItem Selected="True" Text="<%$ Resources:RegistrationTexts, Customer %>" Value="0"></asp:ListItem>
-                            </asp:RadioButtonList></td>
+                          
+                        <td><div class="col-sm-10"><asp:RadioButtonList ID="SellerInfo" runat="server" Required="false">
+                              
+                                           <asp:ListItem icheck Text="<%$ Resources:RegistrationTexts, Seller %>" Value="1"></asp:ListItem>
+                                           <asp:ListItem icheck Selected="True" Text="<%$ Resources:RegistrationTexts, Customer %>" Value="0"></asp:ListItem>
+                              
+                            </asp:RadioButtonList>
+                        </div>
+                            </td>
                     </tr>
        <%--             <asp:PlaceHolder ID="vregRO_Opt_272" runat="server">
                         <tr>

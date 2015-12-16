@@ -70,13 +70,13 @@
         ShowHeader="false" />
     <span style="float:right;margin-right:5px;">
         <asp:HyperLink runat="server" ID="_printLink" Target="_blank"><%=global::Resources.Texts.PrintVersion %></asp:HyperLink></span>
-    <asp:Button ID="_btnCheckout" CssClass="button" OnClick="_btnCheckout_Click" Text="<%$Resources:Texts, PlaceAnOrder %>" runat="server" />
+    <asp:Button ID="_btnCheckout" Class="btn btn-primary btn-sm" OnClick="_btnCheckout_Click" Text="<%$Resources:Texts, PlaceAnOrder %>" runat="server" />
     <% if ( CurrentClient.IsGuest )
        { %>
     <h3>
         <%=global::Resources.Texts.NeedAutorization %></h3>
-    <asp:Button ID="_login" runat="server" OnClick="_btnLogon_Click" CssClass="button" Text="Autorization" /> 
-    <a class="btn btn-success" href="<%=UrlManager.GetRegistrationUrl() %>"><%=global::Resources.Texts.Registration %></a>
+    <asp:Button ID="_login" runat="server" OnClick="_btnLogon_Click" Class="btn btn-primary btn-sm" Text="Autorization" /> 
+    <a Class="btn btn-primary btn-sm" href="<%=UrlManager.GetRegistrationUrl() %>"><%=global::Resources.Texts.Registration %></a>
     <% }
       
        else if ( !( CurrentClient.Profile.IsChecked || ( CurrentClient.Profile.TradingVolume == TradingVolume.Retail && CurrentClient.Profile.Category == ClientCategory.Physical ) ) )

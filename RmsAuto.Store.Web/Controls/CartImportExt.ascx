@@ -36,7 +36,7 @@
             <asp:FileUpload ID="_orderFileUpload" runat="server" Width="400" />
         </p>
         <p>
-            <asp:Button ID="_submitButton" CssClass="button" runat="server" OnClick="_submitButton_Click" OnClientClick="upload();" Text="<%$ Resources:Texts, OrderImport %>" />
+            <asp:Button ID="_submitButton" CssClass="btn btn-primary btn-sm" runat="server" OnClick="_submitButton_Click" OnClientClick="upload();" Text="<%$ Resources:Texts, OrderImport %>" />
         </p>
         <br />
         <uc2:TextItemControl ID="_instructionTextItem" runat="server" TextItemID="CartImportInstruction.Text" />
@@ -47,7 +47,7 @@
         </h1>
         <p>
             <span class="link_block">
-                <asp:LinkButton ID="lbResumeWithDel" CssClass="button" runat="server" OnClick="lbResumeWithDel_Click" Text="<%$ Resources:CartImport, DeclineErrorsLines %>"></asp:LinkButton>
+                <asp:LinkButton ID="lbResumeWithDel" CssClass="btn btn-primary btn-sm" runat="server" OnClick="lbResumeWithDel_Click" Text="<%$ Resources:CartImport, DeclineErrorsLines %>"></asp:LinkButton>
             </span>
         </p>
         <div class="tab-text">
@@ -167,10 +167,10 @@
             </div>
         </div>
         <span class="link_block">
-            <asp:LinkButton ID="LinkButton3" runat="server" CssClass="button" CommandName="SwitchViewByID"
+            <asp:LinkButton ID="LinkButton3" runat="server" CssClass="btn btn-primary btn-sm" CommandName="SwitchViewByID"
                 CommandArgument="_viewLoad"><asp:Literal ID="lReload1" runat="server" Text="<%$ Resources:CartImport, Reload %>" /></asp:LinkButton>
         </span><span class="link_block">
-            <asp:LinkButton ID="lbResume" CssClass="button" runat="server" OnClick="lbResume_Click"><asp:Literal ID="lContinue" runat="server" Text="<%$ Resources:CartImport, ContinueLoading %>" /></asp:LinkButton>
+            <asp:LinkButton ID="lbResume" CssClass="btn btn-primary btn-sm" runat="server" OnClick="lbResume_Click"><asp:Literal ID="lContinue" runat="server" Text="<%$ Resources:CartImport, ContinueLoading %>" /></asp:LinkButton>
         </span>
     </asp:View>
     <asp:View ID="_viewConfirm" runat="server">
@@ -575,11 +575,11 @@
             });
         </script>
         <p class="buttons">
-            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="button" CommandName="SwitchViewByID" CommandArgument="_viewLoad"><asp:Literal ID="lReload2" runat="server" Text="<%$ Resources:CartImport, Reload %>" /></asp:LinkButton> 
-<%--            <asp:LinkButton ID="lbAddToCart" CssClass="button" runat="server" OnClick="lbAddToCart_Click"><asp:Literal ID="lLoadToCart" runat="server" Text="<%$ Resources:CartImport, UploadToCart %>" /></asp:LinkButton> --%>
-            <a id="addToCart" href="#" class="btn btn-success"><asp:Literal ID="Literal1" runat="server" Text="<%$ Resources:CartImport, UploadToCart %>" /></a>
-            <input id="sendOKToEmail" type="checkbox" /><label for="sendOKToEmail"><asp:Literal Text="<%$ Resources:CartImport, SendUploadedOrderToEmail %>" runat="server" /></label>
-            <input id="sendErrorToEmail" type="checkbox" /><label for="sendErrorToEmail"><asp:Literal Text="<%$ Resources:CartImport, SendListErrorToEmail %>" runat="server" /></label>
+            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-primary btn-sm" CommandName="SwitchViewByID" CommandArgument="_viewLoad"><asp:Literal ID="lReload2" runat="server" Text="<%$ Resources:CartImport, Reload %>" /></asp:LinkButton> 
+<%--            <asp:LinkButton ID="lbAddToCart" Class="btn btn-primary btn-sm" runat="server" OnClick="lbAddToCart_Click"><asp:Literal ID="lLoadToCart" runat="server" Text="<%$ Resources:CartImport, UploadToCart %>" /></asp:LinkButton> --%>
+            <a id="addToCart" href="#" Class="btn btn-primary btn-sm"><asp:Literal ID="Literal1" runat="server" Text="<%$ Resources:CartImport, UploadToCart %>" /></a>
+            <input id="sendOKToEmail" class="iCheck-helper" type="checkbox" /><label for="sendOKToEmail"><asp:Literal Text="<%$ Resources:CartImport, SendUploadedOrderToEmail %>" runat="server" /></label>
+            <input id="sendErrorToEmail" class="iCheck-helper" type="checkbox" /><label for="sendErrorToEmail"><asp:Literal Text="<%$ Resources:CartImport, SendListErrorToEmail %>" runat="server" /></label>
         </p>
         <div class="alert alert-success"></div>
         <div class="alert alert-error"></div>
@@ -593,10 +593,10 @@
         </p>
         <p>
             <span class="link_block">
-                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="button" CommandName="SwitchViewByID"
+                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btn btn-primary btn-sm" CommandName="SwitchViewByID"
                     CommandArgument="_viewLoad"><asp:Literal ID="lReload3" runat="server" Text="<%$ Resources:CartImport, Reload %>" /></asp:LinkButton>
             </span><span class="link_block">
-                <asp:LinkButton ID="_placeOrderBtn" CssClass="button" runat="server"><asp:Literal ID="lPlaceOrder" runat="server" Text="<%$ Resources:CartImport, PlaceOrder %>" /></asp:LinkButton>
+                <asp:LinkButton ID="_placeOrderBtn" CssClass="btn btn-primary btn-sm" runat="server"><asp:Literal ID="lPlaceOrder" runat="server" Text="<%$ Resources:CartImport, PlaceOrder %>" /></asp:LinkButton>
             </span>
         </p>
     </asp:View>

@@ -13,21 +13,21 @@ namespace RmsAuto.Store.Web.Manager.Controls {
     public partial class ManagerInfo {
         
         /// <summary>
-        /// _managerNameLabel control.
+        /// QuickSearch1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label _managerNameLabel;
+        protected global::RmsAuto.Store.Web.Controls.QuickSearch QuickSearch1;
         
         /// <summary>
-        /// _logoffButton control.
+        /// _messageRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton _logoffButton;
+        protected global::System.Web.UI.WebControls.Repeater _messageRepeater;
     }
 }

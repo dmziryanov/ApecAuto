@@ -56,11 +56,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\BookSample\BookSample\bin\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.configuration" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
     <Reference Include="System.Data.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -235,7 +240,7 @@
     <Compile Include="Dac\UserMaintDac.cs" />
     <Compile Include="Dac\UserProfileDac.cs" />
     <Compile Include="Dac\VinRequestsDac.cs" />
-    <Compile Include="Data\DCFactory.cs" />
+    <Compile Include="Data\DBCFactory.cs" />
     <Compile Include="Entities\AddToCartSuccessResult.cs" />
     <Compile Include="Entities\City.cs" />
     <Compile Include="Entities\ClientRegistrationDataExt.cs" />
@@ -254,6 +259,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Log.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Message.cs" />
     <Compile Include="Entities\OrderLineStatusChange.cs" />
     <Compile Include="Entities\OwnStoreSupplier.cs" />
     <Compile Include="Entities\Reclamation.cs" />
@@ -280,6 +286,7 @@
     <Compile Include="GlobalDBSettings\GlobalSettings.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Configuration\LoggerConfiguration.cs" />
+    <Compile Include="Messages\MessageRepository.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -414,6 +421,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Acctg\ServiceModel\DataExchange\test_web_hansa.html" />
+    <EmbeddedResource Include="Cms\Mail\Templates\styles.css" />
     <EmbeddedResource Include="Cms\Mail\Templates\VinRequestAnswerAlert.xslt" />
     <EmbeddedResource Include="Cms\Mail\Templates\ResetPasswordAlert.xslt" />
     <EmbeddedResource Include="Cms\Mail\Templates\ReclamationTrackingAlert.xslt" />

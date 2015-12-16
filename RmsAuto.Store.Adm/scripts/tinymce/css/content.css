@@ -1079,6 +1079,16 @@ table.e_list tr.tr td
 }
 
 
+.manager_toplinks {
+	color:#81929c;
+	font-size:12px;
+	font-family: 'Trebuchet MS';
+	background:url(../images/str_blue.gif) no-repeat 0px 7px;
+	padding:0px 0px 0px 10px;
+	margin-left:0px;
+}
+
+
 div.tabs 
 {
 }

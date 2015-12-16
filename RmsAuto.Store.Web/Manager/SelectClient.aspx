@@ -10,5 +10,5 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="_textContentPlaceHolder" runat="server">
     <uc1:ClientPicker ID="ClientPicker1" runat="server" />
     <uc2:ClientPicker ID="ClientPicker2" runat="server" />
-    <asp:LinkButton ID="_lbRegisterClient" CssClass="button" runat="server" Text="<%$ Resources:Texts, RegisterNewClient %>" PostBackUrl="~/Manager/RegisterClient.aspx"></asp:LinkButton>
+    <asp:LinkButton ID="_lbRegisterClient" Class="btn btn-primary btn-sm" runat="server" Text="<%$ Resources:Texts, RegisterNewClient %>" PostBackUrl="~/Manager/RegisterClient.aspx"></asp:LinkButton>
 </asp:Content>

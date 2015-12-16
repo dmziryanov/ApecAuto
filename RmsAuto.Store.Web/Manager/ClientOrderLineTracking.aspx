@@ -11,7 +11,7 @@
 	<uc1:ClientSubMenu ID="_clientSubMenu" runat="server" />
 
 	<span class="right_block">
-	    <asp:HyperLink ID="_backLink" CssClass="button" runat="server" Text="Вернуться в список заказов" />
+	    <asp:HyperLink ID="_backLink" Class="btn btn-primary btn-sm" runat="server" Text="Вернуться в список заказов" />
 	</span>
 
 	<uc3:OrderLineTracking ID="OrderLineTracking1" runat="server" />

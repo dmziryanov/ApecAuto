@@ -6,11 +6,11 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="_textContentPlaceHolder" runat="server">
 	<h3>Status upload</h3>
 	<p>
-	<a href='<%= this.GetTemplateUrl() %>' class="btn btn-success">File upload example</a>
+	<a href='<%= this.GetTemplateUrl() %>' Class="btn btn-primary btn-sm">File upload example</a>
 	<br/>
 	<br/>
 	<asp:FileUpload ID="fuMain" runat="server" />&nbsp; 
-	<asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="btnUpload_Click" CssClass="button"/></p>
+	<asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="btnUpload_Click" Class="btn btn-primary btn-sm"/></p>
 	<p><span style="color:Green"><asp:Literal ID="lPreloadInfo" runat="server"></asp:Literal>&nbsp;</span></p>
     <div class="tab-text">
         <div class="t-hold">
@@ -48,8 +48,8 @@
     </div>
 	
 	<p runat="server" id="pButtons">
-		<span class="link_block"><asp:LinkButton ID="lbClear" runat="server" CssClass="button" onclick="lbClear_Click">Repeat upload</asp:LinkButton></span>
-		<span class="link_block"><asp:LinkButton ID="lbUpdate" runat="server" CssClass="button" onclick="lbUpdate_Click">Refresh statuses</asp:LinkButton></span>
+		<span class="link_block"><asp:LinkButton ID="lbClear" runat="server" Class="btn btn-primary btn-sm" onclick="lbClear_Click">Repeat upload</asp:LinkButton></span>
+		<span class="link_block"><asp:LinkButton ID="lbUpdate" runat="server" Class="btn btn-primary btn-sm" onclick="lbUpdate_Click">Refresh statuses</asp:LinkButton></span>
 	</p>
 	<p><asp:Literal ID="lSummaryInfo" runat="server"></asp:Literal></p>
 </asp:Content>

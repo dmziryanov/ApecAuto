@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{24283758-07F9-471E-8FC4-E4CBD200993D}"
 	ProjectSection(SolutionItems) = preProject
@@ -114,10 +114,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RmsAuto.SetupForms", "RmsAuto.SetupForms\RmsAuto.SetupForms.csproj", "{D0330D14-88B6-450D-8A73-74ECD19F789E}"
 EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -205,6 +201,10 @@ Global
 		{CE62CC0A-658D-45D0-B00C-F2AE4E2EADDE} = {24283758-07F9-471E-8FC4-E4CBD200993D}
 		{89AB4845-F5ED-4F59-8E01-182396236A9A} = {24283758-07F9-471E-8FC4-E4CBD200993D}
 		{F5A64A43-CD31-4577-BC92-6DFC95A03FD8} = {24283758-07F9-471E-8FC4-E4CBD200993D}
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = RmsAuto.vsmdi

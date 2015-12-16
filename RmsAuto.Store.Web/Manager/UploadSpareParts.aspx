@@ -12,11 +12,11 @@
    
     <h3>Загрузка номенклатуры</h3>
 	<p>
-	<a href='<%= this.GetTemplateUrl() %>' class="btn btn-success">File upload example</a>
+	<a href='<%= this.GetTemplateUrl() %>' Class="btn btn-primary btn-sm">File upload example</a>
 	<br/>
 	<br/>
 	<asp:FileUpload ID="fuMain" runat="server" />&nbsp; 
-	<asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="btnUpload_Click" CssClass="button"/></p>
+	<asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="btnUpload_Click" Class="btn btn-primary btn-sm"/></p>
 	<p><span style="color:Green"><asp:Literal ID="lPreloadInfo" runat="server"></asp:Literal>&nbsp;</span></p>
     <div class="tab-text">
         <div class="t-hold">

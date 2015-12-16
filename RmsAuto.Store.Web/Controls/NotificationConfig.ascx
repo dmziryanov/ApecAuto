@@ -126,7 +126,7 @@
     <br />
     <div>
         <asp:Button runat="server" ID="btnSave" OnClick="btnSave_Click"
-            OnClientClick="GatherStatuses()" CssClass="button" Text="<%$ Resources:Texts, Save %>" />
+            OnClientClick="GatherStatuses()" Class="btn btn-primary btn-sm" Text="<%$ Resources:Texts, Save %>" />
     </div>
     <asp:HiddenField ID="hfSelectedStatuses" runat="server" />
 </div>

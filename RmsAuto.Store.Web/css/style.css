@@ -225,11 +225,14 @@ table {
 	margin: 0px;
 	text-align: left;
 	position:relative;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 
 .footer .container {
     background:#b8b8b8;
     color: black;
+    text-align: center;
 }
 
 .main-indent {
@@ -286,12 +289,17 @@ table {
 	left:243px;
 }
 
+.col-lg-4 {
+    padding: 0px !important;
+}
+
 .l-aside {
 	float:left;
 	width:210px;
 	margin-left:-100%;
 	position:relative;
 	left:-233px;
+    display: inline;
 }
 
 .header {
@@ -343,26 +351,29 @@ table {
 .header .logo {
 	position:absolute;
 	z-index:5;
-	
-	
 }
 
 .header .logo a,
 
-.header .logo span {
-	display:block;
+.logo {
 	background:url(../images/APEC_logo.png) no-repeat 0 0;
-	width:140px;
-	height:43px;
+	width:69px;
+	height:49px;
+    
 }
 
 .header .links {
-	font-size:11px;
+	font-size:19px;
 	text-align:right;
 	margin:-20px 0 6px;
+    color: white !important;
 }
 
-.header .links .sep {
+.links a{
+    color: white !important;
+}
+
+.links .sep {
 	display:inline-block;
 	height:10px;
 	border-left:1px solid #eaeef4;
@@ -457,7 +468,7 @@ table {
 }
 
 .blue {
-	color:#2aa064;
+	color:#1ab394;
 }
 
 .button {
@@ -785,6 +796,7 @@ table {
     color:#2aa064 !important;
 	padding-left:9px;
     border: #2aa064 !important;
+    background: #404141 !important;
 }
 
 .submenu a {
@@ -824,6 +836,7 @@ table {
 .bottom-menu {
 	margin-top:24px;
     color: white;
+    
 }
 
 .bottom-menu .sep {
@@ -895,7 +908,6 @@ table {
 }
 
 .context span {
-	background:#2aa06f;
 	color:#fff;
 }
 
@@ -1385,11 +1397,11 @@ table {
 
 .modal {
 	display: inline-block;
+    width: 300px;
     right: 23px;
     margin-left: 500px; 
     position: absolute;
     top: 35px;
-    width: 210px;
     z-index: 1000;
     float: right;
 }
@@ -1440,28 +1452,6 @@ table {
 .steps td {
 	margin-right:2px;
     padding:0;
-}
-
-.steps span {
-    background-color:#79a27d;
-	color:#fff;
-	display:block;
-	position:relative;
-	padding:0 13px;
-	height:25px;
-	font:normal 14px/25px Arial, Helvetica, sans-serif;
-	position:relative;
-	letter-spacing:-0.3px;
-    text-align:center;
-    border-radius:4px 4px 0 0;
-	-webkit-border-radius:4px 4px 0 0;
-	behavior: url(../scripts/PIE.htc);
-    margin:0 1px;
-}
-
-.steps .on span {
-	background-color:#2aa06f;
-    font-weight:bold; 
 }
 
 .itog

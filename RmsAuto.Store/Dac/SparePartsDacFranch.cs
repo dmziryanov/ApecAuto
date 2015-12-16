@@ -49,7 +49,7 @@ namespace RmsAuto.Store.Dac
 			return context.ExecuteQuery<SparePartFranch>(query,
                 "" /* код франча для "региональных" прайсов */, 
 				key.PN, key.Mfr, key.SupplierId,
-				AcctgRefCatalog.RmsFranches[SiteContext.Current.InternalFranchName].AdditionalPeriod /*добавочный период к срокам поставки*/,"rmsauto").SingleOrDefault<SparePartFranch>();
+				0 /*добавочный период к срокам поставки*/,"rmsauto").SingleOrDefault<SparePartFranch>();
         }
 
         public static List<SparePartFranch> LoadMassive(IEnumerable<SparePartPriceKey> keys)

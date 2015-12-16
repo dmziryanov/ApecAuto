@@ -17,7 +17,7 @@
 		<div onkeypress="javascript: if(event.keyCode==13) { <%=GetPostBackClientEvent(_btnApply, String.Empty)%>; return false; }">
 			<uc:EditUser ID="_editUser" runat="server" />
 			<uc:SetPassword ID="_setPassword" runat="server" />
-			<asp:Button ID="_btnApply" runat="server" OnClick="_btnApply_Click" Text="Send" CssClass="button" />
+			<asp:Button ID="_btnApply" runat="server" OnClick="_btnApply_Click" Text="Send" Class="btn btn-primary btn-sm" />
 		</div>
 	</asp:Panel>
 	<asp:Panel ID="_messagePanel" runat="server">
